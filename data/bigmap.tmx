@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="City" tilewidth="16" tileheight="16">
+  <image source="../../../../Pictures/16oga.png" trans="ffffff" width="160" height="80"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RsQ2AMAADwfRh/3lpGICCKI9yxfWWf44xJgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK9cj9070KNIjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9vvvwL3b/pcdZPVa03b0DPYr0aNGjRY8WPVr0aNGjRY8WPVr0aDmpxw3Wyc0KQJwAAA==
+  </data>
+ </layer>
+ <layer name="blocked buildings" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3YOQ7CQAwF0JwBKIGKrWK7/+FwQ0GkSIkYJePMe9JvprG7+XLXAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQG7npRfgx2PpBQAAACCZTWQb2SWfsRb7yCFyTD5jLS6Ra+TWey95ExyaMVULd8pn5BV5995L3gSHZkzlTglMoSvVZUxXauHfrcWYruTfnU+prgRQAx2sLu5VdSl1r6KMFjrYKUEy7fpv7gnytfQec+QDF3RHhECcAAA=
+  </data>
+ </layer>
+ <layer name="blocked objects" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3bOwrDMBQAQR3Ax3Dt+x8viAQSQ1xrjWfg9ULrb6Ex+rbP0KBHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terTo0aJHix4terQ8qcdm/g7XVuyR6+Dandb6BHq06NGiR4seLXq06NGiR4seLXq06NGiR4seLXq06NGiBwBwF/vqBXCiR8uxegGc6NGiR8vs4R3SoUfLMTyzSvRo0aNltnCu4W31+R/nTL5W783v+L7q2IceJXq0zBa+rzrcGy16tOjRokeLHi16tOjR4t+j5wXm6hO7QJwAAA==
+  </data>
+ </layer>
+</map>
