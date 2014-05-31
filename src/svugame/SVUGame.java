@@ -40,7 +40,8 @@ public class SVUGame extends StateBasedGame {
         super(title);
         addState(new Overworld());
         addState(new Battle());
-        addState(new City1());
+        addState(new StartState());
+        addState(new PauseState());
        // enterState(1);  
     }
 
