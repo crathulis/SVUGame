@@ -21,13 +21,10 @@ import org.newdawn.slick.state.transition.CombinedTransition;
 import org.newdawn.slick.state.transition.EmptyTransition;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
-import org.newdawn.slick.state.transition.HorizontalSplitTransition;
 import org.newdawn.slick.state.transition.RotateTransition;
 import org.newdawn.slick.state.transition.VerticalSplitTransition;
 import org.newdawn.slick.tiled.TiledMap;
-//new test
-//test3
-//test4
+
 /**
  *
  * @author craig.reese
@@ -118,7 +115,7 @@ public class Overworld extends BasicGameState {
         if (input.isKeyDown(Input.KEY_UP)) {
             sprite = up;
 
-            if (!isBlocked((playerx), (float) (playery - i * speed))) {
+            if (!isBlocked((playerx), (float) (playery - i * speed),sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -128,7 +125,7 @@ public class Overworld extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             sprite = down;
 
-            if (!isBlocked((playerx), (float) (playery + i * speed))) {
+            if (!isBlocked((playerx), (float) (playery + i * speed),sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -138,7 +135,7 @@ public class Overworld extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_LEFT)) {
             sprite = left;
 
-            if (!isBlocked((float) (playerx - i * speed), playery)) {
+            if (!isBlocked((float) (playerx - i * speed), playery,sbg)) {
                 collision = false;
             }
 
@@ -157,7 +154,7 @@ public class Overworld extends BasicGameState {
                 //we've reached the right edge of the screen
                 transition("right");
             }
-            if (!isBlocked((float) (playerx + i * speed), playery)) {
+            if (!isBlocked((float) (playerx + i * speed), playery,sbg)) {
                 collision = false;
             }
             //check to see if we're at the edge of the map
@@ -201,7 +198,7 @@ public class Overworld extends BasicGameState {
 
     }
 
-    private boolean isBlocked(float x, float y) throws SlickException {
+    private boolean isBlocked(float x, float y ,StateBasedGame sbg) throws SlickException {
         int xBlock = (int) (x + 8) / SIZE;
         int yBlock = (int) (y + 9) / SIZE;
         //we need to see if something that is blocked can cause a transition
@@ -209,11 +206,15 @@ public class Overworld extends BasicGameState {
         int tileID = currentMap.getTileId((int) playerx / 16, (int) playery / 16, 0);
         String value = currentMap.getTileProperty(tileID, "transitiondoor", "false");
         if (!value.equals("false")) {
-            currentMap = new TiledMap("data/" + value + ".tmx");
+            //changing this to enter a new state
+            
+            sbg.enterState(3, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            
+            //currentMap = new TiledMap("data/" + value + ".tmx");
             //rebuild blocking
-            buildBlockArray();
+            //buildBlockArray();
             //now we move our character on the new map
-            playerx = 1;
+            //playerx = 1;
             return false;
         }
         return blocked[xBlock][yBlock];
