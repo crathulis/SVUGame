@@ -17,9 +17,9 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  * @author Alan
  */
-public class StartState extends BasicGameState{
+public class PauseState extends BasicGameState{
     
-    private int ID = 4;
+    private int ID = 5;
     private TiledMap currentMap;
 
     @Override
