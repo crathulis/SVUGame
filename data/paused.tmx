@@ -4,8 +4,8 @@
   <image source="../../../../Downloads/Anikki_square_16x16.png" width="256" height="256"/>
  </tileset>
  <layer name="Tile Layer 1" width="10" height="10">
-  <data encoding="base64" compression="zlib">
-   eJxjZGBgYBxAHAjETkAcBsQhQOwGxK4D7KaBxAAdhgIn
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NkYGBgHEAcCMROQBwGxCFA7AbErgPspoHEAFayjTyQAQAA
   </data>
  </layer>
 </map>

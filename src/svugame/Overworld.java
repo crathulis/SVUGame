@@ -172,6 +172,9 @@ public class Overworld extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_0)) {
 
             sbg.enterState(2, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+        } else if (input.isKeyDown(Input.KEY_P)) {
+
+            sbg.enterState(5, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         }
     }
 
