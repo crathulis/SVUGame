@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="city" tilewidth="16" tileheight="16">
+  <image source="../../../../Pictures/16oga.png" trans="ffffff" width="160" height="80"/>
+  <tile id="22">
+   <properties>
+    <property name="transitionl" value="map3"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="10" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACxNlYGAQxYJ5oBibHD3ViSOJYcOkquMmwg0wdcSqpSYGALz43sGQAQAA
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="10" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACxNiYGAQBmIRBuxACCovA8SyQCyHQx1MXg2I1YFYA4c6mLwBEBsCsRGSnCQSGyZPLaAKpVVw2AcD+lBaj4B5KkRiPSIxTD0A7f4QcpABAAA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="10" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGNxAnMrqBjsAAC4ZlIWQAQAA
+  </data>
+ </layer>
+</map>

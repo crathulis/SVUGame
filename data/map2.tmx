@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="characters" tilewidth="16" tileheight="16">
+  <image source="../../../../Pictures/16x18-2_0.png" trans="ff00ff" width="330" height="400"/>
+ </tileset>
+ <tileset firstgid="501" name="forest" tilewidth="16" tileheight="16">
+  <image source="../../../../Pictures/tileset_16x16_final_1.png" trans="ffffff" width="272" height="304"/>
+  <tile id="87">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="88">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="89">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="90">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="96">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="97">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="104">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="105">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="106">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="119">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="136">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="138">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="139">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="161">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="164">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="165">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="191">
+   <properties>
+    <property name="transitionl" value="map1"/>
+    <property name="transitionr" value="map3"/>
+   </properties>
+  </tile>
+  <tile id="195">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="10" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgIA4sYCIObxnE6rYMAXUA+Tb/ZJABAAA=
+  </data>
+ </layer>
+ <layer name="blocked" width="10" height="10" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC4tlYmCIJQLXY8H+QOyHJoYN5ADF43DI0VpdPBD7IGFsoBaL34gBW2igDgAkKIffkAEAAA==
+  </data>
+ </layer>
+ <layer name="blocked objects" width="10" height="10" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgoBy4MDEwuDIRVhcKVBOGQ900HOIrkMR3EWEHtUASEXZtQVOzAoceZHXY/AnTB1IHAJ7Aev2QAQAA
+  </data>
+ </layer>
+ <objectgroup name="transition layer" width="10" height="10" visible="0"/>
+</map>
