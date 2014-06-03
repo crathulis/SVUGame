@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package engine.state;
+package svugame.engine.state;
 
 import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 import java.awt.event.MouseEvent;
