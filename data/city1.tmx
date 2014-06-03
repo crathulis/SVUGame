@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="city" tilewidth="16" tileheight="16">
-  <image source="../../../../Pictures/16oga.png" trans="ffffff" width="160" height="80"/>
+  <image source="16oga.png" trans="ffffff" width="160" height="80"/>
   <tile id="22">
    <properties>
     <property name="transitionl" value="map3"/>
