@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package svugame;
+package svugame.engine.state;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;

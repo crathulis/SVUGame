@@ -5,6 +5,9 @@
  */
 package svugame;
 
+import svugame.engine.state.Battle;
+import svugame.engine.state.StartState;
+import svugame.engine.state.PauseState;
 import java.awt.Color;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
