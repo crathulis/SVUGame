@@ -24,7 +24,7 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  * @author craig.reese
  */
-public class SVUGame extends StateBasedGame {
+public class SVUGame extends StateBasedGame { 
 
    
 

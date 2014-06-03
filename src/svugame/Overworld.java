@@ -5,6 +5,12 @@
  */
 package svugame;
 
+import java.awt.Font;
+import java.awt.GridLayout;
+import javax.swing.JComboBox;
+import mdes.slick.sui.*;
+import mdes.slick.sui.layout.LayoutManager;
+import mdes.slick.sui.layout.RowLayout;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -13,6 +19,9 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.UnicodeFont;
+import org.newdawn.slick.font.effects.ColorEffect;
+import org.newdawn.slick.gui.GUIContext;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.GameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -29,7 +38,7 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  * @author craig.reese
  */
-public class Overworld extends BasicGameState {
+public class Overworld extends BasicGameState {  //public class Overworld extends BasicGameState
 
     private int ID = 1;
     private TiledMap currentMap;
@@ -38,6 +47,7 @@ public class Overworld extends BasicGameState {
     private boolean[][] blocked;
     private static final int SIZE = 16;//size of our tiles
     Music music;
+    private Display display;
 
     @Override
     public int getID() {
@@ -70,6 +80,50 @@ public class Overworld extends BasicGameState {
 
         //now we build what can be walked on.
         buildBlockArray();
+
+        //******* Start test for gui *********//
+        display = new Display(gc);
+
+        Container content = new Container();
+        content.setSize(160, 60); //sets panel size
+        content.setLocation(0, 100); //sets panel loc relative to parent (display)
+        content.setOpaque(true); //ensures that the background is drawn
+        content.setBackground(Color.lightGray); //sets the background color
+
+        RowLayout layout = new RowLayout(true, RowLayout.LEFT, RowLayout.CENTER);
+        content.setLayout(layout);
+        //GridLayout test = new GridLayout(1,5);
+       // content.setLayout(test);
+        
+       // LayoutManager mng
+        
+
+        /*
+        Button btn = new Button("No where");
+        Font f = new Font("Serif", Font.BOLD, 10);
+        UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
+        ufont.addAsciiGlyphs();
+        ufont.addGlyphs(16, 16);
+        ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
+        ufont.loadGlyphs();
+        btn.setFont(ufont);
+        btn.pack(); //pack the button to the text
+        content.add(btn);
+
+        */
+        
+        Label label = new Label("Where am I?");
+        label.setForeground(Color.white); //sets the foreground (text) color
+        label.pack(); //pack the label with the current text, font and padding
+        //label.setHeight(btn.getHeight()); //set same size between the two components
+        content.add(label); //add the label to this display so it can be rendered
+        
+        
+        
+
+        display.add(content);
+
+        //******** End test for gui **************//
     }
 
     @Override
@@ -84,7 +138,7 @@ public class Overworld extends BasicGameState {
     }
 
     private void buildBlockArray() {
-        
+
         blocked = new boolean[currentMap.getWidth()][currentMap.getHeight()];
         for (int xAxis = 0; xAxis < currentMap.getWidth(); xAxis++) {
             for (int yAxis = 0; yAxis < currentMap.getHeight(); yAxis++) {
@@ -104,6 +158,8 @@ public class Overworld extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
         currentMap.render(0, 0);
         sprite.draw((int) playerx, (int) playery);
+
+        display.render(gc, grphcs);
     }
 
     @Override
@@ -115,7 +171,7 @@ public class Overworld extends BasicGameState {
         if (input.isKeyDown(Input.KEY_UP)) {
             sprite = up;
 
-            if (!isBlocked((playerx), (float) (playery - i * speed),sbg)) {
+            if (!isBlocked((playerx), (float) (playery - i * speed), sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -125,7 +181,7 @@ public class Overworld extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             sprite = down;
 
-            if (!isBlocked((playerx), (float) (playery + i * speed),sbg)) {
+            if (!isBlocked((playerx), (float) (playery + i * speed), sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -135,7 +191,7 @@ public class Overworld extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_LEFT)) {
             sprite = left;
 
-            if (!isBlocked((float) (playerx - i * speed), playery,sbg)) {
+            if (!isBlocked((float) (playerx - i * speed), playery, sbg)) {
                 collision = false;
             }
 
@@ -154,7 +210,7 @@ public class Overworld extends BasicGameState {
                 //we've reached the right edge of the screen
                 transition("right");
             }
-            if (!isBlocked((float) (playerx + i * speed), playery,sbg)) {
+            if (!isBlocked((float) (playerx + i * speed), playery, sbg)) {
                 collision = false;
             }
             //check to see if we're at the edge of the map
@@ -172,6 +228,11 @@ public class Overworld extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_P)) {
 
             sbg.enterState(5, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+        }
+
+        display.update(gc, i);
+        if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
+            gc.exit();
         }
     }
 
@@ -198,7 +259,7 @@ public class Overworld extends BasicGameState {
 
     }
 
-    private boolean isBlocked(float x, float y ,StateBasedGame sbg) throws SlickException {
+    private boolean isBlocked(float x, float y, StateBasedGame sbg) throws SlickException {
         int xBlock = (int) (x + 8) / SIZE;
         int yBlock = (int) (y + 9) / SIZE;
         //we need to see if something that is blocked can cause a transition
@@ -207,9 +268,9 @@ public class Overworld extends BasicGameState {
         String value = currentMap.getTileProperty(tileID, "transitiondoor", "false");
         if (!value.equals("false")) {
             //changing this to enter a new state
-            
+
             sbg.enterState(3, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
-            
+
             //currentMap = new TiledMap("data/" + value + ".tmx");
             //rebuild blocking
             //buildBlockArray();
