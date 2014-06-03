@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="characters" tilewidth="16" tileheight="16">
-  <image source="../../../../Pictures/16x18-2_0.png" trans="ff00ff" width="330" height="400"/>
+  <image source="16x18-2_0.png" trans="ff00ff" width="330" height="400"/>
  </tileset>
  <tileset firstgid="501" name="forest" tilewidth="16" tileheight="16">
-  <image source="../../../../Pictures/tileset_16x16_final_1.png" trans="ffffff" width="272" height="304"/>
+  <image source="tileset_16x16_final_1.png" trans="ffffff" width="272" height="304"/>
   <tile id="87">
    <properties>
     <property name="blocked" value="true"/>
