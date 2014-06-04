@@ -216,7 +216,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
                 collision = false;
             }
 
-            if (playerx + 7 < 0) {
+            if (playerx - 7 < 0) {
                 //we've reached the right edge of the screen
                 transition("left");
             }
@@ -227,7 +227,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             }
         } else if (input.isKeyDown(Input.KEY_RIGHT)) {
             sprite = right;
-            if (playerx + 9 > currentMap.getWidth() * SIZE) {
+                if (playerx+12  > currentMap.getWidth() * SIZE) {
                 //we've reached the right edge of the screen
                 transition("right");
             }
@@ -237,7 +237,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             //check to see if we're at the edge of the map
             //we can see that if startx == mapsize (160)
             //look up tile, from that we can get a transition
-            //System.out.println("Player: " + (playerx +9) + " | Map size: " + (currentMap.getWidth()*SIZE));
+            System.out.println("Player: " + (playerx) + " | Map size: " + (currentMap.getWidth()*SIZE));
 
             if (collision == false) {
                 sprite.update(i);
