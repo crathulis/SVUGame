@@ -8,6 +8,7 @@ package svugame;
 import java.awt.Font;
 import java.awt.GridLayout;
 import static java.lang.Thread.sleep;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
@@ -52,6 +53,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     Music music;
     private Display display;
     Container content;
+    Boolean convoActive = false;
 
     @Override
     public int getID() {
@@ -114,31 +116,34 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
 
          */
         //Label label = new Label("Where am I?");
-        
-         String startString = "Where am I?";
-        try {
-            displayLabel(startString,content);
-            
-           
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+        String startString = "Press Enter to continue conversation";
+        convoActive = true;
+
+        displayLabel(startString, content);
+
     }
 
-    private void displayLabel(String s, Container c) throws InterruptedException {
+    private void displayLabel(String s, Container c) {
         int totalLetters = s.length();
-        sleep(1000);
-
-        for (int i = 0; i < totalLetters; i++) {
-            Label label = new Label(s.substring(0, i));
-            label.setForeground(Color.white); //sets the foreground (text) color
-            label.pack(); //pack the label with the current text, font and padding
-            label.setHeight(10); //set same size between the two components
-            c.add(label); //add the label to this display so it can be rendered
-            display.add(c);
-           // sleep(1000);
-        }
+        //sleep(1000);
+        //TODO: add wipes for old content
+        Label label = new Label(s);
+        label.setForeground(Color.white); //sets the foreground (text) color
+        label.pack(); //pack the label with the current text, font and padding
+        label.setHeight(10); //set same size between the two components
+        c.add(label); //add the label to this display so it can be rendered
+        display.add(c);
+        /*
+         for (int i = 0; i < totalLetters; i++) {
+         Label label = new Label(s.substring(0, i));
+         label.setForeground(Color.white); //sets the foreground (text) color
+         label.pack(); //pack the label with the current text, font and padding
+         label.setHeight(10); //set same size between the two components
+         c.add(label); //add the label to this display so it can be rendered
+         display.add(c);
+         // sleep(1000);
+         }
+         */
     }
 
     @Override
@@ -179,10 +184,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
-        
-        
-        
-        
+
         Input input = gc.getInput();
         double speed = .03; // this is how fast our char can move .03 is good
         boolean collision = true;
@@ -262,6 +264,22 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
             gc.exit();
         }
+
+        if (convoActive == true) {
+            if (input.isKeyDown(Input.KEY_ENTER)) {
+                //we're in a dialogue, we need to advance the dialogue options
+                //when a user presses enter, we need to find which dialogue option they are on and 
+                //pass that to the dialogue handler (ExecuteDialogue)
+                ConversationTest convo = new ConversationTest();
+                ArrayList convos = convo.GetNext(null);
+            }
+        }
+    }
+    
+    private ConvoPart ExecuteDialogue(ConvoPart part)
+    {
+        return null;
+        
     }
 
     private void transition(String direction) throws SlickException {
