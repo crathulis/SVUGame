@@ -9,6 +9,7 @@ package svugame.engine.state;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
@@ -46,7 +47,9 @@ public class PauseState extends BasicGameState{
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
         if(input.isKeyDown(Input.KEY_0)) {
+            
            sbg.enterState(1, new FadeOutTransition(Color.black,1000), new FadeInTransition(Color.black,1000));
+           //sbg.getContainer().getGraphics().setBackground(Color.yellow);
         }
     }
     
