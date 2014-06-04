@@ -52,7 +52,7 @@ public class StartState extends BasicGameState{
     @Override
     public void update(GameContainer gc, final StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
-        input.addMouseListener(sbg);
+        //input.addMouseListener(sbg);
         if(input.isMousePressed(Input.MOUSE_LEFT_BUTTON)){
             System.out.println(input.getMouseX() +":"+ input.getMouseY());
             if( input.getMouseX()>=16 && input.getMouseX() < 143 && input.getMouseY()>=32 && input.getMouseY() <48){

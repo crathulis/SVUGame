@@ -73,7 +73,9 @@ public class Battle extends BasicGameState {
              Music winMusic = new Music("data/6 Open Surge score jingle - AA.ogg");
              winMusic.play();
         }
-        
+        if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
+            gc.exit();
+        }
     }
     
 }

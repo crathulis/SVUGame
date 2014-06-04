@@ -159,6 +159,9 @@ public class City1 extends BasicGameState {
             }
         }
         camera.centerOn(playerx,playery);
+        if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
+            gc.exit();
+        }
     }
 
     private boolean isBlocked(float x, float y, StateBasedGame sbg) throws SlickException {
