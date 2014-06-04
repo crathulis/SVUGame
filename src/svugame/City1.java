@@ -159,6 +159,9 @@ public class City1 extends BasicGameState {
             }
         }
         camera.centerOn(playerx,playery);
+        if (gc.getInput().isKeyPressed(Input.KEY_0)) {
+            sbg.enterState(1, new FadeOutTransition(Color.black,1000), new FadeInTransition(Color.black,1000));
+        }
         if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
             gc.exit();
         }

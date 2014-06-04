@@ -13,7 +13,7 @@ package svugame;
 public class ToDo {
     
     //figure out tilemap scrolling  -DONE
-    //figure out start screen and pause screens - 50%
+    //figure out start screen and pause screens - 70%
     //overlays for battle and etc
     //improve our blocking code
     //build battle mode

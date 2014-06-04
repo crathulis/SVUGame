@@ -181,7 +181,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             sprite = down;
 
-            if (!isBlocked((playerx), (float) (playery + i * speed), sbg)) {
+            if (!isBlocked((playerx), (float) (playery +6 + i * speed), sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -191,7 +191,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         } else if (input.isKeyDown(Input.KEY_LEFT)) {
             sprite = left;
 
-            if (!isBlocked((float) (playerx - i * speed), playery, sbg)) {
+            if (!isBlocked((float) (playerx - 3 - i * speed), playery + 6, sbg)) {
                 collision = false;
             }
 
@@ -210,7 +210,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
                 //we've reached the right edge of the screen
                 transition("right");
             }
-            if (!isBlocked((float) (playerx + i * speed), playery, sbg)) {
+            if (!isBlocked((float) (playerx + 3 + i * speed), playery + 6, sbg)) {
                 collision = false;
             }
             //check to see if we're at the edge of the map
