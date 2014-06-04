@@ -7,6 +7,9 @@ package svugame;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import mdes.slick.sui.*;
 import mdes.slick.sui.layout.LayoutManager;
@@ -48,6 +51,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     private static final int SIZE = 16;//size of our tiles
     Music music;
     private Display display;
+    Container content;
 
     @Override
     public int getID() {
@@ -84,7 +88,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         //******* Start test for gui *********//
         display = new Display(gc);
 
-        Container content = new Container();
+        content = new Container();
         content.setSize(160, 60); //sets panel size
         content.setLocation(0, 100); //sets panel loc relative to parent (display)
         content.setOpaque(true); //ensures that the background is drawn
@@ -93,37 +97,48 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         RowLayout layout = new RowLayout(true, RowLayout.LEFT, RowLayout.CENTER);
         content.setLayout(layout);
         //GridLayout test = new GridLayout(1,5);
-       // content.setLayout(test);
-        
+        // content.setLayout(test);
+
        // LayoutManager mng
-        
-
         /*
-        Button btn = new Button("No where");
-        Font f = new Font("Serif", Font.BOLD, 10);
-        UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
-        ufont.addAsciiGlyphs();
-        ufont.addGlyphs(16, 16);
-        ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
-        ufont.loadGlyphs();
-        btn.setFont(ufont);
-        btn.pack(); //pack the button to the text
-        content.add(btn);
+         Button btn = new Button("No where");
+         Font f = new Font("Serif", Font.BOLD, 10);
+         UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
+         ufont.addAsciiGlyphs();
+         ufont.addGlyphs(16, 16);
+         ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
+         ufont.loadGlyphs();
+         btn.setFont(ufont);
+         btn.pack(); //pack the button to the text
+         content.add(btn);
 
-        */
+         */
+        //Label label = new Label("Where am I?");
         
-        Label label = new Label("Where am I?");
-        label.setForeground(Color.white); //sets the foreground (text) color
-        label.pack(); //pack the label with the current text, font and padding
-        //label.setHeight(btn.getHeight()); //set same size between the two components
-        content.add(label); //add the label to this display so it can be rendered
-        
-        
-        
+         String startString = "Where am I?";
+        try {
+            displayLabel(startString,content);
+            
+           
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }
 
-        display.add(content);
+    private void displayLabel(String s, Container c) throws InterruptedException {
+        int totalLetters = s.length();
+        sleep(1000);
 
-        //******** End test for gui **************//
+        for (int i = 0; i < totalLetters; i++) {
+            Label label = new Label(s.substring(0, i));
+            label.setForeground(Color.white); //sets the foreground (text) color
+            label.pack(); //pack the label with the current text, font and padding
+            label.setHeight(10); //set same size between the two components
+            c.add(label); //add the label to this display so it can be rendered
+            display.add(c);
+           // sleep(1000);
+        }
     }
 
     @Override
@@ -164,6 +179,10 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
+        
+        
+        
+        
         Input input = gc.getInput();
         double speed = .03; // this is how fast our char can move .03 is good
         boolean collision = true;
@@ -181,7 +200,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             sprite = down;
 
-            if (!isBlocked((playerx), (float) (playery +6 + i * speed), sbg)) {
+            if (!isBlocked((playerx), (float) (playery + 6 + i * speed), sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -236,7 +255,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         }
 
         display.update(gc, i);
-        if(input.isKeyDown(Input.KEY_SPACE)){
+        if (input.isKeyDown(Input.KEY_SPACE)) {
             //removes displayed message
             display.removeAll();
         }
