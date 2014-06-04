@@ -223,11 +223,14 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
                 playerx += i * speed;
             }
         } else if (input.isKeyDown(Input.KEY_0)) {
-
+            //Battle screen
             sbg.enterState(2, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         } else if (input.isKeyDown(Input.KEY_P)) {
-
+            //Pause screen
             sbg.enterState(5, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+        } else if (input.isKeyDown(Input.KEY_S)) {
+            //Start screen
+            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         }
 
         display.update(gc, i);
