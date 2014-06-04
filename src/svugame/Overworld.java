@@ -236,6 +236,10 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         }
 
         display.update(gc, i);
+        if(input.isKeyDown(Input.KEY_SPACE)){
+            //removes displayed message
+            display.removeAll();
+        }
         if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
             gc.exit();
         }
