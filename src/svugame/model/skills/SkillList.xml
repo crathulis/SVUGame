@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <SkillList>
+        <Skill>
+            <name>Instrument</name>
+            <attrib1>3</attrib1>
+            <attrib2>8</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Singing</name>
+            <attrib1>2</attrib1>
+            <attrib2>3</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>One-Handed</name>
+            <attrib1>1</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Two-Handed</name>
+            <attrib1>0</attrib1>
+            <attrib2>5</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Close Quarters</name>
+            <attrib1>1</attrib1>
+            <attrib2>3</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Projectile Weapons</name>
+            <attrib1>2</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Shield</name>
+            <attrib1>1</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Haste</name>
+            <attrib1>2</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Dodge</name>
+            <attrib1>1</attrib1>
+            <attrib2>6</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Resist Magic</name>
+            <attrib1>2</attrib1>
+            <attrib2>7</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>First Aid</name>
+            <attrib1>2</attrib1>
+            <attrib2>6</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Persuasion</name>
+            <attrib1>5</attrib1>
+            <attrib2>6</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Leadership</name>
+            <attrib1>5</attrib1>
+            <attrib2>8</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Haggling</name>
+            <attrib1>5</attrib1>
+            <attrib2>7</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Stealth</name>
+            <attrib1>3</attrib1>
+            <attrib2>8</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Escape</name>
+            <attrib1>1</attrib1>
+            <attrib2>3</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Lockpick</name>
+            <attrib1>4</attrib1>
+            <attrib2>6</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Pickpocket</name>
+            <attrib1>5</attrib1>
+            <attrib2>8</attrib2>
+            <level>0</level>
+        </Skill>
+        
+        <Skill>
+            <name>Disarm Trap</name>
+            <attrib1>4</attrib1>
+            <attrib2>6</attrib2>
+            <level>0</level>
+        </Skill>
+    </SkillList>
+</root>
