@@ -6,6 +6,7 @@
 
 package svugame;
 
+import svugame.dialogue.Dialogue;
 import java.util.ArrayList;
 
 /**
@@ -14,12 +15,12 @@ import java.util.ArrayList;
  */
 public class Conversation {
     
-    ConvoPart start;
+    Dialogue start;
    // ConvoPart a;
-    ConvoPart b;
-    ConvoPart c;
-    ConvoPart d1;
-    ConvoPart d2;
+    Dialogue b;
+    Dialogue c;
+    Dialogue d1;
+    Dialogue d2;
     
     String[] pointer;
     
@@ -27,24 +28,24 @@ public class Conversation {
     
     public Conversation()
     {
-         start = new ConvoPart("a","Where am I?",new String[]{"b"});
+         start = new Dialogue("a","Where am I?",new String[]{"b"});
          convoList.add(start);
-        b = new ConvoPart("b","How did i get here?",new String[]{"c"});
+        b = new Dialogue("b","How did i get here?",new String[]{"c"});
         convoList.add(b);
-        c = new ConvoPart("c","My head sure does hurt.",new String[]{"d1","d2"});
+        c = new Dialogue("c","My head sure does hurt.",new String[]{"d1","d2"});
         convoList.add(c);
-        d1 = new ConvoPart("d1","Maybe I should just sit here and wait.",new String[]{"end"});
+        d1 = new Dialogue("d1","Maybe I should just sit here and wait.",new String[]{"end"});
         convoList.add(d1);
-        d2 = new ConvoPart("d2","I'm going to have a look around",new String[]{"end"});
+        d2 = new Dialogue("d2","I'm going to have a look around",new String[]{"end"});
         convoList.add(d2);
         pointer = new String[]{"start"};
     }
     
-    public ConvoPart getText(String id)
+    public Dialogue getText(String id)
     {
         for(int i =0;i<convoList.size();i++)
         {
-            ConvoPart p = (ConvoPart) convoList.get(i);
+            Dialogue p = (Dialogue) convoList.get(i);
             if(p.id.equals(id))
             {
                 return p;

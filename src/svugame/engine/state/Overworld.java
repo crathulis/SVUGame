@@ -38,7 +38,7 @@ import org.newdawn.slick.state.transition.RotateTransition;
 import org.newdawn.slick.state.transition.VerticalSplitTransition;
 import org.newdawn.slick.tiled.TiledMap;
 import svugame.ConversationTest;
-import svugame.ConvoPart;
+import svugame.dialogue.Dialogue;
 
 /**
  *
@@ -56,7 +56,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     private Display display;
     Container content;
     Boolean convoActive = false;
-    ConvoPart lastPart;
+    Dialogue lastPart;
     ConversationTest convo = new ConversationTest();
 
     @Override
@@ -288,7 +288,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             }
         }
         ArrayList convos = convo.GetNext(lastPart);
-        ConvoPart temp = (ConvoPart) convos.get(0);
+        Dialogue temp = (Dialogue) convos.get(0);
         //now we set newest convopart as lastPart
         lastPart = temp;
         //and now we write it

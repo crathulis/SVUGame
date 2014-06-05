@@ -5,6 +5,7 @@
  */
 package svugame;
 
+import svugame.dialogue.Dialogue;
 import java.util.ArrayList;
 
 /**
@@ -20,7 +21,7 @@ public class ConversationTest {
 
     }
 
-    public ArrayList GetNext(ConvoPart cp) {
+    public ArrayList GetNext(Dialogue cp) {
         //we'll return the next part of the conversation here
         //get where pointer is pointing at.
         ArrayList temp = new ArrayList();

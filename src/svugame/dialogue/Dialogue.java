@@ -4,26 +4,26 @@
  * and open the template in the editor.
  */
 
-package svugame;
+package svugame.dialogue;
 
 /**
  *
  * @author craig.reese
  */
-public class ConvoPart {
+public class Dialogue {
     
     public String id;
     public String text;
     public String[] pointer;
     
-    public ConvoPart(String id, String text, String[] pointer)
+    public Dialogue(String id, String text, String[] pointer)
     {
         this.id = id;
         this.text = text;
         this.pointer = pointer;
     }
 
-    ConvoPart() {
+    Dialogue() {
         
     }
     
