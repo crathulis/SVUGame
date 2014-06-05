@@ -12,9 +12,9 @@ package svugame;
  */
 public class ConvoPart {
     
-    String id;
-    String text;
-    String[] pointer;
+    public String id;
+    public String text;
+    public String[] pointer;
     
     public ConvoPart(String id, String text, String[] pointer)
     {
