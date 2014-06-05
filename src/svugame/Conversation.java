@@ -32,10 +32,10 @@ public class Conversation {
         b = new ConvoPart("b","How did i get here?",new String[]{"c"});
         convoList.add(b);
         c = new ConvoPart("c","My head sure does hurt.",new String[]{"d1","d2"});
-        convoList.add(b);
-        d1 = new ConvoPart("d1","Maybe I should just sit here and wait.",new String[]{"e"});
+        convoList.add(c);
+        d1 = new ConvoPart("d1","Maybe I should just sit here and wait.",new String[]{"end"});
         convoList.add(d1);
-        d2 = new ConvoPart("d2","I'm going to have a look around",new String[]{"f"});
+        d2 = new ConvoPart("d2","I'm going to have a look around",new String[]{"end"});
         convoList.add(d2);
         pointer = new String[]{"start"};
     }

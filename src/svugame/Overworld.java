@@ -54,6 +54,8 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     private Display display;
     Container content;
     Boolean convoActive = false;
+    ConvoPart lastPart;
+    ConversationTest convo = new ConversationTest();
 
     @Override
     public int getID() {
@@ -124,7 +126,8 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     }
 
     private void displayLabel(String s, Container c) {
-        int totalLetters = s.length();
+        c.removeAll();
+        //int totalLetters = s.length();
         //sleep(1000);
         //TODO: add wipes for old content
         Label label = new Label(s);
@@ -266,20 +269,34 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         }
 
         if (convoActive == true) {
-            if (input.isKeyDown(Input.KEY_ENTER)) {
+            if (input.isKeyPressed(Input.KEY_ENTER)) {
                 //we're in a dialogue, we need to advance the dialogue options
                 //when a user presses enter, we need to find which dialogue option they are on and 
                 //pass that to the dialogue handler (ExecuteDialogue)
-                ConversationTest convo = new ConversationTest();
-                ArrayList convos = convo.GetNext(null);
+                ExecuteDialogue();
+
             }
         }
     }
-    
-    private ConvoPart ExecuteDialogue(ConvoPart part)
-    {
-        return null;
-        
+
+    private void ExecuteDialogue() {
+        if (lastPart != null) {
+            if (lastPart.pointer[0].equals("end")) {
+                //we've reached the end of a dialog tree, lets stop here
+                convoActive = false;
+                display.removeAll();
+                //extra stuff as warrents
+                return;
+            }
+        }
+        ArrayList convos = convo.GetNext(lastPart);
+        ConvoPart temp = (ConvoPart) convos.get(0);
+        //now we set newest convopart as lastPart
+        lastPart = temp;
+        //and now we write it
+        System.out.println(temp.text);
+        displayLabel(temp.text, content);
+
     }
 
     private void transition(String direction) throws SlickException {
