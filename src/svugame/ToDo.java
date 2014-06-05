@@ -15,7 +15,6 @@ public class ToDo {
     //Engine
         //build battle mode
             //when choice is made it is passed to the model to see if possible
-            //need battle manager
         //need model manager for display to comunicate with model
         //figure out tilemap scrolling  -DONE
         //figure out start screen and pause screens - 70%
@@ -25,5 +24,7 @@ public class ToDo {
         //create state for beginning a new games
         //create tilemaps for specific cities
         //
+    //Model
+            //need battle manager
     
 }
