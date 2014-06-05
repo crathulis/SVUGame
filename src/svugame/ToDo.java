@@ -12,11 +12,15 @@ package svugame;
  */
 public class ToDo {
     
-    //figure out tilemap scrolling  -DONE
-    //figure out start screen and pause screens - 70%
-    //overlays for battle and etc
-    //improve our blocking code
-    //build battle mode
-    //build transitions, or fix lag in transitions
+    //Engine
+        //figure out tilemap scrolling  -DONE
+        //figure out start screen and pause screens - 70%
+        //overlays for battle and etc
+        //improve our blocking code 95%
+        //build battle mode
+        //build transitions, or fix lag in transitions
+        //create state for beginning a new games
+        //create tilemaps for specific cities
+        //
     
 }

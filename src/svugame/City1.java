@@ -16,6 +16,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
+import org.newdawn.slick.state.transition.RotateTransition;
 import org.newdawn.slick.tiled.TiledMap;
 
 /**
@@ -160,10 +161,20 @@ public class City1 extends BasicGameState {
         }
         camera.centerOn(playerx,playery);
         if (gc.getInput().isKeyPressed(Input.KEY_0)) {
+            //moves to overworld. However in the overworld you cannot move or you re-enter the city
             sbg.enterState(1, new FadeOutTransition(Color.black,1000), new FadeInTransition(Color.black,1000));
         }
         if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
             gc.exit();
+        }
+        if (input.isKeyDown(Input.KEY_P)) {
+            //Pause screen
+            //Image test = new Image(sbg.getContainer().getHeight(),sbg.getContainer().getWidth());
+            //sbg.getContainer().getGraphics().copyArea(test,sbg.getContainer().getHeight(),sbg.getContainer().getWidth());
+            sbg.enterState(5, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+        } else if (input.isKeyDown(Input.KEY_S)) {
+            //Start screen
+            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         }
     }
 

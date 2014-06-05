@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package svugame;
+package svugame.engine.state;
 
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -37,6 +37,8 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.state.transition.RotateTransition;
 import org.newdawn.slick.state.transition.VerticalSplitTransition;
 import org.newdawn.slick.tiled.TiledMap;
+import svugame.ConversationTest;
+import svugame.ConvoPart;
 
 /**
  *
@@ -54,8 +56,6 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     private Display display;
     Container content;
     Boolean convoActive = false;
-    ConvoPart lastPart;
-    ConversationTest convo = new ConversationTest();
 
     @Override
     public int getID() {
@@ -126,8 +126,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     }
 
     private void displayLabel(String s, Container c) {
-        c.removeAll();
-        //int totalLetters = s.length();
+        int totalLetters = s.length();
         //sleep(1000);
         //TODO: add wipes for old content
         Label label = new Label(s);
@@ -219,7 +218,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
                 collision = false;
             }
 
-            if (playerx + 7 < 0) {
+            if (playerx - 7 < 0) {
                 //we've reached the right edge of the screen
                 transition("left");
             }
@@ -230,7 +229,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             }
         } else if (input.isKeyDown(Input.KEY_RIGHT)) {
             sprite = right;
-            if (playerx + 9 > currentMap.getWidth() * SIZE) {
+                if (playerx+12  > currentMap.getWidth() * SIZE) {
                 //we've reached the right edge of the screen
                 transition("right");
             }
@@ -240,7 +239,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             //check to see if we're at the edge of the map
             //we can see that if startx == mapsize (160)
             //look up tile, from that we can get a transition
-            //System.out.println("Player: " + (playerx +9) + " | Map size: " + (currentMap.getWidth()*SIZE));
+            System.out.println("Player: " + (playerx) + " | Map size: " + (currentMap.getWidth()*SIZE));
 
             if (collision == false) {
                 sprite.update(i);
@@ -256,7 +255,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             sbg.enterState(5, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         } else if (input.isKeyDown(Input.KEY_S)) {
             //Start screen
-            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            sbg.enterState(4, new RotateTransition(Color.black), new RotateTransition(Color.black));
         }
 
         display.update(gc, i);
@@ -269,34 +268,20 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         }
 
         if (convoActive == true) {
-            if (input.isKeyPressed(Input.KEY_ENTER)) {
+            if (input.isKeyDown(Input.KEY_ENTER)) {
                 //we're in a dialogue, we need to advance the dialogue options
                 //when a user presses enter, we need to find which dialogue option they are on and 
                 //pass that to the dialogue handler (ExecuteDialogue)
-                ExecuteDialogue();
-
+                ConversationTest convo = new ConversationTest();
+                ArrayList convos = convo.GetNext(null);
             }
         }
     }
-
-    private void ExecuteDialogue() {
-        if (lastPart != null) {
-            if (lastPart.pointer[0].equals("end")) {
-                //we've reached the end of a dialog tree, lets stop here
-                convoActive = false;
-                display.removeAll();
-                //extra stuff as warrents
-                return;
-            }
-        }
-        ArrayList convos = convo.GetNext(lastPart);
-        ConvoPart temp = (ConvoPart) convos.get(0);
-        //now we set newest convopart as lastPart
-        lastPart = temp;
-        //and now we write it
-        System.out.println(temp.text);
-        displayLabel(temp.text, content);
-
+    
+    private ConvoPart ExecuteDialogue(ConvoPart part)
+    {
+        return null;
+        
     }
 
     private void transition(String direction) throws SlickException {

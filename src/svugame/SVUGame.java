@@ -5,6 +5,7 @@
  */
 package svugame;
 
+import svugame.engine.state.Overworld;
 import svugame.engine.state.Battle;
 import svugame.engine.state.StartState;
 import svugame.engine.state.PauseState;
