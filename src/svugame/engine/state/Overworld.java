@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package svugame;
+package svugame.engine.state;
 
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -37,6 +37,8 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.state.transition.RotateTransition;
 import org.newdawn.slick.state.transition.VerticalSplitTransition;
 import org.newdawn.slick.tiled.TiledMap;
+import svugame.ConversationTest;
+import svugame.ConvoPart;
 
 /**
  *
