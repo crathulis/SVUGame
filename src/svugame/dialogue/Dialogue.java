@@ -6,20 +6,49 @@
 
 package svugame.dialogue;
 
+import javax.xml.bind.annotation.XmlType;
+
 /**
  *
  * @author craig.reese
  */
+
+@XmlType(propOrder = { "id", "text", "pointer"})
+
 public class Dialogue {
     
-    public String id;
-    public String text;
-    public String[] pointer;
+    private String id;
+    private String text;
+    private String[] pointer;
     
     public Dialogue(String id, String text, String[] pointer)
     {
         this.id = id;
         this.text = text;
+        this.pointer = pointer;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String[] getPointer() {
+        return pointer;
+    }
+
+    public void setPointer(String[] pointer) {
         this.pointer = pointer;
     }
 

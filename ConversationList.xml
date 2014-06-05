@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ConversationList>
+    <Conversation>
+        <conversationName>Opening Dialogue</conversationName>
+        <Dialogue>
+            <id>a</id>
+            <text>Where am I?</text>
+            <pointer>b</pointer>
+        </Dialogue>
+        <Dialogue>
+            <id>b</id>
+            <text>How did i get here?</text>
+            <pointer>c</pointer>
+        </Dialogue>
+        <Dialogue>
+            <id>c</id>
+            <text>My head sure does hurt.</text>
+            <pointer>d</pointer>
+        </Dialogue>
+    </Conversation>
+    <Conversation>
+        <conversationName>Second Dialogue</conversationName>
+        <Dialogue>
+            <id>a</id>
+            <text>Where am I?</text>
+            <pointer>b</pointer>
+        </Dialogue>
+        <Dialogue>
+            <id>b</id>
+            <text>How did i get here?</text>
+            <pointer>c</pointer>
+        </Dialogue>
+        <Dialogue>
+            <id>c</id>
+            <text>My head sure does hurt.</text>
+            <pointer>d</pointer>
+        </Dialogue>
+    </Conversation>
+</ConversationList>

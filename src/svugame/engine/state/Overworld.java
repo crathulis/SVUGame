@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import mdes.slick.sui.*;
 import mdes.slick.sui.layout.LayoutManager;
 import mdes.slick.sui.layout.RowLayout;
@@ -37,8 +39,10 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.state.transition.RotateTransition;
 import org.newdawn.slick.state.transition.VerticalSplitTransition;
 import org.newdawn.slick.tiled.TiledMap;
-import svugame.ConversationTest;
+import svugame.dialogue.ConversationManager;
+import svugame.dialogue.ConversationTest;
 import svugame.dialogue.Dialogue;
+import svugame.model.skills.SkillList;
 
 /**
  *
@@ -66,64 +70,72 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        //this is our starting map
-        TiledMap startMap = new TiledMap("data/map1.tmx");
-        //TiledMap map2 = new TiledMap("data/map2.tmx");
-
-        //TODO: build world map that has tile data for each sectional map, then parse world map to get map data.
-        currentMap = startMap;
-
-        //we're animating 2 steps here
-        Image[] movementUp = {new Image("data/charUp.png"), new Image("data/charWalkUp.png")};
-        Image[] movementDown = {new Image("data/charDown.png"), new Image("data/charWalkDown.png")};
-        Image[] movementLeft = {new Image("data/charLeft.png"), new Image("data/charWalkLeft.png")};
-        Image[] movementRight = {new Image("data/charRight.png"), new Image("data/charWalkRight.png")};
-        int[] duration = {300, 300};
-
-        up = new Animation(movementUp, duration, false);
-        down = new Animation(movementDown, duration, false);
-        left = new Animation(movementLeft, duration, false);
-        right = new Animation(movementRight, duration, false);
-
-        //initial way our character is facing at start of game
-        sprite = down;
-
-        //now we build what can be walked on.
-        buildBlockArray();
-
-        //******* Start test for gui *********//
-        display = new Display(gc);
-
-        content = new Container();
-        content.setSize(160, 60); //sets panel size
-        content.setLocation(0, 100); //sets panel loc relative to parent (display)
-        content.setOpaque(true); //ensures that the background is drawn
-        content.setBackground(Color.lightGray); //sets the background color
-
-        RowLayout layout = new RowLayout(true, RowLayout.LEFT, RowLayout.CENTER);
-        content.setLayout(layout);
-        //GridLayout test = new GridLayout(1,5);
-        // content.setLayout(test);
-
-       // LayoutManager mng
-        /*
-         Button btn = new Button("No where");
-         Font f = new Font("Serif", Font.BOLD, 10);
-         UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
-         ufont.addAsciiGlyphs();
-         ufont.addGlyphs(16, 16);
-         ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
-         ufont.loadGlyphs();
-         btn.setFont(ufont);
-         btn.pack(); //pack the button to the text
-         content.add(btn);
-
-         */
-        //Label label = new Label("Where am I?");
-        String startString = "Press Enter to continue conversation";
-        convoActive = true;
-
-        displayLabel(startString, content);
+        try {
+            //this is our starting map
+            TiledMap startMap = new TiledMap("data/map1.tmx");
+            //TiledMap map2 = new TiledMap("data/map2.tmx");
+            
+            //TODO: build world map that has tile data for each sectional map, then parse world map to get map data.
+            currentMap = startMap;
+            
+            //we're animating 2 steps here
+            Image[] movementUp = {new Image("data/charUp.png"), new Image("data/charWalkUp.png")};
+            Image[] movementDown = {new Image("data/charDown.png"), new Image("data/charWalkDown.png")};
+            Image[] movementLeft = {new Image("data/charLeft.png"), new Image("data/charWalkLeft.png")};
+            Image[] movementRight = {new Image("data/charRight.png"), new Image("data/charWalkRight.png")};
+            int[] duration = {300, 300};
+            
+            up = new Animation(movementUp, duration, false);
+            down = new Animation(movementDown, duration, false);
+            left = new Animation(movementLeft, duration, false);
+            right = new Animation(movementRight, duration, false);
+            
+            //initial way our character is facing at start of game
+            sprite = down;
+            
+            //now we build what can be walked on.
+            buildBlockArray();
+            
+            //******* Start test for gui *********//
+            display = new Display(gc);
+            
+            content = new Container();
+            content.setSize(160, 60); //sets panel size
+            content.setLocation(0, 100); //sets panel loc relative to parent (display)
+            content.setOpaque(true); //ensures that the background is drawn
+            content.setBackground(Color.lightGray); //sets the background color
+            
+            RowLayout layout = new RowLayout(true, RowLayout.LEFT, RowLayout.CENTER);
+            content.setLayout(layout);
+            //GridLayout test = new GridLayout(1,5);
+            // content.setLayout(test);
+            
+            // LayoutManager mng
+            /*
+            Button btn = new Button("No where");
+            Font f = new Font("Serif", Font.BOLD, 10);
+            UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
+            ufont.addAsciiGlyphs();
+            ufont.addGlyphs(16, 16);
+            ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
+            ufont.loadGlyphs();
+            btn.setFont(ufont);
+            btn.pack(); //pack the button to the text
+            content.add(btn);
+            
+            */
+            //Label label = new Label("Where am I?");
+            String startString = "Press Enter to continue conversation";
+            convoActive = true;
+            
+            displayLabel(startString, content);
+            ConversationManager mng = new ConversationManager();
+            System.out.println("test");
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (TransformerException ex) {
+            Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -279,7 +291,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     
     private void ExecuteDialogue() {
         if (lastPart != null) {
-            if (lastPart.pointer[0].equals("end")) {
+            if (lastPart.getPointer()[0].equals("end")) {
                 //we've reached the end of a dialog tree, lets stop here
                 convoActive = false;
                 display.removeAll();
@@ -292,8 +304,8 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         //now we set newest convopart as lastPart
         lastPart = temp;
         //and now we write it
-        System.out.println(temp.text);
-        displayLabel(temp.text, content);
+        System.out.println(temp.getText());
+        displayLabel(temp.getText(), content);
 
     }
 
