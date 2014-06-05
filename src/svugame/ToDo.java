@@ -18,10 +18,10 @@ public class ToDo {
         //need model manager for display to comunicate with model
         //figure out tilemap scrolling  -DONE
         //figure out start screen and pause screens - 70%
+            //create state for beginning a new games
         //overlays for battle and etc
         //improve our blocking code 95%
         //build transitions, or fix lag in transitions
-        //create state for beginning a new games
         //create tilemaps for specific cities
         //
     //Model
