@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package svugame.model.character;
 
 /**
@@ -11,7 +10,7 @@ package svugame.model.character;
  * @author Lab Admin
  */
 public interface AttributeConstants {
-    
+
     public static final int STR = 0;
     public static final int AGI = 1;
     public static final int END = 2;
@@ -21,5 +20,15 @@ public interface AttributeConstants {
     public static final int INT = 6;
     public static final int WIS = 7;
     public static final int FOC = 8;
-    
+
+    public static final String[] ATTRIB_NAMES = {"Strength", "Agility", 
+        "Endurance", "Perception", "Dexterity", "Charisma", "Intelligence", 
+        "Wisdom", "Focus"};
+
+    public static final int NUM_ATTRIB = 9;
+
+    public static final int MALE = 0;
+    public static final int FEMALE = 1;
+                
+
 }
