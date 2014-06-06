@@ -15,5 +15,6 @@ public class Item {
     private String name;
     private int weight;
     private int value;
+    private int equipSlot;
     
 }
