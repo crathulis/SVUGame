@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author craig.reese
+ * This class will be delete soon
  */
 public class ConversationTest {
 
