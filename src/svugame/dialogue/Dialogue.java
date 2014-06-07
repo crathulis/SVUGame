@@ -19,7 +19,9 @@ public class Dialogue {
     
     private String id;
     private String text;
+    private String[] prerequisites;
     private String[] pointer;
+    private String[] actions;  //is this correct?
     
     public Dialogue(String id, String text, String[] pointer)
     {

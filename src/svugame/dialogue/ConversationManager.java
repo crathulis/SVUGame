@@ -22,8 +22,10 @@ import org.w3c.dom.NodeList;
  * @author craig.reese
  */
 public class ConversationManager {
-    //dialoguemanager needs to get an arraylist of all conversations and make it available to the game
+    //dialoguemanager needs to get an arraylist of all conversations and make it available to the game 
     //it should also keep track of where you are in a conversation and should pass this along to the ui
+    //TODO:Conditional Dialogue Choices
+    //TODO:Results at the end of a conversation
 
     private ArrayList<Conversation> allConversations;
     String[] pointer;
