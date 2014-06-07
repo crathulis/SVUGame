@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import mdes.slick.sui.*;
@@ -131,9 +132,8 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             displayLabel(startString, content);
             ConversationManager mng = new ConversationManager();
             System.out.println("test");
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (TransformerException ex) {
+        
+        } catch (JAXBException ex) {
             Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
         }
 
