@@ -59,7 +59,7 @@ public class ConversationManager {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
             // specify the location and name of xml file to be read
-            File XMLfile = new File("./conversation-jaxb.xml");
+            File XMLfile = new File("./Arena1_conversation.xml");
 
             // this will create Java object - country from the XML file
             //Country countryIndia = (Country) jaxbUnmarshaller.unmarshal(XMLfile);

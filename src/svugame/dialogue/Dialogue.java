@@ -30,6 +30,7 @@ public class Dialogue {
     private String[] prerequisites;
     private String[] pointers;
     private String[] actions;  //is this correct?
+    //TODO: add attribute for character portrait
 
     public String[] getPrerequisites() {
         return prerequisites;
