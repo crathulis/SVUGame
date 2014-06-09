@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package svugame.model.character;
+package svugame.model.entity;
 
 import svugame.model.skills.Skill;
 import svugame.model.items.Inventory;
@@ -16,7 +16,7 @@ import svugame.model.items.ItemConstants;
  * 
  * @author Alan Whitehurst
  */
-public class Character implements AttributeConstants, ItemConstants {
+public class Entity implements AttributeConstants, ItemConstants {
 
     private String name;
     private boolean male;
@@ -26,15 +26,14 @@ public class Character implements AttributeConstants, ItemConstants {
     private Attribute[] attributes;
     private Inventory inventory;
     private ArrayList<Skill> skills;
-    private ArrayList<Feat> feats;
     private Item[] equipment;
 
     // TODO: location
-    public Character() {
+    public Entity() {
         this("John", true, 0, 0, 0);
     }
 
-    public Character(String name, boolean male, int experience, int health, int spirit) {
+    public Entity(String name, boolean male, int experience, int health, int spirit) {
         this.name = name;
         this.male = male;
         this.experience = experience;
@@ -47,7 +46,6 @@ public class Character implements AttributeConstants, ItemConstants {
         this.inventory = new Inventory();
         this.equipment = new Item[NUM_EQUIP];
         this.skills = new ArrayList();
-        this.feats = new ArrayList();
     }
 
     /**
@@ -250,17 +248,6 @@ public class Character implements AttributeConstants, ItemConstants {
     }
     
     /**
-     * Set the base value of an attribute by the attribute's ID. Attribute
-     * IDs are defined in AttributeConstants.java.
-     * 
-     * @param attribNum the ID of the attribute to set.
-     * @param value the new value for the attribute.
-     */
-    public void setAttributeBase(int attribNum, int value) {
-        attributes[attribNum].setBaseValue(value);
-    }
-    
-    /**
      * Reset the current value of an attribute to the attribute's base
      * value as indicated by the attribute ID. Attribute IDs are define
      * in AttributeConstants.java
@@ -269,7 +256,7 @@ public class Character implements AttributeConstants, ItemConstants {
      * @return the current value of the attribute after the reset.
      */
     public int resetAttribute(int attribNum){
-        attributes[attribNum].setCurValue(attributes[attribNum].getBaseValue());
+        attributes[attribNum].resetCurValue();
         return attributes[attribNum].getCurValue();
     }
 
