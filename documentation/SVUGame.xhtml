@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>SVU Game Documentation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1> SVU Game Documentation </h1>
+        <h2> Introduction </h2>
+        <h2> Character Generation </h2>
+        <div class="paragraph"> 
+            Characters are represented by a set of attributes that relate to 
+            the innate ability to perform a set of actions. Attributes are 
+            represented as numbers between 0 and 100. An attribute score of 10 
+            is considered to be about average. The following chart gives an 
+            indication of what attribute values mean. 
+        </div>
+        <div>
+            <table align="center" cellpadding="10pt">
+                <tr><th>Value</th><th>Descriptor</th></tr>
+                <tr><td>00-05</td><td>Poor</td></tr>
+                <tr><td>06-09</td><td>Below Average</td></tr>
+                <tr><td>10-13</td><td>Average</td></tr>
+                <tr><td>14-17</td><td>Above Average</td></tr>
+                <tr><td>18-21</td><td>Excellent</td></tr>
+                <tr><td>22-25</td><td>Exceptional</td></tr>
+                <tr><td>26-29</td><td>Superior</td></tr>
+                <tr><td>30-33</td><td>Phenomenal</td></tr>
+                <tr><td>34+</td><td>Legendary</td></tr>
+            </table>
+        </div>
+        <div class="p"> The attributes are grouped according to physical, social, 
+            and mental abilities. Physical attributes are strength, agility, and 
+            endurance. Social attributes are perception, dexterity, and charisma. 
+            Mental attributes are intelligence, wisdom, and concentration. A 
+            character also has two derived attributes, which are health and 
+            spirit. Health is derived from the physical attributes of endurance 
+            and strength (HP = (2*END+STR)/3), while spirit is derived from the 
+            mental attributes of focus and wisdom (SP = (2*FOC+WIS)/3). As a 
+            character sustains physical damage, health is reduced. If health is 
+            completely depleted, the character is incapacitated. As a character 
+            utilizes skills, spirit is reduced. If spirit is completely depleted, 
+            a character cannot perform any skill-dependent actions.
+        </div>
+        <div class="p"> Characters are created by distributing 100 attribute 
+            points across the 9 attributes. Therefore, if each attribute was set
+            at 11 (with one at 12), the resulting character would be entirely 
+            balanced, but completely average. In this case, the chance of success 
+            for this character of completing an action of average complexity 
+            would be 36%. Investing one skill point in the skill associated with 
+            the action would improve the chance of success to 62%.
+        </div>
+
+    </body>
+</html>

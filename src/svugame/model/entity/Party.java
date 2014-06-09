@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 
-package svugame.model.character;
+package svugame.model.entity;
+
+import java.util.ArrayList;
 
 /**
  *
- * @author Lab Admin
+ * @author alan.whitehurst
  */
-public class Skill {
+public class Party {
     
-    private String name;
+    private ArrayList<Entity> members;
     
 }
