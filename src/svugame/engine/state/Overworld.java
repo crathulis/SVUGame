@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import mdes.slick.sui.*;
@@ -131,23 +132,23 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             displayLabel(startString, content);
             ConversationManager mng = new ConversationManager();
             System.out.println("test");
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (TransformerException ex) {
+        
+        } catch (JAXBException ex) {
             Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    private void displayLabel(String s, Container c) {
+    private void displayLabel(String s, Container c) throws SlickException {
         c.removeAll();
         //int totalLetters = s.length();
         //sleep(1000);
         //TODO: add wipes for old content
+        
         Label label = new Label(s);
         label.setForeground(Color.white); //sets the foreground (text) color
         label.pack(); //pack the label with the current text, font and padding
-        label.setHeight(10); //set same size between the two components
+        //label.setHeight(6); //set same size between the two components
         c.add(label); //add the label to this display so it can be rendered
         display.add(c);
         /*
@@ -161,6 +162,19 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
          // sleep(1000);
          }
          */
+        /*
+         Button btn = new Button("No where");
+            Font f = new Font("Serif", Font.BOLD, 10);
+            UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
+            ufont.addAsciiGlyphs();
+            ufont.addGlyphs(16, 16);
+            ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
+            ufont.loadGlyphs();
+            btn.setFont(ufont);
+            btn.pack(); //pack the button to the text
+            c.add(btn);
+            display.add(c);
+                */
     }
 
     @Override
@@ -289,7 +303,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         }
     }
     
-    private void ExecuteDialogue() {
+    private void ExecuteDialogue() throws SlickException {
         if (lastPart != null) {
             if (lastPart.getPointer()[0].equals("end")) {
                 //we've reached the end of a dialog tree, lets stop here

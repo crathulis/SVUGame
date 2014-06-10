@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<conversationList xmlns:ns2="Conversation" xmlns:ns3="ConversationList">
+    <allConversations>
+        <conversation conversationName="test convo">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>this is the begining dialogue</text>
+                    <pointer>b1</pointer>
+                    <pointer>b2</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b1</id>
+                    <prerequisites>STR&gt;=10</prerequisites>
+                    <prerequisites>SNEAK &gt;=5</prerequisites>
+                    <text>this is the test dialogue</text>
+                    <pointer>c1</pointer>
+                    <pointer>c2</pointer>
+                    <actions>STR + 2</actions>
+                    <actions>FACTIONEVIL - 10</actions>
+                </dialogue>
+                <dialogue>
+                    <id>c1</id>
+                    <prerequisites></prerequisites>
+                    <text>this is the test dialogue2</text>
+                    <pointer>d1</pointer>
+                    <pointer>d2</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="test convo2">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>this is the begining dialogu6e</text>
+                    <pointer>b1</pointer>
+                    <pointer>b2</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b1</id>
+                    <prerequisites>END&gt;=10</prerequisites>
+                    <prerequisites>HIT &gt;=5</prerequisites>
+                    <text>this is the test dialogue</text>
+                    <pointer>c1</pointer>
+                    <pointer>c2</pointer>
+                    <actions>STR + 2</actions>
+                    <actions>FACTIONEVIL - 10</actions>
+                </dialogue>
+                <dialogue>
+                    <id>c1</id>
+                    <prerequisites></prerequisites>
+                    <text>this is the test dialogue5</text>
+                    <pointer>d1</pointer>
+                    <pointer>d2</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+    </allConversations>
+</conversationList>

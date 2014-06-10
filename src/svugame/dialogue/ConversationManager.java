@@ -6,32 +6,42 @@
 package svugame.dialogue;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.PropertyException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import svugame.model.skills.Skill;
+import svugame.model.skills.SkillList;
 
 /**
  *
  * @author craig.reese
  */
 public class ConversationManager {
-    //dialoguemanager needs to get an arraylist of all conversations and make it available to the game
+    //dialoguemanager needs to get an arraylist of all conversations and make it available to the game 
     //it should also keep track of where you are in a conversation and should pass this along to the ui
+    //TODO:Conditional Dialogue Choices
+    //TODO:Results at the end of a conversation
 
-    private ArrayList<Conversation> allConversations;
     String[] pointer;
+    private static final String CONVERSATIONS_XML = "./conversation-jaxb.xml";
 
-    public ConversationManager() throws ParserConfigurationException, TransformerException {
+    ConversationList list = new ConversationList();
+    ArrayList<Conversation> allConversations = new ArrayList();
+    
+    
+    public ConversationManager() throws JAXBException {
         //only ran when instantiated, we need an arraylist of conversations here.
         //CreateXML();
         allConversations = GetAllConversations();
+        System.out.println("test");
     }
 
     public Dialogue GetNextDialogue(String conversationName, String choice) {
@@ -40,107 +50,90 @@ public class ConversationManager {
     }
 
     private ArrayList<Conversation> GetAllConversations() {
+        ArrayList<Conversation> conversationList = null;
         try {
-            File conversationsFile = new File("ConversationList.xml");
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(conversationsFile);
-            //doc.getDocumentElement().normalize();
-            Element docEle = doc.getDocumentElement();
+
+            // create JAXB context and initializing Marshaller
+            JAXBContext jaxbContext = JAXBContext.newInstance(ConversationList.class);
+
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+
+            // specify the location and name of xml file to be read
+            File XMLfile = new File("./Arena1_conversation.xml");
+
+            // this will create Java object - country from the XML file
+            //Country countryIndia = (Country) jaxbUnmarshaller.unmarshal(XMLfile);
+            ConversationList list = (ConversationList) jaxbUnmarshaller.unmarshal(XMLfile);
+
+            //System.out.println("Conversation Name: " + countryIndia.getCountryName());
+            //System.out.println("Country Population: " + countryIndia.getCountryPopulation());
+
+            //ArrayList<state> listOfStates = countryIndia.getListOfStates();
+             conversationList = list.getAllConversations();
+
+            /*
+            int i = 0;
+            for (State state : listOfStates) {
+                i++;
+                System.out.println("State:"+i + ' ' + state.getStateName());
+            }*/
             
-            NodeList nodes = docEle.getElementsByTagName("Dialogue");
+            
+            
+            
 
-            for (int i = 0; i < nodes.getLength(); i++) {
-                Node node = nodes.item(i);
-
-                Conversation conv = new Conversation();
-                conv.setConversationName(null);
-            }
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (JAXBException e) {
+            // some exception occured
+            e.printStackTrace();
         }
-        return null;
+
+        return conversationList;
     }
-/*
-    private void CreateXML() throws ParserConfigurationException, TransformerConfigurationException, TransformerException {
-        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-        // root elements
-        Document doc = docBuilder.newDocument();
-        Element rootElement = doc.createElement("ConversationList");
-        doc.appendChild(rootElement);
+    /* THIS WORKS YAAAAY */
+    private void CreateXML() throws PropertyException, JAXBException {
+        ArrayList<Dialogue> dialogueList = new ArrayList<Dialogue>();
+        ArrayList<Dialogue> dialogueList2 = new ArrayList<Dialogue>();
+        ArrayList<Conversation> conversationList = new ArrayList<Conversation>();
 
-        Element conversation = doc.createElement("Conversation");
-        rootElement.appendChild(conversation);
+        //create dialogues
+        Dialogue dialogue0 = new Dialogue("start", new String[]{""}, "this is the begining dialogue", new String[]{"b1", "b2"}, new String[]{""});
+        Dialogue dialogue1 = new Dialogue("b1", new String[]{"STR>=10", "SNEAK >=5"}, "this is the test dialogue", new String[]{"c1", "c2"}, new String[]{"STR + 2", "FACTIONEVIL - 10"});
+        Dialogue dialogue2 = new Dialogue("c1", new String[]{""}, "this is the test dialogue2", new String[]{"d1", "d2"}, new String[]{""});
 
-        Element conversationName = doc.createElement("conversationName");
-        conversationName.appendChild(doc.createTextNode("Opening Dialogue"));
-        conversation.appendChild(conversationName);
+        dialogueList.add(dialogue0);
+        dialogueList.add(dialogue1);
+        dialogueList.add(dialogue2);
 
-        Element dialogueTree = doc.createElement("Dialogue");
-        conversation.appendChild(dialogueTree);
+        Conversation convo = new Conversation();
+        convo.setConversationName("test convo");
+        convo.setDialogueList(dialogueList);
 
-        Element id = doc.createElement("id");
-        id.appendChild(doc.createTextNode("a"));
-        dialogueTree.appendChild(id);
-        
-        Element text = doc.createElement("text");
-        text.appendChild(doc.createTextNode("Where am I?"));
-        dialogueTree.appendChild(text);
+        Dialogue dialogue3 = new Dialogue("start", new String[]{""}, "this is the begining dialogu6e", new String[]{"b1", "b2"}, new String[]{""});
+        Dialogue dialogue4 = new Dialogue("b1", new String[]{"END>=10", "HIT >=5"}, "this is the test dialogue", new String[]{"c1", "c2"}, new String[]{"STR + 2", "FACTIONEVIL - 10"});
+        Dialogue dialogue5 = new Dialogue("c1", new String[]{""}, "this is the test dialogue5", new String[]{"d1", "d2"}, new String[]{""});
 
-        Element pointer = doc.createElement("pointer");
-        pointer.appendChild(doc.createTextNode("b"));
-        dialogueTree.appendChild(pointer);
+        dialogueList2.add(dialogue3);
+        dialogueList2.add(dialogue4);
+        dialogueList2.add(dialogue5);
 
-        /*
-        //Element conversation = doc.createElement("conversation");
-        Node item = null;
-        item = xmlDoc.createElement("Opening Dialogue");
+        Conversation convo2 = new Conversation();
+        convo2.setConversationName("test convo2");
+        convo2.setDialogueList(dialogueList2);
 
-        Element conversationName = doc.createElement("conversationName");
-        conversationName.setValue("Opening Dialogue");
-        conversation.setAttributeNode(conversationName);
+        conversationList.add(convo);
+        conversationList.add(convo2);
 
-        Element dialogueTree = doc.createElement("dialogueTree");
-        conversation.appendChild(dialogueTree);
+        list.setAllConversations(conversationList);
+        JAXBContext context = JAXBContext.newInstance(ConversationList.class);
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-        Element id = doc.createElement("id");
-        id.appendChild(doc.createTextNode("a"));
-        dialogueTree.appendChild(id);
-
-        Element text = doc.createElement("text");
-        text.appendChild(doc.createTextNode("Where am I?"));
-        dialogueTree.appendChild(text);
-
-        Element pointer = doc.createElement("pointer");
-        pointer.appendChild(doc.createTextNode("b"));
-        dialogueTree.appendChild(pointer);
-
-        Element id2 = doc.createElement("id");
-        id2.appendChild(doc.createTextNode("b"));
-        dialogueTree.appendChild(id2);
-
-        Element text2 = doc.createElement("text");
-        text2.appendChild(doc.createTextNode("How did i get here?"));
-        dialogueTree.appendChild(text2);
-
-        Element pointer2 = doc.createElement("pointer");
-        pointer2.appendChild(doc.createTextNode("c"));
-        dialogueTree.appendChild(pointer2);
-
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("ConversationList.xml"));
-
-        // Output to console for testing
-        // StreamResult result = new StreamResult(System.out);
-        transformer.transform(source, result);
-
-        System.out.println("File saved!");
+        // Write to System.out
+        //m.marshal(skillSet, System.out);
+        // Write to File
+        m.marshal(list, new File(CONVERSATIONS_XML));
 
     }
-*/
+
 }
