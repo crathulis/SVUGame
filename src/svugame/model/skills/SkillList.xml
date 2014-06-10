@@ -225,7 +225,31 @@ and open the template in the editor.
         </Skill>
         
         <Skill>
+            <name>Bravery</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Fear</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
             <name>Stone Missile</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Rock Slide</name>
             <attrib1></attrib1>
             <attrib2></attrib2>
             <level>0</level>
