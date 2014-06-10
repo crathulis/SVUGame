@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author Lab Admin
  */
 //@XmlRootElement(name = "skill")
-@XmlType(propOrder = { "name", "attrib1", "attrib2", "level" })
+@XmlType(propOrder = { "name", "attrib1", "attrib2", "level", "description" })
 public class Skill {
     
     public Skill(){
