@@ -33,7 +33,10 @@ public class SVUGame extends StateBasedGame {
    
 
     public static void main(String[] args) throws SlickException {
-        AppGameContainer app = new AppGameContainer(new ScalableGame(new SVUGame("SVU Game"), 160, 160, true));  //making our game area stretch so it's not crazy tiny
+        AppGameContainer app = new AppGameContainer(new ScalableGame(new SVUGame("SVU Game"), 800   , 600, false)); 
+        //AppGameContainer app = new AppGameContainer(new ScalableGame(new SVUGame("SVU Game"), 160, 160, true));
+
+//making our game area stretch so it's not crazy tiny
         //app.setDisplayMode(160, 160, false);
         app.setDisplayMode(800, 600, false);  //final size of container
         app.setTargetFrameRate(60);
