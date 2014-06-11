@@ -52,6 +52,32 @@ public class Conversation {
         this.conversationName = ConversationName;
     }
     
+    public Dialogue GetDialogue(String dialogueID){
+        for(Dialogue dialogue : dialogueList)
+        {
+            if(dialogue.getId().equals(dialogueID))
+            {
+                return dialogue;
+            }
+        }
+        
+        return null;
+    }
+    
+    public ArrayList<Dialogue> GetAllLinkingDialogues(String dialogueID)
+    {
+        ArrayList<Dialogue> tempList = new ArrayList();
+        Dialogue headDialogue = GetDialogue(dialogueID);
+        for(String s : headDialogue.getPointer())
+        {
+            Dialogue tempDialogue = GetDialogue(s);
+            tempList.add(tempDialogue);
+            
+        }
+        
+        return tempList;
+    }
+    
     
     
     

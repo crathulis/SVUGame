@@ -16,6 +16,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import mdes.slick.sui.*;
+import mdes.slick.sui.event.ActionEvent;
+import mdes.slick.sui.event.ActionListener;
 import mdes.slick.sui.layout.LayoutManager;
 import mdes.slick.sui.layout.RowLayout;
 import org.newdawn.slick.Animation;
@@ -63,6 +65,8 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     Boolean convoActive = false;
     Dialogue lastPart;
     ConversationTest convo = new ConversationTest();
+    TextArea convoArea;
+    ConversationManager convoMng;
 
     @Override
     public int getID() {
@@ -71,117 +75,21 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        try {
-            //this is our starting map
-            TiledMap startMap = new TiledMap("data/map1.tmx");
-            //TiledMap map2 = new TiledMap("data/map2.tmx");
-            
-            //TODO: build world map that has tile data for each sectional map, then parse world map to get map data.
-            currentMap = startMap;
-            
-            //we're animating 2 steps here
-            Image[] movementUp = {new Image("data/charUp.png"), new Image("data/charWalkUp.png")};
-            Image[] movementDown = {new Image("data/charDown.png"), new Image("data/charWalkDown.png")};
-            Image[] movementLeft = {new Image("data/charLeft.png"), new Image("data/charWalkLeft.png")};
-            Image[] movementRight = {new Image("data/charRight.png"), new Image("data/charWalkRight.png")};
-            int[] duration = {300, 300};
-            
-            up = new Animation(movementUp, duration, false);
-            down = new Animation(movementDown, duration, false);
-            left = new Animation(movementLeft, duration, false);
-            right = new Animation(movementRight, duration, false);
-            
-            //initial way our character is facing at start of game
-            sprite = down;
-            
-            //now we build what can be walked on.
-            buildBlockArray();
-            
-            //******* Start test for gui *********//
-            display = new Display(gc);
-            
-            content = new Container();
-            content.setSize(800, 100); //sets panel size
-            content.setLocation(0, 500); //sets panel loc relative to parent (display)
-            content.setOpaque(true); //ensures that the background is drawn
-            Color color = new Color(160,160,232);
-            content.setBackground(color); //sets the background color
-            
-            RowLayout layout = new RowLayout(true, RowLayout.LEFT, RowLayout.CENTER);
-            content.setLayout(layout);
-            //GridLayout test = new GridLayout(1,5);
-            // content.setLayout(test);
-            
-            // LayoutManager mng
-            
-            Button btn = new Button("No where");
-            //btn.setBounds(400, 200, 100, 100);
-            //btn.setSize(400, 200);
-            //btn.setLocation(100, 100);
-            Font f = new Font("Serif", Font.BOLD, 25);
-            UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
-            ufont.addAsciiGlyphs();
-            ufont.addGlyphs(16, 16);
-            ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
-            ufont.loadGlyphs();
-            btn.setFont(ufont);
-            btn.pack(); //pack the button to the text
-            content.add(btn);
-            float fb = btn.getTextWidth();
-            btn.setSize(fb +10, 60);
-            display.add(content);
-            
-            
-            //Label label = new Label("Where am I?");
-            //String startString = "Press Enter to continue conversation";
-            convoActive = true;
-            
-            //displayLabel(startString, content);
-            ConversationManager mng = new ConversationManager();
-            System.out.println("test");
-        
-        } catch (JAXBException ex) {
-            Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        TiledMap startMap = new TiledMap("data/map1.tmx");
+        currentMap = startMap;
+        Image[] movementUp = {new Image("data/charUp.png"), new Image("data/charWalkUp.png")};
+        Image[] movementDown = {new Image("data/charDown.png"), new Image("data/charWalkDown.png")};
+        Image[] movementLeft = {new Image("data/charLeft.png"), new Image("data/charWalkLeft.png")};
+        Image[] movementRight = {new Image("data/charRight.png"), new Image("data/charWalkRight.png")};
+        int[] duration = {300, 300};
+        up = new Animation(movementUp, duration, false);
+        down = new Animation(movementDown, duration, false);
+        left = new Animation(movementLeft, duration, false);
+        right = new Animation(movementRight, duration, false);
+        sprite = down;
+        buildBlockArray();
+        System.out.println("test");
 
-    }
-
-    private void displayLabel(String s, Container c) throws SlickException {
-        c.removeAll();
-        //int totalLetters = s.length();
-        //sleep(1000);
-        //TODO: add wipes for old content
-        
-        Label label = new Label(s);
-        label.setForeground(Color.white); //sets the foreground (text) color
-        label.pack(); //pack the label with the current text, font and padding
-        //label.setHeight(6); //set same size between the two components
-        c.add(label); //add the label to this display so it can be rendered
-        display.add(c);
-        /*
-         for (int i = 0; i < totalLetters; i++) {
-         Label label = new Label(s.substring(0, i));
-         label.setForeground(Color.white); //sets the foreground (text) color
-         label.pack(); //pack the label with the current text, font and padding
-         label.setHeight(10); //set same size between the two components
-         c.add(label); //add the label to this display so it can be rendered
-         display.add(c);
-         // sleep(1000);
-         }
-         */
-        /*
-         Button btn = new Button("No where");
-            Font f = new Font("Serif", Font.BOLD, 10);
-            UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
-            ufont.addAsciiGlyphs();
-            ufont.addGlyphs(16, 16);
-            ufont.getEffects().add(new ColorEffect(java.awt.Color.BLACK));
-            ufont.loadGlyphs();
-            btn.setFont(ufont);
-            btn.pack(); //pack the button to the text
-            c.add(btn);
-            display.add(c);
-                */
     }
 
     @Override
@@ -218,10 +126,11 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         grphcs.scale(4, 4);
         currentMap.render(0, 0);
         sprite.draw((int) playerx, (int) playery);
-        
-        grphcs.scale(0.25f, 0.25f);
-       
-        display.render(gc, grphcs);
+
+        if (this.convoActive == true) {
+            grphcs.scale(0.25f, 0.25f);
+            display.render(gc, grphcs);
+        }
     }
 
     @Override
@@ -269,7 +178,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             }
         } else if (input.isKeyDown(Input.KEY_RIGHT)) {
             sprite = right;
-                if (playerx+12  > currentMap.getWidth() * SIZE) {
+            if (playerx + 12 > currentMap.getWidth() * SIZE) {
                 //we've reached the right edge of the screen
                 transition("right");
             }
@@ -279,7 +188,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             //check to see if we're at the edge of the map
             //we can see that if startx == mapsize (160)
             //look up tile, from that we can get a transition
-            System.out.println("Player: " + (playerx) + " | Map size: " + (currentMap.getWidth()*SIZE));
+            System.out.println("Player: " + (playerx) + " | Map size: " + (currentMap.getWidth() * SIZE));
 
             if (collision == false) {
                 sprite.update(i);
@@ -298,7 +207,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             sbg.enterState(4, new RotateTransition(Color.black), new RotateTransition(Color.black));
         }
 
-        display.update(gc, i);
+        // display.update(gc, i);
         if (input.isKeyDown(Input.KEY_SPACE)) {
             //removes displayed message
             display.removeAll();
@@ -307,13 +216,21 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             gc.exit();
         }
 
+        if (gc.getInput().isKeyPressed(Input.KEY_C)) {
+            try {
+                StartConversation("ArenaBattle1", gc);
+            } catch (JAXBException ex) {
+                Logger.getLogger(Overworld.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
         if (convoActive == true) {
             if (input.isKeyPressed(Input.KEY_ENTER)) {
-                 ExecuteDialogue();
+                ExecuteDialogue();
             }
         }
     }
-    
+
     private void ExecuteDialogue() throws SlickException {
         if (lastPart != null) {
             if (lastPart.getPointer()[0].equals("end")) {
@@ -330,7 +247,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         lastPart = temp;
         //and now we write it
         System.out.println(temp.getText());
-        displayLabel(temp.getText(), content);
+        //displayLabel(temp.getText(), content);
 
     }
 
@@ -377,6 +294,74 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             return false;
         }
         return blocked[xBlock][yBlock];
+    }
+
+    private void StartConversation(String conversationName, GameContainer gc) throws SlickException, JAXBException {
+        convoActive = true;
+        convoMng = new ConversationManager(conversationName);
+        //so we now can get the starters of the conversation, lets start by displaying them on the screen.
+        //for now, we'll hard code it.
+
+        /***  BUILDING THE BACKGROUND CONTAINER ***/
+        display = new Display(gc);
+        content = new Container();
+        content.setSize(800, 140); //sets panel size
+        content.setLocation(0, 460); //sets panel loc relative to parent (display)
+        content.setOpaque(true); //ensures that the background is drawn
+        Color color = new Color(160, 160, 232);
+        content.setBackground(color); //sets the background color
+        
+       /*** END BUILDING BACKGROUND CONTAINER ***/
+        
+        //now we'll need eventually 4 items to display, those being the two portraits, the label of current convo, and the list of buttons for responces
+        
+        /**  ADDING THE CURRENT STARTER INFO ***/
+        convoArea = new TextArea(convoMng.getCurrentString(),2,5);
+        convoArea.setLocation(10, 470);
+        convoArea.setSize(300, 130);
+        convoArea.setBackground(color);
+        convoArea.setBorderRendered(false);
+        display.add(convoArea);
+        /*** END ADDING THE CURRENT STARTER INFO ***/
+        
+        /*** ADDING THE ANSWER AREA ***/
+        Container answerArea = new Container();
+        answerArea.setSize(450,130);
+        answerArea.setLocation(330,465);
+        answerArea.setOpaque(true);
+        answerArea.setBackground(Color.cyan);
+        RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
+        answerArea.setLayout(layout);
+        /*** END ADDING THE ANSWER AREA ***/
+        
+        /*** ADDING THE ANSWER BUTTONS ***/
+        ArrayList<Dialogue> answerList = convoMng.getConvoList();
+        for(final Dialogue dialogue : answerList)
+        {
+            Button btn = new Button(dialogue.getText());
+            btn.setSize(450, answerArea.getHeight()/answerList.size());
+            btn.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e)
+                {
+                    UpdateConversation(dialogue.getId());
+                }
+            });
+            btn.pack();
+            answerArea.add(btn);
+        }
+        /*** END ADDING ANSWER BUTTONS ***/
+        
+        display.add(answerArea);
+        display.add(content);
+    }
+    
+    private void UpdateConversation(String choice)
+    {
+        //here we need to move everything along, we have our choice so lets update the conversationManager
+        convoMng.GetNextDialogue(choice);
+       
+        convoArea.setText(convoMng.getCurrentString());
+        
     }
 
 }

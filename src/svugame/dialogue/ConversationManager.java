@@ -35,18 +35,50 @@ public class ConversationManager {
 
     ConversationList list = new ConversationList();
     ArrayList<Conversation> allConversations = new ArrayList();
+    Conversation convo = new Conversation();
+    String currentString;
+    ArrayList<Dialogue> convoList;
+
+  
     
-    
-    public ConversationManager() throws JAXBException {
+    public ConversationManager(String conversationName) throws JAXBException {
         //only ran when instantiated, we need an arraylist of conversations here.
         //CreateXML();
         allConversations = GetAllConversations();
+        for(Conversation con : allConversations)
+        {
+            if(con.getConversationName().equals(conversationName))
+            {
+                convo = con;
+            }
+        }
+        currentString = convo.GetDialogue("start").getText();
+        convoList = convo.GetAllLinkingDialogues("start");
+        //at this point we should have our starting info.
         System.out.println("test");
+        
+    }
+    
+      public String getCurrentString() {
+        return currentString;
     }
 
-    public Dialogue GetNextDialogue(String conversationName, String choice) {
+    public ArrayList<Dialogue> getConvoList() {
+        return convoList;
+    }
+    
+    
+    //here's what we need to do
+    //at the start of the conversation we will always need to get the starter and display it as a label
+    //we also need to get all of its children and add them as buttons
+    //so we should probably load an instance of this class using a conversation name as the input
 
-        return null;  //TODO:  fix this
+    public void GetNextDialogue(String choice) {
+           Dialogue tempDialogue = convo.GetDialogue(choice);
+           String tempDialoguePointer = tempDialogue.getPointer()[0];
+           Dialogue nextDialogue = convo.GetDialogue(tempDialoguePointer);
+           currentString = nextDialogue.getText();
+           convoList = convo.GetAllLinkingDialogues(nextDialogue.getId());
     }
 
     private ArrayList<Conversation> GetAllConversations() {
