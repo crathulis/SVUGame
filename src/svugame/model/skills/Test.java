@@ -27,9 +27,9 @@ public class Test {
         ArrayList<Skill> skillList = new ArrayList<Skill>();
 
         // create books
-        Skill skill1 = new Skill("One-handed", 3, 0, 0);
+        Skill skill1 = new Skill("One-handed", 3, 0, 0, "");
         skillList.add(skill1);
-        Skill skill2 = new Skill("Two-handed", 0, 3, 0);
+        Skill skill2 = new Skill("Two-handed", 0, 3, 0, "");
         skillList.add(skill2);
         SkillList skillSet = new SkillList(skillList);
 

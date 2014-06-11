@@ -13,6 +13,7 @@ and open the template in the editor.
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -20,34 +21,103 @@ and open the template in the editor.
             <attrib1>2</attrib1>
             <attrib2>3</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
-            <name>One-Handed</name>
+            <name>One-Handed: Thrust</name>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
-            <name>Two-Handed</name>
+            <name>One-Handed: Swing</name>
+            <attrib1>1</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>One-Handed: Whirlwind</name>
+            <attrib1>1</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Two-Handed: Chop</name>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
-            <name>Close Quarters</name>
+            <name>Two-Handed: Sunder</name>
+            <attrib1>0</attrib1>
+            <attrib2>5</attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Two-Handed: Cleave</name>
+            <attrib1>0</attrib1>
+            <attrib2>5</attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Close Quarters: Stab</name>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
-            <name>Projectile Weapons</name>
+            <name>Close Quarters: Slash</name>
+            <attrib1>1</attrib1>
+            <attrib2>3</attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Close Quarters: Disarm</name>
+            <attrib1>1</attrib1>
+            <attrib2>3</attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Projectile Weapons: Pierce</name>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
             <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Projectile Weapons: Puncture</name>
+            <attrib1>2</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Projectile Weapons: Precision</name>
+            <attrib1>2</attrib1>
+            <attrib2>4</attrib2>
+            <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -55,6 +125,7 @@ and open the template in the editor.
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -62,6 +133,7 @@ and open the template in the editor.
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -69,6 +141,7 @@ and open the template in the editor.
             <attrib1>1</attrib1>
             <attrib2>6</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -76,6 +149,7 @@ and open the template in the editor.
             <attrib1>2</attrib1>
             <attrib2>7</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -83,6 +157,7 @@ and open the template in the editor.
             <attrib1>2</attrib1>
             <attrib2>6</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -90,6 +165,7 @@ and open the template in the editor.
             <attrib1>5</attrib1>
             <attrib2>6</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -97,6 +173,7 @@ and open the template in the editor.
             <attrib1>5</attrib1>
             <attrib2>8</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -104,6 +181,7 @@ and open the template in the editor.
             <attrib1>5</attrib1>
             <attrib2>7</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -111,6 +189,7 @@ and open the template in the editor.
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -118,6 +197,7 @@ and open the template in the editor.
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -125,6 +205,7 @@ and open the template in the editor.
             <attrib1>4</attrib1>
             <attrib2>6</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -132,6 +213,7 @@ and open the template in the editor.
             <attrib1>5</attrib1>
             <attrib2>8</attrib2>
             <level>0</level>
+            <description></description>
         </Skill>
         
         <Skill>
@@ -139,6 +221,183 @@ and open the template in the editor.
             <attrib1>4</attrib1>
             <attrib2>6</attrib2>
             <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Bravery</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Fear</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Stone Missile</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Rock Slide</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Fire Bolt</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Fireball</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Ice Sphere</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Water Cannon</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Lightning</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Chain Lightning</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Earthquake</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Tornado</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Tsunami</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Shield</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Shell</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Blind</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Heal</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Mind Trick</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Invisibility</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Teleport</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Unlock</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
+        </Skill>
+        
+        <Skill>
+            <name>Disable Trap</name>
+            <attrib1></attrib1>
+            <attrib2></attrib2>
+            <level>0</level>
+            <description></description>
         </Skill>
     </SkillList>
 </root>

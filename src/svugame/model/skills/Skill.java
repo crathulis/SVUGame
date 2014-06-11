@@ -16,18 +16,19 @@ import javax.xml.bind.annotation.XmlType;
  * @author Lab Admin
  */
 //@XmlRootElement(name = "skill")
-@XmlType(propOrder = { "name", "attrib1", "attrib2", "level" })
+@XmlType(propOrder = { "name", "attrib1", "attrib2", "level", "description" })
 public class Skill {
     
     public Skill(){
         
     }
 
-    public Skill(String name, int attrib1, int attrib2, int level) {
+    public Skill(String name, int attrib1, int attrib2, int level, String description) {
         this.name = name;
         this.attrib1 = attrib1;
         this.attrib2 = attrib2;
         this.level = level;
+        this.description = description;
     }
     
     public String getName() {
@@ -66,5 +67,6 @@ public class Skill {
     private int attrib1;
     private int attrib2;
     private int level;
+    private String description;
     
 }
