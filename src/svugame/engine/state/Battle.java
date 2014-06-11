@@ -60,7 +60,7 @@ public class Battle extends BasicGameState {
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        TiledMap startMap = new TiledMap("data/forestBattle.tmx");
+        TiledMap startMap = new TiledMap("data/BattleMap.tmx");
         //TiledMap map2 = new TiledMap("data/map2.tmx");
 
         //TODO: build world map that has tile data for each sectional map, then parse world map to get map data.
@@ -187,12 +187,12 @@ public class Battle extends BasicGameState {
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
-        grphcs.scale(4, 4);
+        grphcs.scale((float) 1.85, (float) 2);
         currentMap.render(0, 0);
         //sprite.draw((int) playerx, (int) playery);
 
         //if (this.convoActive == true) {
-        grphcs.scale(0.25f, 0.25f);
+        grphcs.scale(.51f, .5f);
         display.render(gc, grphcs);
         // }
     }

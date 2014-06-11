@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="14" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Sprites" tilewidth="32" tileheight="32">
+  <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="14" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NlYWBwAWJWPNgFBxufOlz4IDN5+NAoHhQYACr2GFcwAgAA
+  </data>
+ </layer>
+ <layer name="Characters" width="14" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGDrgEglq3ZlI0+9Monp0kIpF/3AEACcz2HgwAgAA
+  </data>
+ </layer>
+</map>
