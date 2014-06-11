@@ -104,7 +104,6 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             content.setSize(800, 100); //sets panel size
             content.setLocation(0, 500); //sets panel loc relative to parent (display)
             content.setOpaque(true); //ensures that the background is drawn
-            content.
             Color color = new Color(160,160,232);
             content.setBackground(color); //sets the background color
             
