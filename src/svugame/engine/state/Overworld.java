@@ -101,10 +101,11 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             display = new Display(gc);
             
             content = new Container();
-            content.setSize(160, 60); //sets panel size
-            content.setLocation(0, 100); //sets panel loc relative to parent (display)
+            content.setSize(800, 100); //sets panel size
+            content.setLocation(0, 500); //sets panel loc relative to parent (display)
             content.setOpaque(true); //ensures that the background is drawn
-            content.setBackground(Color.lightGray); //sets the background color
+            Color color = new Color(160,160,232);
+            content.setBackground(color); //sets the background color
             
             RowLayout layout = new RowLayout(true, RowLayout.LEFT, RowLayout.CENTER);
             content.setLayout(layout);
@@ -112,9 +113,12 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             // content.setLayout(test);
             
             // LayoutManager mng
-            /*
+            
             Button btn = new Button("No where");
-            Font f = new Font("Serif", Font.BOLD, 10);
+            //btn.setBounds(400, 200, 100, 100);
+            //btn.setSize(400, 200);
+            //btn.setLocation(100, 100);
+            Font f = new Font("Serif", Font.BOLD, 25);
             UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
             ufont.addAsciiGlyphs();
             ufont.addGlyphs(16, 16);
@@ -123,13 +127,16 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
             btn.setFont(ufont);
             btn.pack(); //pack the button to the text
             content.add(btn);
+            float fb = btn.getTextWidth();
+            btn.setSize(fb +10, 60);
+            display.add(content);
             
-            */
+            
             //Label label = new Label("Where am I?");
-            String startString = "Press Enter to continue conversation";
+            //String startString = "Press Enter to continue conversation";
             convoActive = true;
             
-            displayLabel(startString, content);
+            //displayLabel(startString, content);
             ConversationManager mng = new ConversationManager();
             System.out.println("test");
         
@@ -207,9 +214,13 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
+        //Graphics temp = grphcs;
+        grphcs.scale(4, 4);
         currentMap.render(0, 0);
         sprite.draw((int) playerx, (int) playery);
-
+        
+        grphcs.scale(0.25f, 0.25f);
+       
         display.render(gc, grphcs);
     }
 
