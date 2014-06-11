@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import mdes.slick.sui.Button;
 import mdes.slick.sui.Container;
 import mdes.slick.sui.Display;
+import mdes.slick.sui.event.ActionEvent;
+import mdes.slick.sui.event.ActionListener;
 import mdes.slick.sui.layout.RowLayout;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -38,6 +40,7 @@ public class Battle extends BasicGameState {
     Container content;
     Button btn = new Button("No where");
     Button btn2 = new Button("No what");
+    Container secondGroup;
 
     @Override
     public int getID() {
@@ -65,22 +68,133 @@ public class Battle extends BasicGameState {
 
         display = new Display(gc);
 
+        display = new Display(gc);
         content = new Container();
-        content.setSize(60, 160); //sets panel size
-        content.setLocation(100, 0); //sets panel loc relative to parent (display)
+        content.setSize(800, 140); //sets panel size
+        content.setLocation(0, 460); //sets panel loc relative to parent (display)
         content.setOpaque(true); //ensures that the background is drawn
-        content.setBackground(Color.lightGray); //sets the background color
+        Color color = new Color(160, 160, 232);
+        content.setBackground(color); //sets the background color
+        content.setZIndex(0);
 
-        RowLayout layout = new RowLayout(true, RowLayout.LEFT, RowLayout.CENTER);
-        content.setLayout(layout);
-        content.setVisible(true);
-        //adding music
+        Container base = new Container();
+        base.setSize(85, 130);
+        base.setLocation(5, 465);
+        base.setOpaque(true);
+        base.setBackground(Color.black);
+        RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
+        base.setLayout(layout);
+        base.setZIndex(1);
+        display.add(base);
+
+        String[] row1 = new String[]{"Attack", "Magical", "Physical", "Inventory", "Flee"};
+
+        for (final String s : row1) {
+
+            Button tempButton = new Button(s);
+
+            tempButton.setSize(10, base.getHeight() / 5);
+
+            tempButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    renderSecondSet(s);
+                }
+            });
+
+            tempButton.setBorderRendered(false);
+            tempButton.setOpaque(true);
+            tempButton.setBackground(Color.cyan);  //TODO: FIX ME
+            tempButton.pack();
+            tempButton.setWidth(85);
+            base.add(tempButton);
+        }
+
+        display.add(content);
+    }
+
+    private void renderSecondSet(String choice) {
+
+        secondGroup = new Container();
+        secondGroup.setSize(85, 130);
+        secondGroup.setLocation(100, 465);
+        secondGroup.setOpaque(true);
+        secondGroup.setBackground(Color.black);
+        RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
+        secondGroup.setLayout(layout);
+        secondGroup.setZIndex(1);
+        display.add(secondGroup);
+        display.reinit();
+        //display.ensureZOrder();
+        //display.add(content);
+
+        switch (choice) {
+            case "Physical": {
+                String[] row1 = new String[]{"Musical", "Weapon", "Buffs"};
+
+                for (final String s : row1) {
+
+                    Button tempButton = new Button(s);
+
+                    tempButton.setSize(10, secondGroup.getHeight() / 5);
+
+                    tempButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            renderThirdSet(s);
+                        }
+
+                    });
+
+                    tempButton.setBorderRendered(false);
+                    tempButton.setOpaque(true);
+                    tempButton.setBackground(Color.cyan);  //TODO: FIX ME
+                    tempButton.pack();
+                    tempButton.setWidth(85);
+                    secondGroup.add(tempButton);
+                }
+                break;
+            }
+            case "Magical": {
+                String[] row1 = new String[]{"Elemental", "Control", "Buffs"};
+
+                for (final String s : row1) {
+
+                    Button tempButton = new Button(s);
+
+                    tempButton.setSize(10, secondGroup.getHeight() / 5);
+
+                    tempButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            renderSecondSet(s);
+                        }
+                    });
+
+                    tempButton.setBorderRendered(false);
+                    tempButton.setOpaque(true);
+                    tempButton.setBackground(Color.cyan);  //TODO: FIX ME
+                    tempButton.pack();
+                    tempButton.setWidth(85);
+                    secondGroup.add(tempButton);
+                }
+            }
+            break;
+        }
+
+    }
+
+    private void renderThirdSet(String s) {
+       //this will be our actual list of skills
     }
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
+        grphcs.scale(4, 4);
         currentMap.render(0, 0);
+        //sprite.draw((int) playerx, (int) playery);
+
+        //if (this.convoActive == true) {
+        grphcs.scale(0.25f, 0.25f);
         display.render(gc, grphcs);
+        // }
     }
 
     @Override
@@ -99,18 +213,17 @@ public class Battle extends BasicGameState {
         if (gc.getInput().isKeyPressed(Input.KEY_3)) {
             menus(gc);
         }
-        
+
         //need listener to know when button is pressed then add new button
 //        if(btn){
 //            content.removeAll();
 //        }
-        
         display.update(gc, i);
     }
 
     private void menus(GameContainer gc) throws SlickException {
         content.removeAll();
-        
+
         Font f = new Font("Serif", Font.BOLD, 10);
         UnicodeFont ufont = new UnicodeFont(f, f.getSize(), f.isBold(), f.isItalic());
         ufont.addAsciiGlyphs();
@@ -120,17 +233,14 @@ public class Battle extends BasicGameState {
         btn.setFont(ufont);
         btn.pack();
         content.add(btn);
-        
-        
+
         btn2.setFont(ufont);
         btn2.pack();
         content.add(btn2);
-        btn.setLocation(((content.getWidth()-btn.getWidth())/2)+1,10);
-        btn2.setLocation(((content.getWidth()-btn2.getWidth())/2)+1, 60);
+        btn.setLocation(((content.getWidth() - btn.getWidth()) / 2) + 1, 10);
+        btn2.setLocation(((content.getWidth() - btn2.getWidth()) / 2) + 1, 60);
         //btn.setEnabled(true);
-        
-        
-        
+
         display.add(content);
         System.out.println("new Test");
         System.out.println(content.getSize());

@@ -346,7 +346,12 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
                     UpdateConversation(dialogue.getId());
                 }
             });
+            
+            btn.setBorderRendered(false);
+            btn.setOpaque(true);  
+            btn.setBackground(Color.cyan);  //TODO: FIX ME
             btn.pack();
+           
             answerArea.add(btn);
         }
         /*** END ADDING ANSWER BUTTONS ***/
