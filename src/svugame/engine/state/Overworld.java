@@ -67,6 +67,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     ConversationTest convo = new ConversationTest();
     TextArea convoArea;
     ConversationManager convoMng;
+    Container answerArea;
 
     @Override
     public int getID() {
@@ -325,7 +326,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         /*** END ADDING THE CURRENT STARTER INFO ***/
         
         /*** ADDING THE ANSWER AREA ***/
-        Container answerArea = new Container();
+        answerArea = new Container();
         answerArea.setSize(450,130);
         answerArea.setLocation(330,465);
         answerArea.setOpaque(true);
@@ -367,6 +368,39 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
        
         convoArea.setText(convoMng.getCurrentString());
         
+         ArrayList<Dialogue> answerList = convoMng.getConvoList();
+         answerArea.removeAll();
+         Dialogue checkNull = answerList.get(0);  //checking to see if we've reached the end of the conversation.
+         if(checkNull == null)
+         {
+             Button btn = new Button("End conversation");
+             btn.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e)
+                {
+                    display.removeAll();
+                }
+            });
+         }
+         else{
+        for(final Dialogue dialogue : answerList)
+        {
+            Button btn = new Button(dialogue.getText());
+            btn.setSize(450, answerArea.getHeight()/answerList.size());
+            btn.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e)
+                {
+                    UpdateConversation(dialogue.getId());
+                }
+            });
+            
+            btn.setBorderRendered(false);
+            btn.setOpaque(true);  
+            btn.setBackground(Color.cyan);  //TODO: FIX ME
+            btn.pack();
+           
+            answerArea.add(btn);
+        }
+         }
     }
 
 }
