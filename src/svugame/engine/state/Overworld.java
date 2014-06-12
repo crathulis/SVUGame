@@ -303,7 +303,9 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         //so we now can get the starters of the conversation, lets start by displaying them on the screen.
         //for now, we'll hard code it.
 
-        /***  BUILDING THE BACKGROUND CONTAINER ***/
+        /**
+         * * BUILDING THE BACKGROUND CONTAINER **
+         */
         display = new Display(gc);
         content = new Container();
         content.setSize(800, 140); //sets panel size
@@ -311,96 +313,107 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         content.setOpaque(true); //ensures that the background is drawn
         Color color = new Color(160, 160, 232);
         content.setBackground(color); //sets the background color
-        
-       /*** END BUILDING BACKGROUND CONTAINER ***/
-        
+
+        /**
+         * * END BUILDING BACKGROUND CONTAINER **
+         */
         //now we'll need eventually 4 items to display, those being the two portraits, the label of current convo, and the list of buttons for responces
-        
-        /**  ADDING THE CURRENT STARTER INFO ***/
-        convoArea = new TextArea(convoMng.getCurrentString(),2,5);
+        /**
+         * ADDING THE CURRENT STARTER INFO **
+         */
+        convoArea = new TextArea(convoMng.getCurrentString(), 2, 5);
         convoArea.setLocation(10, 470);
         convoArea.setSize(300, 130);
         convoArea.setBackground(color);
         convoArea.setBorderRendered(false);
         display.add(convoArea);
-        /*** END ADDING THE CURRENT STARTER INFO ***/
-        
-        /*** ADDING THE ANSWER AREA ***/
+        /**
+         * * END ADDING THE CURRENT STARTER INFO **
+         */
+
+        /**
+         * * ADDING THE ANSWER AREA **
+         */
         answerArea = new Container();
-        answerArea.setSize(450,130);
-        answerArea.setLocation(330,465);
+        answerArea.setSize(450, 130);
+        answerArea.setLocation(330, 465);
         answerArea.setOpaque(true);
         answerArea.setBackground(Color.cyan);
         RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
         answerArea.setLayout(layout);
-        /*** END ADDING THE ANSWER AREA ***/
-        
-        /*** ADDING THE ANSWER BUTTONS ***/
+        /**
+         * * END ADDING THE ANSWER AREA **
+         */
+
+        /**
+         * * ADDING THE ANSWER BUTTONS **
+         */
         ArrayList<Dialogue> answerList = convoMng.getConvoList();
-        for(final Dialogue dialogue : answerList)
-        {
+        for (final Dialogue dialogue : answerList) {
             Button btn = new Button(dialogue.getText());
-            btn.setSize(450, answerArea.getHeight()/answerList.size());
+            btn.setSize(450, answerArea.getHeight() / answerList.size());
             btn.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e)
-                {
+                public void actionPerformed(ActionEvent e) {
                     UpdateConversation(dialogue.getId());
                 }
             });
-            
+
             btn.setBorderRendered(false);
-            btn.setOpaque(true);  
+            btn.setOpaque(true);
             btn.setBackground(Color.cyan);  //TODO: FIX ME
             btn.pack();
-           
+
             answerArea.add(btn);
         }
-        /*** END ADDING ANSWER BUTTONS ***/
-        
+        /**
+         * * END ADDING ANSWER BUTTONS **
+         */
+
         display.add(answerArea);
         display.add(content);
     }
-    
-    private void UpdateConversation(String choice)
-    {
+
+    private void UpdateConversation(String choice) {
         //here we need to move everything along, we have our choice so lets update the conversationManager
         convoMng.GetNextDialogue(choice);
-       
+
         convoArea.setText(convoMng.getCurrentString());
-        
-         ArrayList<Dialogue> answerList = convoMng.getConvoList();
-         answerArea.removeAll();
-         Dialogue checkNull = answerList.get(0);  //checking to see if we've reached the end of the conversation.
-         if(checkNull == null)
-         {
-             Button btn = new Button("End conversation");
-             btn.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e)
-                {
-                    display.removeAll();
-                }
-            });
-         }
-         else{
-        for(final Dialogue dialogue : answerList)
-        {
-            Button btn = new Button(dialogue.getText());
-            btn.setSize(450, answerArea.getHeight()/answerList.size());
+
+        ArrayList<Dialogue> answerList = convoMng.getConvoList();
+        answerArea.removeAll();
+        Dialogue checkNull = answerList.get(0);  //checking to see if we've reached the end of the conversation.
+        if (checkNull == null) {
+            Button btn = new Button("End conversation");
             btn.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e)
-                {
-                    UpdateConversation(dialogue.getId());
+                public void actionPerformed(ActionEvent e) {
+                    display.removeAll();
+                    convoActive = false;
                 }
             });
-            
             btn.setBorderRendered(false);
-            btn.setOpaque(true);  
+            btn.setOpaque(true);
             btn.setBackground(Color.cyan);  //TODO: FIX ME
             btn.pack();
-           
+
             answerArea.add(btn);
+        } else {
+            for (final Dialogue dialogue : answerList) {
+                Button btn = new Button(dialogue.getText());
+                btn.setSize(450, answerArea.getHeight() / answerList.size());
+                btn.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        UpdateConversation(dialogue.getId());
+                    }
+                });
+
+                btn.setBorderRendered(false);
+                btn.setOpaque(true);
+                btn.setBackground(Color.cyan);  //TODO: FIX ME
+                btn.pack();
+
+                answerArea.add(btn);
+            }
         }
-         }
     }
 
 }

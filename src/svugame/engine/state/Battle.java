@@ -40,7 +40,7 @@ public class Battle extends BasicGameState {
     Container content;
     Button btn = new Button("No where");
     Button btn2 = new Button("No what");
-    Container secondGroup;
+    Container secondGroup = new Container();
 
     @Override
     public int getID() {
@@ -84,17 +84,21 @@ public class Battle extends BasicGameState {
         RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
         base.setLayout(layout);
         base.setZIndex(1);
+       
         display.add(base);
 
-        String[] row1 = new String[]{"Attack", "Magical", "Physical", "Inventory", "Flee"};
-
+        String[] row1 = new String[]{"Magical", "Inventory", "Physical","Flee" ,"Attack" };
+        int i = 0;
+        
+        
         for (final String s : row1) {
 
             Button tempButton = new Button(s);
-
+            System.out.println(s + " " + i);
             tempButton.setSize(10, base.getHeight() / 5);
 
             tempButton.addActionListener(new ActionListener() {
+                @Override
                 public void actionPerformed(ActionEvent e) {
                     renderSecondSet(s);
                 }
@@ -105,15 +109,26 @@ public class Battle extends BasicGameState {
             tempButton.setBackground(Color.cyan);  //TODO: FIX ME
             tempButton.pack();
             tempButton.setWidth(85);
-            base.add(tempButton);
+            base.add(tempButton,i);
+            i++;
         }
+        
+        secondGroup.setSize(85, 130);
+        secondGroup.setLocation(100, 465);
+        secondGroup.setOpaque(true);
+        secondGroup.setBackground(Color.black);
+        RowLayout layout2 = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
+        secondGroup.setLayout(layout2);
+        secondGroup.setZIndex(1);
+        display.add(secondGroup);
 
         display.add(content);
     }
 
     private void renderSecondSet(String choice) {
 
-        secondGroup = new Container();
+        secondGroup.removeAll();
+        /*
         secondGroup.setSize(85, 130);
         secondGroup.setLocation(100, 465);
         secondGroup.setOpaque(true);
@@ -125,7 +140,7 @@ public class Battle extends BasicGameState {
         //display.reinit();
         //display.ensureZOrder();
         //display.add(content);
-
+                */
         switch (choice) {
             case "Physical": {
                 String[] row1 = new String[]{"Musical", "Weapon", "Buffs"};

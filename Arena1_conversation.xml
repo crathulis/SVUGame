@@ -24,8 +24,7 @@
                 <dialogue>
                     <id>c1</id>
                     <prerequisites></prerequisites>
-                    <text>No one likes it when a newcomer gets into the area and dies right off,
-                        so you're only up against a bear to start with.</text>
+                    <text>No one likes it when a newcomer gets into the arena and dies right off, so you're only up against a bear to start with.</text>
                     <pointer>d1</pointer>
                     <pointer>d2</pointer>
                     <actions></actions>
@@ -65,7 +64,7 @@
                 <dialogue>
                     <id>f1</id>
                     <prerequisites></prerequisites>
-                    <text>Later on you might go in with someone else, but for now, you'll be fin on your own.</text>
+                    <text>Later on you might go in with someone else, but for now, you'll be fine on your own.</text>
                     <pointer>b1</pointer>
                     <pointer>b2</pointer>
                     <pointer>b3</pointer>
@@ -123,6 +122,13 @@
                     <id>b5</id>
                     <prerequisites></prerequisites>
                     <text>Give me some more time.</text>
+                    <pointer>b6</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b6</id>
+                    <prerequisites></prerequisites>
+                    <text>Hurry it up.</text>
                     <pointer>end</pointer>
                     <actions></actions>
                 </dialogue>
