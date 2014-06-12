@@ -38,6 +38,7 @@ public class Battle extends BasicGameState {
     Music battleMusic;
     private Display display;
     Container content;
+    Container content2;
     Button btn = new Button("No where");
     Button btn2 = new Button("No what");
     Container secondGroup;
@@ -76,6 +77,14 @@ public class Battle extends BasicGameState {
         content.setBackground(color); //sets the background color
         content.setZIndex(0);
 
+//        content2 = new Container();
+//        content2.setSize(140, 600); //sets panel size
+//        content2.setLocation(660, 0); //sets panel loc relative to parent (display)
+//        content2.setOpaque(true); //ensures that the background is drawn
+//        //Color color = new Color(160, 160, 232);
+//        content2.setBackground(color);
+//        display.add(content2);
+        
         Container base = new Container();
         base.setSize(85, 130);
         base.setLocation(5, 465);
