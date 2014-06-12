@@ -66,8 +66,7 @@ public class Battle extends BasicGameState {
         //TODO: build world map that has tile data for each sectional map, then parse world map to get map data.
         currentMap = startMap;
 
-        display = new Display(gc);
-
+        //display = new Display(gc);
         display = new Display(gc);
         content = new Container();
         content.setSize(800, 140); //sets panel size
@@ -123,7 +122,7 @@ public class Battle extends BasicGameState {
         secondGroup.setLayout(layout);
         secondGroup.setZIndex(1);
         display.add(secondGroup);
-        display.reinit();
+        //display.reinit();
         //display.ensureZOrder();
         //display.add(content);
 
@@ -141,7 +140,6 @@ public class Battle extends BasicGameState {
                         public void actionPerformed(ActionEvent e) {
                             renderThirdSet(s);
                         }
-
                     });
 
                     tempButton.setBorderRendered(false);
@@ -151,6 +149,7 @@ public class Battle extends BasicGameState {
                     tempButton.setWidth(85);
                     secondGroup.add(tempButton);
                 }
+                display.add(secondGroup);
                 break;
             }
             case "Magical": {
@@ -175,14 +174,30 @@ public class Battle extends BasicGameState {
                     tempButton.setWidth(85);
                     secondGroup.add(tempButton);
                 }
+                display.add(secondGroup);
+                break;
             }
-            break;
+            case "Flee": {
+                secondGroup.removeAll();
+                display.add(secondGroup);
+                break;
+            }
+            case "Inventory": {
+                secondGroup.removeAll();
+                display.add(secondGroup);
+                break;
+            }
+            case "Attack": {
+                secondGroup.removeAll();
+                display.add(secondGroup);
+                break;
+            }
         }
 
     }
 
     private void renderThirdSet(String s) {
-       //this will be our actual list of skills
+        //this will be our actual list of skills
     }
 
     @Override
