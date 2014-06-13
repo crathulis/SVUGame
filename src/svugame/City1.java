@@ -23,9 +23,7 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  * @author craig.reese
  */
-
 //test1
-
 //kevin test 1
 public class City1 extends BasicGameState {
 
@@ -33,10 +31,10 @@ public class City1 extends BasicGameState {
     private TiledMap currentMap;
     private Animation sprite, up, down, left, right;
     private boolean[][] blocked;
-     private float playerx = 64f, playery = 64f;
-      private static final int SIZE = 16;//size of our tiles
-      private float screenx, screeny;
-      Camera camera;
+    private float playerx = 64f, playery = 64f;
+    private static final int SIZE = 32;//size of our tiles
+    private float screenx, screeny;
+    Camera camera;
 
     @Override
     public int getID() {
@@ -45,7 +43,7 @@ public class City1 extends BasicGameState {
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        TiledMap startMap = new TiledMap("data/bigmap.tmx");
+        TiledMap startMap = new TiledMap("data/SmallTown.tmx");
         currentMap = startMap;
 
         Image[] movementUp = {new Image("data/charUp.png"), new Image("data/charWalkUp.png")};
@@ -61,18 +59,17 @@ public class City1 extends BasicGameState {
 
         //initial way our character is facing at start of game
         sprite = down;
-        
+
         screenx = 50;
         screeny = 80;
-        
-        camera = new Camera(gc,startMap);
-        
-        
- buildBlockArray();
+
+        camera = new Camera(gc, startMap);
+
+        buildBlockArray();
     }
-    
+
     private void buildBlockArray() {
-        
+
         blocked = new boolean[currentMap.getWidth()][currentMap.getHeight()];
         for (int xAxis = 0; xAxis < currentMap.getWidth(); xAxis++) {
             for (int yAxis = 0; yAxis < currentMap.getHeight(); yAxis++) {
@@ -91,11 +88,11 @@ public class City1 extends BasicGameState {
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
        // currentMap.render(0, 0,(int)screenx,(int)screeny,10,10);
-        
+
         camera.drawMap();
         camera.translateGraphics();
-       sprite.draw( playerx,  playery);
-       
+        sprite.draw(playerx, playery);
+
     }
 
     @Override
@@ -107,7 +104,7 @@ public class City1 extends BasicGameState {
         if (input.isKeyDown(Input.KEY_UP)) {
             sprite = up;
 
-            if (!isBlocked((playerx), (float) (playery - i * speed),sbg)) {
+            if (!isBlocked((playerx), (float) (playery - i * speed), sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -117,7 +114,7 @@ public class City1 extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             sprite = down;
 
-            if (!isBlocked((playerx), (float) (playery + i * speed),sbg)) {
+            if (!isBlocked((playerx), (float) (playery + i * speed), sbg)) {
                 collision = false;
             }
             if (collision == false) {
@@ -127,13 +124,13 @@ public class City1 extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_LEFT)) {
             sprite = left;
 
-            if (!isBlocked((float) (playerx - i * speed), playery,sbg)) {
+            if (!isBlocked((float) (playerx - i * speed), playery, sbg)) {
                 collision = false;
             }
 
             if (playerx + 7 < 0) {
                 //we've reached the right edge of the screen
-               // transition("left");
+                // transition("left");
             }
 
             if (collision == false) {
@@ -144,9 +141,9 @@ public class City1 extends BasicGameState {
             sprite = right;
             if (playerx + 9 > currentMap.getWidth() * SIZE) {
                 //we've reached the right edge of the screen
-               // transition("right");
+                // transition("right");
             }
-            if (!isBlocked((float) (playerx + i * speed), playery,sbg)) {
+            if (!isBlocked((float) (playerx + i * speed), playery, sbg)) {
                 collision = false;
             }
             //check to see if we're at the edge of the map
@@ -159,10 +156,10 @@ public class City1 extends BasicGameState {
                 playerx += i * speed;
             }
         }
-        camera.centerOn(playerx,playery);
+        camera.centerOn(playerx, playery);
         if (gc.getInput().isKeyPressed(Input.KEY_0)) {
             //moves to overworld. However in the overworld you cannot move or you re-enter the city
-            sbg.enterState(1, new FadeOutTransition(Color.black,1000), new FadeInTransition(Color.black,1000));
+            sbg.enterState(1, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         }
         if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
             gc.exit();
@@ -176,6 +173,8 @@ public class City1 extends BasicGameState {
             //Start screen
             sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         }
+        System.out.println(playerx + ", " + playery);
+
     }
 
     private boolean isBlocked(float x, float y, StateBasedGame sbg) throws SlickException {
@@ -183,7 +182,7 @@ public class City1 extends BasicGameState {
         int yBlock = (int) (y + 9) / SIZE;
         //we need to see if something that is blocked can cause a transition
         //so lets see if the tile we are standing on has a transitiondoor value
-        int tileID = currentMap.getTileId((int) playerx / 16, (int) playery / 16, 0);
+        int tileID = currentMap.getTileId((int) playerx / 32, (int) playery / 32, 0);
         String value = currentMap.getTileProperty(tileID, "transitiondoor", "false");
         if (!value.equals("false")) {
             //changing this to enter a new state

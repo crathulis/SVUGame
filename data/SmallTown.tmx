@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Tileset" tilewidth="32" tileheight="32">
+  <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+ </tileset>
+ <tileset firstgid="3073" name="castle" tilewidth="32" tileheight="32">
+  <image source="Castle_2.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="3329" name="Town" tilewidth="32" tileheight="32">
+  <image source="town_0.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RwQ3AIAzFUCQYC8ZjMDZjhBa1gBX58M5fTkZOaWzWDmycYAeLHSx2sNjBYgeLHSx2sNjBYgeLHSx2sNixthHBX/eol//xRS/P7LBjR0cN0hHlH3bw2MFiB4sdLHaw2MFiB4sdLHa8NwEAq9qkECcAAA==
+  </data>
+ </layer>
+ <layer name="Buildings" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2XOUoEQRSG2y2zHfUAKkzuuOSuuevErox4Ab2B3kCPoDfQyOUCLoGR4G46jlvq8hVWYyl0CyLMe/g++KluqoP/oyiaF0WGoymOonbSHFe7ye9xDm3eo0Oxi3PoJAXS5V00kjgUAheN9NG7P8iAUo8Reo8GGVPqMUXv6SAzSj2MD3Y4v12yR/YVn+UB3Q/JETlW7HFG93NyQS4Vezju6F8h98o9Xun/ptzBMP6KGu5CLakTfCfcPJL7YQ5pYa+V5AV7hDNVGt3sFUmvYI9wpkpjkL0hMizYI5lHsuaQcX8ek/6bG9ZbYU7JPJI1h8yyN0fm/TdPrM/CPAyjWtRzF3pIg/A7UaLfgsL/xxV9roNOSzwvZ3SciD8jiQf6PAadVnheTel44vsv+vVUmEvIGt3WBfdLo9z49X0Dh02FHi/fPLZw2FboYRiGYRiGYRiG8d94B1Ll4m4QJwAA
+  </data>
+ </layer>
+ <layer name="Window" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3YwQnAIAwFUKFnN3IgZ+kIndajWmh7ESTlPfjkmn8LSQng25l3b7DG9YMeNc8zqnL0RDb2eAoAwE73u8SNAgCx+T0AAADAuwawG3JtECcAAA==
+  </data>
+ </layer>
+</map>
