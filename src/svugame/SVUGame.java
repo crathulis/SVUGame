@@ -45,9 +45,9 @@ public class SVUGame extends StateBasedGame {
 
     public SVUGame(String title) {
         super(title);
-        addState(new Overworld());
-        addState(new Battle());
         
+        addState(new Battle());
+        addState(new Overworld());
         
         addState(new StartState());
         addState(new PauseState());

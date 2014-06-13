@@ -42,6 +42,7 @@ public class Battle extends BasicGameState {
     Button btn = new Button("No where");
     Button btn2 = new Button("No what");
     Container secondGroup = new Container();
+    Container thirdGroup = new Container();
 
     @Override
     public int getID() {
@@ -122,7 +123,7 @@ public class Battle extends BasicGameState {
             i++;
         }
         
-        secondGroup.setSize(85, 130);
+        secondGroup.setSize(165, 130);
         secondGroup.setLocation(100, 465);
         secondGroup.setOpaque(true);
         secondGroup.setBackground(Color.black);
@@ -130,7 +131,17 @@ public class Battle extends BasicGameState {
         secondGroup.setLayout(layout2);
         secondGroup.setZIndex(1);
         display.add(secondGroup);
-
+        
+        /*
+        thirdGroup.setSize(85, 130);
+        thirdGroup.setLocation(195, 465);
+        thirdGroup.setOpaque(true);
+        thirdGroup.setBackground(Color.black);
+        RowLayout layout3 = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
+        thirdGroup.setLayout(layout3);
+        thirdGroup.setZIndex(1);
+        display.add(thirdGroup);
+        */
         display.add(content);
     }
 
@@ -150,6 +161,77 @@ public class Battle extends BasicGameState {
         //display.ensureZOrder();
         //display.add(content);
                 */
+        switch (choice) {
+            case "Physical": {
+                String[] row1 = new String[]{"One-Handed", "Two-Handed", "Close Quarters", "Projectile Weapons"};
+
+                for (final String s : row1) {
+
+                    Button tempButton = new Button(s);
+
+                    tempButton.setSize(10, secondGroup.getHeight() / 5);
+
+                    tempButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            renderThirdSet(s);
+                        }
+                    });
+
+                    tempButton.setBorderRendered(false);
+                    tempButton.setOpaque(true);
+                    tempButton.setBackground(Color.cyan);  //TODO: FIX ME
+                    tempButton.pack();
+                    tempButton.setWidth(secondGroup.getWidth());
+                    secondGroup.add(tempButton);
+                }
+                display.add(secondGroup);
+                break;
+            }
+            case "Magical": {
+                String[] row1 = new String[]{"Single-Target", "Multi-Target", "Buff / Debuff"};
+
+                for (final String s : row1) {
+
+                    Button tempButton = new Button(s);
+
+                    tempButton.setSize(10, secondGroup.getHeight() / 5);
+
+                    tempButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            renderThirdSet(s);
+                        }
+                    });
+
+                    tempButton.setBorderRendered(false);
+                    tempButton.setOpaque(true);
+                    tempButton.setBackground(Color.cyan);  //TODO: FIX ME
+                    tempButton.pack();
+                    tempButton.setWidth(secondGroup.getWidth());
+                    secondGroup.add(tempButton);
+                }
+                display.add(secondGroup);
+                break;
+            }
+            case "Flee": {
+                secondGroup.removeAll();
+                display.add(secondGroup);
+                break;
+            }
+            case "Inventory": {
+                secondGroup.removeAll();
+                display.add(secondGroup);
+                break;
+            }
+            case "Attack": {
+                secondGroup.removeAll();
+                display.add(secondGroup);
+                break;
+            }
+        }
+
+    }
+
+    private void renderThirdSet(String choice) {
         switch (choice) {
             case "Physical": {
                 String[] row1 = new String[]{"Musical", "Weapon", "Buffs"};
@@ -187,7 +269,7 @@ public class Battle extends BasicGameState {
 
                     tempButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                            renderSecondSet(s);
+                            renderThirdSet(s);
                         }
                     });
 
@@ -201,27 +283,8 @@ public class Battle extends BasicGameState {
                 display.add(secondGroup);
                 break;
             }
-            case "Flee": {
-                secondGroup.removeAll();
-                display.add(secondGroup);
-                break;
-            }
-            case "Inventory": {
-                secondGroup.removeAll();
-                display.add(secondGroup);
-                break;
-            }
-            case "Attack": {
-                secondGroup.removeAll();
-                display.add(secondGroup);
-                break;
-            }
+           
         }
-
-    }
-
-    private void renderThirdSet(String s) {
-        //this will be our actual list of skills
     }
 
     @Override
