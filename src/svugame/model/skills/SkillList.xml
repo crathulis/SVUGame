@@ -129,7 +129,7 @@ and open the template in the editor.
         </Skill>
         
         <Skill>
-            <name>Haste</name>
+            <name>Sprint</name>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
             <level>0</level>
@@ -226,176 +226,168 @@ and open the template in the editor.
         
         <Skill>
             <name>Bravery</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Fear</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>6</attrib1>
+            <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Stone Missile</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Rock Slide</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Fire Bolt</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>6</attrib1>
+            <attrib2>1</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Fireball</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>6</attrib1>
+            <attrib2>1</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Ice Sphere</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Water Cannon</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Lightning</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>8</attrib1>
+            <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Chain Lightning</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>8</attrib1>
+            <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Earthquake</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Tornado</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>6</attrib1>
+            <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Tsunami</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
-            <level>0</level>
-            <description></description>
-        </Skill>
-        
-        <Skill>
-            <name>Shield</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>8</attrib1>
+            <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Shell</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>8</attrib1>
+            <attrib2>2</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Blind</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Heal</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>6</attrib1>
+            <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Mind Trick</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>7</attrib1>
+            <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Invisibility</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>6</attrib1>
+            <attrib2>2</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Teleport</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>8</attrib1>
+            <attrib2>2</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Unlock</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>8</attrib1>
+            <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
         
         <Skill>
             <name>Disable Trap</name>
-            <attrib1></attrib1>
-            <attrib2></attrib2>
+            <attrib1>6</attrib1>
+            <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
         </Skill>
