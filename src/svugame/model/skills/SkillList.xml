@@ -9,19 +9,21 @@ and open the template in the editor.
 <root>
     <SkillList>
         <Skill>
-            <name>Instrument</name>
+            <name>Play Instrument</name>
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
-            <name>Singing</name>
+            <name>Sing Anthem</name>
             <attrib1>2</attrib1>
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -30,6 +32,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>oneHanded</parent>
         </Skill>
         
         <Skill>
@@ -38,6 +41,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>oneHanded</parent>
         </Skill>
         
         <Skill>
@@ -46,6 +50,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>oneHanded</parent>
         </Skill>
         
         <Skill>
@@ -54,6 +59,7 @@ and open the template in the editor.
             <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
+            <parent>twoHanded</parent>
         </Skill>
         
         <Skill>
@@ -62,6 +68,7 @@ and open the template in the editor.
             <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
+            <parent>twoHanded</parent>
         </Skill>
         
         <Skill>
@@ -70,6 +77,7 @@ and open the template in the editor.
             <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
+            <parent>twoHanded</parent>
         </Skill>
         
         <Skill>
@@ -78,6 +86,7 @@ and open the template in the editor.
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent>closeQuarters</parent>
         </Skill>
         
         <Skill>
@@ -86,6 +95,7 @@ and open the template in the editor.
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent>closeQuarters</parent>
         </Skill>
         
         <Skill>
@@ -94,6 +104,7 @@ and open the template in the editor.
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent>closeQuarters</parent>
         </Skill>
         
         <Skill>
@@ -102,6 +113,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>projectileWeapon</parent>
         </Skill>
         
         <Skill>
@@ -110,6 +122,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>projectileWeapon</parent>
         </Skill>
         
         <Skill>
@@ -118,6 +131,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>projectileWeapon</parent>
         </Skill>
         
         <Skill>
@@ -126,6 +140,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -134,6 +149,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -142,6 +158,7 @@ and open the template in the editor.
             <attrib2>6</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -150,6 +167,7 @@ and open the template in the editor.
             <attrib2>7</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -158,6 +176,7 @@ and open the template in the editor.
             <attrib2>6</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -166,6 +185,7 @@ and open the template in the editor.
             <attrib2>6</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -174,6 +194,7 @@ and open the template in the editor.
             <attrib2>8</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -182,14 +203,16 @@ and open the template in the editor.
             <attrib2>7</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
-            <name>Stealth</name>
+            <name>Sneak</name>
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
             <level>0</level>
             <description></description>
+            <parent>physicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -198,6 +221,7 @@ and open the template in the editor.
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -206,6 +230,7 @@ and open the template in the editor.
             <attrib2>6</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -214,6 +239,7 @@ and open the template in the editor.
             <attrib2>8</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -222,6 +248,7 @@ and open the template in the editor.
             <attrib2>6</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -230,6 +257,7 @@ and open the template in the editor.
             <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
+            <parent>magicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -238,6 +266,7 @@ and open the template in the editor.
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent>magicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -246,6 +275,7 @@ and open the template in the editor.
             <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
+            <parent>singleTarget</parent>
         </Skill>
         
         <Skill>
@@ -254,6 +284,7 @@ and open the template in the editor.
             <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
+            <parent>multiTarget</parent>
         </Skill>
         
         <Skill>
@@ -262,6 +293,7 @@ and open the template in the editor.
             <attrib2>1</attrib2>
             <level>0</level>
             <description></description>
+            <parent>singleTarget</parent>
         </Skill>
         
         <Skill>
@@ -270,6 +302,7 @@ and open the template in the editor.
             <attrib2>1</attrib2>
             <level>0</level>
             <description></description>
+            <parent>multiTarget</parent>
         </Skill>
         
         <Skill>
@@ -278,6 +311,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>singleTarget</parent>
         </Skill>
         
         <Skill>
@@ -286,6 +320,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>multiTarget</parent>
         </Skill>
         
         <Skill>
@@ -294,6 +329,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>singleTarget</parent>
         </Skill>
         
         <Skill>
@@ -302,6 +338,7 @@ and open the template in the editor.
             <attrib2>4</attrib2>
             <level>0</level>
             <description></description>
+            <parent>multiTarget</parent>
         </Skill>
         
         <Skill>
@@ -310,6 +347,7 @@ and open the template in the editor.
             <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
+            <parent>multiTarget</parent>
         </Skill>
         
         <Skill>
@@ -318,6 +356,7 @@ and open the template in the editor.
             <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
+            <parent>multiTarget</parent>
         </Skill>
         
         <Skill>
@@ -326,6 +365,7 @@ and open the template in the editor.
             <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
+            <parent>multiTarget</parent>
         </Skill>
         
         <Skill>
@@ -334,6 +374,7 @@ and open the template in the editor.
             <attrib2>2</attrib2>
             <level>0</level>
             <description></description>
+            <parent>magicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -342,6 +383,7 @@ and open the template in the editor.
             <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
+            <parent>magicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -350,6 +392,7 @@ and open the template in the editor.
             <attrib2>0</attrib2>
             <level>0</level>
             <description></description>
+            <parent>magicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -358,6 +401,7 @@ and open the template in the editor.
             <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -366,6 +410,16 @@ and open the template in the editor.
             <attrib2>2</attrib2>
             <level>0</level>
             <description></description>
+            <parent>magicalBuff</parent>
+        </Skill>
+        
+        <Skill>
+            <name>Haste</name>
+            <attrib1>7</attrib1>
+            <attrib2>1</attrib2>
+            <level>0</level>
+            <description></description>
+            <parent>magicalBuff</parent>
         </Skill>
         
         <Skill>
@@ -374,6 +428,7 @@ and open the template in the editor.
             <attrib2>2</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -382,6 +437,7 @@ and open the template in the editor.
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
         
         <Skill>
@@ -390,6 +446,7 @@ and open the template in the editor.
             <attrib2>3</attrib2>
             <level>0</level>
             <description></description>
+            <parent></parent>
         </Skill>
     </SkillList>
 </root>
