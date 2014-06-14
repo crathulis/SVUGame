@@ -1,13 +1,14 @@
 package svugame.model.entity;
 
 import java.util.ArrayList;
+import svugame.model.Thing;
 
 /**
  * A party is a group of entities that travel and fight together.
  *
  * @author alan.whitehurst
  */
-public class Party {
+public class Party extends Thing {
 
     private ArrayList<Entity> members;
 
