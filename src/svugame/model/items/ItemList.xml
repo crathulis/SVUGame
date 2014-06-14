@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<root>
+    <itemlist>
+        <item>
+            <name>dagger</name>
+            <description>
+                The dagger is a knife consisting of a short blade with
+                a sharply tapered point, a central spine or fuller, and two 
+                cutting edges sharpened the full length of the blade.
+            </description>
+            <itemtype>0</itemtype>
+            <itemslot>1</itemslot>
+            <value>2</value>
+            <weight>1</weight>
+            <damage>1d4</damage>
+        </item>
+        <item>
+            <name>shortsword</name>
+            <description>
+                The shortsword is a two-edged blade made for cutting with a 
+                tapered point for stabbing during thrusting. A solid grip is
+                equipped with a knobbed hilt with ridges for the fingers.
+            </description>
+            <itemtype>0</itemtype>
+            <itemslot>1</itemslot>
+            <value>6</value>
+            <weight>3</weight>
+            <damage>1d6</damage>
+        </item>
+        <item>
+            <name>longsword</name>
+            <description> 
+                The longsword consists of a long two-edged blade measuring
+                around 40 inches with a long,polished handle. The longsword 
+                is very popular due to its and versatile cutting and thrusting
+                abilities.
+            </description>
+            <itemtype>0</itemtype>
+            <itemslot>1</itemslot>
+            <value>10</value>
+            <weight>4</weight>
+            <damage>1d8</damage>
+        </item>
+        <item>
+            <name>claymore</name>
+            <decription>
+                "The claymore is a two-handed sword measuring 60-70 inches 
+                overall, with an expanded cruciform hilt and a quillon block. 
+            </decription>
+            <itemtype>0</itemtype>
+            <itemslot>3</itemslot>
+            <value>18</value>
+            <weight>8</weight>
+            <damage>1d10</damage>
+        </item>
+        <item>
+            <name>shortbow</name>
+            <description>
+                The shortbow is a flexible shaft of wood (or horn or bone) about
+                3 to 4 feet long with the ends connected by
+                strong cord or a gut string that is a little shorter than the
+                shaft, causing the wood to bend and keep the string under tension.
+            </description>
+            <itemtype>0</itemtype>
+            <itemslot>3</itemslot>
+            <value>25</value>
+            <weight>2</weight>
+            <damage>1d6</damage>
+        </item>
+        <item>
+            <name>longbow</name>
+            <description>
+                The longbow is a flexible shaft of wood (or horn or bone) about
+                4 to 6 feet long with the ends connected by strong cord or a
+                gut string that is a little shorter than the shaft, causing the
+                wood to bend and keep the string under tension. 
+            </description>
+            <itemtype>0</itemtype>
+            <itemslot>3</itemslot>
+            <value>60</value>
+            <weight>3</weight>
+            <damage>1d8</damage>
+    </itemlist>
+</root>
