@@ -25,7 +25,7 @@ public interface ItemConstants {
     
     public static final int NUM_SLOTS = 10;
     
-    public static final int ITEM_TYPE_WEAPON = 0;
+    
     public static final int ITEM_TYPE_HELM = 1;
     public static final int ITEM_TYPE_RING = 2;
     public static final int ITEM_TYPE_NECKLASS = 3;
@@ -34,6 +34,11 @@ public interface ItemConstants {
     public static final int ITEM_TYPE_PANTS = 6;
     public static final int ITEM_TYPE_SHOES = 7;
     public static final int ITEM_TYPE_INSTRUMENT = 8;
+    public static final int ITEM_TYPE_CQ_WEAPON = 9;
+    public static final int ITEM_TYPE_OH_WEAPON = 10;
+    public static final int ITEM_TYPE_TH_WEAPON = 11;
+    public static final int ITEM_TYPE_PR_WEAPON = 12;
+    
     
     
 }
