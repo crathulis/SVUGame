@@ -23,7 +23,7 @@ public interface ItemConstants {
     public static final int ITEM_SLOT_LEGS = 0x100;
     public static final int ITEM_SLOT_FEET = 0x200;
     
-    public static final int NUM_EQUIP = 10;
+    public static final int NUM_SLOTS = 10;
     
     public static final int ITEM_TYPE_WEAPON = 0;
     public static final int ITEM_TYPE_HELM = 1;
@@ -33,6 +33,7 @@ public interface ItemConstants {
     public static final int ITEM_TYPE_BRACER = 5;
     public static final int ITEM_TYPE_PANTS = 6;
     public static final int ITEM_TYPE_SHOES = 7;
+    public static final int ITEM_TYPE_INSTRUMENT = 8;
     
     
 }
