@@ -13,11 +13,11 @@ and open the template in the editor.
                 a sharply tapered point, a central spine or fuller, and two 
                 cutting edges sharpened the full length of the blade.
             </description>
-            <itemtype>0</itemtype>
-            <itemslot>1</itemslot>
+            <type>0</type>
+            <slot>1</slot>
             <value>2</value>
             <weight>1</weight>
-            <damage>1d4</damage>
+            <damage>4</damage>
         </item>
         <item>
             <name>shortsword</name>
@@ -26,11 +26,11 @@ and open the template in the editor.
                 tapered point for stabbing during thrusting. A solid grip is
                 equipped with a knobbed hilt with ridges for the fingers.
             </description>
-            <itemtype>0</itemtype>
-            <itemslot>1</itemslot>
+            <type>0</type>
+            <slot>1</slot>
             <value>6</value>
             <weight>3</weight>
-            <damage>1d6</damage>
+            <damage>6</damage>
         </item>
         <item>
             <name>longsword</name>
@@ -40,11 +40,11 @@ and open the template in the editor.
                 is very popular due to its and versatile cutting and thrusting
                 abilities.
             </description>
-            <itemtype>0</itemtype>
-            <itemslot>1</itemslot>
+            <type>0</type>
+            <slot>1</slot>
             <value>10</value>
             <weight>4</weight>
-            <damage>1d8</damage>
+            <damage>8</damage>
         </item>
         <item>
             <name>claymore</name>
@@ -52,11 +52,11 @@ and open the template in the editor.
                 "The claymore is a two-handed sword measuring 60-70 inches 
                 overall, with an expanded cruciform hilt and a quillon block. 
             </decription>
-            <itemtype>0</itemtype>
-            <itemslot>3</itemslot>
+            <type>0</type>
+            <slot>3</slot>
             <value>18</value>
             <weight>8</weight>
-            <damage>1d10</damage>
+            <damage>10</damage>
         </item>
         <item>
             <name>shortbow</name>
@@ -66,11 +66,11 @@ and open the template in the editor.
                 strong cord or a gut string that is a little shorter than the
                 shaft, causing the wood to bend and keep the string under tension.
             </description>
-            <itemtype>0</itemtype>
-            <itemslot>3</itemslot>
+            <type>0</type>
+            <slot>3</slot>
             <value>25</value>
             <weight>2</weight>
-            <damage>1d6</damage>
+            <damage>6</damage>
         </item>
         <item>
             <name>longbow</name>
@@ -80,10 +80,10 @@ and open the template in the editor.
                 gut string that is a little shorter than the shaft, causing the
                 wood to bend and keep the string under tension. 
             </description>
-            <itemtype>0</itemtype>
-            <itemslot>3</itemslot>
+            <type>0</type>
+            <slot>3</slot>
             <value>60</value>
             <weight>3</weight>
-            <damage>1d8</damage>
+            <damage>8</damage>
     </itemlist>
 </root>
