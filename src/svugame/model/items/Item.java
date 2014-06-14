@@ -14,8 +14,8 @@ public class Item {
     
     private String name;
     private String description;
-    private int itemType;
-    private int itemSlot;
+    private int type;
+    private int slot;
     private int value;
     private int weight;
     private int damage;
