@@ -13,8 +13,11 @@ package svugame.model.items;
 public class Item {
     
     private String name;
-    private int weight;
+    private String description;
+    private int itemType;
+    private int itemSlot;
     private int value;
-    private int equipSlot;
+    private int weight;
+    private int damage;
     
 }
