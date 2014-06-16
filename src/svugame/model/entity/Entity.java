@@ -5,18 +5,19 @@
  */
 package svugame.model.entity;
 
+import svugame.model.Thing;
 import svugame.model.skills.Skill;
 import svugame.model.items.Inventory;
-import java.util.ArrayList;
 import svugame.model.items.Item;
 import svugame.model.items.ItemConstants;
+import svugame.model.skills.SkillConstants;
 
 /**
  * The character is the super class of all living entities in the game.
  * 
  * @author Alan Whitehurst
  */
-public class Entity implements AttributeConstants, ItemConstants {
+public class Entity extends Thing implements AttributeConstants, SkillConstants, ItemConstants {
 
     private String name;
     private boolean male;
@@ -25,7 +26,7 @@ public class Entity implements AttributeConstants, ItemConstants {
     private int spirit;
     private Attribute[] attributes;
     private Inventory inventory;
-    private ArrayList<Skill> skills;
+    private Skill[] skills;
     private Item[] equipment;
 
     // TODO: location
@@ -44,8 +45,8 @@ public class Entity implements AttributeConstants, ItemConstants {
             attributes[i] = new Attribute(i, 0, 0);
         }
         this.inventory = new Inventory();
-        this.equipment = new Item[NUM_EQUIP];
-        this.skills = new ArrayList();
+        this.equipment = new Item[NUM_SLOTS];
+        this.skills = new Skill[NUM_SKILLS];
     }
 
     /**
@@ -341,5 +342,27 @@ public class Entity implements AttributeConstants, ItemConstants {
     public int getInitiative() {
         return getAgility() + getIntelligence();
     }
-
+    
+    /**
+     * Get the item the entity has currently equipped in the requested slot.
+     * 
+     * @param slot a slot value (defined in ItemConstants)
+     * @return the item in the given slot, or null
+     */
+    public Item getItemInSlot(int slot){
+        return equipment[slot];
+    }
+    
+    /**
+     * Get the skill value for a particular skill for this entity
+     * 
+     */
+    public int getSkillValue(int skillID){
+        int base = Math.round(getAttribute(skills[skillID].getAttrib1()) + getAttribute(skills[skillID].getAttrib2()) / 2);
+        if(skills[skillID].getLevel()==0){
+            return base - 25;
+        } else {
+            return base + skills[skillID].getLevel();
+        }
+    }
 }
