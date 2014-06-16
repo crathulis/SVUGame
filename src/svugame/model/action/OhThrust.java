@@ -62,7 +62,8 @@ public class OhThrust extends Action implements ItemConstants {
     public int resultAmount() {
         double strengthFactor = actor.getStrength() / 25.0;
         double skillFactor = actor.getSkillValue(OH_THRUST);
-        double weaponDamage = actor.getItemInSlot(ITEM_SLOT_RHAND).getDamage() * actor.getLevel();
+        double weaponDamage = actor.getItemInSlot(ITEM_SLOT_RHAND).getDamage() 
+                * actor.getLevel();
         return (int)Math.round((strengthFactor + skillFactor) * weaponDamage);
         
     }
