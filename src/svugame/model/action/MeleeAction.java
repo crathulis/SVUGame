@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package svugame.model.action;
 
 import svugame.model.Dice;
@@ -56,7 +51,7 @@ public abstract class MeleeAction extends Action {
 
     @Override
     public int resultType() {
-        return ActionConstants.RESULTS_DAMAGE;
+        return ActionConstants.RESULTS_DAMAGE_HP;
     }
 
     @Override
