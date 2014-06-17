@@ -41,6 +41,10 @@ public class Monster extends Entity{
         super.setAttribute(INT, hit);
         super.setAttribute(WIS, damage);
         super.setAttribute(FOC, foc);
+        
+        attacks.add(new Skill(skill1,att1,att2,lv1, ""));
+        attacks.add(new Skill(skill2,att3,att4,lv2, ""));
+        attacks.add(new Skill(skill3,att5,att6,lv3, ""));    
     }
     
 }
