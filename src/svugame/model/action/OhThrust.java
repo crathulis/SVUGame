@@ -25,7 +25,7 @@ public class OhThrust extends MeleeAction implements ItemConstants {
     }
 
     @Override
-    public boolean actorCan() {
+    public boolean isPossible() {
         // melee actions require a target (dobj)
         if (dobj == null) {
             return false;
