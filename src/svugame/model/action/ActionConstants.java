@@ -8,24 +8,25 @@ public interface ActionConstants {
     
     // direct effects
     public static final int RESULTS_NONE = 0;
-    public static final int RESULTS_DAMAGE_HP = 1;
-    public static final int RESULTS_DAMAGE_SP = 2;
-    public static final int RESULTS_DOT_HP = 3;
-    public static final int RESULTS_DOT_SP = 4;
-    public static final int RESULTS_BLOCK = 5;
-    public static final int RESULTS_SPRINT = 6;
-    public static final int RESULTS_DODGE = 7;
-    public static final int RESULTS_RESIST = 8;
-    public static final int RESULTS_HEAL = 9;
-    public static final int RESULTS_PERSUADE = 10;
-    public static final int RESULTS_INTIMIDATE = 11;
-    public static final int RESULTS_INSPIRE = 12;
-    public static final int RESUTLS_HAGGLE = 13;
-    public static final int RESULTS_SNEAK = 14;
-    public static final int RESULTS_ESCAPE = 15;
-    public static final int RESULTS_UNLOCK = 16;
-    public static final int RESULTS_PICKPOCKET = 17;
-    public static final int RESULTS_UNTRAP = 18;
+    public static final int RESULTS_MISS = 1;
+    public static final int RESULTS_DAMAGE_HP = 2;
+    public static final int RESULTS_DAMAGE_SP = 3;
+    public static final int RESULTS_DOT_HP = 4;
+    public static final int RESULTS_DOT_SP = 5;
+    public static final int RESULTS_BLOCK = 6;
+    public static final int RESULTS_SPRINT = 7;
+    public static final int RESULTS_DODGE = 8;
+    public static final int RESULTS_RESIST = 9;
+    public static final int RESULTS_HEAL = 10;
+    public static final int RESULTS_PERSUADE = 11;
+    public static final int RESULTS_INTIMIDATE = 12;
+    public static final int RESULTS_INSPIRE = 13;
+    public static final int RESUTLS_HAGGLE = 14;
+    public static final int RESULTS_SNEAK = 15;
+    public static final int RESULTS_ESCAPE = 16;
+    public static final int RESULTS_UNLOCK = 17;
+    public static final int RESULTS_PICKPOCKET = 18;
+    public static final int RESULTS_UNTRAP = 19;
     
     //spell results (Negative)
     public static final int RESULTS_BURN = 50;
@@ -38,6 +39,7 @@ public interface ActionConstants {
     public static final int RESULTS_SIPHON = 57;
     public static final int RESULTS_BLIND = 58;
     public static final int RESULTS_ROOT = 59;
+    public static final int RESULTS_PANIC = 60;
     
     // spell results (Positive)
     public static final int RESULTS_HASTE = 70;
@@ -81,20 +83,20 @@ public interface ActionConstants {
     public static final int RESULTS_BUFF_CQST = 209; // (AGI & PER) Stab*
     public static final int RESULTS_BUFF_CQCU = 210; // (AGI & PER) Slash (dot)*
     public static final int RESULTS_BUFF_CQSL = 211; // Close Quarters (AGI & PER) Disarm (loss of weapon)*
-    public static final int RESULTS_BUFF_PRPI = 212; //Projectile weapons (END & DEX) Pierce*
-    public static final int RESULTS_BUFF_PRPU = 213; //Projectile weapons (END & DEX) Puncture (dot)*
-    public static final int RESULTS_BUFF_PRSK = 214; //Projectile weapons (END & DEX) Precision (stun)*
+    public static final int RESULTS_BUFF_PRPI = 212; // Projectile weapons (END & DEX) Pierce*
+    public static final int RESULTS_BUFF_PRPU = 213; // Projectile weapons (END & DEX) Puncture (dot)*
+    public static final int RESULTS_BUFF_PRSK = 214; // Projectile weapons (END & DEX) Precision (stun)*
     public static final int RESULTS_BUFF_SHIE = 215; // (AGI & DEX)
-    public static final int RESULTS_BUFF_SPRI = 216; //Sprint (END & FOC)*
+    public static final int RESULTS_BUFF_SPRI = 216; // Sprint (END & FOC)*
     public static final int RESULTS_BUFF_DODG = 217; // Dodge (AGI & INT)
-    public static final int RESULTS_BUFF_RESI = 218; //Resist Magic (END & WIS)
+    public static final int RESULTS_BUFF_RESI = 218; // Resist Magic (END & WIS)
     public static final int RESULTS_BUFF_FAID = 219; // (END & INT)*
     public static final int RESULTS_BUFF_PERS = 220; // Persuade (CHA & INT)
     public static final int RESULTS_BUFF_INTI = 221; // Intimidate (CHA & STR)
     public static final int RESULTS_BUFF_INSP = 222; // Inspire (CHA & FOC)
     public static final int RESULTS_BUFF_HAGG = 223; // Haggle (CHA & WIS)
     public static final int RESULTS_BUFF_SNEA = 224; // Sneak (PER & FOC)*
-    public static final int RESULTS_BUFF_ESCA = 225; //Escape (AGI & PER)*
+    public static final int RESULTS_BUFF_ESCA = 225; // Escape (AGI & PER)*
     public static final int RESULTS_BUFF_PLOC = 226; // Pick Lock (DEX & INT)
     public static final int RESULTS_BUFF_PPOC = 227; // Pick Pocket (CHA & FOC)
     public static final int RESULTS_BUFF_DISA = 228; // Disarm Trap (DEX & INT)
@@ -125,7 +127,7 @@ public interface ActionConstants {
     public static final int RESULTS_HARM_PLAY = 301; // (PER & FOC) Play Instrument*
     public static final int RESULTS_HARM_SING = 302; // (END & PER) Sing Anthem*
     public static final int RESULTS_HARM_OHTH = 303; // (AGI & DEX) Thrust*
-    public static final int RESULTS_HARM_OHSL = 304; //(AGI & DEX) Swing (dot)*
+    public static final int RESULTS_HARM_OHSL = 304; // (AGI & DEX) Swing (dot)*
     public static final int RESULTS_HARM_OHWH = 305; // (AGI & DEX) Whirlwind (multiple enemies)*
     public static final int RESULTS_HARM_THCH = 306; // (STR & CHA) Chop*
     public static final int RESULTS_HARM_THSU = 307; // (STR & CHA) Sunder (dot)*
@@ -133,20 +135,20 @@ public interface ActionConstants {
     public static final int RESULTS_HARM_CQST = 309; // (AGI & PER) Stab*
     public static final int RESULTS_HARM_CQCU = 310; // (AGI & PER) Slash (dot)*
     public static final int RESULTS_HARM_CQSL = 311; // Close Quarters (AGI & PER) Disarm (loss of weapon)*
-    public static final int RESULTS_HARM_PRPI = 312; //Projectile weapons (END & DEX) Pierce*
-    public static final int RESULTS_HARM_PRPU = 313; //Projectile weapons (END & DEX) Puncture (dot)*
-    public static final int RESULTS_HARM_PRSK = 314; //Projectile weapons (END & DEX) Precision (stun)*
+    public static final int RESULTS_HARM_PRPI = 312; // Projectile weapons (END & DEX) Pierce*
+    public static final int RESULTS_HARM_PRPU = 313; // Projectile weapons (END & DEX) Puncture (dot)*
+    public static final int RESULTS_HARM_PRSK = 314; // Projectile weapons (END & DEX) Precision (stun)*
     public static final int RESULTS_HARM_SHIE = 315; // (AGI & DEX)
-    public static final int RESULTS_HARM_SPRI = 316; //Sprint (END & FOC)*
+    public static final int RESULTS_HARM_SPRI = 316; // Sprint (END & FOC)*
     public static final int RESULTS_HARM_DODG = 317; // Dodge (AGI & INT)
-    public static final int RESULTS_HARM_RESI = 318; //Resist Magic (END & WIS)
+    public static final int RESULTS_HARM_RESI = 318; // Resist Magic (END & WIS)
     public static final int RESULTS_HARM_FAID = 319; // (END & INT)*
     public static final int RESULTS_HARM_PERS = 320; // Persuade (CHA & INT)
     public static final int RESULTS_HARM_INTI = 321; // Intimidate (CHA & STR)
     public static final int RESULTS_HARM_INSP = 322; // Inspire (CHA & FOC)
     public static final int RESULTS_HARM_HAGG = 323; // Haggle (CHA & WIS)
     public static final int RESULTS_HARM_SNEA = 324; // Sneak (PER & FOC)*
-    public static final int RESULTS_HARM_ESCA = 325; //Escape (AGI & PER)*
+    public static final int RESULTS_HARM_ESCA = 325; // Escape (AGI & PER)*
     public static final int RESULTS_HARM_PLOC = 326; // Pick Lock (DEX & INT)
     public static final int RESULTS_HARM_PPOC = 327; // Pick Pocket (CHA & FOC)
     public static final int RESULTS_HARM_DISA = 328; // Disarm Trap (DEX & INT)
