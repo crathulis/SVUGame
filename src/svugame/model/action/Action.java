@@ -6,6 +6,7 @@
 
 package svugame.model.action;
 
+import java.util.ArrayList;
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
 
@@ -35,9 +36,9 @@ public abstract class Action {
         this.iobj = iobj;
     }
     
-    public abstract boolean actorCan();
-    public abstract boolean success();
-    public abstract int resultType();
-    public abstract int resultAmount();
+    public abstract boolean isPossible();
+    public abstract boolean isSuccessful();
+    public abstract ArrayList<Integer> resultType();
+    public abstract ArrayList<Integer> resultAmount();
     
 }
