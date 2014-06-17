@@ -31,15 +31,13 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
 
     // TODO: location
     public Entity() {
-        this("John", true, 0, 0, 0);
+        this("John", true, 0);
     }
 
-    public Entity(String name, boolean male, int experience, int health, int spirit) {
+    public Entity(String name, boolean male, int experience) {
         this.name = name;
         this.male = male;
         this.experience = experience;
-        this.health = health;
-        this.spirit = spirit;
         this.attributes = new Attribute[NUM_ATTRIB];
         for (int i = 0; i < NUM_ATTRIB; ++i) {
             attributes[i] = new Attribute(i, 0, 0);
@@ -363,6 +361,15 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
             return base - 25;
         } else {
             return base + skills[skillID].getLevel();
+        }
+    }
+    
+    public static void main(String [] args){
+        System.out.println("Level table: ");
+        Entity bob = new Entity("Bob",true,0);
+        for(int i=0;i<100000;i=i+5){
+            bob.setExperience(i);
+            System.out.println("Entity " + bob.getName() + ": Exp=" + bob.getExperience() + ", Level=" + bob.getLevel());
         }
     }
 }

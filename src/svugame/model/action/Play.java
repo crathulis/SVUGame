@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package svugame.model.action;
 
 import svugame.model.Dice;
+import svugame.model.Thing;
 import svugame.model.entity.Entity;
 import svugame.model.entity.Party;
 import svugame.model.items.ItemConstants;
-import static svugame.model.skills.SkillConstants.PLAY_INSTRUMENT;
+import static svugame.model.skills.SkillConstants.SKILL_PLAY;
+
 
 /**
  *
@@ -18,6 +14,17 @@ import static svugame.model.skills.SkillConstants.PLAY_INSTRUMENT;
  */
 public class Play extends Action implements ItemConstants {
 
+    public Play(Entity actor, int skillId) {
+        super(actor, SKILL_PLAY);
+    }
+
+    public Play(Entity actor, int skillId, Thing dobj) {
+        super(actor, SKILL_PLAY, dobj);
+    }
+
+    public Play(Entity actor, int skillId, Thing dobj, Thing iobj) {
+        super(actor, SKILL_PLAY, dobj, iobj);
+    }
     
     @Override
     public boolean actorCan() {
@@ -35,7 +42,7 @@ public class Play extends Action implements ItemConstants {
 
     @Override
     public boolean success() {
-        int successChance = actor.getSkillValue(PLAY_INSTRUMENT);
+        int successChance = actor.getSkillValue(skillId);
         return (Dice.roll("1d100")<=successChance);
     }
 
