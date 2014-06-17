@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package svugame.model.action;
 
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
 import svugame.model.items.ItemConstants;
-import static svugame.model.skills.SkillConstants.OH_THRUST;
+import static svugame.model.skills.SkillConstants.SKILL_OHTH;
+
 
 /**
  *
@@ -17,15 +13,15 @@ import static svugame.model.skills.SkillConstants.OH_THRUST;
 public class OhThrust extends MeleeAction implements ItemConstants {
 
     public OhThrust(Entity actor) {
-        super(actor, OH_THRUST);
+        super(actor, SKILL_OHTH);
     }
 
     public OhThrust(Entity actor, Thing dobj) {
-        super(actor, OH_THRUST, dobj);
+        super(actor, SKILL_OHTH, dobj);
     }
 
     public OhThrust(Entity actor, Thing dobj, Thing iobj) {
-        super(actor, OH_THRUST, dobj, iobj);
+        super(actor, SKILL_OHTH, dobj, iobj);
     }
 
     @Override
