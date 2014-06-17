@@ -1,5 +1,6 @@
 package svugame.model.action;
 
+import java.util.ArrayList;
 import svugame.model.Dice;
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
@@ -28,7 +29,7 @@ public abstract class MeleeAction extends Action {
     }
 
     @Override
-    public boolean success() {
+    public boolean isSuccessful() {
         double agilityChance = actor.getAgility() / 25.0;
         double skillChance = actor.getSkillValue(skillId);
         int successChance = (int) Math.round(agilityChance + skillChance);
@@ -50,12 +51,15 @@ public abstract class MeleeAction extends Action {
     }
 
     @Override
-    public int resultType() {
-        return ActionConstants.RESULTS_DAMAGE_HP;
+    public ArrayList<Integer> resultType() {
+        ArrayList<Integer> result = new ArrayList();
+        result.add(ActionConstants.RESULTS_DAMAGE_HP);
+        return result;
     }
 
     @Override
-    public int resultAmount() {
+    public ArrayList<Integer> resultAmount() {
+        ArrayList<Integer> result = new ArrayList();
         double strengthFactor = actor.getStrength() / 25.0;
         double skillFactor = actor.getSkillValue(skillId);
         double weaponDamage = actor.getItemInSlot(ITEM_SLOT_RHAND).getDamage()
@@ -79,8 +83,10 @@ public abstract class MeleeAction extends Action {
             System.out.println(target.getName() + "'s armor absorbs " + armorAbsorb
                     + " points of damage.");
         }
-        System.out.println(actor.getName() + " hits for " + (damage - shieldAbsorb - armorAbsorb) + " damage.");
-        return Math.max(0,damage-shieldAbsorb-armorAbsorb);
+        System.out.println(actor.getName() + " hits for " + 
+                (damage - shieldAbsorb - armorAbsorb) + " damage.");
+        result.add(Math.max(0,damage-shieldAbsorb-armorAbsorb));
+        return result;
     }
 
 }
