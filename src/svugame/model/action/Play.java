@@ -1,5 +1,6 @@
 package svugame.model.action;
 
+import java.util.ArrayList;
 import svugame.model.Dice;
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
@@ -27,7 +28,7 @@ public class Play extends Action implements ItemConstants {
     }
     
     @Override
-    public boolean actorCan() {
+    public boolean isPossible() {
         // actor must be carrying an instrument in one of their hands
         if(actor.getItemInSlot(ITEM_SLOT_RHAND).getType()!=ITEM_TYPE_INSTRUMENT &&
                 actor.getItemInSlot(ITEM_SLOT_LHAND).getType()!=ITEM_TYPE_INSTRUMENT){
@@ -41,18 +42,18 @@ public class Play extends Action implements ItemConstants {
     }
 
     @Override
-    public boolean success() {
+    public boolean isSuccessful() {
         int successChance = actor.getSkillValue(skillId);
         return (Dice.roll("1d100")<=successChance);
     }
 
     @Override
-    public int resultType() {
+    public ArrayList<Integer> resultType() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int resultAmount() {
+    public ArrayList<Integer> resultAmount() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
