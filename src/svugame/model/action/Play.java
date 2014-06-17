@@ -7,6 +7,7 @@
 package svugame.model.action;
 
 import svugame.model.Dice;
+import svugame.model.Thing;
 import svugame.model.entity.Entity;
 import svugame.model.entity.Party;
 import svugame.model.items.ItemConstants;
@@ -18,6 +19,17 @@ import static svugame.model.skills.SkillConstants.PLAY_INSTRUMENT;
  */
 public class Play extends Action implements ItemConstants {
 
+    public Play(Entity actor, int skillId) {
+        super(actor, PLAY_INSTRUMENT);
+    }
+
+    public Play(Entity actor, int skillId, Thing dobj) {
+        super(actor, PLAY_INSTRUMENT, dobj);
+    }
+
+    public Play(Entity actor, int skillId, Thing dobj, Thing iobj) {
+        super(actor, PLAY_INSTRUMENT, dobj, iobj);
+    }
     
     @Override
     public boolean actorCan() {
@@ -35,7 +47,7 @@ public class Play extends Action implements ItemConstants {
 
     @Override
     public boolean success() {
-        int successChance = actor.getSkillValue(PLAY_INSTRUMENT);
+        int successChance = actor.getSkillValue(skillId);
         return (Dice.roll("1d100")<=successChance);
     }
 
