@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <monsters>
+        <monster>
+            <name>Bear</name>
+            <hit>11</hit>
+            <damage>11</damage>
+            <endurance>11</endurance>
+            <perception>11</perception>
+            <charisma>11</charisma>
+            <focus>11</focus>
+            <skill1>Claw</skill1>
+            <attrib1>0</attrib1>
+            <attrib2>4</attrib2>
+            <level1>1</level1>
+            <skill2>Bite</skill2>
+            <attrib3>0</attrib3>
+            <attrib4>4</attrib4>
+            <level2>1</level2>
+            <skill3>Roar</skill3>
+            <attrib5>8</attrib5>
+            <attrib6>5</attrib6>
+            <level3>1</level3>
+        </monster>
+        
+        <monster>
+            <name>Wolf</name>
+            <hit>11</hit>
+            <damage>11</damage>
+            <endurance>11</endurance>
+            <perception>11</perception>
+            <charisma>11</charisma>
+            <focus>11</focus>
+            <skill1>Claw</skill1>
+            <attrib1>0</attrib1>
+            <attrib2>4</attrib2>
+            <level1>1</level1>
+            <skill2>Bite</skill2>
+            <attrib3>0</attrib3>
+            <attrib4>4</attrib4>
+            <level2>1</level2>
+            <skill3>Howl</skill3>
+            <attrib5>5</attrib5>
+            <attrib6>8</attrib6>
+            <level3>1</level3>
+        </monster>
+    </monsters>
+</root>
