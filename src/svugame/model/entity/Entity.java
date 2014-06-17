@@ -38,8 +38,6 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
         this.name = name;
         this.male = male;
         this.experience = experience;
-        this.health = health;
-        this.spirit = spirit;
         this.attributes = new Attribute[NUM_ATTRIB];
         for (int i = 0; i < NUM_ATTRIB; ++i) {
             attributes[i] = new Attribute(i, 0, 0);
