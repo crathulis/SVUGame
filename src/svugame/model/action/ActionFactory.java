@@ -7,56 +7,56 @@ package svugame.model.action;
 
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
-import static svugame.model.skills.SkillConstants.SKILL_BLIN;
-import static svugame.model.skills.SkillConstants.SKILL_BRAV;
-import static svugame.model.skills.SkillConstants.SKILL_CLIG;
-import static svugame.model.skills.SkillConstants.SKILL_CQCU;
-import static svugame.model.skills.SkillConstants.SKILL_CQSL;
-import static svugame.model.skills.SkillConstants.SKILL_CQST;
-import static svugame.model.skills.SkillConstants.SKILL_DISA;
-import static svugame.model.skills.SkillConstants.SKILL_DODG;
-import static svugame.model.skills.SkillConstants.SKILL_DTRA;
-import static svugame.model.skills.SkillConstants.SKILL_EART;
-import static svugame.model.skills.SkillConstants.SKILL_ESCA;
-import static svugame.model.skills.SkillConstants.SKILL_FAID;
-import static svugame.model.skills.SkillConstants.SKILL_FBAL;
-import static svugame.model.skills.SkillConstants.SKILL_FBOL;
+import static svugame.model.skills.SkillConstants.SKILL_AID;
+import static svugame.model.skills.SkillConstants.SKILL_BLIND;
+import static svugame.model.skills.SkillConstants.SKILL_BRAVERY;
+import static svugame.model.skills.SkillConstants.SKILL_CHOP;
+import static svugame.model.skills.SkillConstants.SKILL_CLEAVE;
+import static svugame.model.skills.SkillConstants.SKILL_CONFUSE;
+import static svugame.model.skills.SkillConstants.SKILL_CRIPPLE;
+import static svugame.model.skills.SkillConstants.SKILL_DISABLE;
+import static svugame.model.skills.SkillConstants.SKILL_DISARM;
+import static svugame.model.skills.SkillConstants.SKILL_DODGE;
+import static svugame.model.skills.SkillConstants.SKILL_EARTHQUAKE;
+import static svugame.model.skills.SkillConstants.SKILL_ESCAPE;
 import static svugame.model.skills.SkillConstants.SKILL_FEAR;
-import static svugame.model.skills.SkillConstants.SKILL_HAGG;
-import static svugame.model.skills.SkillConstants.SKILL_HAST;
+import static svugame.model.skills.SkillConstants.SKILL_FIREBALL;
+import static svugame.model.skills.SkillConstants.SKILL_FIREBOLT;
+import static svugame.model.skills.SkillConstants.SKILL_GYSER;
+import static svugame.model.skills.SkillConstants.SKILL_HAGGLE;
+import static svugame.model.skills.SkillConstants.SKILL_HASTE;
 import static svugame.model.skills.SkillConstants.SKILL_HEAL;
-import static svugame.model.skills.SkillConstants.SKILL_INSP;
-import static svugame.model.skills.SkillConstants.SKILL_INTI;
-import static svugame.model.skills.SkillConstants.SKILL_INVI;
-import static svugame.model.skills.SkillConstants.SKILL_ISPH;
-import static svugame.model.skills.SkillConstants.SKILL_KNOC;
-import static svugame.model.skills.SkillConstants.SKILL_LIGH;
-import static svugame.model.skills.SkillConstants.SKILL_MTRI;
-import static svugame.model.skills.SkillConstants.SKILL_OHSL;
-import static svugame.model.skills.SkillConstants.SKILL_OHTH;
-import static svugame.model.skills.SkillConstants.SKILL_OHWH;
-import static svugame.model.skills.SkillConstants.SKILL_PERS;
+import static svugame.model.skills.SkillConstants.SKILL_ICICLE;
+import static svugame.model.skills.SkillConstants.SKILL_INSPIRE;
+import static svugame.model.skills.SkillConstants.SKILL_INTIMIDATE;
+import static svugame.model.skills.SkillConstants.SKILL_INVISIBLE;
+import static svugame.model.skills.SkillConstants.SKILL_KNOCK;
+import static svugame.model.skills.SkillConstants.SKILL_LIGHTNING;
+import static svugame.model.skills.SkillConstants.SKILL_LOCKPICK;
+import static svugame.model.skills.SkillConstants.SKILL_MISSILE;
+import static svugame.model.skills.SkillConstants.SKILL_PERSUADE;
+import static svugame.model.skills.SkillConstants.SKILL_PICKPOCKET;
+import static svugame.model.skills.SkillConstants.SKILL_PIERCE;
 import static svugame.model.skills.SkillConstants.SKILL_PLAY;
-import static svugame.model.skills.SkillConstants.SKILL_PLOC;
-import static svugame.model.skills.SkillConstants.SKILL_PPOC;
-import static svugame.model.skills.SkillConstants.SKILL_PRPI;
-import static svugame.model.skills.SkillConstants.SKILL_PRPU;
-import static svugame.model.skills.SkillConstants.SKILL_PRSK;
-import static svugame.model.skills.SkillConstants.SKILL_RESI;
-import static svugame.model.skills.SkillConstants.SKILL_RSLI;
-import static svugame.model.skills.SkillConstants.SKILL_SHEL;
-import static svugame.model.skills.SkillConstants.SKILL_SHIE;
+import static svugame.model.skills.SkillConstants.SKILL_PUNCTURE;
+import static svugame.model.skills.SkillConstants.SKILL_RESIST;
+import static svugame.model.skills.SkillConstants.SKILL_ROCKSLIDE;
+import static svugame.model.skills.SkillConstants.SKILL_SHELL;
+import static svugame.model.skills.SkillConstants.SKILL_SHIELD;
+import static svugame.model.skills.SkillConstants.SKILL_SHOCK;
 import static svugame.model.skills.SkillConstants.SKILL_SING;
-import static svugame.model.skills.SkillConstants.SKILL_SMIS;
-import static svugame.model.skills.SkillConstants.SKILL_SNEA;
-import static svugame.model.skills.SkillConstants.SKILL_SPRI;
-import static svugame.model.skills.SkillConstants.SKILL_TELE;
-import static svugame.model.skills.SkillConstants.SKILL_THCH;
-import static svugame.model.skills.SkillConstants.SKILL_THCL;
-import static svugame.model.skills.SkillConstants.SKILL_THSU;
-import static svugame.model.skills.SkillConstants.SKILL_TORN;
-import static svugame.model.skills.SkillConstants.SKILL_TSUN;
-import static svugame.model.skills.SkillConstants.SKILL_WCAN;
+import static svugame.model.skills.SkillConstants.SKILL_SKEWER;
+import static svugame.model.skills.SkillConstants.SKILL_SLASH;
+import static svugame.model.skills.SkillConstants.SKILL_SNEAK;
+import static svugame.model.skills.SkillConstants.SKILL_SPEED;
+import static svugame.model.skills.SkillConstants.SKILL_STAB;
+import static svugame.model.skills.SkillConstants.SKILL_SUNDER;
+import static svugame.model.skills.SkillConstants.SKILL_SWING;
+import static svugame.model.skills.SkillConstants.SKILL_TELEPORT;
+import static svugame.model.skills.SkillConstants.SKILL_THRUST;
+import static svugame.model.skills.SkillConstants.SKILL_TORNADO;
+import static svugame.model.skills.SkillConstants.SKILL_TSUNAMI;
+import static svugame.model.skills.SkillConstants.SKILL_WHIRL;
 
 /**
  *
@@ -68,57 +68,63 @@ public class ActionFactory {
         switch (skillId) {
             case SKILL_PLAY:
             case SKILL_SING:
-            case SKILL_OHTH:
+            case SKILL_THRUST:
                 return new OhMeleeAction(actor, skillId, dobj, iobj);
-            case SKILL_OHSL:
+            case SKILL_SWING:
                 return new OhMeleeAction(actor, skillId, dobj, iobj);
-            case SKILL_OHWH:
+            case SKILL_WHIRL:
                 return new OhMeleeAction(actor, skillId, dobj, iobj);
-            case SKILL_THCH:
-            case SKILL_THSU:
-            case SKILL_THCL:
-            case SKILL_CQST:
-            case SKILL_CQCU:
-            case SKILL_CQSL:
-            case SKILL_PRPI:
-            case SKILL_PRPU:
-            case SKILL_PRSK:
-            case SKILL_SHIE:
-            case SKILL_SPRI:
-            case SKILL_DODG:
-            case SKILL_RESI:
-            case SKILL_FAID:
-            case SKILL_PERS:
-            case SKILL_INTI:
-            case SKILL_INSP:
-            case SKILL_HAGG:
-            case SKILL_SNEA:
-            case SKILL_ESCA:
-            case SKILL_PLOC:
-            case SKILL_PPOC:
-            case SKILL_DISA:
+            case SKILL_CHOP:
+                return new ThMeleeAction(actor, skillId, dobj, iobj);
+            case SKILL_SUNDER:
+                return new ThMeleeAction(actor, skillId, dobj, iobj);
+            case SKILL_CLEAVE:
+                return new ThMeleeAction(actor, skillId, dobj, iobj);
+            case SKILL_STAB:
+                return new CqMeleeAction(actor, skillId, dobj, iobj);
+            case SKILL_SLASH:
+                return new CqMeleeAction(actor, skillId, dobj, iobj);
+            case SKILL_CRIPPLE:
+                return new CqMeleeAction(actor, skillId, dobj, iobj);
+            case SKILL_PIERCE:
+            case SKILL_PUNCTURE:
+            case SKILL_SKEWER:
+            case SKILL_SHIELD:
+            case SKILL_SPEED:
+            case SKILL_DODGE:
+            case SKILL_RESIST:
+            case SKILL_AID:
+            case SKILL_PERSUADE:
+            case SKILL_INTIMIDATE:
+            case SKILL_INSPIRE:
+            case SKILL_HAGGLE:
+            case SKILL_SNEAK:
+            case SKILL_ESCAPE:
+            case SKILL_LOCKPICK:
+            case SKILL_PICKPOCKET:
+            case SKILL_DISABLE:
             case SKILL_FEAR:
-            case SKILL_BRAV:
-            case SKILL_SMIS:
-            case SKILL_RSLI:
-            case SKILL_FBOL:
-            case SKILL_FBAL:
-            case SKILL_ISPH:
-            case SKILL_WCAN:
-            case SKILL_LIGH:
-            case SKILL_CLIG:
-            case SKILL_EART:
-            case SKILL_TORN:
-            case SKILL_TSUN:
-            case SKILL_BLIN:
-            case SKILL_HAST:
-            case SKILL_SHEL:
+            case SKILL_BRAVERY:
+            case SKILL_MISSILE:
+            case SKILL_ROCKSLIDE:
+            case SKILL_FIREBOLT:
+            case SKILL_FIREBALL:
+            case SKILL_ICICLE:
+            case SKILL_GYSER:
+            case SKILL_SHOCK:
+            case SKILL_LIGHTNING:
+            case SKILL_EARTHQUAKE:
+            case SKILL_TORNADO:
+            case SKILL_TSUNAMI:
+            case SKILL_BLIND:
             case SKILL_HEAL:
-            case SKILL_MTRI:
-            case SKILL_INVI:
-            case SKILL_TELE:
-            case SKILL_KNOC:
-            case SKILL_DTRA:
+            case SKILL_SHELL:
+            case SKILL_CONFUSE:
+            case SKILL_INVISIBLE:
+            case SKILL_HASTE:
+            case SKILL_TELEPORT:
+            case SKILL_KNOCK:
+            case SKILL_DISARM:
             default:
                 return null;
         }
