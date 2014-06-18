@@ -20,16 +20,16 @@ import javax.xml.bind.Unmarshaller;
  */
 public class Test {
 
-    private static final String SKILLLIST_XML = "./skillset-jaxb.xml";
+    private static final String SKILLLIST_XML = "./data/skillset-jaxb.xml";
 
     public static void main(String[] args) throws JAXBException, IOException {
 
-        ArrayList<Skill> skillList = new ArrayList<Skill>();
+        ArrayList<SkillModel> skillList = new ArrayList<SkillModel>();
 
         // create books
-        Skill skill1 = new Skill("One-handed", 3, 0, 0, "");
+        SkillModel skill1 = new SkillModel("Thrust", 3, "One-handed Thrust", "", 3, 0);
         skillList.add(skill1);
-        Skill skill2 = new Skill("Two-handed", 0, 3, 0, "");
+        SkillModel skill2 = new SkillModel("Chop", 6, "Two-handed Chop", "", 0, 6);
         skillList.add(skill2);
         SkillList skillSet = new SkillList(skillList);
 
@@ -47,10 +47,10 @@ public class Test {
         System.out.println("Output from our XML File: ");
         Unmarshaller um = context.createUnmarshaller();
         SkillList skillList2 = (SkillList) um.unmarshal(new FileReader(SKILLLIST_XML));
-        ArrayList<Skill> list = skillList2.getListOfSkills();
-        for (Skill skill : list) {
-            System.out.println("Skill: " + skill.getName() + " Level: "
-                    + skill.getLevel());
+        ArrayList<SkillModel> list = skillList2.getListOfSkills();
+        for (SkillModel skill : list) {
+            System.out.println("Skill: " + skill.getName() + " Attrib1: "
+                    + skill.getAttrib1() + ",  Attrib2: " + skill.getAttrib2());
         }
     }
 
