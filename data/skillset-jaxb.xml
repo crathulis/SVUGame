@@ -6,7 +6,7 @@
             <name>NONE</name>
             <id>0</id>
             <sdesc>NONE</sdesc>
-			<ldesc>NONE</ldesc>
+            <ldesc>NONE</ldesc>
             <attrib1>0</attrib1>
             <attrib2>0</attrib2>
         </skill>
@@ -15,7 +15,7 @@
             <name>Play</name>
             <id>1</id>
             <sdesc>Play Instrument</sdesc>
-			<ldesc>The ability to play a musical instrument so as to beguile or inspire.</ldesc>
+            <ldesc>The ability to play a musical instrument so as to beguile or inspire.</ldesc>
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
             <parent>physicalBuff</parent>
@@ -25,7 +25,7 @@
             <name>Sing</name>
             <id>2</id>
             <sdesc>Sing Anthem</sdesc>
-			<ldesc>The ability to use one's voide so as to influence others.</ldesc>
+            <ldesc>The ability to use one's voide so as to influence others.</ldesc>
             <attrib1>2</attrib1>
             <attrib2>3</attrib2>
             <parent>physicalBuff</parent>
@@ -35,7 +35,7 @@
             <name>Thrust</name>
             <id>3</id>
             <sdesc>One-Handed Thrust</sdesc>
-			<ldesc>The ability to accurately thrust a one-handed weapon into an enemy's weak spot.</ldesc>
+            <ldesc>The ability to accurately thrust a one-handed weapon into an enemy's weak spot.</ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
             <parent>oneHanded</parent>
@@ -45,7 +45,7 @@
             <name>Swing</name>
             <id>4</id>
             <sdesc>One-Handed Swing</sdesc>
-			<ldesc>The ability to accurately swing a one-handed weapons so as to damage an emeny.</ldesc>
+            <ldesc>The ability to accurately swing a one-handed weapons so as to damage an emeny.</ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -54,7 +54,7 @@
             <name>Whirl</name>
             <id>5</id>
             <sdesc>One-Handed Whirl</sdesc>
-			<ldesc>The ability to spin and slice multiple enemies at the same time with a one-handed weapon.</ldesc>
+            <ldesc>The ability to spin and slice multiple enemies at the same time with a one-handed weapon.</ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -63,7 +63,7 @@
             <name>Chop</name>
             <id>6</id>
             <sdesc>Two-Handed Chop</sdesc>
-			<ldesc>The ability to accurately chop a two-handed weapon into an enemy.</ldesc>
+            <ldesc>The ability to accurately chop a two-handed weapon into an enemy.</ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
         </skill>
@@ -72,7 +72,7 @@
             <name>Sunder</name>
             <id>7</id>
             <sdesc>Two-Handed Sunder</sdesc>
-			<ldesc>The ability to swing a two-handed weapon through an enemy's defenses sundering armor and bone.</ldesc>
+            <ldesc>The ability to swing a two-handed weapon through an enemy's defenses sundering armor and bone.</ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
         </skill>
@@ -81,7 +81,7 @@
             <name>Cleave</name>
             <id>8</id>
             <sdesc>Two-Handed Cleave</sdesc>
-			<ldesc>The ability to smash a two-handed weapon into multiple enemies.</ldesc>
+            <ldesc>The ability to smash a two-handed weapon into multiple enemies.</ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
         </skill>
@@ -90,7 +90,7 @@
             <name>Stab</name>
             <id>9</id>
             <sdesc>Close-Quarters Stab</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
         </skill>
@@ -99,7 +99,7 @@
             <name>Slash</name>
             <id>10</id>
             <sdesc>Close-Quarters Slash</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
         </skill>
@@ -108,7 +108,7 @@
             <name>Cripple</name>
             <id>11</id>
             <sdesc>Close-Quarters Cripple</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
         </skill>
@@ -117,7 +117,7 @@
             <name>Pierce</name>
             <id>12</id>
             <sdesc>Ranged Pierce</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -126,7 +126,7 @@
             <name>Puncture</name>
             <id>13</id>
             <sdesc>Ranged Puncture</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -135,7 +135,7 @@
             <name>Skewer</name>
             <id>14</id>
             <sdesc>Ranged Skewer</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -144,7 +144,7 @@
             <name>Shield</name>
             <id>15</id>
             <sdesc>Shield Block</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -153,7 +153,7 @@
             <name>Speed</name>
             <id>16</id>
             <sdesc>Speed</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -162,7 +162,7 @@
             <name>Dodge</name>
             <id>17</id>
             <sdesc>Dodge Attack</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>6</attrib2>
         </skill>
@@ -171,7 +171,7 @@
             <name>Resist</name>
             <id>18</id>
             <sdesc>Resist Magic</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>7</attrib2>
         </skill>
@@ -180,7 +180,7 @@
             <name>Aid</name>
             <id>19</id>
             <sdesc>First Aid</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>6</attrib2>
         </skill>
@@ -189,7 +189,7 @@
             <name>Persuade</name>
             <id>20</id>
             <sdesc>Persuasion</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>6</attrib2>
         </skill>
@@ -198,7 +198,7 @@
             <name>Intimidate</name>
             <id>21</id>
             <sdesc>Intimidation</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
         </skill>
@@ -207,7 +207,7 @@
             <name>Inspire</name>
             <id>22</id>
             <sdesc>Inspire Party</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>8</attrib2>
         </skill>
@@ -216,7 +216,7 @@
             <name>Haggle</name>
             <id>23</id>
             <sdesc>Haggling</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>7</attrib2>
         </skill>
@@ -225,7 +225,7 @@
             <name>Sneak</name>
             <id>24</id>
             <sdesc>Sneak</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
         </skill>
@@ -234,7 +234,7 @@
             <name>Escape</name>
             <id>25</id>
             <sdesc>Escape Combat</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
         </skill>
@@ -243,7 +243,7 @@
             <name>Lockpick</name>
             <id>26</id>
             <sdesc>Open Lock</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>4</attrib1>
             <attrib2>6</attrib2>
         </skill>
@@ -252,7 +252,7 @@
             <name>Pickpocket</name>
             <id>27</id>
             <sdesc>Pick Pocket</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>8</attrib2>
         </skill>
@@ -261,7 +261,7 @@
             <name>Disable</name>
             <id>28</id>
             <sdesc>Disable Trap</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>4</attrib1>
             <attrib2>6</attrib2>
         </skill>
@@ -270,16 +270,16 @@
             <name>Fear</name>
             <id>29</id>
             <sdesc>Incite Fear Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>3</attrib2>
         </skill>
         
-		<skill>
+        <skill>
             <name>Bravery</name>
             <id>30</id>
             <sdesc>Induce Bravery Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>5</attrib2>
         </skill>
@@ -289,7 +289,7 @@
             <name>Missile</name>
             <id>31</id>
             <sdesc>Stone Missile Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>0</attrib2>
         </skill>
@@ -298,7 +298,7 @@
             <name>Rockslide</name>
             <id>32</id>
             <sdesc>Rockslide Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>0</attrib2>
         </skill>
@@ -307,7 +307,7 @@
             <name>Firebolt</name>
             <id>33</id>
             <sdesc>Firebolt Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>1</attrib2>
         </skill>
@@ -316,7 +316,7 @@
             <name>Fireball</name>
             <id>34</id>
             <sdesc>Fireball Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>1</attrib2>
         </skill>
@@ -325,7 +325,7 @@
             <name>Icicle</name>
             <id>35</id>
             <sdesc>Icicle Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -334,7 +334,7 @@
             <name>Gyser</name>
             <id>36</id>
             <sdesc>Gyser Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -343,7 +343,7 @@
             <name>Shock</name>
             <id>37</id>
             <sdesc>Shock Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -352,7 +352,7 @@
             <name>Lightning</name>
             <id>38</id>
             <sdesc>Lightning Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>4</attrib2>
         </skill>
@@ -361,7 +361,7 @@
             <name>Earthquake</name>
             <id>39</id>
             <sdesc>Earthquake Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>0</attrib2>
         </skill>
@@ -370,7 +370,7 @@
             <name>Tornado</name>
             <id>40</id>
             <sdesc>Tornado Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>0</attrib2>
         </skill>
@@ -379,7 +379,7 @@
             <name>Tsunami</name>
             <id>41</id>
             <sdesc>Tsunami Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>0</attrib2>
         </skill>
@@ -388,7 +388,7 @@
             <name>Blind</name>
             <id>42</id>
             <sdesc>Blind Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>5</attrib2>
         </skill>
@@ -397,7 +397,7 @@
             <name>Heal</name>
             <id>43</id>
             <sdesc>Heal Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>0</attrib2>
         </skill>
@@ -406,7 +406,7 @@
             <name>Shell</name>
             <id>44</id>
             <sdesc>Magic Shell Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>2</attrib2>
         </skill>
@@ -415,7 +415,7 @@
             <name>Confuse</name>
             <id>45</id>
             <sdesc>Confusion Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>5</attrib2>
         </skill>
@@ -424,7 +424,7 @@
             <name>Invisible</name>
             <id>46</id>
             <sdesc>Invisibility Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>2</attrib2>
         </skill>
@@ -433,7 +433,7 @@
             <name>Haste</name>
             <id>47</id>
             <sdesc>Haste Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>1</attrib2>
         </skill>
@@ -442,7 +442,7 @@
             <name>Teleport</name>
             <id>48</id>
             <sdesc>Teleport Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>2</attrib2>
         </skill>
@@ -451,7 +451,7 @@
             <name>Knock</name>
             <id>49</id>
             <sdesc>Unlock Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>3</attrib2>
         </skill>
@@ -460,7 +460,7 @@
             <name>Disarm</name>
             <id>50</id>
             <sdesc>Disarm Spell</sdesc>
-			<ldesc></ldesc>
+            <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>3</attrib2>
         </skill>
