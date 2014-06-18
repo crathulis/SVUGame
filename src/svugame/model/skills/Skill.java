@@ -1,72 +1,56 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package svugame.model.skills;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
+import svugame.model.entity.Entity;
 
 /**
  *
  * @author Lab Admin
  */
-//@XmlRootElement(name = "skill")
-@XmlType(propOrder = { "name", "attrib1", "attrib2", "level", "description" })
 public class Skill {
     
-    public Skill(){
-        
-    }
-
-    public Skill(String name, int attrib1, int attrib2, int level, String description) {
-        this.name = name;
-        this.attrib1 = attrib1;
-        this.attrib2 = attrib2;
-        this.level = level;
-        this.description = description;
+    private SkillModel model;
+    private Entity owner;
+    private int points;
+    
+    public Skill() {
     }
     
-    public String getName() {
-        return name;
+    public Skill(Entity owner, int skillId){
+        this(owner, skillId, 0);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Skill(Entity owner, int skillId, int level){
+        this.owner = owner;
+        this.points = level;
+        this.model = SkillFactory.getModel(skillId);
     }
 
-    public int getAttrib1() {
-        return attrib1;
+    public Entity getOwner() {
+        return owner;
     }
 
-    public void setAttrib1(int attrib1) {
-        this.attrib1 = attrib1;
+    public void setOwner(Entity owner) {
+        this.owner = owner;
     }
 
-    public int getAttrib2() {
-        return attrib2;
+    public int getPoints() {
+        return points;
     }
 
-    public void setAttrib2(int attrib2) {
-        this.attrib2 = attrib2;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
+    public void setPoints(int level) {
+        this.points = level;
     }
     
-    private String name;
-    private int attrib1;
-    private int attrib2;
-    private int level;
-    private String description;
+    private void addPoints(int points){
+        this.points += points;
+    }
+    
+    public int getLevel(){
+        int attrib1Value = owner.getAttribute(model.getAttrib1());
+        int attrib2Value = owner.getAttribute(model.getAttrib2());
+        double attribAverage = (attrib1Value + attrib2Value) / 2.0;
+        return (int)Math.round(attribAverage + (points==0?-25:points));
+    }
+
     
 }
