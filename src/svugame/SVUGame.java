@@ -5,24 +5,25 @@
  */
 package svugame;
 
-import svugame.engine.state.Overworld;
-import svugame.engine.state.Battle;
-import svugame.engine.state.StartState;
-import svugame.engine.state.PauseState;
 import java.awt.Color;
+import org.lwjgl.*;
+import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.SlickException;
-import org.lwjgl.*;
-import org.newdawn.slick.Animation;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.ScalableGame;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.BlobbyTransition;
 import org.newdawn.slick.tiled.TiledMap;
+import svugame.engine.state.Battle;
+import svugame.engine.state.NewOverworld;
+import svugame.engine.state.Overworld;
+import svugame.engine.state.PauseState;
+import svugame.engine.state.StartState;
 
 /**
  *
@@ -45,14 +46,14 @@ public class SVUGame extends StateBasedGame {
 
     public SVUGame(String title) {
         super(title);
-        
+        addState(new NewOverworld());
         addState(new Battle());
-        addState(new Overworld());
+        //addState(new Overworld());
         
         addState(new StartState());
         addState(new PauseState());
         addState(new City1());
-        //enterState(2);  
+        enterState(8);  
     }
 
     @Override
