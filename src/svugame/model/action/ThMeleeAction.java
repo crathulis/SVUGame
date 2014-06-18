@@ -29,8 +29,8 @@ public class ThMeleeAction extends MeleeAction implements ItemConstants {
         if (dobj == null) {
             return false;
         }
-        // actor must be holding a melee weapon in the right hand
-        if (actor.getItemInSlot(ITEM_SLOT_RHAND).getType() != ITEM_TYPE_OH_WEAPON) {
+        // actor must be holding a two-handed melee weapon in the right hand
+        if (actor.getItemInSlot(ITEM_SLOT_RHAND).getType() != ITEM_TYPE_TH_WEAPON) {
             return false;
         }
         // dobj must be an entity
