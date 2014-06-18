@@ -3,25 +3,22 @@
  <tileset firstgid="1" name="Tileset" tilewidth="32" tileheight="32">
   <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
  </tileset>
- <tileset firstgid="3073" name="castle" tilewidth="32" tileheight="32">
-  <image source="Castle_2.png" width="512" height="512"/>
- </tileset>
- <tileset firstgid="3329" name="Town" tilewidth="32" tileheight="32">
+ <tileset firstgid="3073" name="Town" tilewidth="32" tileheight="32">
   <image source="town_0.png" width="512" height="512"/>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3RwQ3AIAzFUCQYC8ZjMDZjhBa1gBX58M5fTkZOaWzWDmycYAeLHSx2sNjBYgeLHSx2sNjBYgeLHSx2sNixthHBX/eol//xRS/P7LBjR0cN0hHlH3bw2MFiB4sdLHaw2MFiB4sdLHa8NwEAq9qkECcAAA==
+   H4sIAAAAAAAAC+3XMQ6AIBAAQRJ9ljzPh/EzW0NioBDcwy2mJssVB2VLqQyWJ5wxgx0sdrDYwRKh47hZpeNJhI4edrDYwWIHix0sdnyvfpe03mARRJ6HHVwzOvIi3rqPyP/Bc2+zw44RHfU+J+71P83DDh47WOxgsYPFDhY7WOxgsYPFjn4X3Vt83hAnAAA=
   </data>
  </layer>
  <layer name="Buildings" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XOUoEQRSG2y2zHfUAKkzuuOSuuevErox4Ab2B3kCPoDfQyOUCLoGR4G46jlvq8hVWYyl0CyLMe/g++KluqoP/oyiaF0WGoymOonbSHFe7ye9xDm3eo0Oxi3PoJAXS5V00kjgUAheN9NG7P8iAUo8Reo8GGVPqMUXv6SAzSj2MD3Y4v12yR/YVn+UB3Q/JETlW7HFG93NyQS4Vezju6F8h98o9Xun/ptzBMP6KGu5CLakTfCfcPJL7YQ5pYa+V5AV7hDNVGt3sFUmvYI9wpkpjkL0hMizYI5lHsuaQcX8ek/6bG9ZbYU7JPJI1h8yyN0fm/TdPrM/CPAyjWtRzF3pIg/A7UaLfgsL/xxV9roNOSzwvZ3SciD8jiQf6PAadVnheTel44vsv+vVUmEvIGt3WBfdLo9z49X0Dh02FHi/fPLZw2FboYRiGYRiGYRiG8d94B1Ll4m4QJwAA
+   H4sIAAAAAAAAC+2XOUoEQRSG2y1rxuUAKpg7Lrlr7h6PzogyF9Ab6A30CHoDjVwu4BIYCaOOGrvH6ldYjZV0KyLMe8374KcKqoP/oyiaF0WGoxBHUQ/piBvd5O84h27v0avYxTn0kyIZ8C4aSRyKgYtGRug9GmRMqccUvaeDzCj1KNG7Shb9uqTUw/jigPs7JEfkWPFdntD9lJyRc8UeNbpfkWtyo9jD8UD/R/Kk3OOd/h/KHQzjv2jiLTSTFsFvws0j7T/MIZ2cdZE+wR7hTJXGIGcLZFiwRzhTpTHO2QSZFOyRzCNZc8isv495/80d670wp2QeyZpDypxVyLL/5pX1TZiHYTSKVt7CEGkT/iZW6Leq8P9Rp89t0GmN/XpGx7n4O5J4ps9L0GmD/WZKxwvfv+rXS2EuIVt02xbc77fs4LCbA489HPZz4GEYhmEYhmEYhpF3PgFhVn/gECcAAA==
   </data>
  </layer>
  <layer name="Window" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3YwQnAIAwFUKFnN3IgZ+kIndajWmh7ESTlPfjkmn8LSQng25l3b7DG9YMeNc8zqnL0RDb2eAoAwE73u8SNAgCx+T0AAADAuwawG3JtECcAAA==
+   H4sIAAAAAAAAC+3PQQ0AMAgAMQRMORJQi4A9+JAsWVoFdxEAszyvC3bUJx8AAAAAAAAAANwa/+7NNxAnAAA=
   </data>
  </layer>
 </map>

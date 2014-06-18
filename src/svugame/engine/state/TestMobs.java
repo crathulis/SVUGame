@@ -27,9 +27,9 @@ public class TestMobs {
     }
     
     private void createEnemyParty(){
-        wolf1 = new Entity("Wolf", true, 10, 10, 10);
-        wolf2 = new Entity("Wolf", true, 10, 10, 10);
-        wolf3 = new Entity("Wolf", true, 10, 10, 10);
+        wolf1 = new Entity("Wolf", true, 10);
+        wolf2 = new Entity("Wolf", true, 10);
+        wolf3 = new Entity("Wolf", true, 10);
         mobParty = new Party();
         mobParty.add(wolf1);
         mobParty.add(wolf2);
@@ -37,8 +37,8 @@ public class TestMobs {
     }
     
     private void createPlayerParty(){
-        player = new Entity("Player", true, 20, 20, 20);
-        bernard =  new Entity("Bernard", true, 20, 20, 20);
+        player = new Entity("Player", true, 20);
+        bernard =  new Entity("Bernard", true, 20);
         playerParty = new Party();
         playerParty.add(player);
         playerParty.add(bernard);

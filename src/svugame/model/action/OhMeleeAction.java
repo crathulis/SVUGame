@@ -3,25 +3,24 @@ package svugame.model.action;
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
 import svugame.model.items.ItemConstants;
-import static svugame.model.skills.SkillConstants.SKILL_OHTH;
 
 
 /**
  *
  * @author Alan
  */
-public class OhThrust extends MeleeAction implements ItemConstants {
+public class OhMeleeAction extends MeleeAction implements ItemConstants {
 
-    public OhThrust(Entity actor) {
-        super(actor, SKILL_OHTH);
+    public OhMeleeAction(Entity actor, int skillId) {
+        super(actor, skillId);
     }
 
-    public OhThrust(Entity actor, Thing dobj) {
-        super(actor, SKILL_OHTH, dobj);
+    public OhMeleeAction(Entity actor, int skillId, Thing dobj) {
+        super(actor, skillId, dobj);
     }
 
-    public OhThrust(Entity actor, Thing dobj, Thing iobj) {
-        super(actor, SKILL_OHTH, dobj, iobj);
+    public OhMeleeAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
+        super(actor, skillId, dobj, iobj);
     }
 
     @Override

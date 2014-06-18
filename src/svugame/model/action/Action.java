@@ -6,6 +6,7 @@
 
 package svugame.model.action;
 
+import java.util.ArrayList;
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
 
@@ -16,12 +17,28 @@ import svugame.model.entity.Entity;
 public abstract class Action {
     
     protected Entity actor;
+    protected int skillId;
     protected Thing dobj;
     protected Thing iobj;
     
-    public abstract boolean actorCan();
-    public abstract boolean success();
-    public abstract int resultType();
-    public abstract int resultAmount();
+    public Action(Entity actor, int skillId){
+        this(actor, skillId, null, null);
+    }
+    
+    public Action(Entity actor, int skillId, Thing dobj){
+        this(actor, skillId, dobj, null);
+    }
+    
+    public Action(Entity actor, int skillId, Thing dobj, Thing iobj){
+        this.actor = actor;
+        this.skillId = skillId;
+        this.dobj = dobj;
+        this.iobj = iobj;
+    }
+    
+    public abstract boolean isPossible();
+    public abstract boolean isSuccessful();
+    public abstract ArrayList<Integer> resultType();
+    public abstract ArrayList<Integer> resultAmount();
     
 }

@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package svugame.model.action;
 
+import java.util.ArrayList;
 import svugame.model.Dice;
+import svugame.model.Thing;
 import svugame.model.entity.Entity;
 import svugame.model.entity.Party;
 import svugame.model.items.ItemConstants;
-import static svugame.model.skills.SkillConstants.PLAY_INSTRUMENT;
+import static svugame.model.skills.SkillConstants.SKILL_PLAY;
+
 
 /**
  *
@@ -18,9 +15,20 @@ import static svugame.model.skills.SkillConstants.PLAY_INSTRUMENT;
  */
 public class Play extends Action implements ItemConstants {
 
+    public Play(Entity actor, int skillId) {
+        super(actor, SKILL_PLAY);
+    }
+
+    public Play(Entity actor, int skillId, Thing dobj) {
+        super(actor, SKILL_PLAY, dobj);
+    }
+
+    public Play(Entity actor, int skillId, Thing dobj, Thing iobj) {
+        super(actor, SKILL_PLAY, dobj, iobj);
+    }
     
     @Override
-    public boolean actorCan() {
+    public boolean isPossible() {
         // actor must be carrying an instrument in one of their hands
         if(actor.getItemInSlot(ITEM_SLOT_RHAND).getType()!=ITEM_TYPE_INSTRUMENT &&
                 actor.getItemInSlot(ITEM_SLOT_LHAND).getType()!=ITEM_TYPE_INSTRUMENT){
@@ -34,18 +42,18 @@ public class Play extends Action implements ItemConstants {
     }
 
     @Override
-    public boolean success() {
-        int successChance = actor.getSkillValue(PLAY_INSTRUMENT);
+    public boolean isSuccessful() {
+        int successChance = actor.getSkillValue(skillId);
         return (Dice.roll("1d100")<=successChance);
     }
 
     @Override
-    public int resultType() {
+    public ArrayList<Integer> resultType() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int resultAmount() {
+    public ArrayList<Integer> resultAmount() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

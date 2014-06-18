@@ -3,25 +3,24 @@ package svugame.model.action;
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
 import svugame.model.items.ItemConstants;
-import static svugame.model.skills.SkillConstants.SKILL_OHTH;
 
 
 /**
  *
  * @author Alan
  */
-public class OhThrust extends MeleeAction implements ItemConstants {
+public class CqMeleeAction extends MeleeAction implements ItemConstants {
 
-    public OhThrust(Entity actor) {
-        super(actor, SKILL_OHTH);
+    public CqMeleeAction(Entity actor, int skillId) {
+        super(actor, skillId);
     }
 
-    public OhThrust(Entity actor, Thing dobj) {
-        super(actor, SKILL_OHTH, dobj);
+    public CqMeleeAction(Entity actor, int skillId, Thing dobj) {
+        super(actor, skillId, dobj);
     }
 
-    public OhThrust(Entity actor, Thing dobj, Thing iobj) {
-        super(actor, SKILL_OHTH, dobj, iobj);
+    public CqMeleeAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
+        super(actor, skillId, dobj, iobj);
     }
 
     @Override
@@ -30,8 +29,8 @@ public class OhThrust extends MeleeAction implements ItemConstants {
         if (dobj == null) {
             return false;
         }
-        // actor must be holding a melee weapon in the right hand
-        if (actor.getItemInSlot(ITEM_SLOT_RHAND).getType() != ITEM_TYPE_OH_WEAPON) {
+        // actor must be holding a two-handed melee weapon in the right hand
+        if (actor.getItemInSlot(ITEM_SLOT_RHAND).getType() != ITEM_TYPE_CQ_WEAPON) {
             return false;
         }
         // dobj must be an entity
