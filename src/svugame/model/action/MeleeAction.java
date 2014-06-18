@@ -43,9 +43,9 @@ public abstract class MeleeAction extends Action {
             System.out.println(target.getName() + " dodged.");
             return false;
         } else {
-            System.out.println(actor.getName() + " thrusts the "
-                    + actor.getItemInSlot(ITEM_SLOT_RHAND).getName()
-                    + " into " + target.getName());
+            System.out.println(actor.getName() + " hits the " +
+                    target.getName() + " with the " 
+                    + actor.getItemInSlot(ITEM_SLOT_RHAND).getName());
             return true;
         }
     }
@@ -83,9 +83,10 @@ public abstract class MeleeAction extends Action {
             System.out.println(target.getName() + "'s armor absorbs " + armorAbsorb
                     + " points of damage.");
         }
+        int finalDamage = Math.max(0, damage - shieldAbsorb - armorAbsorb);
         System.out.println(actor.getName() + " hits for " + 
-                (damage - shieldAbsorb - armorAbsorb) + " damage.");
-        result.add(Math.max(0,damage-shieldAbsorb-armorAbsorb));
+                 finalDamage + " damage.");
+        result.add(finalDamage);
         return result;
     }
 
