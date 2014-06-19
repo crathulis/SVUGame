@@ -34,10 +34,14 @@ class SkillFactory {
         return skillList.getSkillModelById(skillId);
     }
     
+    public static SkillModel getModel(String name){
+        return skillList.getSkillModelByName(name);
+    }
+    
     public static void main(String [] args){
         for(int i=0;i<NUM_SKILLS;++i){
             SkillModel sm = SkillFactory.getModel(i);
-            System.out.println(sm);
+            System.out.println(i + ": " + sm);
         }
     }
     
