@@ -3,6 +3,12 @@ package svugame.model.action;
 import java.util.ArrayList;
 import svugame.model.Dice;
 import svugame.model.Thing;
+import static svugame.model.action.ActionConstants.RESULTS_ARMOR;
+import static svugame.model.action.ActionConstants.RESULTS_BLOCK;
+import static svugame.model.action.ActionConstants.RESULTS_DAMAGE_HP;
+import static svugame.model.action.ActionConstants.RESULTS_DODGE;
+import static svugame.model.action.ActionConstants.RESULTS_MISS;
+import static svugame.model.action.ActionConstants.RESULTS_NONE;
 import svugame.model.entity.Entity;
 import static svugame.model.items.ItemConstants.ITEM_SLOT_LHAND;
 import static svugame.model.items.ItemConstants.ITEM_SLOT_RHAND;
@@ -29,65 +35,58 @@ public abstract class MeleeAction extends Action {
     }
 
     @Override
-    public boolean isSuccessful() {
+    public ArrayList<Effect> apply() {
+        ArrayList<Effect> results = new ArrayList<>();
+        if(!isPossible()){
+            results.add(new Effect(RESULTS_NONE,0,0));
+            return results;
+        }
         double agilityChance = actor.getAgility() / 25.0;
-        double skillChance = actor.getSkillValue(skillId);
-        int successChance = (int) Math.round(agilityChance + skillChance);
+        double skillFactor = actor.getSkillValue(skillId);
+        int successChance = (int) Math.round(agilityChance + skillFactor);
         boolean hit = (Dice.roll("1d100") <= successChance);
         Entity target = (Entity) dobj;
-        boolean dodge = Dice.roll("1d100") <= target.getAgility() - skillChance;
+        boolean dodge = Dice.roll("1d100") <= target.getAgility() - skillFactor;
         if (!hit) {
             System.out.println(actor.getName() + " missed.");
-            return false;
+            results.add(new Effect(RESULTS_MISS, 0, 0));
+            return results;
         } else if (dodge) {
             System.out.println(target.getName() + " dodged.");
-            return false;
+            results.add(new Effect(RESULTS_DODGE, 0, 0));
+            return results;
         } else {
-            System.out.println(actor.getName() + " hits the " +
-                    target.getName() + " with the " 
+            double strengthFactor = actor.getStrength() / 25.0;
+            double weaponDamage = actor.getItemInSlot(ITEM_SLOT_RHAND).getDamage()
+                    * actor.getLevel();
+            int maxDamage = (int) Math.round((strengthFactor + skillFactor) * weaponDamage);
+            int damage = Dice.roll(actor.getLevel() + "d" + maxDamage);
+            System.out.println(actor.getName() + " hits the "
+                    + target.getName() + " with the "
                     + actor.getItemInSlot(ITEM_SLOT_RHAND).getName());
-            return true;
+            int shieldAbsorb = 0;
+            if (target.getItemInSlot(ITEM_SLOT_LHAND).getType() == ITEM_TYPE_SHIELD) {
+                int shieldPower = target.getItemInSlot(ITEM_SLOT_LHAND).getDamage();
+                int maxDamageAbsorb = (int) Math.round(shieldPower * target.getLevel());
+                shieldAbsorb = Dice.roll(target.getLevel() + "d" + maxDamageAbsorb);
+                System.out.println(target.getName() + " blocks " + shieldAbsorb
+                        + " points of damage with their shield.");
+                results.add(new Effect(RESULTS_BLOCK,shieldAbsorb,0));
+            }
+            int armorAbsorb = 0;
+            if (target.getItemInSlot(ITEM_SLOT_TORSO).getType() == ITEM_TYPE_ARMOR) {
+                int armorPower = target.getItemInSlot(ITEM_SLOT_TORSO).getDamage();
+                int maxArmorAbsorb = (int) Math.round(armorPower * target.getLevel());
+                armorAbsorb = Dice.roll(target.getLevel() + "d" + maxArmorAbsorb);
+                System.out.println(target.getName() + "'s armor absorbs " + armorAbsorb
+                        + " points of damage.");
+                results.add(new Effect(RESULTS_ARMOR,armorAbsorb,0));
+            }
+            int finalDamage = Math.max(0, damage - shieldAbsorb - armorAbsorb);
+            results.add(new Effect(RESULTS_DAMAGE_HP, finalDamage, 0));
+            target.setHealth(target.getHealth()-finalDamage);
+            return results;
         }
-    }
-
-    @Override
-    public ArrayList<Integer> resultType() {
-        ArrayList<Integer> result = new ArrayList();
-        result.add(ActionConstants.RESULTS_DAMAGE_HP);
-        return result;
-    }
-
-    @Override
-    public ArrayList<Integer> resultAmount() {
-        ArrayList<Integer> result = new ArrayList();
-        double strengthFactor = actor.getStrength() / 25.0;
-        double skillFactor = actor.getSkillValue(skillId);
-        double weaponDamage = actor.getItemInSlot(ITEM_SLOT_RHAND).getDamage()
-                * actor.getLevel();
-        int maxDamage = (int) Math.round((strengthFactor + skillFactor) * weaponDamage);
-        int damage = Dice.roll(actor.getLevel() + "d" + maxDamage);
-        Entity target = ((Entity) dobj);
-        int shieldAbsorb = 0;
-        if (target.getItemInSlot(ITEM_SLOT_LHAND).getType() == ITEM_TYPE_SHIELD) {
-            int shieldPower = target.getItemInSlot(ITEM_SLOT_LHAND).getDamage();
-            int maxDamageAbsorb = (int) Math.round(shieldPower * target.getLevel());
-            shieldAbsorb = Dice.roll(target.getLevel() + "d" + maxDamageAbsorb);
-            System.out.println(target.getName() + " blocks " + shieldAbsorb
-                    + " points of damage with their shield.");
-        }
-        int armorAbsorb = 0;
-        if (target.getItemInSlot(ITEM_SLOT_TORSO).getType() == ITEM_TYPE_ARMOR) {
-            int armorPower = target.getItemInSlot(ITEM_SLOT_TORSO).getDamage();
-            int maxArmorAbsorb = (int) Math.round(armorPower * target.getLevel());
-            armorAbsorb = Dice.roll(target.getLevel() + "d" + maxArmorAbsorb);
-            System.out.println(target.getName() + "'s armor absorbs " + armorAbsorb
-                    + " points of damage.");
-        }
-        int finalDamage = Math.max(0, damage - shieldAbsorb - armorAbsorb);
-        System.out.println(actor.getName() + " hits for " + 
-                 finalDamage + " damage.");
-        result.add(finalDamage);
-        return result;
     }
 
 }
