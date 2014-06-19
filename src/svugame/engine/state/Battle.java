@@ -303,7 +303,7 @@ public class Battle extends BasicGameState {
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
         if (input.isKeyDown(Input.KEY_0)) {
-            sbg.enterState(1, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            sbg.enterState(8, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
         } else if (input.isKeyDown(Input.KEY_9)) {
             battleMusic.stop();
             Music winMusic = new Music("data/6 Open Surge score jingle - AA.ogg");
