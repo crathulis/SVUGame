@@ -67,6 +67,7 @@ public class ActionFactory {
     public static Action getInstance(Entity actor, int skillId, Thing dobj, Thing iobj) {
         switch (skillId) {
             case SKILL_PLAY:
+                return new PlayAction(actor, skillId, dobj, iobj);
             case SKILL_SING:
             case SKILL_THRUST:
                 return new OhMeleeAction(actor, skillId, dobj, iobj);
