@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package svugame.model.entity;
 
 import svugame.model.Thing;
@@ -13,7 +8,7 @@ import svugame.model.items.ItemConstants;
 import svugame.model.skills.SkillConstants;
 
 /**
- * The character is the super class of all living entities in the game.
+ * The entity is the super class of all living entities in the game.
  * 
  * @author Alan Whitehurst
  */
@@ -45,6 +40,9 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
         this.inventory = new Inventory();
         this.equipment = new Item[NUM_SLOTS];
         this.skills = new Skill[NUM_SKILLS];
+        for(int i=0;i<NUM_SKILLS;++i){
+            skills[i] = new Skill(this, i);
+        }
     }
 
     /**
@@ -354,14 +352,19 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
     /**
      * Get the skill value for a particular skill for this entity
      * 
+     * @param skillId the id of the skill for which to get the value
      */
-    public int getSkillValue(int skillID){
-        int base = Math.round(getAttribute(skills[skillID].getAttrib1()) + getAttribute(skills[skillID].getAttrib2()) / 2);
-        if(skills[skillID].getLevel()==0){
-            return base - 25;
-        } else {
-            return base + skills[skillID].getLevel();
-        }
+    public int getSkillValue(int skillId){
+        return skills[skillId].getLevel();
+    }
+    
+    /**
+     * Get the skill level for a particular skill for this entity
+     * 
+     * @param skillId the id of the skill for which to get the value
+     */
+    public int getSkillLevel(int skillId){
+        return skills[skillId].getLevel();
     }
     
     public static void main(String [] args){

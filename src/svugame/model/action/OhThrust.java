@@ -3,7 +3,7 @@ package svugame.model.action;
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
 import svugame.model.items.ItemConstants;
-import static svugame.model.skills.SkillConstants.SKILL_OHTH;
+import static svugame.model.skills.SkillConstants.SKILL_THRUST;
 
 
 /**
@@ -13,15 +13,15 @@ import static svugame.model.skills.SkillConstants.SKILL_OHTH;
 public class OhThrust extends MeleeAction implements ItemConstants {
 
     public OhThrust(Entity actor) {
-        super(actor, SKILL_OHTH);
+        super(actor, SKILL_THRUST);
     }
 
     public OhThrust(Entity actor, Thing dobj) {
-        super(actor, SKILL_OHTH, dobj);
+        super(actor, SKILL_THRUST, dobj);
     }
 
     public OhThrust(Entity actor, Thing dobj, Thing iobj) {
-        super(actor, SKILL_OHTH, dobj, iobj);
+        super(actor, SKILL_THRUST, dobj, iobj);
     }
 
     @Override
