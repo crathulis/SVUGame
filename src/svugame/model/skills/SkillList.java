@@ -42,6 +42,15 @@ public class SkillList {
         }
         return skillList.get(skillId);
     }
+    
+    public SkillModel getSkillModelByName(String name){
+        for(SkillModel sm : skillList){
+            if(sm.getName().equals(name)){
+                return sm;
+            }
+        }
+        return skillList.get(0);
+    }
 
     // XmLElementWrapper generates a wrapper element around XML representation
     @XmlElementWrapper(name = "skillList")
