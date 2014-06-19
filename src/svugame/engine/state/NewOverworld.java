@@ -235,11 +235,10 @@ public class NewOverworld extends BasicGameState {
             case "right":
                 int endpoint = renderedArea.width + (gc.getWidth()/32) /2;
                 
-                for(int i = 0;i< endpoint;i++)
-                {
-                    renderedArea.width +=1;
+                
+                    renderedArea.width = endpoint;
             
-                }
+                
             
             //now we move our character on the new map
             playerx = 1;
