@@ -367,6 +367,17 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
         return skills[skillId].getLevel();
     }
     
+    /**
+     * Add a number of skill points to a skill. Each skill point improves
+     * the probabilities associated with the skill by 1%.
+     * 
+     * @param skillId the skill to improve.
+     * @param points the number of points to add.
+     */
+    public void addSkillPoints(int skillId, int points){
+        skills[skillId].addPoints(points);
+    }
+    
     public static void main(String [] args){
         System.out.println("Level table: ");
         Entity bob = new Entity("Bob",true,0);
