@@ -20,17 +20,20 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.BlobbyTransition;
 import org.newdawn.slick.tiled.TiledMap;
 import svugame.engine.state.Battle;
+import svugame.engine.state.ClientBase;
+import svugame.engine.state.GameData;
+import svugame.engine.state.Map;
 import svugame.engine.state.NewOverworld;
 import svugame.engine.state.Overworld;
 import svugame.engine.state.PauseState;
 import svugame.engine.state.StartState;
-import svugame.engine.state.Map;
+import svugame.engine.state.States;
 
 /**
  *
  * @author craig.reese
  */
-public class SVUGame extends StateBasedGame { 
+public class SVUGame extends ClientBase<GameData> { 
 
    
 
@@ -46,20 +49,20 @@ public class SVUGame extends StateBasedGame {
     }
 
     public SVUGame(String title) {
-        super(title);
-        addState(new NewOverworld());
-        addState(new Battle());
-        //addState(new Overworld());
-        addState(new Map());
-        addState(new StartState());
-        addState(new PauseState());
-        addState(new City1());
-        enterState(8);  
+        super(title,new GameData());
+        
     }
 
     @Override
     public void initStatesList(GameContainer gc) throws SlickException {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       addState(new NewOverworld(this, States.NewOverworld));
+        addState(new Battle());
+        //addState(new Overworld());
+        addState(new Map(this, States.Map));
+        addState(new StartState());
+        addState(new PauseState());
+        addState(new City1());
+        enterState(8);  
     }
     
     

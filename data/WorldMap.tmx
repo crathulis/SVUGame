@@ -294,4 +294,14 @@
    H4sIAAAAAAAAC+3duYoUURTH4Zsppmo8hePGhDKOYKa4wMSODr6O+5K5L5n7krkvz6Ov4V9oaWhasMS2qT7fB7/oJJWc6Fbdag0AAAAAAAAAAAAAAAAAAAAAAAAA+F++LbW2o2vt+9K8nwSYte1da2tpZzfnBwFmbrUbByy2n3u+3tl3AAAAAAAAAACA3/HdBNThuwmow3cTUIfvJgAAgCqcZ0AdzjOgDucZUIfzDAAAAAAAAAAAAAAAAAAAAAAAAP6Ee2ihDvfQQh3uoYU63EMLAAAAAMBQeEcF6vCOCtThHRWowzsqzNuWtHXUth4zYHj2pf2jVnrMgOE5lDZHHe4xA4bnZBvv9HqPGTA8Z9p4p8/2mAHDs2ui3WlP2jtlBgzbgYlW08G0NmUGDNvRiY6l4+nElBkwbEdG/drpU2kjnZ4yAwAAAAAAAAAAAAAAAAAAAIbH/+KgDv+Lgzr8Lw7q8L84AAAAABhz/g11OP+GOpx/Qx3OvwEAAADg751bbu18upAupkvpcrqSrqZr6fryvJ8S+BduZJdvplvpdrqT7qZ76X56kB7ad1gIj7LLj9OT9DQ9S8/Ti/QyvUqv7TsshDfZ5bfpXXqfPqSP6VP6nL6kr/YdAAAAAAAAAAAAAJgxd/tCHe72hTrc7Qt1uNsXAAAAAAAAAAAAAAAAAAAAAACgph8j0mptoE4CAA==
   </data>
  </layer>
+ <layer name="Fog" width="252" height="150">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DMQ0AAAwDoDqZ2+ruMxmQ0Euqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqp/i35RMaBOAgA=
+  </data>
+ </layer>
+ <layer name="visible" width="252" height="150">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVP7WkJoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AYn2Ks0oE4CAA==
+  </data>
+ </layer>
 </map>
