@@ -24,6 +24,7 @@ import svugame.engine.state.NewOverworld;
 import svugame.engine.state.Overworld;
 import svugame.engine.state.PauseState;
 import svugame.engine.state.StartState;
+import svugame.engine.state.Map;
 
 /**
  *
@@ -49,7 +50,7 @@ public class SVUGame extends StateBasedGame {
         addState(new NewOverworld());
         addState(new Battle());
         //addState(new Overworld());
-        
+        addState(new Map());
         addState(new StartState());
         addState(new PauseState());
         addState(new City1());

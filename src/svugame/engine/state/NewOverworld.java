@@ -104,7 +104,7 @@ public class NewOverworld extends BasicGameState {
         double speed = .1; // this is how fast our char can move .03 is good
         boolean collision = false;
         
-        System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
+        //System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
         
         
 
@@ -219,6 +219,12 @@ public class NewOverworld extends BasicGameState {
 
         if (gc.getInput().isKeyPressed(Input.KEY_C)) {
         }
+        
+        if (gc.getInput().isKeyPressed(Input.KEY_M)) {
+            sbg.enterState(9);
+        }
+        
+        
 
         if (convoActive == true) {
             if (input.isKeyPressed(Input.KEY_ENTER)) {
