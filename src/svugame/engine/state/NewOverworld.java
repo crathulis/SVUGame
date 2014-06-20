@@ -5,6 +5,7 @@
  */
 package svugame.engine.state;
 
+import HelperClasses.Position;
 import java.awt.Dimension;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +30,7 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  * @author craig.reese
  */
-public class NewOverworld extends BasicGameState {
+public class NewOverworld extends GameStateBase<GameData,States> {
 
     private TiledMap currentMap;
     private Animation up;
@@ -44,6 +45,10 @@ public class NewOverworld extends BasicGameState {
     private boolean[][] blocked;
     SpriteSheet spritesheet;
     private Dimension renderedArea = new Dimension(84,80);  //this is where our camera will start
+
+    public NewOverworld(ClientBase<GameData> theClient, States theState) {
+        super(theClient, theState);
+    }
 
     @Override
     public int getID() {
@@ -66,6 +71,8 @@ public class NewOverworld extends BasicGameState {
         left = new Animation(movementLeft, duration, false);
         right = new Animation(movementRight, duration, false);
         sprite = down;
+        GameData gameData = getClient().getGameData();
+        gameData.setPlayerSprite(down);
         buildBlockArray();
     }
 
@@ -90,7 +97,9 @@ public class NewOverworld extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
         grphcs.scale(2, 2);
         //currentMap.render(0, 0);
-        currentMap.render(0, 0, renderedArea.width, renderedArea.height, 25, 18);
+        currentMap.render(0, 0, renderedArea.width, renderedArea.height, 25, 18,0,false);
+        currentMap.render(0, 0, renderedArea.width, renderedArea.height, 25, 18,1,false);
+        currentMap.render(0, 0, renderedArea.width, renderedArea.height, 25, 18,2,false);
         sprite.draw( playerx,  playery);
         if (this.convoActive == true) {
             grphcs.scale(0.25f, 0.25f);
@@ -104,7 +113,7 @@ public class NewOverworld extends BasicGameState {
         double speed = .1; // this is how fast our char can move .03 is good
         boolean collision = false;
         
-        System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
+        //System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
         
         
 
@@ -219,6 +228,19 @@ public class NewOverworld extends BasicGameState {
 
         if (gc.getInput().isKeyPressed(Input.KEY_C)) {
         }
+        
+        if (gc.getInput().isKeyPressed(Input.KEY_M)) {
+            GameData thedata = getClient().getGameData();
+            //get half of the rendered area + etc /2 for both gets middle 25, 18
+            int middlex = renderedArea.width ;
+            int middley = renderedArea.height ;
+            thedata.setCameraPosition(new Position(middlex,middley));
+            thedata.setPlayerPosition(new Position((renderedArea.width*32)+playerx,(renderedArea.height*32)+playery));
+            
+            sbg.enterState(9);
+        }
+        
+        
 
         if (convoActive == true) {
             if (input.isKeyPressed(Input.KEY_ENTER)) {
@@ -235,11 +257,10 @@ public class NewOverworld extends BasicGameState {
             case "right":
                 int endpoint = renderedArea.width + (gc.getWidth()/32) /2;
                 
-                for(int i = 0;i< endpoint;i++)
-                {
-                    renderedArea.width +=1;
+                
+                    renderedArea.width = endpoint;
             
-                }
+                
             
             //now we move our character on the new map
             playerx = 1;
@@ -297,6 +318,100 @@ public class NewOverworld extends BasicGameState {
             return false;
         }
         return blocked[xBlock][yBlock];
+    }
+
+    @Override
+    public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException {
+        
+    }
+
+    @Override
+    public void leave(GameContainer gc, StateBasedGame sbg) throws SlickException {
+    }
+
+    @Override
+    public void mouseWheelMoved(int i) {
+    }
+
+    @Override
+    public void mouseClicked(int i, int i1, int i2, int i3) {
+    }
+
+    @Override
+    public void mousePressed(int i, int i1, int i2) {
+    }
+
+    @Override
+    public void mouseReleased(int i, int i1, int i2) {
+    }
+
+    @Override
+    public void mouseMoved(int i, int i1, int i2, int i3) {
+    }
+
+    @Override
+    public void mouseDragged(int i, int i1, int i2, int i3) {
+    }
+
+    @Override
+    public void setInput(Input input) {
+    }
+
+    @Override
+    public void inputEnded() {
+    }
+
+    @Override
+    public void inputStarted() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(int i, char c) {
+    }
+
+    @Override
+    public void keyReleased(int i, char c) {
+    }
+
+    @Override
+    public void controllerLeftPressed(int i) {
+    }
+
+    @Override
+    public void controllerLeftReleased(int i) {
+    }
+
+    @Override
+    public void controllerRightPressed(int i) {
+    }
+
+    @Override
+    public void controllerRightReleased(int i) {
+    }
+
+    @Override
+    public void controllerUpPressed(int i) {
+    }
+
+    @Override
+    public void controllerUpReleased(int i) {
+    }
+
+    @Override
+    public void controllerDownPressed(int i) {
+    }
+
+    @Override
+    public void controllerDownReleased(int i) {
+    }
+
+    @Override
+    public void controllerButtonPressed(int i, int i1) {
+    }
+
+    @Override
+    public void controllerButtonReleased(int i, int i1) {
     }
 
 }

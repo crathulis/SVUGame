@@ -27,6 +27,8 @@ public interface ActionConstants {
     public static final int RESULTS_UNLOCK = 17;
     public static final int RESULTS_PICKPOCKET = 18;
     public static final int RESULTS_UNTRAP = 19;
+    public static final int RESULTS_ARMOR = 20;
+    public static final int RESULTS_PLAY = 21;
     
     //spell results (Negative)
     public static final int RESULTS_BURN = 50;

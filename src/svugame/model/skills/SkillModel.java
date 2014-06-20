@@ -5,8 +5,6 @@
  */
 package svugame.model.skills;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -15,10 +13,14 @@ import javax.xml.bind.annotation.XmlType;
  */
 //@XmlRootElement(name = "skill")
 @XmlType(propOrder = {"name", "id", "sdesc", "ldesc", "attrib1", "attrib2"})
-public class SkillModel {
+public class SkillModel implements Comparable {
 
     public SkillModel() {
 
+    }
+
+    public SkillModel(int id) {
+        this("", id, "", "", 0, 0);
     }
 
     public SkillModel(String name, int id, String sdesc, String ldesc, int attrib1, int attrib2) {
@@ -90,5 +92,13 @@ public class SkillModel {
     private String ldesc;
     private int attrib1;
     private int attrib2;
+
+    @Override
+    public int compareTo(Object o) {
+        if ((o == null) || (!(o instanceof SkillModel))) {
+            return 1;
+        }
+        return this.id - ((SkillModel) o).getId();
+    }
 
 }
