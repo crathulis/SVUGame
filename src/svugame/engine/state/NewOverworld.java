@@ -236,6 +236,7 @@ public class NewOverworld extends GameStateBase<GameData,States> {
             int middley = renderedArea.height ;
             thedata.setCameraPosition(new Position(middlex,middley));
             thedata.setPlayerPosition(new Position((renderedArea.width*32)+playerx,(renderedArea.height*32)+playery));
+            thedata.setRelativePlayerPosition(new Position(playerx,playery));
             
             sbg.enterState(9);
         }
