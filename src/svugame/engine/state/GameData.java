@@ -17,9 +17,20 @@ import org.newdawn.slick.Animation;
 public class GameData {
     private Position cameraPosition = new Position(0,0);
     private Position playerPosition = new Position(0,0);
+    private Position relativePlayerPosition = new Position(0,0);
     private Boolean[] fogofware;
     private Animation playerSprite;
 
+    public Position getRelativePlayerPosition() {
+        return relativePlayerPosition;
+    }
+
+    public void setRelativePlayerPosition(Position relativePlayerPosition) {
+        this.relativePlayerPosition = relativePlayerPosition;
+    }
+
+    
+    
     public Animation getPlayerSprite() {
         return playerSprite;
     }
