@@ -18,7 +18,7 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  * @author craig.reese
  */
-public class Map extends GameStateBase<GameData,States> {
+public class Map extends GameStateBase<GameData, States> {
 
     TiledMap startMap;
     float scalex = 0f;
@@ -31,6 +31,7 @@ public class Map extends GameStateBase<GameData,States> {
     float playerx;
     float playery;
     Animation player;
+    float scale = .5f;
 
     public Map(ClientBase<GameData> theClient, States theState) {
         super(theClient, theState);
@@ -44,7 +45,7 @@ public class Map extends GameStateBase<GameData,States> {
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-       
+
         startMap = new TiledMap("data/WorldMap.tmx");
         float x = startMap.getWidth() * 32;
         float y = startMap.getHeight() * 32;
@@ -64,7 +65,7 @@ public class Map extends GameStateBase<GameData,States> {
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
         //grphcs.scale(scalex, scaley);
-        grphcs.scale(.5f, .5f);
+        grphcs.scale(scale, scale);
         /*
          for(int i =0;i<startMap.getWidth();i++)
          {
@@ -76,12 +77,12 @@ public class Map extends GameStateBase<GameData,States> {
          }
          }
          */
-        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(),0,false);
-        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(),1,false);
-        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(),2,false);
+        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 0, false);
+        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 1, false);
+        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 2, false);
         grphcs.scale(2, 2);
-        player.draw(( playerx-(currentrenderx*32))/2, ( playery-(currentrendery*32))/2);
-        
+        player.draw((playerx - (currentrenderx * 32)) / 2, (playery - (currentrendery * 32)) / 2);
+
     }
 
     @Override
@@ -106,33 +107,34 @@ public class Map extends GameStateBase<GameData,States> {
             float differancey = gc.getInput().getMouseY() - mousedowny;
             float tilediffx = differancex / 32;
             float tilediffy = differancey / 32;
-            int changeintx = currentrenderx - (int) tilediffx *2;
-            int changeinty = currentrendery - (int) tilediffy*2;
-            
-            
-            if(changeintx != currentrenderx || changeinty != currentrendery){
-            mousedownx = gc.getInput().getMouseX();
-            mousedowny = gc.getInput().getMouseY();
-            currentrenderx = currentrenderx - (int) tilediffx *2;
-            currentrendery = currentrendery - (int) tilediffy *2;
-        }
+            int changeintx = currentrenderx - (int) tilediffx * 2;
+            int changeinty = currentrendery - (int) tilediffy * 2;
+
+            if (changeintx != currentrenderx || changeinty != currentrendery) {
+                mousedownx = gc.getInput().getMouseX();
+                mousedowny = gc.getInput().getMouseY();
+                currentrenderx = currentrenderx - (int) tilediffx * 2;
+                currentrendery = currentrendery - (int) tilediffy * 2;
+            }
             System.out.println("mouse down");
             //}
         }
     }
-    
-     @Override
+
+    @Override
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException {
-         GameData theGameData = getClient().getGameData();
+        GameData theGameData = getClient().getGameData();
          //the positions we get from gamedata need to be where the camera is centered
-         //int cameracornerx = (int)theGameData.getCameraPosition().getX()- ((gc.getWidth() / startMap.getTileHeight()) );
-         //int cameracornery = (int)theGameData.getCameraPosition().getY()- ((gc.getHeight() / startMap.getTileHeight()) );
-         int cameracornerx = (int) ((int) theGameData.getPlayerPosition().getX()-(.25*gc.getWidth()))/32;
-         int cameracornery = (int) ((int) theGameData.getPlayerPosition().getY()-(.25*gc.getHeight()))/32;
-         
+        //int cameracornerx = (int)theGameData.getCameraPosition().getX()- ((gc.getWidth() / startMap.getTileHeight()) );
+        //int cameracornery = (int)theGameData.getCameraPosition().getY()- ((gc.getHeight() / startMap.getTileHeight()) );
+        //int cameracornerx = (int) ((int) theGameData.getPlayerPosition().getX()-(.25*gc.getWidth()))/32;
+        //int cameracornery = (int) ((int) theGameData.getPlayerPosition().getY()-(.25*gc.getHeight()))/32;
+        int cameracornerx = (int) (theGameData.getCameraPosition().getX() - 25 + (theGameData.getRelativePlayerPosition().getX() / 32));
+        int cameracornery = (int) (theGameData.getCameraPosition().getY() - 18 + (theGameData.getRelativePlayerPosition().getY() / 32));
+
         currentrenderx = cameracornerx;
         currentrendery = cameracornery;
-        
+
         playerx = theGameData.getPlayerPosition().getX();
         playery = theGameData.getPlayerPosition().getY();
         this.player = theGameData.getPlayerSprite();
@@ -144,6 +146,14 @@ public class Map extends GameStateBase<GameData,States> {
 
     @Override
     public void mouseWheelMoved(int i) {
+        if (i < 0 && scale > .15f) {
+            scale = (float) (scale - .05);
+        } else if (i > 0 && scale < 1.25f) {
+            scale = (float) (scale + .05);
+        } else if (i < 0 && scale < .15) {
+
+        }
+        System.out.println("scale: " + scale);
     }
 
     @Override
