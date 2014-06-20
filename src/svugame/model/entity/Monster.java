@@ -17,6 +17,6 @@ import svugame.model.skills.Skill;
 
 public abstract class Monster extends Entity{
     
-    private ArrayList<Skill> attacks;
+    //private ArrayList<Skill> attacks;
     
 }

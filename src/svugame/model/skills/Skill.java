@@ -41,7 +41,7 @@ public class Skill {
         this.points = level;
     }
     
-    private void addPoints(int points){
+    public void addPoints(int points){
         this.points += points;
     }
     

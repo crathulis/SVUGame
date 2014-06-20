@@ -21,17 +21,11 @@ and open the template in the editor.
             <focus>11</focus>
             <exp>300</exp>
             <skill1>Claw</skill1>
-            <attrib1>0</attrib1>
-            <attrib2>4</attrib2>
-            <level1>1</level1>
+            <id1>8</id1>
             <skill2>Bite</skill2>
-            <attrib3>0</attrib3>
-            <attrib4>4</attrib4>
-            <level2>1</level2>
+            <id2>4</id2>
             <skill3>Roar</skill3>
-            <attrib5>8</attrib5>
-            <attrib6>5</attrib6>
-            <level3>1</level3>
+            <id3>29</id3>
             <armour>fur</armour>
             <weapon></weapon>
         </monster>
@@ -49,17 +43,11 @@ and open the template in the editor.
             <focus>11</focus>
             <exp>600</exp>
             <skill1>Claw</skill1>
-            <attrib1>0</attrib1>
-            <attrib2>4</attrib2>
-            <level1>3</level1>
+            <id1>8</id1>
             <skill2>Bite</skill2>
-            <attrib3>0</attrib3>
-            <attrib4>4</attrib4>
-            <level2>3</level2>
+            <id2>4</id2>
             <skill3>Roar</skill3>
-            <attrib5>8</attrib5>
-            <attrib6>5</attrib6>
-            <level3>3</level3>
+            <id3>29</id3>
             <armour>fur</armour>
             <weapon></weapon>
         </monster>
@@ -77,17 +65,11 @@ and open the template in the editor.
             <focus>11</focus>
             <exp>1000</exp>
             <skill1>Claw</skill1>
-            <attrib1>0</attrib1>
-            <attrib2>4</attrib2>
-            <level1>5</level1>
+            <id1>8</id1>
             <skill2>Bite</skill2>
-            <attrib3>0</attrib3>
-            <attrib4>4</attrib4>
-            <level2>5</level2>
+            <id2>4</id2>
             <skill3>Roar</skill3>
-            <attrib5>8</attrib5>
-            <attrib6>5</attrib6>
-            <level3>5</level3>
+            <id3>29</id3>
             <armour>fur</armour>
             <weapon></weapon>
             
@@ -106,17 +88,11 @@ and open the template in the editor.
             <focus>11</focus>
             <exp>300</exp>
             <skill1>Claw</skill1>
-            <attrib1>0</attrib1>
-            <attrib2>4</attrib2>
-            <level1>1</level1>
+            <id1>8</id1>
             <skill2>Bite</skill2>
-            <attrib3>0</attrib3>
-            <attrib4>4</attrib4>
-            <level2>1</level2>
+            <id2>4</id2>
             <skill3>Howl</skill3>
-            <attrib5>8</attrib5>
-            <attrib6>5</attrib6>
-            <level3>1</level3>
+            <id3>30</id3>
             <armour>fur</armour>
             <weapon></weapon>
         </monster>
