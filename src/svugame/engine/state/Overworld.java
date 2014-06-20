@@ -58,6 +58,7 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
     private Animation sprite, up, down, left, right;
     private float playerx = 64f, playery = 64f;
     private boolean[][] blocked;
+    boolean[][] fog;
     private static final int SIZE = 16;//size of our tiles
     Music music;
     private Display display;
@@ -90,7 +91,6 @@ public class Overworld extends BasicGameState {  //public class Overworld extend
         sprite = down;
         buildBlockArray();
         System.out.println("test");
-
     }
 
     @Override

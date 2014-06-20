@@ -18,7 +18,7 @@ public class GameData {
     private Position cameraPosition = new Position(0,0);
     private Position playerPosition = new Position(0,0);
     private Position relativePlayerPosition = new Position(0,0);
-    private Boolean[] fogofware;
+    private boolean[][] fog;
     private Animation playerSprite;
 
     public Position getRelativePlayerPosition() {
@@ -59,12 +59,12 @@ public class GameData {
     
     
 
-    public Boolean[] getFogofware() {
-        return fogofware;
+    public boolean[][] getFog() {
+        return fog;
     }
 
-    public void setFogofware(Boolean[] fogofware) {
-        this.fogofware = fogofware;
+    public void setFog(boolean[][] fogofware) {
+        this.fog = fogofware;
     }
     
     

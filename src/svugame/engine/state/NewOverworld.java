@@ -45,6 +45,7 @@ public class NewOverworld extends GameStateBase<GameData,States> {
     private boolean[][] blocked;
     SpriteSheet spritesheet;
     private Dimension renderedArea = new Dimension(84,80);  //this is where our camera will start
+    private boolean[][] fog;
 
     public NewOverworld(ClientBase<GameData> theClient, States theState) {
         super(theClient, theState);
@@ -74,6 +75,33 @@ public class NewOverworld extends GameStateBase<GameData,States> {
         GameData gameData = getClient().getGameData();
         gameData.setPlayerSprite(down);
         buildBlockArray();
+        buildFogofwar();
+        clearFog(renderedArea.width, renderedArea.height, 12, 9);
+
+    }
+    
+    private void clearFog(int startx,int starty, int distancex, int distancey)
+    {
+        for(int i = startx;i<distancex+startx;i++)
+        {
+            for(int j = starty;j<distancey+starty;j++)
+            {
+                fog[i][j] = false;
+                System.out.println("Cleared fog at: " + i + "," + j);
+            }
+        }
+    }
+    
+    private void buildFogofwar()
+    {
+        fog = new boolean[currentMap.getWidth()][currentMap.getHeight()];
+        for(int i = 0;i<currentMap.getWidth();i++)
+        {
+            for(int j = 0;j<currentMap.getHeight();j++)
+            {
+                fog[i][j] = true;
+            }
+        }
     }
 
     private void buildBlockArray() {
@@ -237,6 +265,7 @@ public class NewOverworld extends GameStateBase<GameData,States> {
             thedata.setCameraPosition(new Position(middlex,middley));
             thedata.setPlayerPosition(new Position((renderedArea.width*32)+playerx,(renderedArea.height*32)+playery));
             thedata.setRelativePlayerPosition(new Position(playerx,playery));
+            thedata.setFog(fog);
             
             sbg.enterState(9);
         }
@@ -292,8 +321,9 @@ public class NewOverworld extends GameStateBase<GameData,States> {
             case "down":
                 renderedArea.height += (gc.getHeight()/32) /2;
                 playery = 1;
+                break;
         }
-       
+       clearFog(renderedArea.width, renderedArea.height, 12, 9);
 
         
 

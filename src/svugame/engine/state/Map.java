@@ -32,6 +32,7 @@ public class Map extends GameStateBase<GameData, States> {
     float playery;
     Animation player;
     float scale = .5f;
+    boolean[][] fog;
 
     public Map(ClientBase<GameData> theClient, States theState) {
         super(theClient, theState);
@@ -53,13 +54,6 @@ public class Map extends GameStateBase<GameData, States> {
         scaley = 600 / y;
         System.out.println("scalex: " + scalex + " scaley: " + scaley);
 
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                int tileid = startMap.getTileId(i, j, 3);
-                startMap.setTileId(i, j, 3, 1);
-            }
-        }
-
     }
 
     @Override
@@ -67,19 +61,24 @@ public class Map extends GameStateBase<GameData, States> {
         //grphcs.scale(scalex, scaley);
         grphcs.scale(scale, scale);
         /*
-         for(int i =0;i<startMap.getWidth();i++)
+         for (int i = currentrenderx; i < currentrenderx + 25; i++) {
+         for (int j = currentrendery; i < currentrendery + 18; i++) {
+         if(fog[i][j] == false)
          {
-         for(int j =0;i<startMap.getHeight();i++)
+         startMap.render(i, j, currentrenderx, currentrenderx, startMap.getWidth(), startMap.getHeight(), 0, false);
+         startMap.render(i, j, currentrenderx, currentrenderx, startMap.getWidth(), startMap.getHeight(), 1, false);
+         startMap.render(i, j, currentrenderx, currentrenderx, startMap.getWidth(), startMap.getHeight(), 2, false);
+         System.out.println("no fog at: " + i+ "," + j);
+         } else
          {
-         startMap.render(i, j,0,0,startMap.getWidth(),startMap.getHeight(),0,true);
-         startMap.render(i, j,0,0,startMap.getWidth(),startMap.getHeight(),1,true);
-         startMap.render(i, j,0,0,startMap.getWidth(),startMap.getHeight(),2,true);
+         startMap.render(i, j, currentrenderx, currentrenderx, startMap.getWidth(), startMap.getHeight(), 3, false);
+         }
          }
          }
          */
-        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 0, false);
-        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 1, false);
-        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 2, false);
+        startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight());
+        //startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 1, false);
+        //startMap.render(0, 0, currentrenderx, currentrendery, startMap.getWidth(), startMap.getHeight(), 2, false);
         grphcs.scale(2, 2);
         player.draw((playerx - (currentrenderx * 32)) / 2, (playery - (currentrendery * 32)) / 2);
 
@@ -92,6 +91,17 @@ public class Map extends GameStateBase<GameData, States> {
         if (gc.getInput().isKeyPressed(Input.KEY_M)) {
             sbg.enterState(8);
         }
+
+        if (gc.getInput().isKeyPressed(Input.KEY_C)) {
+            for (int i2 = 0; i2 < startMap.getWidth(); i2++) {
+                for (int j = 0; j < startMap.getHeight(); j++) {
+                    
+                        startMap.setTileId(i2, j, 3, 1);
+                    
+                }
+            }
+        }
+
         if (gc.getInput().isMousePressed(0)) {
             //setting initial location
             mousedownx = gc.getInput().getMouseX();
@@ -113,10 +123,23 @@ public class Map extends GameStateBase<GameData, States> {
             if (changeintx != currentrenderx || changeinty != currentrendery) {
                 mousedownx = gc.getInput().getMouseX();
                 mousedowny = gc.getInput().getMouseY();
-                currentrenderx = currentrenderx - (int) tilediffx * 2;
-                currentrendery = currentrendery - (int) tilediffy * 2;
+
+                int possiblex = currentrenderx - (int) tilediffx * 2;
+                int possibley = currentrendery - (int) tilediffy * 2;
+
+                int xmaxcalc = (int) (possiblex + (gc.getWidth() / (32 * scale)));
+                int ymaxcalc = (int) (possibley + (gc.getHeight() / (32 * scale)));
+
+                if (xmaxcalc < startMap.getWidth() && possiblex > 0) {
+                    currentrenderx = possiblex;
+                }
+                if (ymaxcalc < startMap.getHeight() && possibley > 0) {
+                    currentrendery = possibley;
+                }
+                System.out.println("possiblex: " + possiblex + " calc: " + xmaxcalc + " map width: " + startMap.getWidth());
+
             }
-            System.out.println("mouse down");
+            //System.out.println("mouse down");
             //}
         }
     }
@@ -124,7 +147,7 @@ public class Map extends GameStateBase<GameData, States> {
     @Override
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException {
         GameData theGameData = getClient().getGameData();
-         //the positions we get from gamedata need to be where the camera is centered
+        //the positions we get from gamedata need to be where the camera is centered
         //int cameracornerx = (int)theGameData.getCameraPosition().getX()- ((gc.getWidth() / startMap.getTileHeight()) );
         //int cameracornery = (int)theGameData.getCameraPosition().getY()- ((gc.getHeight() / startMap.getTileHeight()) );
         //int cameracornerx = (int) ((int) theGameData.getPlayerPosition().getX()-(.25*gc.getWidth()))/32;
@@ -138,6 +161,16 @@ public class Map extends GameStateBase<GameData, States> {
         playerx = theGameData.getPlayerPosition().getX();
         playery = theGameData.getPlayerPosition().getY();
         this.player = theGameData.getPlayerSprite();
+
+        fog = theGameData.getFog();
+
+        for (int i = 0; i < startMap.getWidth(); i++) {
+            for (int j = 0; j < startMap.getHeight(); j++) {
+                if (fog[i][j] == false) {
+                    startMap.setTileId(i, j, 3, 1);
+                }
+            }
+        }
     }
 
     @Override
@@ -148,10 +181,16 @@ public class Map extends GameStateBase<GameData, States> {
     public void mouseWheelMoved(int i) {
         if (i < 0 && scale > .15f) {
             scale = (float) (scale - .05);
+            //do check to see if we scaled off of map
         } else if (i > 0 && scale < 1.25f) {
             scale = (float) (scale + .05);
-        } else if (i < 0 && scale < .15) {
-
+        } else if (i < 0 && scale <= .15) {
+            currentrenderx = 0;
+            currentrendery = 0;
+            scale = .15f;
+            //do check to see if we scaled off of the map
+        } else if (i > 0 && scale > 1.25f) {
+            scale = 1.25f;
         }
         System.out.println("scale: " + scale);
     }
@@ -186,7 +225,7 @@ public class Map extends GameStateBase<GameData, States> {
 
     @Override
     public void inputStarted() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
