@@ -6,17 +6,10 @@
 
 package svugame.model.entity;
 
-import java.util.ArrayList;
-import svugame.model.skills.Skill;
-
 /**
  *
  * @author Kevin
  */
-
-
-public abstract class Monster extends Entity{
-    
-    private ArrayList<Skill> attacks;
+public class Wolf extends Monster{
     
 }

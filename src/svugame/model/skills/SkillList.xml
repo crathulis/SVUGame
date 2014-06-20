@@ -257,8 +257,8 @@ and open the template in the editor.
             <attrib2>5</attrib2>
             <level>0</level>
             <description></description>
-            <parent>magicalBuff</parent>
-        </Skill>
+            
+        </Skill><parent>magicalBuff</parent>
         
         <Skill>
             <name>Fear</name>
