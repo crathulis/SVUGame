@@ -6,6 +6,8 @@
 package svugame.model.skills;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -34,12 +36,20 @@ public class SkillList {
     }
 
     public SkillModel getSkillModelById(int skillId) {
-        for (SkillModel sm : skillList) {
-            if (skillId == sm.getId()) {
+        if(!sorted){
+            Collections.sort(skillList);
+            sorted = true;
+        }
+        return skillList.get(skillId);
+    }
+    
+    public SkillModel getSkillModelByName(String name){
+        for(SkillModel sm : skillList){
+            if(sm.getName().equals(name)){
                 return sm;
             }
         }
-        return null;
+        return skillList.get(0);
     }
 
     // XmLElementWrapper generates a wrapper element around XML representation
@@ -47,5 +57,6 @@ public class SkillList {
     // XmlElement sets the name of the entities
     @XmlElement(name = "skill")
     private ArrayList<SkillModel> skillList;
+    private boolean sorted = false;
 
 }

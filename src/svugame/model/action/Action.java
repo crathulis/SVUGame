@@ -37,8 +37,6 @@ public abstract class Action {
     }
     
     public abstract boolean isPossible();
-    public abstract boolean isSuccessful();
-    public abstract ArrayList<Integer> resultType();
-    public abstract ArrayList<Integer> resultAmount();
+    public abstract ArrayList<Effect> apply();
     
 }
