@@ -43,7 +43,7 @@ public class Bear extends Monster{
         super.setExperience(exp);
         
         //Set Skills
-        
+        //super.addSkill(skill1,super.skills[id1]);
     }
     
 }

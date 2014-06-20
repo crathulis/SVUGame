@@ -6,7 +6,7 @@
 
 package svugame.model.entity;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import svugame.model.skills.Skill;
 
 /**
@@ -17,6 +17,18 @@ import svugame.model.skills.Skill;
 
 public abstract class Monster extends Entity{
     
-    //private ArrayList<Skill> attacks;
+    private HashMap<String,Skill> attacks;
+    
+    public void addSkill(String name, Skill skill){
+        attacks.put(name, skill);
+    }
+    
+    public Skill getSkill(String name){
+        return attacks.get(name);
+    }
+    
+    public int attackNum(){
+        return attacks.size();
+    }
     
 }
