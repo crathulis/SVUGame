@@ -8,14 +8,18 @@ and open the template in the editor.
 
 <root>
     <monsters>
-        <monster>
+        <monster> 
             <name>Bear</name>
-            <hit>11</hit>
-            <damage>11</damage>
+            <strength>11</strength>
+            <agility>11</agility>
             <endurance>11</endurance>
             <perception>11</perception>
+            <dexterity>11</dexterity>
             <charisma>11</charisma>
+            <intelligence>11</intelligence>
+            <wisdom>11</wisdom>
             <focus>11</focus>
+            <exp>300</exp>
             <skill1>Claw</skill1>
             <attrib1>0</attrib1>
             <attrib2>4</attrib2>
@@ -28,16 +32,22 @@ and open the template in the editor.
             <attrib5>8</attrib5>
             <attrib6>5</attrib6>
             <level3>1</level3>
+            <armour>fur</armour>
+            <weapon></weapon>
         </monster>
-        
+
         <monster>
-            <name>Strong Bear</name>
-            <hit>11</hit>
-            <damage>11</damage>
+            <name>Brown Bear</name>
+            <strength>11</strength>
+            <agility>11</agility>
             <endurance>11</endurance>
             <perception>11</perception>
+            <dexterity>11</dexterity>
             <charisma>11</charisma>
+            <intelligence>11</intelligence>
+            <wisdom>11</wisdom>
             <focus>11</focus>
+            <exp>600</exp>
             <skill1>Claw</skill1>
             <attrib1>0</attrib1>
             <attrib2>4</attrib2>
@@ -50,16 +60,22 @@ and open the template in the editor.
             <attrib5>8</attrib5>
             <attrib6>5</attrib6>
             <level3>3</level3>
+            <armour>fur</armour>
+            <weapon></weapon>
         </monster>
-        
+
         <monster>
-            <name>Elite Bear</name>
-            <hit>11</hit>
-            <damage>11</damage>
+            <name>Black Bear</name>
+            <strength>11</strength>
+            <agility>11</agility>
             <endurance>11</endurance>
             <perception>11</perception>
+            <dexterity>11</dexterity>
             <charisma>11</charisma>
+            <intelligence>11</intelligence>
+            <wisdom>11</wisdom>
             <focus>11</focus>
+            <exp>1000</exp>
             <skill1>Claw</skill1>
             <attrib1>0</attrib1>
             <attrib2>4</attrib2>
@@ -72,16 +88,23 @@ and open the template in the editor.
             <attrib5>8</attrib5>
             <attrib6>5</attrib6>
             <level3>5</level3>
+            <armour>fur</armour>
+            <weapon></weapon>
+            
         </monster>
         
         <monster>
             <name>Wolf</name>
-            <hit>11</hit>
-            <damage>11</damage>
+            <strength>11</strength>
+            <agility>11</agility>
             <endurance>11</endurance>
             <perception>11</perception>
+            <dexterity>11</dexterity>
             <charisma>11</charisma>
+            <intelligence>11</intelligence>
+            <wisdom>11</wisdom>
             <focus>11</focus>
+            <exp>300</exp>
             <skill1>Claw</skill1>
             <attrib1>0</attrib1>
             <attrib2>4</attrib2>
@@ -91,9 +114,11 @@ and open the template in the editor.
             <attrib4>4</attrib4>
             <level2>1</level2>
             <skill3>Howl</skill3>
-            <attrib5>5</attrib5>
-            <attrib6>8</attrib6>
+            <attrib5>8</attrib5>
+            <attrib6>5</attrib6>
             <level3>1</level3>
+            <armour>fur</armour>
+            <weapon></weapon>
         </monster>
     </monsters>
 </root>
