@@ -38,7 +38,7 @@ public abstract class MeleeAction extends Action {
     public ArrayList<Effect> apply() {
         ArrayList<Effect> results = new ArrayList<>();
         if(!isPossible()){
-            results.add(new Effect(RESULTS_NONE,0,0));
+            results.add(new Effect(RESULTS_NONE));
             return results;
         }
         double agilityChance = actor.getAgility() / 25.0;
@@ -49,11 +49,11 @@ public abstract class MeleeAction extends Action {
         boolean dodge = Dice.roll("1d100") <= target.getAgility() - skillFactor;
         if (!hit) {
             System.out.println(actor.getName() + " missed.");
-            results.add(new Effect(RESULTS_MISS, 0, 0));
+            results.add(new Effect(RESULTS_MISS));
             return results;
         } else if (dodge) {
             System.out.println(target.getName() + " dodged.");
-            results.add(new Effect(RESULTS_DODGE, 0, 0));
+            results.add(new Effect(RESULTS_DODGE));
             return results;
         } else {
             double strengthFactor = actor.getStrength() / 25.0;
@@ -71,7 +71,7 @@ public abstract class MeleeAction extends Action {
                 shieldAbsorb = Dice.roll(target.getLevel() + "d" + maxDamageAbsorb);
                 System.out.println(target.getName() + " blocks " + shieldAbsorb
                         + " points of damage with their shield.");
-                results.add(new Effect(RESULTS_BLOCK,shieldAbsorb,0));
+                results.add(new Effect(RESULTS_BLOCK,shieldAbsorb));
             }
             int armorAbsorb = 0;
             if (target.getItemInSlot(ITEM_SLOT_TORSO).getType() == ITEM_TYPE_ARMOR) {
@@ -80,10 +80,10 @@ public abstract class MeleeAction extends Action {
                 armorAbsorb = Dice.roll(target.getLevel() + "d" + maxArmorAbsorb);
                 System.out.println(target.getName() + "'s armor absorbs " + armorAbsorb
                         + " points of damage.");
-                results.add(new Effect(RESULTS_ARMOR,armorAbsorb,0));
+                results.add(new Effect(RESULTS_ARMOR,armorAbsorb));
             }
             int finalDamage = Math.max(0, damage - shieldAbsorb - armorAbsorb);
-            results.add(new Effect(RESULTS_DAMAGE_HP, finalDamage, 0));
+            results.add(new Effect(RESULTS_DAMAGE_HP, finalDamage));
             target.setHealth(target.getHealth()-finalDamage);
             return results;
         }
