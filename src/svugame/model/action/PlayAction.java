@@ -47,9 +47,9 @@ public class PlayAction extends Action implements ItemConstants {
         ArrayList<Effect> results = new ArrayList<>();
         int successChance = actor.getSkillValue(skillId);
         if (Dice.roll("1d100") <= successChance) {
-            results.add(new Effect(RESULTS_PLAY, 1, 0));
+            results.add(new Effect(RESULTS_PLAY, 1));
         } else {
-            results.add(new Effect(RESULTS_NONE, 0, 0));
+            results.add(new Effect(RESULTS_NONE));
         }
         return results;
     }
