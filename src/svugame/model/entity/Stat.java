@@ -6,13 +6,14 @@
 package svugame.model.entity;
 
 import java.util.ArrayList;
+import svugame.model.action.Modifiable;
 import svugame.model.action.Modifier;
 
 /**
  *
  * @author Lab Admin
  */
-public class Stat {
+public class Stat  implements Modifiable {
 
     private final String name;
     private final Entity owner;
