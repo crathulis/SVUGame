@@ -3,9 +3,12 @@
  <tileset firstgid="1" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
   <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
  </tileset>
+ <tileset firstgid="3073" name="town_0" tilewidth="32" tileheight="32">
+  <image source="town_0.png" width="512" height="512"/>
+ </tileset>
  <layer name="Tile Layer 1" width="14" height="10">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC41QQQrAMAgrdG6PmvbU/79pLSiEkMIOoSYxKrWrtXvhXZhZP8B3bcAte+qd6VWueOWKV//o/+FUb0TyAD/AQ3+Q7mIuz3IAzlEe64MyuFftD5GLru9iXf0T7mIdNb5f/cmp9wPR2D7WMAIAAA==
+   H4sIAAAAAAAAC41QQQrAMAgT6nE/qnravf//zVa2QQgZeAhooom4DrN1Y7rZ6U/d6T9sbnq/r9FHUL2Rb5+gJ2ioF/EhfNkrAOijNOaLdjBX5afYy6HvYl79CbOYR47vVz/5m70Avp7l1TACAAA=
   </data>
  </layer>
 </map>
