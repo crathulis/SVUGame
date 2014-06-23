@@ -410,6 +410,57 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
         skills[skillId].addPoints(points);
     }
     
+    /**
+     * Updates the entity's health, spirit, attributes and skills to account
+     * for modifiers that have effect over time and are of a particular duration.
+     * 
+     */
+    public void update(){
+        health.update();
+        spirit.update();
+        for(Attribute a : attributes){
+            a.update();
+        }
+        for(Skill s: skills){
+            s.update();
+        }
+    }
+    
+    /**
+     * Removes all dispellable modifiers from an entity's health, spirit,
+     * attributes and skills.
+     * 
+     */
+    public void dispell(){
+        health.dispell();
+        spirit.dispell();
+        for(Attribute a : attributes){
+            a.dispell();
+        }
+        for(Skill s: skills){
+            s.dispell();
+        }
+    }
+    
+    /**
+     * Resets the entity's health, spirit, attributes and skills to their base
+     * (unmodified) values. This sets hit points and spirit points back to their
+     * maximum values, attributes to their base values, and skills to their
+     * calculated values based upon the governing attributes and spell points
+     * invested in the skill.
+     * 
+     */
+    public void reset(){
+        health.resetCurrentValue();
+        spirit.resetCurrentValue();
+        for(Attribute a : attributes){
+            a.resetCurValue();
+        }
+        for(Skill s: skills){
+            s.resetCurrentValue();
+        }
+    }
+    
     public static void main(String [] args){
         System.out.println("Level table: ");
         Entity bob = new Entity("Bob",true,0);
