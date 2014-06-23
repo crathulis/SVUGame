@@ -9,9 +9,30 @@
  <tileset firstgid="3329" name="town_0" tilewidth="32" tileheight="32">
   <image source="town_0.png" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="29" height="21">
+ <tileset firstgid="3585" name="PathAndObjects_0" tilewidth="32" tileheight="32">
+  <image source="PathAndObjects_0.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="3841" name="animated_wooden_castle_door" tilewidth="32" tileheight="32">
+  <image source="animated_wooden_castle_door.png" width="384" height="64"/>
+ </tileset>
+ <layer name="ground" width="29" height="21">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACzvIwsBwkAxsQ6Y+ED40AHaSi0f9OerPkeZPmwHAh8jE5Oo9OGrnqJ2jdo7aiWbnQJS3ANdAQUGECQAA
+   H4sIAAAAAAAACzvIwsBwkAxsQ6Y+ED5EQztt0TC5bqSGnbT0J7XxYI3PUX/S306bAcCHyMTk6j04aueonaN2jtqJZudAlLcA2DM69YQJAAA=
+  </data>
+ </layer>
+ <layer name="In Between" width="29" height="21">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMglEwCqgPnNBoetkJw8Md1A+0A0YBxQAAF3t8e4QJAAA=
+  </data>
+ </layer>
+ <layer name="buildings" width="29" height="21">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NggABGXgYGJSBm5mWgCrADmmOPhh3QzDYE8p2A2JhKdvphMScATSwQyA8C4uAhbCcxYUsLf/qjYXR/EgLn+BgYzgPxBT7ixKlh5z2gmfeB+AEfceLUAO+AZr4H4g98xImPgsENSE231AC0SLdKSBgboEW6BdnlhMdOWgBC/qQFMELC9AKgcPWB0vQCQUDsD6VHAXUAAPRPlV6ECQAA
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="29" height="21">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGFgQwjvADqATYOanv538NLAT5A8WOvsF5A+BAQi/UTAKRsEoGAWjgJYAAEAe0PyECQAA
   </data>
  </layer>
 </map>
