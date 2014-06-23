@@ -38,7 +38,7 @@ public abstract class GameStateBase<T, U extends StateBase> implements GameState
 
     @Override
     public int getID() {
-        return getState().getValue();
+        return 10;
     }
 
     @Override

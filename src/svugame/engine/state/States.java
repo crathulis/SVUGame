@@ -12,7 +12,10 @@ package svugame.engine.state;
  */
 public enum States implements StateBase{
 NewOverworld(8),
-Map(9)
+Map(9),
+CharCreation(11),
+NewStart(10)
+
 ;
     private int value;
     States(int theValue){
