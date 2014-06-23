@@ -387,6 +387,23 @@ public class CharCreation extends GameStateBase implements ComponentListener {
                 remaining.setStat(remaining.getStat() - 1);
             }
         }
+        
+        if(source == areas[1]){
+            for(StatAllocation stat: stats)
+            {
+                stat.setStat(10);
+            }
+            
+            
+            
+            for(int i = 0;i<10;i++)
+            {
+                int random = (int )(Math.random() * stats.size());
+                StatAllocation stat = stats.get(random);
+                stat.setStat(stat.getStat()+1);
+            }
+            remaining.setStat(0);
+        }
 
         for (int i = 0; i < 21; i++) {
             if (source == areas[i]) {
