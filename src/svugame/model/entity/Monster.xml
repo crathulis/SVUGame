@@ -10,15 +10,15 @@ and open the template in the editor.
     <monsters>
         <monster> 
             <name>Bear</name>
-            <strength>11</strength>
-            <agility>11</agility>
-            <endurance>11</endurance>
-            <perception>11</perception>
-            <dexterity>11</dexterity>
-            <charisma>11</charisma>
-            <intelligence>11</intelligence>
-            <wisdom>11</wisdom>
-            <focus>11</focus>
+            <strength>10</strength>
+            <agility>10</agility>
+            <endurance>10</endurance>
+            <perception>10</perception>
+            <dexterity>13</dexterity>
+            <charisma>10</charisma>
+            <intelligence>13</intelligence>
+            <wisdom>10</wisdom>
+            <focus>10</focus>
             <exp>300</exp>
             <skill1>Claw</skill1>
             <id1>8</id1>
@@ -26,6 +26,7 @@ and open the template in the editor.
             <id2>4</id2>
             <skill3>Roar</skill3>
             <id3>29</id3>
+            <level>1</level>
             <armour>fur</armour>
             <weapon></weapon>
         </monster>
@@ -36,9 +37,9 @@ and open the template in the editor.
             <agility>11</agility>
             <endurance>11</endurance>
             <perception>11</perception>
-            <dexterity>11</dexterity>
+            <dexterity>14</dexterity>
             <charisma>11</charisma>
-            <intelligence>11</intelligence>
+            <intelligence>14</intelligence>
             <wisdom>11</wisdom>
             <focus>11</focus>
             <exp>600</exp>
@@ -48,21 +49,22 @@ and open the template in the editor.
             <id2>4</id2>
             <skill3>Roar</skill3>
             <id3>29</id3>
+            <level>2</level>
             <armour>fur</armour>
             <weapon></weapon>
         </monster>
 
         <monster>
             <name>Black Bear</name>
-            <strength>11</strength>
-            <agility>11</agility>
-            <endurance>11</endurance>
-            <perception>11</perception>
-            <dexterity>11</dexterity>
-            <charisma>11</charisma>
-            <intelligence>11</intelligence>
-            <wisdom>11</wisdom>
-            <focus>11</focus>
+            <strength>12</strength>
+            <agility>12</agility>
+            <endurance>12</endurance>
+            <perception>12</perception>
+            <dexterity>15</dexterity>
+            <charisma>12</charisma>
+            <intelligence>15</intelligence>
+            <wisdom>12</wisdom>
+            <focus>12</focus>
             <exp>1000</exp>
             <skill1>Claw</skill1>
             <id1>8</id1>
@@ -70,6 +72,7 @@ and open the template in the editor.
             <id2>4</id2>
             <skill3>Roar</skill3>
             <id3>29</id3>
+            <level>3</level>
             <armour>fur</armour>
             <weapon></weapon>
             
@@ -77,10 +80,33 @@ and open the template in the editor.
         
         <monster>
             <name>Wolf</name>
+            <strength>10</strength>
+            <agility>13</agility>
+            <endurance>10</endurance>
+            <perception>13</perception>
+            <dexterity>10</dexterity>
+            <charisma>10</charisma>
+            <intelligence>10</intelligence>
+            <wisdom>10</wisdom>
+            <focus>10</focus>
+            <exp>300</exp>
+            <skill1>Claw</skill1>
+            <id1>8</id1>
+            <skill2>Bite</skill2>
+            <id2>4</id2>
+            <skill3>Howl</skill3>
+            <id3>30</id3>
+            <level>1</level>
+            <armour>fur</armour>
+            <weapon></weapon>
+        </monster>
+        
+        <monster>
+            <name>Mountain Wolf</name>
             <strength>11</strength>
-            <agility>11</agility>
+            <agility>14</agility>
             <endurance>11</endurance>
-            <perception>11</perception>
+            <perception>14</perception>
             <dexterity>11</dexterity>
             <charisma>11</charisma>
             <intelligence>11</intelligence>
@@ -93,6 +119,99 @@ and open the template in the editor.
             <id2>4</id2>
             <skill3>Howl</skill3>
             <id3>30</id3>
+            <level>2</level>
+            <armour>fur</armour>
+            <weapon></weapon>
+        </monster>
+        
+        <monster>
+            <name>Werewolf</name>
+            <strength>12</strength>
+            <agility>15</agility>
+            <endurance>12</endurance>
+            <perception>15</perception>
+            <dexterity>12</dexterity>
+            <charisma>12</charisma>
+            <intelligence>12</intelligence>
+            <wisdom>12</wisdom>
+            <focus>12</focus>
+            <exp>300</exp>
+            <skill1>Claw</skill1>
+            <id1>8</id1>
+            <skill2>Bite</skill2>
+            <id2>4</id2>
+            <skill3>Howl</skill3>
+            <id3>30</id3>
+            <level>3</level>
+            <armour>fur</armour>
+            <weapon></weapon>
+        </monster>
+        
+        <monster>
+            <name>Orc</name>
+            <strength>13</strength>
+            <agility>10</agility>
+            <endurance>13</endurance>
+            <perception>10</perception>
+            <dexterity>10</dexterity>
+            <charisma>10</charisma>
+            <intelligence>10</intelligence>
+            <wisdom>10</wisdom>
+            <focus>10</focus>
+            <exp>300</exp>
+            <skill1>Thrust</skill1>
+            <id1>3</id1>
+            <skill2>Swing</skill2>
+            <id2>4</id2>
+            <skill3>Horn</skill3>
+            <id3>1</id3>
+            <level>1</level>
+            <armour>fur</armour>
+            <weapon></weapon>
+        </monster>
+        
+        <monster>
+            <name>Orc Warrior</name>
+            <strength>14</strength>
+            <agility>11</agility>
+            <endurance>14</endurance>
+            <perception>11</perception>
+            <dexterity>11</dexterity>
+            <charisma>11</charisma>
+            <intelligence>11</intelligence>
+            <wisdom>11</wisdom>
+            <focus>11</focus>
+            <exp>300</exp>
+            <skill1>Thrust</skill1>
+            <id1>3</id1>
+            <skill2>Swing</skill2>
+            <id2>4</id2>
+            <skill3>Horn</skill3>
+            <id3>1</id3>
+            <level>2</level>
+            <armour>fur</armour>
+            <weapon></weapon>
+        </monster>
+        
+        <monster>
+            <name>Orc Chief</name>
+            <strength>15</strength>
+            <agility>12</agility>
+            <endurance>15</endurance>
+            <perception>12</perception>
+            <dexterity>12</dexterity>
+            <charisma>12</charisma>
+            <intelligence>12</intelligence>
+            <wisdom>12</wisdom>
+            <focus>12</focus>
+            <exp>300</exp>
+            <skill1>Thrust</skill1>
+            <id1>3</id1>
+            <skill2>Swing</skill2>
+            <id2>4</id2>
+            <skill3>Horn</skill3>
+            <id3>1</id3>
+            <level>3</level>
             <armour>fur</armour>
             <weapon></weapon>
         </monster>

@@ -1,6 +1,7 @@
 package svugame.model.entity;
 
 import svugame.model.Thing;
+import svugame.model.action.Modifier;
 import svugame.model.skills.Skill;
 import svugame.model.items.Inventory;
 import svugame.model.items.Item;
@@ -17,8 +18,8 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
     private String name;
     private boolean male;
     private int experience;
-    private int health;
-    private int spirit;
+    private Stat health;
+    private Stat spirit;
     private Attribute[] attributes;
     private Inventory inventory;
     private Skill[] skills;
@@ -37,6 +38,8 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
         for (int i = 0; i < NUM_ATTRIB; ++i) {
             attributes[i] = new Attribute(i, 0, 0);
         }
+        this.health = new Stat("Health", this, END);
+        this.spirit = new Stat("Spirit", this, FOC);
         this.inventory = new Inventory();
         this.equipment = new Item[NUM_SLOTS];
         this.skills = new Skill[NUM_SKILLS];
@@ -156,7 +159,7 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
      * @return base health points.
      */
     public int getBaseHealth() {
-        return (int) Math.round(getEndurance() * getLevel());
+        return health.getBaseValue();
     }
 
     /**
@@ -165,23 +168,33 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
      * @return the characters health.
      */
     public int getHealth() {
-        return health;
+        return health.getCurrentValue();
     }
 
     /**
      * Set the character's health to the given amount.
      *
-     * @param health the new health value.
+     * @param value the new health value.
      */
-    public void setHealth(int health) {
-        this.health = health;
+    public void setHealth(int value) {
+        health.setCurrentValue(value);
     }
 
     /**
      * Reset the health of the character back to the base health amount.
      */
     public void resetHealth() {
-        setHealth(getBaseHealth());
+        health.resetCurrentValue();
+    }
+    
+    /**
+     * Put a modifier on the health of the entity. Modifiers can be either buffs
+     * or debuffs that have a duration.
+     * 
+     * @param mod a temporary modifier that affects the health of the entity
+     */
+    public void modifyHealth(Modifier mod){
+        health.addMods(mod);
     }
 
     /**
@@ -191,7 +204,7 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
      * @return base spirit points.
      */
     public int getBaseSpirit() {
-        return (int) Math.round(getFocus() * getLevel());
+        return spirit.getBaseValue();
     }
 
     /**
@@ -200,17 +213,34 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
      * @return the character's spirit.
      */
     public int getSpirit() {
-        return spirit;
+        return spirit.getCurrentValue();
     }
 
     /**
      * Set the current spirit of the character.
-     * @param spirit the new spirit value.
+     * @param value the new spirit value.
      */
-    public void setSpirit(int spirit) {
-        this.spirit = spirit;
+    public void setSpirit(int value) {
+        spirit.setCurrentValue(value);
     }
-
+    
+    /**
+     * Reset the spirit of the entity back to the base spirit amount.
+     */
+    public void resetSpirit(){
+        spirit.resetCurrentValue();
+    }
+    
+    /**
+     * Put a modifier on the spirit of the entity. Modifiers can be either buffs
+     * or debuffs that have a duration.
+     * 
+     * @param mod a temporary modifier that affects the spirit of the entity
+     */
+    public void modifySpirit(Modifier mod){
+        spirit.addMods(mod);
+    }
+    
     /**
      * Get the current value of an attribute by the attribute's ID. Attribute
      * IDs are defined in AttributeConstants.java.
@@ -353,6 +383,7 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
      * Get the skill value for a particular skill for this entity
      * 
      * @param skillId the id of the skill for which to get the value
+     * @return the value (or level) of the indicated skill
      */
     public int getSkillValue(int skillId){
         return skills[skillId].getLevel();
@@ -362,6 +393,7 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
      * Get the skill level for a particular skill for this entity
      * 
      * @param skillId the id of the skill for which to get the value
+     * @return the value (or level) of the indicated skill
      */
     public int getSkillLevel(int skillId){
         return skills[skillId].getLevel();
@@ -376,6 +408,57 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
      */
     public void addSkillPoints(int skillId, int points){
         skills[skillId].addPoints(points);
+    }
+    
+    /**
+     * Updates the entity's health, spirit, attributes and skills to account
+     * for modifiers that have effect over time and are of a particular duration.
+     * 
+     */
+    public void update(){
+        health.update();
+        spirit.update();
+        for(Attribute a : attributes){
+            a.update();
+        }
+        for(Skill s: skills){
+            s.update();
+        }
+    }
+    
+    /**
+     * Removes all dispellable modifiers from an entity's health, spirit,
+     * attributes and skills.
+     * 
+     */
+    public void dispell(){
+        health.dispell();
+        spirit.dispell();
+        for(Attribute a : attributes){
+            a.dispell();
+        }
+        for(Skill s: skills){
+            s.dispell();
+        }
+    }
+    
+    /**
+     * Resets the entity's health, spirit, attributes and skills to their base
+     * (unmodified) values. This sets hit points and spirit points back to their
+     * maximum values, attributes to their base values, and skills to their
+     * calculated values based upon the governing attributes and spell points
+     * invested in the skill.
+     * 
+     */
+    public void reset(){
+        health.resetCurrentValue();
+        spirit.resetCurrentValue();
+        for(Attribute a : attributes){
+            a.resetCurValue();
+        }
+        for(Skill s: skills){
+            s.resetCurrentValue();
+        }
     }
     
     public static void main(String [] args){

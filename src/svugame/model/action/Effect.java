@@ -7,27 +7,26 @@
 package svugame.model.action;
 
 /**
- *
+ * An effect is the result of some action. It may be instantaneous (of duration
+ * 0) or last some number of updates. It may be constant (additive == false) or
+ * accumulate over time (additive == true). If the effect is dispellable, it
+ * can be dispelled through magic.
+ * 
  * @author Alan
  */
 public class Effect {
     
     private int result;
     private int amount;
-    private int duration;
+    
     
     public Effect(int result){
-        this(result, 0, 0);
+        this(result, 0);
     }
 
     public Effect(int result, int amount) {
-        this(result, amount, 0);
-    }
-
-    public Effect(int result, int amount, int duration) {
         this.result = result;
         this.amount = amount;
-        this.duration = duration;
     }
 
     public int getResult() {
@@ -46,14 +45,4 @@ public class Effect {
         this.amount = amount;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-    
-    
-    
 }

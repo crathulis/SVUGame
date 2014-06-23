@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
     "dexterity", "charisma", "intelligence", "wisdom", "focus", "exp",
     "skill1", "id1", "skill2", "id2", "skill3", "id3", "level", "armour", "weapon"})
 
-public class Wolf extends Monster{
+public class Orc extends Monster{
     
-    public Wolf(String name, int str, int agi, int end, int per, int dex,
+    public Orc(String name, int str, int agi, int end, int per, int dex,
             int cha, int intel, int wis, int foc, int exp,
             String skill1, int id1, String skill2, int id2,
             String skill3, int id3, int level, String armour, String weapon){
@@ -38,4 +38,5 @@ public class Wolf extends Monster{
         super.addSkill(skill2,id2, level);
         super.addSkill(skill3,id3, level);
     }
+    
 }

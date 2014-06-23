@@ -17,18 +17,32 @@ import svugame.model.skills.Skill;
 
 public abstract class Monster extends Entity{
     
-    private HashMap<String,Skill> attacks;
+    private HashMap<String,Integer> attacks;
     
-    public void addSkill(String name, Skill skill){
-        attacks.put(name, skill);
+    public void addSkill(String name, int skillNum, int level){
+        attacks.put(name, skillNum);
+        super.addSkillPoints(skillNum, level);
     }
     
-    public Skill getSkill(String name){
+    public Integer getSkill(String name){
         return attacks.get(name);
     }
     
     public int attackNum(){
         return attacks.size();
+    }
+    
+    public void setAttributes(int str, int agi, int end, int per, int dex, 
+            int cha, int intel, int wis, int foc){
+        super.setAttribute(STR, str);
+        super.setAttribute(AGI, agi);
+        super.setAttribute(END, end);
+        super.setAttribute(PER, per);
+        super.setAttribute(DEX, dex);
+        super.setAttribute(CHA, cha);
+        super.setAttribute(INT, intel);
+        super.setAttribute(WIS, wis);
+        super.setAttribute(FOC, foc);
     }
     
 }
