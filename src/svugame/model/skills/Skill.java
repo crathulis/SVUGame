@@ -59,6 +59,10 @@ public class Skill implements Modifiable {
         int level = (int)Math.round(attribAverage + (points==0?-25:points));
         return level + modTotal;
     }
+    
+    public void resetCurrentValue(){
+        modTotal = 0;
+    }
 
     @Override
     public ArrayList<Modifier> getMods() {
