@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<conversationList xmlns:ns2="Conversation" xmlns:ns3="ConversationList">
+    <allConversations>
+        <conversation conversationName="ArenaBattle1">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>You're talking to me? Does that mean you're ready for a match?</text>
+                    <pointer>b1</pointer>
+                    <pointer>b2</pointer>
+                    <pointer>b3</pointer>
+                    <pointer>b4</pointer>
+                    <pointer>b5</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b1</id>
+                    <prerequisites></prerequisites>
+                    <text>What am I up against?</text>
+                    <pointer>c1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>c1</id>
+                    <prerequisites></prerequisites>
+                    <text>No one likes it when a newcomer gets into the arena and dies right off, so you're only up against a bear to start with.</text>
+                    <pointer>d1</pointer>
+                    <pointer>d2</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>d1</id>
+                    <prerequisites></prerequisites>
+                    <text>I have to kill a bear?</text>
+                    <pointer>e1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>d2</id>
+                    <prerequisites></prerequisites>
+                    <text>Oh, is that all?</text>
+                    <pointer>e1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>e1</id>
+                    <prerequisites></prerequisites>
+                    <text>Yeah, it should be pretty simple. Just don't get mauled and you should be fine.</text>
+                    <pointer>b1</pointer>
+                    <pointer>b2</pointer>
+                    <pointer>b3</pointer>
+                    <pointer>b4</pointer>
+                    <pointer>b5</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b2</id>
+                    <prerequisites></prerequisites>
+                    <text>Must I go alone?</text>
+                    <pointer>f1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>f1</id>
+                    <prerequisites></prerequisites>
+                    <text>Later on you might go in with someone else, but for now, you'll be fine on your own.</text>
+                    <pointer>b1</pointer>
+                    <pointer>b2</pointer>
+                    <pointer>b3</pointer>
+                    <pointer>b4</pointer>
+                    <pointer>b5</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b3</id>
+                    <prerequisites></prerequisites>
+                    <text>What do I get if I win?</text>
+                    <pointer>g1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>g1</id>
+                    <prerequisites></prerequisites>
+                    <text>To live.</text>
+                    <pointer>h1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>h1</id>
+                    <prerequisites></prerequisites>
+                    <text>Anything else?</text>
+                    <pointer>i1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>i1</id>
+                    <prerequisites></prerequisites>
+                    <text>If you win a lot, the crowd may start to like you.</text>
+                    <pointer>b1</pointer>
+                    <pointer>b2</pointer>
+                    <pointer>b3</pointer>
+                    <pointer>b4</pointer>
+                    <pointer>b5</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b4</id>
+                    <prerequisites></prerequisites>
+                    <text>Just set me up with a match.</text>
+                    <pointer>j1</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>j1</id>
+                    <prerequisites></prerequisites>
+                    <text>You're the boss...No wait, I am. Hah. </text>
+                    <pointer>end</pointer>
+                    <actions>fight=arena1</actions>
+                </dialogue>
+                <dialogue>
+                    <id>b5</id>
+                    <prerequisites></prerequisites>
+                    <text>Give me some more time.</text>
+                    <pointer>b6</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>b6</id>
+                    <prerequisites></prerequisites>
+                    <text>Hurry it up.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="RogueTrainer">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>What do you do? </text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>Do you train?</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;open training menu&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Goodbye.</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>3a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4a</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>5a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3a</id>
+                    <prerequisites></prerequisites>
+                    <text>You're not going to say anything?</text>
+                    <pointer>4a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5a</id>
+                    <prerequisites></prerequisites>
+                    <text>Why not?</text>
+                    <pointer>6a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>6a</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>7a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7a</id>
+                    <prerequisites></prerequisites>
+                    <text>I see...</text>
+                    <pointer>8a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8a</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>9a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>9a</id>
+                    <prerequisites></prerequisites>
+                    <text>...</text>
+                    <pointer>8a</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="ArenaBattle2">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>See? You did fine. This time might not be so easy though. Are you ready for the next match? </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>What do I have to beat this time? </text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>Pixies. Nasty little creatures. Come in groups and are poisonous to the touch. </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>Do I still have to go it alone? </text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>No, this time that kid Bernard will go in with you. You’re lucky. </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Just set me up with the match. </text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>Yeah, yeah.</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;start match 2&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>1d</id>
+                    <prerequisites></prerequisites>
+                    <text>Give me some more time.</text>
+                    <pointer>2d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2d</id>
+                    <prerequisites></prerequisites>
+                    <text>Whatever.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="ArenaBattle3">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>Are you interested in studying the arcane arts? </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>Why should I study magic?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>You mean besides the pursuit of knowledge and learning is not enough of a reward? </text>
+                    <pointer>3aa</pointer>
+                    <pointer>3ab</pointer>
+                    <pointer>3ac</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3aa</id>
+                    <prerequisites></prerequisites>
+                    <text>I mean, can it help with my current situation? </text>
+                    <pointer>4aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4aa</id>
+                    <prerequisites></prerequisites>
+                    <text>Just like everyone else in this hellish place. Well, magic is powerful. You will probably have to see for yourself in the arena though. </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ab</id>
+                    <prerequisites></prerequisites>
+                    <text>I was hoping for something a little more pragmatic. </text>
+                    <pointer>4aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ac</id>
+                    <prerequisites></prerequisites>
+                    <text>Nope. I just want to blow something up.</text>
+                    <pointer>4aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>Let's see what you can teach me.</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>Open your mind and let go of your preconceptions.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Goodbye.</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>If you ever change your mind you know where to find me.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="MageTrainer">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>Impressive, you got some of the nobles to bet quite a lot on your match. You ready for another? </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <pointer>1e</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>How much did I make the arena? </text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>What do I have to beat this time?</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>Do you know what a Rellian Bloodletter is?</text>
+                    <pointer>3ba</pointer>
+                    <pointer>3bb</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ba</id>
+                    <prerequisites></prerequisites>
+                    <text>No.</text>
+                    <pointer>4ba</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>A lot. No one thought you would actually win. </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <pointer>1e</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3bb</id>
+                    <prerequisites></prerequisites>
+                    <text>Yes.</text>
+                    <pointer>4bb</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4bb</id>
+                    <prerequisites></prerequisites>
+                    <text>Right, well. Good luck, then. (He laughs.)</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <pointer>1e</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4ba</id>
+                    <prerequisites></prerequisites>
+                    <text>(He only laughs.)</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <pointer>1e</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Do I have to go it alone? </text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>You and Bernard are a current crowd favorite, so you’ll go in together. Can’t say you will be for long though. </text>
+                    <pointer>3c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3c</id>
+                    <prerequisites></prerequisites>
+                    <text>* What do you mean? 
+What do you mean? </text>
+                    <pointer>4c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4c</id>
+                    <prerequisites></prerequisites>
+                    <text>The dead aren't favorites.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <pointer>1e</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1d</id>
+                    <prerequisites></prerequisites>
+                    <text>Just set me up with the match. </text>
+                    <pointer>2d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2d</id>
+                    <prerequisites></prerequisites>
+                    <text>Hah hah, I’m going to be placing my own bets on this one.</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;Start third arena fight&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>1e</id>
+                    <prerequisites></prerequisites>
+                    <text>Give me some more time.</text>
+                    <pointer>2e</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2e</id>
+                    <prerequisites></prerequisites>
+                    <text>As if preparing more is going to help.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="WarriorTrainer">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>What you want?</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>What are you doing here?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>I make sure that you don't die.</text>
+                    <pointer>3aa</pointer>
+                    <pointer>3ba</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3aa</id>
+                    <prerequisites></prerequisites>
+                    <text>How do you do that?</text>
+                    <pointer>4aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ab</id>
+                    <prerequisites></prerequisites>
+                    <text>Does it work?</text>
+                    <pointer>4ab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4aa</id>
+                    <prerequisites></prerequisites>
+                    <text>I tell you what to do, you do it, and things go better.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4ab</id>
+                    <prerequisites></prerequisites>
+                    <text>If they do what I say. But they never do.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>Show me what you can teach me.</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>Just do what I say and you'll be fine.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>I'll have to come back later.</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>Fine, but don't blame me when things go wrong.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="ArenaNPC1">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>(He says nothing, instead pounding his fist into his hand.)</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>Is everything okay?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3a</id>
+                    <prerequisites></prerequisites>
+                    <text>And then what? You'll just keep on winning forever?</text>
+                    <pointer>4a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4a</id>
+                    <prerequisites></prerequisites>
+                    <text>Yeah, yeah. Just keep winning.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>What's your problem?</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>(He just stares at you.)</text>
+                    <pointer>3ba</pointer>
+                    <pointer>3bb</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ba</id>
+                    <prerequisites></prerequisites>
+                    <text>(Stare back.)</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3bb</id>
+                    <prerequisites>&quot;Having discussed this plan with the warrior trainer&quot;</prerequisites>
+                    <text>(Stare back.)</text>
+                    <pointer>4bb</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4bb</id>
+                    <prerequisites></prerequisites>
+                    <text>(He roars and attacks you.)</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;battle&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>Gonna win, gonna keep winning, can't stop winning.</text>
+                    <pointer>3a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>I'll... come back later.</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>(He doesn't respond.)</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="ArenaNPC2">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>It's been much too long since I've begun in here.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites>&quot;has not gotten the health potion yet.&quot;</prerequisites>
+                    <text>How long have you been at it?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3a</id>
+                    <prerequisites></prerequisites>
+                    <text>How have you done it?</text>
+                    <pointer>4a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4a</id>
+                    <prerequisites></prerequisites>
+                    <text>I don't know if I could tell you that.</text>
+                    <pointer>5a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5a</id>
+                    <prerequisites>&quot;persuasion check&quot;</prerequisites>
+                    <text>You can trust me with your secret.</text>
+                    <pointer>6aa</pointer>
+                    <pointer>6ab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>6aa</id>
+                    <prerequisites></prerequisites>
+                    <text>Oh no, no. Can't risk being found out.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>6ab</id>
+                    <prerequisites></prerequisites>
+                    <text>I've devised a way to create health potions from some of the natural materials down here.</text>
+                    <pointer>7aba</pointer>
+                    <pointer>7abb</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>I don't know. Months.</text>
+                    <pointer>3a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7aba</id>
+                    <prerequisites></prerequisites>
+                    <text>Feel like sharing?</text>
+                    <pointer>8aba</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7abb</id>
+                    <prerequisites></prerequisites>
+                    <text>Give me one or I'll let your secret out of the bag.</text>
+                    <pointer>8aba</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8aba</id>
+                    <prerequisites></prerequisites>
+                    <text>I... suppose I can spare one for your silence.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>Goodbye.</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Goodbye.</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>Good luck out there.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="merchant1">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>Come! Look at my wares!</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>Who are you?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>Who are you?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>Okay, let's see what you have for sell.</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>Of course, of course! Right this way.</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;open merchant menu&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Maybe later.</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>Of course, if ever you need anything, you just come back to see me.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1d</id>
+                    <prerequisites></prerequisites>
+                    <text>Why are you selling right outside this person's shop?</text>
+                    <pointer>2d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2d</id>
+                    <prerequisites></prerequisites>
+                    <text>Selling my wares, of course. The proprieter here doesn't mind me much.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="WeaponSmith">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>What can I help you with?</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>Who are you?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>I'm Cabal. Lived here all my life. </text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3c</id>
+                    <prerequisites></prerequisites>
+                    <text>That guy is still there? He sells way too high and sells right outside. I don't get it.</text>
+                    <pointer>4ca</pointer>
+                    <pointer>4cb</pointer>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>Sure thing.</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;open merchant list&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Why is there that merchant out there?</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>That guy is still there? He sells way too high and sells right outside. I don't get it.</text>
+                    <pointer>3c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3c</id>
+                    <prerequisites></prerequisites>
+                    <text>That guy is still there? He sells way too high and sells right outside. I don't get it.</text>
+                    <pointer>3c</pointer>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4ca</id>
+                    <prerequisites></prerequisites>
+                    <text>Does he bother you?</text>
+                    <pointer>5ca</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5ca</id>
+                    <prerequisites></prerequisites>
+                    <text>Anyone who buys from him is an idiot and probably deserves it.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5cb</id>
+                    <prerequisites></prerequisites>
+                    <text>What? No. Annoying bugger, but not really threatening.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4cb</id>
+                    <prerequisites></prerequisites>
+                    <text>Do you want me to take care of him?</text>
+                    <pointer>5cb</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="BernardAfterArena">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>I can't believe we made it!</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>Of course we made it. </text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>What do you mean, of course we made it? No one's ever done that before!</text>
+                    <pointer>3aa</pointer>
+                    <pointer>3ab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3aa</id>
+                    <prerequisites></prerequisites>
+                    <text>We had to. I'm not going to give up my life just because someone tells us that it's useless.</text>
+                    <pointer>4aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4aa</id>
+                    <prerequisites></prerequisites>
+                    <text>*player*... You're right. We can't just give up because we don't like the way things are.</text>
+                    <pointer>8</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8</id>
+                    <prerequisites></prerequisites>
+                    <text>But, what do we do now?</text>
+                    <pointer>9</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ab</id>
+                    <prerequisites></prerequisites>
+                    <text>We can't give up just because things seem bleak.</text>
+                    <pointer>4aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>Just barely. This place is insane.</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>It's always been that way. Life is hard and unfair. </text>
+                    <pointer>3ba</pointer>
+                    <pointer>3bb</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ba</id>
+                    <prerequisites></prerequisites>
+                    <text>Why don't you do something about it?</text>
+                    <pointer>4ba</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4ba</id>
+                    <prerequisites></prerequisites>
+                    <text>What can we do about it, *name*. It's too hard to fight against the entire empire.</text>
+                    <pointer>5baa</pointer>
+                    <pointer>5bab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5baa</id>
+                    <prerequisites></prerequisites>
+                    <text>There has got to be something that we can do.</text>
+                    <pointer>6baa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5bab</id>
+                    <prerequisites></prerequisites>
+                    <text>Maybe we could make something of a difference to someone. Everyone matters.</text>
+                    <pointer>6baa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>6baa</id>
+                    <prerequisites></prerequisites>
+                    <text>Maybe you are right, *name*.</text>
+                    <pointer>7</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7</id>
+                    <prerequisites></prerequisites>
+                    <text>What do you mean?</text>
+                    <pointer>9</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+    </allConversations>
+</conversationList>
