@@ -22,7 +22,8 @@ public class ArenaQuest {
     }
     
     private void constructQuest(){
-        example.addStage(0, "You are in the arena and must fight. Start a fight "
+        example.addStage(0, "This quest hasn't been started yet.");
+        example.addStage(3, "You are in the arena and must fight. Start a fight "
                 + "by speaking with the arena master and keep your eyes open"
                 + "for a way to get out.");
         example.addStage(5, "Go through the door to fight your first arena battle.");

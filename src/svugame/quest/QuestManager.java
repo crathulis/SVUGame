@@ -18,8 +18,13 @@ public class QuestManager {
         populateQuestList(new ArenaQuest());
     }
     
-    public void populateQuestList(ArenaQuest example){
+    private void populateQuestList(ArenaQuest example){
         questList.put("ArenaQuest", example.getQuest());
+        //This should read in an XML file of quests. Eventually.
+    }
+    
+    public void advanceQuests(int thingID, int actionID){
+        questList.
     }
     
     public Quest getStage(String questName){
@@ -34,7 +39,7 @@ public class QuestManager {
         questList.get(questName).setStage(100);
     }
     
-    public boolean QuestExists(String questName){
+    public boolean questExists(String questName){
         return questList.containsKey(questName);
     }
     

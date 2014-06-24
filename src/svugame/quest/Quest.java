@@ -6,7 +6,7 @@
 
 package svugame.quest;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,7 +20,7 @@ public class Quest {
     }
     
     public void addStage(int stage, String desc){
-        stageDescriptions.put(stage, desc);
+        questStages.add(new QuestStage(stage, desc));
     }
     
     public int getStage(){
@@ -33,6 +33,6 @@ public class Quest {
     
     private int stage;
     private String name;
-    private HashMap<Integer, String> stageDescriptions = new HashMap();
+    private ArrayList<QuestStage> questStages = new ArrayList<>();
     
 }
