@@ -29,6 +29,9 @@ public interface ActionConstants {
     public static final int RESULTS_UNTRAP = 19;
     public static final int RESULTS_ARMOR = 20;
     public static final int RESULTS_PLAY = 21;
+    public static final int RESULTS_DIALOG = 22;
+    public static final int RESULTS_ENTER = 23;
+    public static final int RESULTS_EXIT = 24;
     
     //spell results (Negative)
     public static final int RESULTS_BURN = 50;
