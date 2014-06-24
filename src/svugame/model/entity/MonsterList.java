@@ -17,7 +17,7 @@ import svugame.model.skills.SkillModel;
  *
  * @author Kevin
  */
-@XmlRootElement(namespace = "skills")
+@XmlRootElement(namespace = "monsters")
 
 public class MonsterList {
     
@@ -28,24 +28,24 @@ public class MonsterList {
         this.monsterList = monsterList;
     }
 
-    public ArrayList<SkillModel> getListOfSkills() {
+    public ArrayList<MonsterModel> getListOfMonsters() {
         return monsterList;
     }
 
-    public void setSkillList(ArrayList<SkillModel> skillList) {
-        this.monsterList = skillList;
+    public void setMonsterList(ArrayList<MonsterModel> monsterList) {
+        this.monsterList = monsterList;
     }
 
-    public SkillModel getSkillModelById(int skillId) {
+    public MonsterModel getSkillModelById(int monsterId) {
         if(!sorted){
             Collections.sort(monsterList);
             sorted = true;
         }
-        return monsterList.get(skillId);
+        return monsterList.get(monsterId);
     }
     
-    public SkillModel getSkillModelByName(String name){
-        for(SkillModel sm : monsterList){
+    public MonsterModel getMonsterModelByName(String name){
+        for(MonsterModel sm : monsterList){
             if(sm.getName().equals(name)){
                 return sm;
             }
@@ -54,10 +54,10 @@ public class MonsterList {
     }
 
     // XmLElementWrapper generates a wrapper element around XML representation
-    @XmlElementWrapper(name = "skillList")
+    @XmlElementWrapper(name = "monsters")
     // XmlElement sets the name of the entities
-    @XmlElement(name = "skill")
-    private ArrayList<SkillModel> monsterList;
+    @XmlElement(name = "monster")
+    private ArrayList<MonsterModel> monsterList;
     private boolean sorted = false;
     
 }

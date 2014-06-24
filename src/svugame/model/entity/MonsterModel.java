@@ -12,21 +12,22 @@ import javax.xml.bind.annotation.XmlType;
  *
  * @author Kevin
  */
-@XmlType(propOrder = { "name", "strength", "agility", "endurance", "perception", 
+@XmlType(propOrder = { "name", "id", "strength", "agility", "endurance", "perception", 
     "dexterity", "charisma", "intelligence", "wisdom", "focus", "exp",
     "skill1", "id1", "skill2", "id2", "skill3", "id3", "level", "armour", "weapon"})
 
-public class MonsterModel {
+public class MonsterModel implements Comparable{
     
     public MonsterModel(){
         
     }
     
-    public MonsterModel(String name, int str, int agi, int end, int per, int dex,
+    public MonsterModel(String name, int id, int str, int agi, int end, int per, int dex,
             int cha, int intel, int wis, int foc, int exp,
             String skill1, int id1, String skill2, int id2,
             String skill3, int id3, int level, String armour, String weapon){
         this.name = name;
+        this.id = id;
         this.str = str;
         this.agi = agi;
         this.end = end;
@@ -54,6 +55,14 @@ public class MonsterModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getStr() {
@@ -208,14 +217,23 @@ public class MonsterModel {
         this.weapon = weapon;
     }
     
-    
-    
+    public String toString(){
+        return getName();
+    }
     
     private String name;
+    private int id;
     private int str, agi, end, per, dex, cha, intel, wis, foc;
     private int exp;
     private String skill1, skill2, skill3;
     private int id1, id2, id3, level;
     private String armour, weapon;
     
+    @Override
+    public int compareTo(Object o) {
+        if ((o == null) || (!(o instanceof MonsterModel))) {
+            return 1;
+        }
+        return this.id - ((MonsterModel) o).getId();
+    }
 }
