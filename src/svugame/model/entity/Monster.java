@@ -7,7 +7,6 @@
 package svugame.model.entity;
 
 import java.util.HashMap;
-import svugame.model.skills.Skill;
 
 /**
  *

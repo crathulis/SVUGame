@@ -39,7 +39,10 @@ public interface ItemConstants {
     public static final int ITEM_TYPE_TH_WEAPON = 11;
     public static final int ITEM_TYPE_RG_WEAPON = 12;
     public static final int ITEM_TYPE_SHIELD = 13;
-    public static final int ITEM_TYPE_ARMOR = 14;
+    public static final int ITEM_TYPE_ARMOR_NONE = 14;
+    public static final int ITEM_TYPE_ARMOR_LEATHER = 15;
+    public static final int ITEM_TYPE_ARMOR_CHAIN = 16;
+    public static final int ITEM_TYPE_ARMOR_PLATE = 17;
     
     
     

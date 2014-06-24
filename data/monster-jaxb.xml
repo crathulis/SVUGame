@@ -27,7 +27,7 @@ and open the template in the editor.
             <skill3>Roar</skill3>
             <id3>29</id3>
             <level>1</level>
-            <armour>fur</armour>
+            <armour>16</armour>
             <weapon></weapon>
         </monster>
 
@@ -50,7 +50,7 @@ and open the template in the editor.
             <skill3>Roar</skill3>
             <id3>29</id3>
             <level>2</level>
-            <armour>fur</armour>
+            <armour>16</armour>
             <weapon></weapon>
         </monster>
 
@@ -73,7 +73,7 @@ and open the template in the editor.
             <skill3>Roar</skill3>
             <id3>29</id3>
             <level>3</level>
-            <armour>fur</armour>
+            <armour>16</armour>
             <weapon></weapon>
             
         </monster>
@@ -97,7 +97,7 @@ and open the template in the editor.
             <skill3>Howl</skill3>
             <id3>30</id3>
             <level>1</level>
-            <armour>fur</armour>
+            <armour>15</armour>
             <weapon></weapon>
         </monster>
         
@@ -120,7 +120,7 @@ and open the template in the editor.
             <skill3>Howl</skill3>
             <id3>30</id3>
             <level>2</level>
-            <armour>fur</armour>
+            <armour>15</armour>
             <weapon></weapon>
         </monster>
         
@@ -143,7 +143,7 @@ and open the template in the editor.
             <skill3>Howl</skill3>
             <id3>30</id3>
             <level>3</level>
-            <armour>fur</armour>
+            <armour>15</armour>
             <weapon></weapon>
         </monster>
         
@@ -166,7 +166,7 @@ and open the template in the editor.
             <skill3>Horn</skill3>
             <id3>1</id3>
             <level>1</level>
-            <armour>fur</armour>
+            <armour>17</armour>
             <weapon></weapon>
         </monster>
         
@@ -189,7 +189,7 @@ and open the template in the editor.
             <skill3>Horn</skill3>
             <id3>1</id3>
             <level>2</level>
-            <armour>fur</armour>
+            <armour>17</armour>
             <weapon></weapon>
         </monster>
         
@@ -212,7 +212,7 @@ and open the template in the editor.
             <skill3>Horn</skill3>
             <id3>1</id3>
             <level>3</level>
-            <armour>fur</armour>
+            <armour>17</armour>
             <weapon></weapon>
         </monster>
     </monsters>
