@@ -10,6 +10,7 @@ and open the template in the editor.
     <monsters>
         <monster> 
             <name>Bear</name>
+            <id>0</id>
             <strength>10</strength>
             <agility>10</agility>
             <endurance>10</endurance>
@@ -33,6 +34,7 @@ and open the template in the editor.
 
         <monster>
             <name>Brown Bear</name>
+            <id>1</id>
             <strength>11</strength>
             <agility>11</agility>
             <endurance>11</endurance>
@@ -56,6 +58,7 @@ and open the template in the editor.
 
         <monster>
             <name>Black Bear</name>
+            <id>2</id>
             <strength>12</strength>
             <agility>12</agility>
             <endurance>12</endurance>
@@ -80,6 +83,7 @@ and open the template in the editor.
         
         <monster>
             <name>Wolf</name>
+            <id>3</id>
             <strength>10</strength>
             <agility>13</agility>
             <endurance>10</endurance>
@@ -103,6 +107,7 @@ and open the template in the editor.
         
         <monster>
             <name>Mountain Wolf</name>
+            <id>4</id>
             <strength>11</strength>
             <agility>14</agility>
             <endurance>11</endurance>
@@ -126,6 +131,7 @@ and open the template in the editor.
         
         <monster>
             <name>Werewolf</name>
+            <id>5</id>
             <strength>12</strength>
             <agility>15</agility>
             <endurance>12</endurance>
@@ -149,6 +155,7 @@ and open the template in the editor.
         
         <monster>
             <name>Orc</name>
+            <id>6</id>
             <strength>13</strength>
             <agility>10</agility>
             <endurance>13</endurance>
@@ -172,6 +179,7 @@ and open the template in the editor.
         
         <monster>
             <name>Orc Warrior</name>
+            <id>7</id>
             <strength>14</strength>
             <agility>11</agility>
             <endurance>14</endurance>
@@ -194,7 +202,8 @@ and open the template in the editor.
         </monster>
         
         <monster>
-            <name>Orc Chief</name>
+            <name>Orc Chieftain</name>
+            <id>8</id>
             <strength>15</strength>
             <agility>12</agility>
             <endurance>15</endurance>
