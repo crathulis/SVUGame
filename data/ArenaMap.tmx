@@ -17,7 +17,7 @@
  </tileset>
  <layer name="ground" width="29" height="21">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACzvIwsBwkAxsQ6Y+ED5EQztt0TC5bqSGnbT0J7XxYI3PUX/S306bAcCHyMTk6j04aueonaN2jtqJZudAlLcA2DM69YQJAAA=
+   H4sIAAAAAAAACzvIwsBwkAxsQ6Y+ED40AHaSiwerP23RMD38icvOQ2hq6B2f9LJzOPoTW/qxGQB8CA+2xSNHSC8ucw6O2jnk7Tw0aueIsRO97qGVneRiSsp4AGK/sxGECQAA
   </data>
  </layer>
  <layer name="In Between" width="29" height="21">
@@ -27,12 +27,12 @@
  </layer>
  <layer name="buildings" width="29" height="21">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NggABGXgYGJSBm5mWgCrADmmOPhh3QzDYE8p2A2JhKdvphMScATSwQyA8C4uAhbCcxYUsLf/qjYXR/EgLn+BgYzgPxBT7ixKlh5z2gmfeB+AEfceLUAO+AZr4H4g98xImPgsENSE231AC0SLdKSBgboEW6BdnlhMdOWgBC/qQFMELC9AKgcPWB0vQCQUDsD6VHAXUAAPRPlV6ECQAA
+   H4sIAAAAAAAAC2NggABGXgYGJSBm5mWgGzAE2uUExMZ0tDMQaFcQEAdTyU47oDn2aNgBzWxq2+mHxZyAQWAnIXCOj4HhPBBf4CNOnJiwJQTuAc28D8QP+IgTB/nTHw2T6s93QDPfA/EHPuLEqWHnKKAdIDXdUgOQmm6JAUpIGBsgNd0Sa6cTHjvJBaD6yghHfUXIn+QCQ2iZiq2+MkLC1ASO0DrSGYudoHD1gdLUBKC6IwRH3REExP5QmpogEWhXEhAnj8ByDwDRAYuHhAkAAA==
   </data>
  </layer>
  <layer name="Tile Layer 3" width="29" height="21">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGFgQwjvADqATYOanv538NLAT5A8WOvsF5A+BAQi/UTAKRsEoGAWjgJYAAEAe0PyECQAA
+   H4sIAAAAAAAAC2NgGFgQwjvADqATYOanv538A2DncAGg+GKhc/iB4ktgNM5GwSgYBaNgxAAAm2G01YQJAAA=
   </data>
  </layer>
 </map>
