@@ -54,7 +54,7 @@ public class MonsterList {
     }
 
     // XmLElementWrapper generates a wrapper element around XML representation
-    @XmlElementWrapper(name = "monsters")
+    @XmlElementWrapper(name = "monsterList")
     // XmlElement sets the name of the entities
     @XmlElement(name = "monster")
     private ArrayList<MonsterModel> monsterList;

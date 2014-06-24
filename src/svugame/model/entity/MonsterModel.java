@@ -22,21 +22,21 @@ public class MonsterModel implements Comparable{
         
     }
     
-    public MonsterModel(String name, int id, int str, int agi, int end, int per, int dex,
-            int cha, int intel, int wis, int foc, int exp,
+    public MonsterModel(String name, int id, int strength, int agility, int endurance, int perception, int dexterity,
+            int charisma, int intelligence, int wisdom, int focus, int exp,
             String skill1, int id1, String skill2, int id2,
             String skill3, int id3, int level, String armour, String weapon){
         this.name = name;
         this.id = id;
-        this.str = str;
-        this.agi = agi;
-        this.end = end;
-        this.per = per;
-        this.dex = dex;
-        this.cha = cha;
-        this.intel = intel;
-        this.wis = wis;
-        this.foc = foc;
+        this.strength = strength;
+        this.agility = agility;
+        this.endurance = endurance;
+        this.perception = perception;
+        this.dexterity = dexterity;
+        this.charisma = charisma;
+        this.intelligence = intelligence;
+        this.wisdom = wisdom;
+        this.focus = focus;
         this.exp = exp;
         this.skill1 = skill1;
         this.skill2 = skill2;
@@ -65,76 +65,76 @@ public class MonsterModel implements Comparable{
         this.id = id;
     }
 
-    public int getStr() {
-        return str;
+    public int getStrength() {
+        return strength;
     }
 
-    public void setStr(int str) {
-        this.str = str;
+    public void setStrength(int str) {
+        this.strength = str;
     }
 
-    public int getAgi() {
-        return agi;
+    public int getAgility() {
+        return agility;
     }
 
-    public void setAgi(int agi) {
-        this.agi = agi;
+    public void setAgility(int agi) {
+        this.agility = agi;
     }
 
-    public int getEnd() {
-        return end;
+    public int getEndurance() {
+        return endurance;
     }
 
-    public void setEnd(int end) {
-        this.end = end;
+    public void setEndurance(int end) {
+        this.endurance = end;
     }
 
-    public int getPer() {
-        return per;
+    public int getPerception() {
+        return perception;
     }
 
-    public void setPer(int per) {
-        this.per = per;
+    public void setPerception(int per) {
+        this.perception = per;
     }
 
-    public int getDex() {
-        return dex;
+    public int getDexterity() {
+        return dexterity;
     }
 
-    public void setDex(int dex) {
-        this.dex = dex;
+    public void setDexterity(int dex) {
+        this.dexterity = dex;
     }
 
-    public int getCha() {
-        return cha;
+    public int getCharisma() {
+        return charisma;
     }
 
-    public void setCha(int cha) {
-        this.cha = cha;
+    public void setCharisma(int cha) {
+        this.charisma = cha;
     }
 
-    public int getIntel() {
-        return intel;
+    public int getIntelligence() {
+        return intelligence;
     }
 
-    public void setIntel(int intel) {
-        this.intel = intel;
+    public void setIntelligence(int intel) {
+        this.intelligence = intel;
     }
 
-    public int getWis() {
-        return wis;
+    public int getWisdom() {
+        return wisdom;
     }
 
-    public void setWis(int wis) {
-        this.wis = wis;
+    public void setWisdom(int wis) {
+        this.wisdom = wis;
     }
 
-    public int getFoc() {
-        return foc;
+    public int getFocus() {
+        return focus;
     }
 
-    public void setFoc(int foc) {
-        this.foc = foc;
+    public void setFocus(int foc) {
+        this.focus = foc;
     }
 
     public int getExp() {
@@ -223,7 +223,7 @@ public class MonsterModel implements Comparable{
     
     private String name;
     private int id;
-    private int str, agi, end, per, dex, cha, intel, wis, foc;
+    private int strength, agility, endurance, perception, dexterity, charisma, intelligence, wisdom, focus;
     private int exp;
     private String skill1, skill2, skill3;
     private int id1, id2, id3, level;
