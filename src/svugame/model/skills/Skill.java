@@ -12,6 +12,7 @@ import svugame.model.entity.Entity;
 public class Skill implements Modifiable {
     
     private SkillModel model;
+    private String name;
     private Entity owner;
     private int points;
     private int modTotal;
@@ -30,6 +31,42 @@ public class Skill implements Modifiable {
         this.model = SkillFactory.getModel(skillId);
         modTotal = 0;
         mods = new ArrayList<Modifier>();
+    }
+
+    public SkillModel getModel() {
+        return model;
+    }
+
+    public void setModel(SkillModel model) {
+        this.model = model;
+    }
+
+    public String getName() {
+        if(name!=null){
+            return name;
+        } else {
+            return model.getName();
+        }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getSdesc(){
+        return model.getSdesc();
+    }
+    
+    public String getLdesc(){
+        return model.getLdesc();
+    }
+
+    public int getModTotal() {
+        return modTotal;
+    }
+
+    public void setModTotal(int modTotal) {
+        this.modTotal = modTotal;
     }
 
     public Entity getOwner() {
