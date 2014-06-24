@@ -39,9 +39,9 @@ public class ArenaState  extends GameStateBase{
     private float screenx, screeny;
     Boolean convoActive = false;
     private Display display;
-    Camera camera;
+    //Camera camera;
     SpriteSheet spritesheet;
-    private Dimension renderedArea = new Dimension(15,5);  //this is where our camera will start
+    private Dimension renderedArea = new Dimension(0,9);  //this is where our camera will start
     
 
     public ArenaState(ClientBase theClient, StateBase theState) {
@@ -76,7 +76,7 @@ public class ArenaState  extends GameStateBase{
 //        screenx = 50;
 //        screeny = 80;
 
-        camera = new Camera(gc, startMap);
+        //camera = new Camera(gc, startMap);
 
         buildBlockArray();
     }
@@ -100,11 +100,13 @@ public class ArenaState  extends GameStateBase{
     
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
-        camera.drawMap();
-        camera.translateGraphics();
+        grphcs.scale(2, 2);
+        //camera.drawMap();
+        //camera.translateGraphics();
+        currentMap.render(0, 0, renderedArea.width, renderedArea.height, 10, 14,false);
         sprite.draw( playerx,  playery);
         if (this.convoActive == true) {
-            grphcs.scale(0.25f, 0.25f);
+            grphcs.scale(0.2f, 0.2f);
             display.render(gc, grphcs);
         }
     }
