@@ -79,6 +79,7 @@ public class ArenaState  extends GameStateBase{
         //camera = new Camera(gc, startMap);
 
         buildBlockArray();
+        
     }
     
      private void buildBlockArray() {
