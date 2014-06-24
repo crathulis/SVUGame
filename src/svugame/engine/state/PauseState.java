@@ -46,7 +46,7 @@ public class PauseState extends BasicGameState{
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
-        if(input.isKeyDown(Input.KEY_0)) {
+        if(input.isKeyDown(Input.KEY_P)) {
             //need to find way to know what the previous state was.
            sbg.enterState(1, new FadeOutTransition(Color.black,1000), new FadeInTransition(Color.black,1000));
            //sbg.getContainer().getGraphics().setBackground(Color.yellow);

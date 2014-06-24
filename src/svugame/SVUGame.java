@@ -27,7 +27,6 @@ import svugame.engine.state.NewOverworld;
 import svugame.engine.state.NewStart;
 import svugame.engine.state.Overworld;
 import svugame.engine.state.PauseState;
-import svugame.engine.state.StartState;
 import svugame.engine.state.States;
 import svugame.engine.state.CharCreation;
 
@@ -62,7 +61,6 @@ public class SVUGame extends ClientBase<GameData> {
         //addState(new Overworld());
         addState(new Map(this, States.Map));
         addState(new NewStart(this,States.NewStart));
-        addState(new StartState());
         addState(new PauseState());
         addState(new City1());
         addState(new CharCreation(this,States.CharCreation));
