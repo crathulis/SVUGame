@@ -73,6 +73,7 @@ public class CharCreation extends GameStateBase implements ComponentListener {
         generate = new Image("data/generatename.png");
         random = new Image("data/randomize.png");
         done = new Image("data/done.png");
+        // need a back button
         areas[0] = new MouseOverArea(gc, generate, 530, 8, this);
         areas[1] = new MouseOverArea(gc, random, 503, 245, this);
         areas[2] = new MouseOverArea(gc, done, 321, 533, this);
