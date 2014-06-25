@@ -2,14 +2,15 @@ package svugame.model.action;
 
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
-import svugame.model.items.ItemConstants;
+import static svugame.model.items.ItemConstants.ITEM_SLOT_RHAND;
+import static svugame.model.items.ItemConstants.ITEM_TYPE_OH_WEAPON;
 
 
 /**
  *
  * @author Alan
  */
-public class OhMeleeAction extends MeleeAction implements ItemConstants {
+public class OhMeleeAction extends MeleeAction {
 
     public OhMeleeAction(Entity actor, int skillId) {
         super(actor, skillId);
