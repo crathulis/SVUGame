@@ -101,7 +101,7 @@ public class ArenaState  extends GameStateBase{
     
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
-        grphcs.scale(2, 2);
+        grphcs.scale(1.5f, 1.5f);
         //camera.drawMap();
         //camera.translateGraphics();
         currentMap.render(0, 0, renderedArea.width, renderedArea.height, 10, 14,false);
