@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="29" height="21" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="31" height="23" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="Castle_2" tilewidth="32" tileheight="32">
   <image source="Castle_2.png" width="512" height="512"/>
  </tileset>
@@ -15,24 +15,24 @@
  <tileset firstgid="3841" name="animated_wooden_castle_door" tilewidth="32" tileheight="32">
   <image source="animated_wooden_castle_door.png" width="384" height="64"/>
  </tileset>
- <layer name="ground" width="29" height="21">
+ <layer name="ground" width="31" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACzvIwsBwkAxsQ6Y+ED40AHaSiwerP23RMD38icvOQ2hq6B2f9LJzOPoTW/qxGQB8CA+2xSNHSC8ucw6O2jnk7Tw0aueIsRO97qGVneRiSsp4AGK/sxGECQAA
+   H4sIAAAAAAAACzvIwsBwkExsQ4FeSjE17D406m+q222Lhunpb0J2H0JTO1DxTW+7h7O/ccW1zQBiWJjjwrZ45GwI6MVlDnp8j9o9/Ow+NGr3qN1Y7ELHtLSbXDyU20wA/V031yQLAAA=
   </data>
  </layer>
- <layer name="In Between" width="29" height="21">
+ <layer name="In Between" width="31" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAWjYBSMglEwCqgPnNBoetkJw8Md1A+0A0YBxQAAF3t8e4QJAAA=
+   H4sIAAAAAAAAC2NgGAWjYBSMglEwCkYBpcAJjaa33TA80kD9QDtgFAxbAADhYG2FJAsAAA==
   </data>
  </layer>
- <layer name="buildings" width="29" height="21">
+ <layer name="buildings" width="31" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NggABGXgYGJSBm5mWgGzAE2uUExMZ0tDMQaFcQEAdTyU47oDn2aNgBzWxq2+mHxZyAQWAnIXCOj4HhPBBf4CNOnJiwJQTuAc28D8QP+IgTB/nTHw2T6s93QDPfA/EHPuLEqWHnKKAdIDXdUgOQmm6JAUpIGBsgNd0Sa6cTHjvJBaD6yghHfUXIn+QCQ2iZiq2+MkLC1ASO0DrSGYudoHD1gdLUBKC6IwRH3REExP5QmpogEWhXEhAnj8ByDwDRAYuHhAkAAA==
+   H4sIAAAAAAAAC2NgGByAkZeBQQmImXnpb7ch0E4nIDYeALsDgXYGAXEwley2A5pjj4YdcJhNbbv9sJgTMAjtJgTO8TEwnAfiC3zEiZMS5oTAPaDZ94H4AR9x4iB/+6Nhcv39Dmj2eyD+wEecODXtHgX0B6Smc2oCUtM5KUAJCWMDpKZzUu12wmM3uQBUPxoRqB8J+ZtcYAgtq/HVj0ZImJrAEVo3O+OxGxTePlCamgBUR4UQqKOCgNgfSlMTJALtTALi5NHydMABACHOOBAkCwAA
   </data>
  </layer>
- <layer name="Tile Layer 3" width="29" height="21">
+ <layer name="Tile Layer 3" width="31" height="23">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGFgQwjvADqATYOanv538A2DncAGg+GKhc/iB4ktgNM5GwSgYBaNgxAAAm2G01YQJAAA=
+   H4sIAAAAAAAAC2NgGAUgEMI70C4YGMDMP3B28w+g3cMNgOKRZYDCExSPAqNxOQpGwSgYBaNgmAEALRq4VSQLAAA=
   </data>
  </layer>
 </map>

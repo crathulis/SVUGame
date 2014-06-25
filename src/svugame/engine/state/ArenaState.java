@@ -104,7 +104,7 @@ public class ArenaState  extends GameStateBase{
         grphcs.scale(1.5f, 1.5f);
         //camera.drawMap();
         //camera.translateGraphics();
-        currentMap.render(0, 0, renderedArea.width, renderedArea.height, 10, 14,false);
+        currentMap.render(0, 0, renderedArea.width, renderedArea.height, 18, 14);
         sprite.draw( playerx,  playery);
         if (this.convoActive == true) {
             grphcs.scale(0.2f, 0.2f);
@@ -198,7 +198,7 @@ public class ArenaState  extends GameStateBase{
             //check to see if we're at the edge of the map
             //we can see that if startx == mapsize (160)
             //look up tile, from that we can get a transition
-           if(playerx + (i*speed) > 400)
+           if(playerx + (i*speed) > 500)
             {
                 //we will transition the screen up
                 System.out.println("transition right");
@@ -278,7 +278,7 @@ public class ArenaState  extends GameStateBase{
             {
                 renderedArea.width = checkleft;
             //now we move our character on the new map
-            playerx = 360;
+            playerx = 500;
             }
             
                 
