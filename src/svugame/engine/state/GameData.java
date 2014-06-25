@@ -9,6 +9,7 @@ package svugame.engine.state;
 import HelperClasses.Position;
 import mdes.slick.sui.Dimension;
 import org.newdawn.slick.Animation;
+import svugame.model.entity.Player;
 
 /**
  *
@@ -20,6 +21,17 @@ public class GameData {
     private Position relativePlayerPosition = new Position(0,0);
     private boolean[][] fog;
     private Animation playerSprite;
+    Player player;
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
 
     public Position getRelativePlayerPosition() {
         return relativePlayerPosition;

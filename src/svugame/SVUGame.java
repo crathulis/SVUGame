@@ -58,7 +58,7 @@ public class SVUGame extends ClientBase<GameData> {
     @Override
     public void initStatesList(GameContainer gc) throws SlickException {
        addState(new NewOverworld(this, States.NewOverworld));
-        addState(new Battle());
+        addState(new Battle(this,States.Battle));
         //addState(new Overworld());
         addState(new Map(this, States.Map));
         addState(new NewStart(this,States.NewStart));

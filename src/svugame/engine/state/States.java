@@ -14,7 +14,8 @@ public enum States implements StateBase{
 NewOverworld(8),
 Map(9),
 CharCreation(11),
-NewStart(10)
+NewStart(10),
+Battle(2)
 
 ;
     private int value;

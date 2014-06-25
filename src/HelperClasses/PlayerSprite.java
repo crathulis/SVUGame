@@ -7,6 +7,7 @@
 package HelperClasses;
 
 import org.newdawn.slick.Animation;
+import org.newdawn.slick.SpriteSheet;
 
 /**
  *
@@ -16,6 +17,7 @@ public class PlayerSprite {
     
     private Animation animation;
     private String playerType;
+    private SpriteSheet SpriteSheet;
 
     public PlayerSprite() {
     }
@@ -23,6 +25,14 @@ public class PlayerSprite {
     public PlayerSprite(Animation animation, String playerType) {
         this.animation = animation;
         this.playerType = playerType;
+    }
+
+    public SpriteSheet getSpriteSheet() {
+        return SpriteSheet;
+    }
+
+    public void setSpriteSheet(SpriteSheet SpriteSheet) {
+        this.SpriteSheet = SpriteSheet;
     }
     
     

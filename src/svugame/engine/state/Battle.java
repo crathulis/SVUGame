@@ -5,6 +5,7 @@
  */
 package svugame.engine.state;
 
+import HelperClasses.TurnMade;
 import java.awt.Font;
 import javax.swing.JButton;
 import mdes.slick.sui.Button;
@@ -26,12 +27,16 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.tiled.TiledMap;
+import svugame.SVUGame;
+import svugame.model.BattleManager;
+import svugame.model.entity.Entity;
+import svugame.model.entity.Party;
 
 /**
  *
  * @author craig.reese
  */
-public class Battle extends BasicGameState {
+public class Battle extends GameStateBase<GameData, States> {
 
     private int ID = 2;
     private TiledMap currentMap;
@@ -43,6 +48,11 @@ public class Battle extends BasicGameState {
     Button btn2 = new Button("No what");
     Container secondGroup = new Container();
     Container thirdGroup = new Container();
+    BattleManager battlemanager = new BattleManager();
+
+    public Battle(SVUGame aThis, States states) {
+        super(aThis, states);
+    }
 
     @Override
     public int getID() {
@@ -53,6 +63,26 @@ public class Battle extends BasicGameState {
     public void enter(GameContainer container, StateBasedGame game) throws SlickException {
         battleMusic = new Music("data/Boss_Battle_Loop_2.ogg");
         battleMusic.loop();
+
+        GameData theGameData = getClient().getGameData();
+        //get party and add to the roster
+        Party goodguys = new Party();
+        Entity bernard = new Entity("Bernard", true, 20);
+        goodguys.add(theGameData.player.getEntity());
+        goodguys.add(bernard);
+
+        Entity wolf1 = new Entity("Wolf", true, 10);
+        Entity wolf2 = new Entity("Wolf", true, 10);
+        Entity wolf3 = new Entity("Wolf", true, 10);
+        Party mobParty = new Party();
+        mobParty.add(wolf1);
+        mobParty.add(wolf2);
+        mobParty.add(wolf3);
+
+        battlemanager.setGroms(mobParty);
+        battlemanager.setParty(goodguys);
+
+        //TODO: here we need to get our actors and do our intial draw on the field.
     }
 
     @Override
@@ -85,7 +115,6 @@ public class Battle extends BasicGameState {
 //        //Color color = new Color(160, 160, 232);
 //        content2.setBackground(color);
 //        display.add(content2);
-        
         Container base = new Container();
         base.setSize(85, 130);
         base.setLocation(5, 465);
@@ -94,13 +123,12 @@ public class Battle extends BasicGameState {
         RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
         base.setLayout(layout);
         base.setZIndex(1);
-       
+
         display.add(base);
 
-        String[] row1 = new String[]{"Magical", "Inventory", "Physical","Flee" ,"Attack" };
+        String[] row1 = new String[]{"Magical", "Inventory", "Physical", "Flee", "Attack"};
         int i = 0;
-        
-        
+
         for (final String s : row1) {
 
             Button tempButton = new Button(s);
@@ -119,10 +147,10 @@ public class Battle extends BasicGameState {
             tempButton.setBackground(Color.cyan);  //TODO: FIX ME
             tempButton.pack();
             tempButton.setWidth(85);
-            base.add(tempButton,i);
+            base.add(tempButton, i);
             i++;
         }
-        
+
         secondGroup.setSize(165, 130);
         secondGroup.setLocation(100, 465);
         secondGroup.setOpaque(true);
@@ -131,17 +159,17 @@ public class Battle extends BasicGameState {
         secondGroup.setLayout(layout2);
         secondGroup.setZIndex(1);
         display.add(secondGroup);
-        
+
         /*
-        thirdGroup.setSize(85, 130);
-        thirdGroup.setLocation(195, 465);
-        thirdGroup.setOpaque(true);
-        thirdGroup.setBackground(Color.black);
-        RowLayout layout3 = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
-        thirdGroup.setLayout(layout3);
-        thirdGroup.setZIndex(1);
-        display.add(thirdGroup);
-        */
+         thirdGroup.setSize(85, 130);
+         thirdGroup.setLocation(195, 465);
+         thirdGroup.setOpaque(true);
+         thirdGroup.setBackground(Color.black);
+         RowLayout layout3 = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
+         thirdGroup.setLayout(layout3);
+         thirdGroup.setZIndex(1);
+         display.add(thirdGroup);
+         */
         display.add(content);
     }
 
@@ -149,18 +177,18 @@ public class Battle extends BasicGameState {
 
         secondGroup.removeAll();
         /*
-        secondGroup.setSize(85, 130);
-        secondGroup.setLocation(100, 465);
-        secondGroup.setOpaque(true);
-        secondGroup.setBackground(Color.black);
-        RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
-        secondGroup.setLayout(layout);
-        secondGroup.setZIndex(1);
-        display.add(secondGroup);
-        //display.reinit();
-        //display.ensureZOrder();
-        //display.add(content);
-                */
+         secondGroup.setSize(85, 130);
+         secondGroup.setLocation(100, 465);
+         secondGroup.setOpaque(true);
+         secondGroup.setBackground(Color.black);
+         RowLayout layout = new RowLayout(false, RowLayout.LEFT, RowLayout.CENTER);
+         secondGroup.setLayout(layout);
+         secondGroup.setZIndex(1);
+         display.add(secondGroup);
+         //display.reinit();
+         //display.ensureZOrder();
+         //display.add(content);
+         */
         switch (choice) {
             case "Physical": {
                 String[] row1 = new String[]{"One-Handed", "Two-Handed", "Close Quarters", "Projectile Weapons"};
@@ -283,7 +311,7 @@ public class Battle extends BasicGameState {
                 display.add(secondGroup);
                 break;
             }
-           
+
         }
     }
 
@@ -298,29 +326,46 @@ public class Battle extends BasicGameState {
         display.render(gc, grphcs);
         // }
     }
+    
+    private void AnimateAction(TurnMade turnamde)
+    {
+        
+    }
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
-        Input input = gc.getInput();
-        if (input.isKeyDown(Input.KEY_0)) {
-            sbg.enterState(8, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
-        } else if (input.isKeyDown(Input.KEY_9)) {
-            battleMusic.stop();
-            Music winMusic = new Music("data/6 Open Surge score jingle - AA.ogg");
-            winMusic.play();
-        }
-        if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
-            gc.exit();
-        }
-        if (gc.getInput().isKeyPressed(Input.KEY_3)) {
-            menus(gc);
-        }
+        while (battlemanager.IsGameActive()) {
+            TurnMade turnmade = battlemanager.nextTurn(null, null, null);
+            if(turnmade.getAction() == null)
+            {
+                //here we need to pause for input ... somehow
+            }
+            else
+            {
+                //turnmade has data that we need the ui to display
+            }
 
-        //need listener to know when button is pressed then add new button
-//        if(btn){
-//            content.removeAll();
-//        }
-        display.update(gc, i);
+            Input input = gc.getInput();
+            if (input.isKeyDown(Input.KEY_0)) {
+                sbg.enterState(8, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            } else if (input.isKeyDown(Input.KEY_9)) {
+                battleMusic.stop();
+                Music winMusic = new Music("data/6 Open Surge score jingle - AA.ogg");
+                winMusic.play();
+            }
+            if (gc.getInput().isKeyPressed(Input.KEY_ESCAPE)) {
+                gc.exit();
+            }
+            if (gc.getInput().isKeyPressed(Input.KEY_3)) {
+                menus(gc);
+            }
+
+            display.update(gc, i);
+        }
+        if(battlemanager.IsGameActive()==false)
+        {
+            //battle is over, display the screen on who won
+        }
     }
 
     private void menus(GameContainer gc) throws SlickException {
@@ -346,6 +391,90 @@ public class Battle extends BasicGameState {
         display.add(content);
         System.out.println("new Test");
         System.out.println(content.getSize());
+    }
+
+    @Override
+    public void mouseWheelMoved(int i) {
+    }
+
+    @Override
+    public void mouseClicked(int i, int i1, int i2, int i3) {
+    }
+
+    @Override
+    public void mousePressed(int i, int i1, int i2) {
+    }
+
+    @Override
+    public void mouseReleased(int i, int i1, int i2) {
+    }
+
+    @Override
+    public void mouseMoved(int i, int i1, int i2, int i3) {
+    }
+
+    @Override
+    public void mouseDragged(int i, int i1, int i2, int i3) {
+    }
+
+    @Override
+    public void setInput(Input input) {
+    }
+
+    @Override
+    public void inputEnded() {
+    }
+
+    @Override
+    public void inputStarted() {
+    }
+
+    @Override
+    public void keyPressed(int i, char c) {
+    }
+
+    @Override
+    public void keyReleased(int i, char c) {
+    }
+
+    @Override
+    public void controllerLeftPressed(int i) {
+    }
+
+    @Override
+    public void controllerLeftReleased(int i) {
+    }
+
+    @Override
+    public void controllerRightPressed(int i) {
+    }
+
+    @Override
+    public void controllerRightReleased(int i) {
+    }
+
+    @Override
+    public void controllerUpPressed(int i) {
+    }
+
+    @Override
+    public void controllerUpReleased(int i) {
+    }
+
+    @Override
+    public void controllerDownPressed(int i) {
+    }
+
+    @Override
+    public void controllerDownReleased(int i) {
+    }
+
+    @Override
+    public void controllerButtonPressed(int i, int i1) {
+    }
+
+    @Override
+    public void controllerButtonReleased(int i, int i1) {
     }
 
 }

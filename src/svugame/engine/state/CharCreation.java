@@ -26,12 +26,14 @@ import org.newdawn.slick.gui.TextField;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
+import svugame.model.entity.Entity;
+import svugame.model.entity.Player;
 
 /**
  *
  * @author craig.reese
  */
-public class CharCreation extends GameStateBase implements ComponentListener {
+public class CharCreation extends GameStateBase<GameData,States> implements ComponentListener {
 
     Font font = new Font("Verdana", Font.BOLD, 23);
     TrueTypeFont ttf = new TrueTypeFont(font, true);
@@ -42,6 +44,7 @@ public class CharCreation extends GameStateBase implements ComponentListener {
     Image done;
     boolean femaleChose = true;
     Animation activeSprite = new Animation();
+    SpriteSheet activeSpriteSheet;
 
     private MouseOverArea[] areas = new MouseOverArea[21];
 
@@ -55,7 +58,7 @@ public class CharCreation extends GameStateBase implements ComponentListener {
     ArrayList<PlayerSprite> female = new ArrayList();
     ArrayList<PlayerSprite> male = new ArrayList();
 
-    public CharCreation(ClientBase theClient, StateBase theState) {
+    public CharCreation(ClientBase<GameData> theClient, States theState) {
         super(theClient, theState);
     }
 
@@ -119,6 +122,7 @@ public class CharCreation extends GameStateBase implements ComponentListener {
             int[] duration = {300, 300, 300, 300};
             Animation down = new Animation(movementDown, duration, false);
             PlayerSprite ps = new PlayerSprite(down, s + "_f");
+            ps.setSpriteSheet(spritesheet);
             female.add(ps);
         }
 
@@ -128,6 +132,7 @@ public class CharCreation extends GameStateBase implements ComponentListener {
             int[] duration = {300, 300, 300, 300};
             Animation down = new Animation(movementDown, duration, false);
             PlayerSprite ps = new PlayerSprite(down, s + "_m");
+            ps.setSpriteSheet(spritesheet);
             male.add(ps);
         }
 
@@ -197,6 +202,7 @@ public class CharCreation extends GameStateBase implements ComponentListener {
                 //choose female
                 femaleChose = true;
                 activeSprite = female.get(0).getAnimation();
+                
             }
             if (input.getMouseX() >= 355 && input.getMouseX() < 383 && input.getMouseY() >= 95 && input.getMouseY() < 120) {
                 //choose male
@@ -206,36 +212,46 @@ public class CharCreation extends GameStateBase implements ComponentListener {
             if (input.getMouseX() >= 189 && input.getMouseX() < 245 && input.getMouseY() >= 161 && input.getMouseY() < 229) {
                 if (femaleChose == true) {
                     activeSprite = female.get(0).getAnimation();
+                    activeSpriteSheet = female.get(0).getSpriteSheet();
                 } else {
                     activeSprite = male.get(0).getAnimation();
+                    activeSpriteSheet = male.get(0).getSpriteSheet();
                 }
             }
             if (input.getMouseX() >= 259 && input.getMouseX() < 318 && input.getMouseY() >= 161 && input.getMouseY() < 229) {
                 if (femaleChose == true) {
                     activeSprite = female.get(1).getAnimation();
+                    activeSpriteSheet = female.get(1).getSpriteSheet();
                 } else {
                     activeSprite = male.get(1).getAnimation();
+                    activeSpriteSheet = male.get(1).getSpriteSheet();
                 }
             }
             if (input.getMouseX() >= 331 && input.getMouseX() < 389 && input.getMouseY() >= 161 && input.getMouseY() < 229) {
                 if (femaleChose == true) {
                     activeSprite = female.get(2).getAnimation();
+                    activeSpriteSheet = female.get(2).getSpriteSheet();
                 } else {
                     activeSprite = male.get(2).getAnimation();
+                    activeSpriteSheet = male.get(2).getSpriteSheet();
                 }
             }
             if (input.getMouseX() >= 403 && input.getMouseX() < 459 && input.getMouseY() >= 161 && input.getMouseY() < 229) {
                 if (femaleChose == true) {
                     activeSprite = female.get(3).getAnimation();
+                    activeSpriteSheet = female.get(3).getSpriteSheet();
                 } else {
                     activeSprite = male.get(3).getAnimation();
+                    activeSpriteSheet = male.get(3).getSpriteSheet();
                 }
             }
             if (input.getMouseX() >= 472 && input.getMouseX() < 530 && input.getMouseY() >= 161 && input.getMouseY() < 229) {
                 if (femaleChose == true) {
                     activeSprite = female.get(4).getAnimation();
+                    activeSpriteSheet = female.get(4).getSpriteSheet();
                 } else {
                     activeSprite = male.get(4).getAnimation();
+                    activeSpriteSheet = male.get(4).getSpriteSheet();
                 }
             }
         }
@@ -403,6 +419,29 @@ public class CharCreation extends GameStateBase implements ComponentListener {
                 stat.setStat(stat.getStat()+1);
             }
             remaining.setStat(0);
+        }
+        
+        if(source == areas[2])
+        {
+            //done
+            //TODO: add error checking here
+            Player player = new Player();
+            Entity entity = new Entity(txtName.getText(),!femaleChose,0);
+            entity.setAttribute(0, GetStatAllocation("str").getStat());
+            entity.setAttribute(1, GetStatAllocation("agi").getStat());
+            entity.setAttribute(2, GetStatAllocation("end").getStat());
+            entity.setAttribute(3, GetStatAllocation("per").getStat());
+            entity.setAttribute(4, GetStatAllocation("dex").getStat());
+            entity.setAttribute(5, GetStatAllocation("cha").getStat());
+            entity.setAttribute(6, GetStatAllocation("int").getStat());
+            entity.setAttribute(7, GetStatAllocation("wis").getStat());
+            entity.setAttribute(8, GetStatAllocation("foc").getStat());
+            
+            player.setEntity(entity);
+            player.setSpritesheet(activeSpriteSheet);
+            GameData theGameData = getClient().getGameData();
+            theGameData.setPlayer(player);
+            //now we start the game with the cutscene, but for now lets head to the overworld
         }
 
         for (int i = 0; i < 21; i++) {
