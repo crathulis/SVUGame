@@ -32,6 +32,8 @@ public interface ActionConstants {
     public static final int RESULTS_DIALOG = 22;
     public static final int RESULTS_ENTER = 23;
     public static final int RESULTS_EXIT = 24;
+    public static final int RESULTS_DAMAGE_PARTY_HP = 25;
+    public static final int RESULTS_DAMAGE_PARTY_SP = 26;
     
     //spell results (Negative)
     public static final int RESULTS_BURN = 50;
