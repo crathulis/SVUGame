@@ -9,7 +9,7 @@ import svugame.model.items.ItemConstants;
  *
  * @author Alan
  */
-public class ThMeleeAction extends MeleeAction implements ItemConstants {
+public abstract class ThMeleeAction extends MeleeAction implements ItemConstants {
 
     public ThMeleeAction(Entity actor, int skillId) {
         super(actor, skillId);

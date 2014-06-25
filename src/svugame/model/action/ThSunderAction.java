@@ -14,17 +14,17 @@ import svugame.model.entity.Entity;
  *
  * @author Alan
  */
-public class OhSwingAction extends OhMeleeAction {
+public class ThSunderAction extends ThMeleeAction {
 
-    public OhSwingAction(Entity actor, int skillId) {
+    public ThSunderAction(Entity actor, int skillId) {
         super(actor, skillId);
     }
 
-    public OhSwingAction(Entity actor, int skillId, Thing dobj) {
+    public ThSunderAction(Entity actor, int skillId, Thing dobj) {
         super(actor, skillId, dobj);
     }
 
-    public OhSwingAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
+    public ThSunderAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
         super(actor, skillId, dobj, iobj);
     }
     

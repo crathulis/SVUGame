@@ -9,17 +9,17 @@ import static svugame.model.skills.SkillConstants.SKILL_THRUST;
  *
  * @author Alan
  */
-public class OhThrustAction extends OhMeleeAction {
+public class ThChopAction extends ThMeleeAction {
 
-    public OhThrustAction(Entity actor, int skillId) {
+    public ThChopAction(Entity actor, int skillId) {
         super(actor, skillId);
     }
 
-    public OhThrustAction(Entity actor, int skillId, Thing dobj) {
+    public ThChopAction(Entity actor, int skillId, Thing dobj) {
         super(actor, skillId, dobj);
     }
 
-    public OhThrustAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
+    public ThChopAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
         super(actor, skillId, dobj, iobj);
     }
 

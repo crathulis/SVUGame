@@ -58,7 +58,7 @@ public abstract class MeleeAction extends Action {
             double agilityFactor = target.getAgility() / 25.0;
             int shieldDamage = target.getItemInSlot(ITEM_SLOT_LHAND).getDamage();
             int maxShield = (int) Math.round((agilityFactor + target.getSkillValue(SKILL_SHIELD)) * shieldDamage);
-            int shieldAbsorb = Dice.roll(((int)target.getLevel()) + "d" + maxShield);
+            int shieldAbsorb = Dice.roll(((int) target.getLevel()) + "d" + maxShield);
             if (shieldAbsorb > 0) {
                 System.out.println(target.getName() + " blocks " + shieldAbsorb
                         + " points of damage with their shield.");
@@ -83,9 +83,24 @@ public abstract class MeleeAction extends Action {
         return 0;
     }
 
-    protected void addMoreEffects() {
+    protected int getFinalDamage() {
+        int baseDamage = getBaseDamage();
+        int shieldAbsorb = getShieldAbsorb();
+        int armorAbsorb = getArmorAbsorb();
+        int finalDamage = Math.max(0, baseDamage - shieldAbsorb - armorAbsorb);
+        if (finalDamage > 0) {
+            System.out.println(actor.getName() + " hits the "
+                    + ((Entity)dobj).getName() + " with the "
+                    + actor.getItemInSlot(ITEM_SLOT_RHAND).getName()
+                    + " for " + finalDamage + " damage.");
+            results.add(new Effect(RESULTS_DAMAGE_HP, finalDamage));
+            ((Entity)dobj).setHealth(((Entity)dobj).getHealth() - finalDamage);
+        }
+        return finalDamage;
     }
 
+    protected abstract void addMoreEffects();
+    
     @Override
     public ArrayList<Effect> apply() {
         if (!isPossible()) {
@@ -105,7 +120,7 @@ public abstract class MeleeAction extends Action {
             int baseDamage = getBaseDamage();
             int shieldAbsorb = getShieldAbsorb();
             int armorAbsorb = getArmorAbsorb();
-            int finalDamage = Math.max(0, baseDamage - shieldAbsorb - armorAbsorb);
+            int finalDamage = getFinalDamage();
             if (finalDamage > 0) {
                 System.out.println(actor.getName() + " hits the "
                         + target.getName() + " with the "
@@ -113,8 +128,8 @@ public abstract class MeleeAction extends Action {
                         + " for " + finalDamage + " damage.");
                 results.add(new Effect(RESULTS_DAMAGE_HP, finalDamage));
                 target.setHealth(target.getHealth() - finalDamage);
+                addMoreEffects();
             }
-            addMoreEffects();
             return results;
         }
     }

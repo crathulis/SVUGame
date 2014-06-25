@@ -10,7 +10,7 @@ import static svugame.model.items.ItemConstants.ITEM_TYPE_OH_WEAPON;
  *
  * @author Alan
  */
-public class OhMeleeAction extends MeleeAction {
+public abstract class OhMeleeAction extends MeleeAction {
 
     public OhMeleeAction(Entity actor, int skillId) {
         super(actor, skillId);
