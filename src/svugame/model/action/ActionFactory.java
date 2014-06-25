@@ -70,23 +70,23 @@ public class ActionFactory {
                 return new PlayAction(actor, skillId, dobj, iobj);
             case SKILL_SING:
             case SKILL_THRUST:
-                return new OhMeleeAction(actor, skillId, dobj, iobj);
+                return new OhThrustAction(actor, skillId, dobj, iobj);
             case SKILL_SWING:
-                return new OhMeleeAction(actor, skillId, dobj, iobj);
+                return new OhSwingAction(actor, skillId, dobj, iobj);
             case SKILL_WHIRL:
-                return new OhMeleeAction(actor, skillId, dobj, iobj);
+                return new OhWhirlAction(actor, skillId, dobj, iobj);
             case SKILL_CHOP:
-                return new ThMeleeAction(actor, skillId, dobj, iobj);
+                return new ThChopAction(actor, skillId, dobj, iobj);
             case SKILL_SUNDER:
-                return new ThMeleeAction(actor, skillId, dobj, iobj);
+                return new ThSunderAction(actor, skillId, dobj, iobj);
             case SKILL_CLEAVE:
-                return new ThMeleeAction(actor, skillId, dobj, iobj);
+                return new ThCleaveAction(actor, skillId, dobj, iobj);
             case SKILL_STAB:
-                return new CqMeleeAction(actor, skillId, dobj, iobj);
+                return new CqStabAction(actor, skillId, dobj, iobj);
             case SKILL_SLASH:
-                return new CqMeleeAction(actor, skillId, dobj, iobj);
+                return new CqSlashAction(actor, skillId, dobj, iobj);
             case SKILL_CRIPPLE:
-                return new CqMeleeAction(actor, skillId, dobj, iobj);
+                return new CqCrippleAction(actor, skillId, dobj, iobj);
             case SKILL_PIERCE:
                 return new RangedAction(actor, skillId, dobj, iobj);
             case SKILL_PUNCTURE:
