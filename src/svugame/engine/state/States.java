@@ -15,7 +15,8 @@ NewOverworld(8),
 Map(9),
 CharCreation(11),
 NewStart(10),
-Battle(2)
+Battle(2),
+ArenaState(12)
 
 ;
     private int value;

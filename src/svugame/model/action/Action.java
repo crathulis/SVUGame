@@ -20,6 +20,7 @@ public abstract class Action {
     protected int skillId;
     protected Thing dobj;
     protected Thing iobj;
+    protected ArrayList<Effect> results;
     
     public Action(Entity actor, int skillId){
         this(actor, skillId, null, null);
@@ -34,6 +35,7 @@ public abstract class Action {
         this.skillId = skillId;
         this.dobj = dobj;
         this.iobj = iobj;
+        this.results = new ArrayList<>();
     }
     
     public abstract boolean isPossible();

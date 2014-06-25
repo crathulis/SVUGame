@@ -286,6 +286,15 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
         attributes[attribNum].resetCurValue();
         return attributes[attribNum].getCurValue();
     }
+    
+    /**
+     * 
+     * @param attribNum
+     * @param mod 
+     */
+    public void modifyAttribute(int attribNum, Modifier mod){
+        attributes[attribNum].addMods(mod);
+    }
 
     /**
      * Get the current value of the strength attribute.

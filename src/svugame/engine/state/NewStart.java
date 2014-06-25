@@ -97,7 +97,10 @@ public class NewStart extends GameStateBase implements ComponentListener{
 				System.out.println("Option "+(i+1)+" pressed!");
 			}
 		}
-		
+		if(source == areas[3])
+                {
+                    sbg.getContainer().exit();
+                }
 	}
 
     @Override

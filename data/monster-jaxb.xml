@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 
-
-<root>
-    <monsters>
+<ns2:monsterList xmlns:ns2="monsters">
+    <monsterList>
         <monster> 
             <name>Bear</name>
+            <id>0</id>
             <strength>10</strength>
             <agility>10</agility>
             <endurance>10</endurance>
@@ -27,12 +22,13 @@ and open the template in the editor.
             <skill3>Roar</skill3>
             <id3>29</id3>
             <level>1</level>
-            <armour>fur</armour>
+            <armour>16</armour>
             <weapon></weapon>
         </monster>
 
         <monster>
             <name>Brown Bear</name>
+            <id>1</id>
             <strength>11</strength>
             <agility>11</agility>
             <endurance>11</endurance>
@@ -50,12 +46,13 @@ and open the template in the editor.
             <skill3>Roar</skill3>
             <id3>29</id3>
             <level>2</level>
-            <armour>fur</armour>
+            <armour>16</armour>
             <weapon></weapon>
         </monster>
 
         <monster>
             <name>Black Bear</name>
+            <id>2</id>
             <strength>12</strength>
             <agility>12</agility>
             <endurance>12</endurance>
@@ -73,13 +70,14 @@ and open the template in the editor.
             <skill3>Roar</skill3>
             <id3>29</id3>
             <level>3</level>
-            <armour>fur</armour>
+            <armour>16</armour>
             <weapon></weapon>
             
         </monster>
         
         <monster>
             <name>Wolf</name>
+            <id>3</id>
             <strength>10</strength>
             <agility>13</agility>
             <endurance>10</endurance>
@@ -97,12 +95,13 @@ and open the template in the editor.
             <skill3>Howl</skill3>
             <id3>30</id3>
             <level>1</level>
-            <armour>fur</armour>
+            <armour>15</armour>
             <weapon></weapon>
         </monster>
         
         <monster>
             <name>Mountain Wolf</name>
+            <id>4</id>
             <strength>11</strength>
             <agility>14</agility>
             <endurance>11</endurance>
@@ -120,12 +119,13 @@ and open the template in the editor.
             <skill3>Howl</skill3>
             <id3>30</id3>
             <level>2</level>
-            <armour>fur</armour>
+            <armour>15</armour>
             <weapon></weapon>
         </monster>
         
         <monster>
             <name>Werewolf</name>
+            <id>5</id>
             <strength>12</strength>
             <agility>15</agility>
             <endurance>12</endurance>
@@ -143,12 +143,13 @@ and open the template in the editor.
             <skill3>Howl</skill3>
             <id3>30</id3>
             <level>3</level>
-            <armour>fur</armour>
+            <armour>15</armour>
             <weapon></weapon>
         </monster>
         
         <monster>
             <name>Orc</name>
+            <id>6</id>
             <strength>13</strength>
             <agility>10</agility>
             <endurance>13</endurance>
@@ -166,12 +167,13 @@ and open the template in the editor.
             <skill3>Horn</skill3>
             <id3>1</id3>
             <level>1</level>
-            <armour>fur</armour>
+            <armour>17</armour>
             <weapon></weapon>
         </monster>
         
         <monster>
             <name>Orc Warrior</name>
+            <id>7</id>
             <strength>14</strength>
             <agility>11</agility>
             <endurance>14</endurance>
@@ -189,12 +191,13 @@ and open the template in the editor.
             <skill3>Horn</skill3>
             <id3>1</id3>
             <level>2</level>
-            <armour>fur</armour>
+            <armour>17</armour>
             <weapon></weapon>
         </monster>
         
         <monster>
-            <name>Orc Chief</name>
+            <name>Orc Chieftain</name>
+            <id>8</id>
             <strength>15</strength>
             <agility>12</agility>
             <endurance>15</endurance>
@@ -212,8 +215,8 @@ and open the template in the editor.
             <skill3>Horn</skill3>
             <id3>1</id3>
             <level>3</level>
-            <armour>fur</armour>
+            <armour>17</armour>
             <weapon></weapon>
         </monster>
-    </monsters>
-</root>
+    </monsterList>
+</ns2:monsterList>

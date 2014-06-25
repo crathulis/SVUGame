@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="14" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32">
+  <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+ </tileset>
+ <tileset firstgid="3073" name="town_0" tilewidth="32" tileheight="32">
+  <image source="town_0.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="14" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC41QQQrAMAgT6nE/qnravf//zVa2QQgZeAhooom4DrN1Y7rZ6U/d6T9sbnq/r9FHUL2Rb5+gJ2ioF/EhfNkrAOijNOaLdjBX5afYy6HvYl79CbOYR47vVz/5m70Avp7l1TACAAA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="14" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgwA5SeRgY0nhwSOIBpUA9ZWToawXqaSND31Sgnmlk6BsF5AEA421wujACAAA=
+  </data>
+ </layer>
+</map>

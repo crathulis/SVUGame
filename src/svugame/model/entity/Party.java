@@ -1,6 +1,7 @@
 package svugame.model.entity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import svugame.model.Thing;
 
 /**
@@ -33,6 +34,15 @@ public class Party extends Thing {
     public ArrayList<Entity> getMembers(){
         return members;
     }
+    
+    /**
+     * Returns an interator over the members of the party;
+     * @return an iterator over the members of the party.
+     */
+    public Iterator<Entity> iterator(){
+        return members.iterator();
+    }
+    
     /**
      * Get the total health of all party members.
      *

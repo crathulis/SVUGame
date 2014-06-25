@@ -9,7 +9,7 @@ import svugame.model.items.ItemConstants;
  *
  * @author Alan
  */
-public class CqMeleeAction extends MeleeAction implements ItemConstants {
+public abstract class CqMeleeAction extends MeleeAction implements ItemConstants {
 
     public CqMeleeAction(Entity actor, int skillId) {
         super(actor, skillId);

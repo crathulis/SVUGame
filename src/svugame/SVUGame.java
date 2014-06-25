@@ -19,7 +19,9 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.BlobbyTransition;
 import org.newdawn.slick.tiled.TiledMap;
+import svugame.engine.state.ArenaState;
 import svugame.engine.state.Battle;
+import svugame.engine.state.CharCreation;
 import svugame.engine.state.ClientBase;
 import svugame.engine.state.GameData;
 import svugame.engine.state.Map;
@@ -27,9 +29,7 @@ import svugame.engine.state.NewOverworld;
 import svugame.engine.state.NewStart;
 import svugame.engine.state.Overworld;
 import svugame.engine.state.PauseState;
-import svugame.engine.state.StartState;
 import svugame.engine.state.States;
-import svugame.engine.state.CharCreation;
 
 /**
  *
@@ -62,11 +62,11 @@ public class SVUGame extends ClientBase<GameData> {
         //addState(new Overworld());
         addState(new Map(this, States.Map));
         addState(new NewStart(this,States.NewStart));
-        addState(new StartState());
         addState(new PauseState());
         addState(new City1());
         addState(new CharCreation(this,States.CharCreation));
-       enterState(10); 
+        addState(new ArenaState(this,States.ArenaState));
+       enterState(12); 
     }
     
     
