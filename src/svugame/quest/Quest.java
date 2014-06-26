@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package svugame.quest;
 
 import java.util.ArrayList;
@@ -13,36 +12,36 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class Quest {
-    
-    public Quest(String name){
-        currentStage = 0;
+
+    public Quest(String name) {
+        setCurrentStage(0);
         this.name = name;
     }
-    
-    public void addStage(int stage, String desc){
+
+    public void addStage(int stage, String desc) {
         questStages.add(new QuestStage(stage, desc));
     }
-    
-    public int getStage(int stage){
+
+    public QuestStage getCurrentStage() {
         return currentStage;
     }
-    
-    public int getCurrentStage(){
-        return currentStage;
+
+    public void advanceQuest(int thingID, int actionID) {
+        if (currentStage.checkAdvancers(thingID, actionID) != -1) {
+            setCurrentStage(currentStage.checkAdvancers(thingID, actionID));
+        }
     }
-    
-    public void advanceQuest(int thingID, int actionID){
-        for(int n = 0; n < questStages.size(); n++) {
-            if (questStages.get(n).getStageNumber() == currentStage) {
-                if (questStages.get(n).checkAdvancers(thingID, actionID) != -1) {
-                    currentStage = questStages.get(n).checkAdvancers(thingID, actionID);
-                    return;
-                }
+
+    public void setCurrentStage(int stage) {
+        for (int n = 0; n < questStages.size(); n++) {
+            if (questStages.get(n).getStageNumber() == stage) {
+                currentStage = questStages.get(n);
+                return;
             }
         }
     }
     
-    private int currentStage;
+    private QuestStage currentStage;
     private String name;
     private ArrayList<QuestStage> questStages = new ArrayList<>();
     
