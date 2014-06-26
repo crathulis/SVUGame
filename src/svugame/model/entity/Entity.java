@@ -409,6 +409,16 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
     }
     
     /**
+     * Get the skill for a particular skill for this entity
+     * 
+     * @param skillId the id of the skill for which to get the value
+     * @return the skill object
+     */
+    public Skill getSkill(int skillId){
+        return skills[skillId];
+    }
+    
+    /**
      * Add a number of skill points to a skill. Each skill point improves
      * the probabilities associated with the skill by 1%.
      * 

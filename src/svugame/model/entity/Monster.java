@@ -6,7 +6,7 @@
 
 package svugame.model.entity;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,32 +16,45 @@ import java.util.HashMap;
 
 public abstract class Monster extends Entity{
     
-    private HashMap<String,Integer> attacks;
+    public MonsterModel model;
+    private ArrayList<Integer> attackId;
     
-    public void addSkill(String name, int skillNum, int level){
-        attacks.put(name, skillNum);
-        super.addSkillPoints(skillNum, level);
+    
+    public Monster(MonsterModel model){
+        
+        super(model.getName(), true, model.getExp());
+        this.model = model;
+        super.setAttribute(STR, model.getStrength());
+        super.setAttribute(AGI, model.getAgility());
+        super.setAttribute(END, model.getEndurance());
+        super.setAttribute(PER, model.getPerception());
+        super.setAttribute(DEX, model.getDexterity());
+        super.setAttribute(CHA, model.getCharisma());
+        super.setAttribute(INT, model.getIntelligence());
+        super.setAttribute(WIS, model.getWisdom());
+        super.setAttribute(FOC, model.getFocus());        
+        
+        modSkill(model.getSkill1(), model.getId1(), model.getLevel());
+        modSkill(model.getSkill2(), model.getId2(), model.getLevel());
+        modSkill(model.getSkill3(), model.getId3(), model.getLevel());
     }
     
-    public Integer getSkill(String name){
-        return attacks.get(name);
+    public void modSkill(String name, int skillId, int level){
+        super.addSkillPoints(skillId, level);
+        super.getSkill(skillId).setName(name);
+        attackId.add(skillId);
+    }
+    
+    public Integer getSkillId(int loc){
+        return attackId.get(loc);
     }
     
     public int attackNum(){
-        return attacks.size();
+        return attackId.size();
     }
     
-    public void setAttributes(int str, int agi, int end, int per, int dex, 
-            int cha, int intel, int wis, int foc){
-        super.setAttribute(STR, str);
-        super.setAttribute(AGI, agi);
-        super.setAttribute(END, end);
-        super.setAttribute(PER, per);
-        super.setAttribute(DEX, dex);
-        super.setAttribute(CHA, cha);
-        super.setAttribute(INT, intel);
-        super.setAttribute(WIS, wis);
-        super.setAttribute(FOC, foc);
+    public int getMonsterId(){
+        return model.getId();
     }
     
 }
