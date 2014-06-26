@@ -6,16 +6,10 @@
 
 package svugame.model.items;
 
-import svugame.model.Thing;
-
 /**
  *
- * @author Lab Admin
+ * @author Kevin
  */
-public class Item extends Thing {
-    
-    
-    
-    
+public class ItemFactory {
     
 }
