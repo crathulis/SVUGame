@@ -42,9 +42,11 @@ public class CharCreation extends GameStateBase<GameData,States> implements Comp
     Image generate;
     Image random;
     Image done;
+    Image back;
     boolean femaleChose = true;
     Animation activeSprite = new Animation();
     SpriteSheet activeSpriteSheet;
+    private StateBasedGame sbg;
 
     private MouseOverArea[] areas = new MouseOverArea[21];
 
@@ -57,15 +59,16 @@ public class CharCreation extends GameStateBase<GameData,States> implements Comp
 
     ArrayList<PlayerSprite> female = new ArrayList();
     ArrayList<PlayerSprite> male = new ArrayList();
-
+    
+        
     public CharCreation(ClientBase<GameData> theClient, States theState) {
         super(theClient, theState);
     }
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+        this.sbg = sbg;
         gc.setShowFPS(false);
-        background = new Image("data/charSelectMain.png");
         txtName = new TextField(gc, ttf, 148, 27, 320, 27, new ComponentListener() {
             public void componentActivated(AbstractComponent source) {
                 System.out.println("Entered1: ");
@@ -73,15 +76,17 @@ public class CharCreation extends GameStateBase<GameData,States> implements Comp
             }
         });
         txtName.setMaxLength(18);
+        background = new Image("data/charSelectMain.png");
         generate = new Image("data/generatename.png");
         random = new Image("data/randomize.png");
         done = new Image("data/done.png");
-        // need a back button
+        back = new Image("data/Back.png");// need a back button
         areas[0] = new MouseOverArea(gc, generate, 530, 8, this);
         areas[1] = new MouseOverArea(gc, random, 503, 245, this);
         areas[2] = new MouseOverArea(gc, done, 321, 533, this);
+        areas[3] = new MouseOverArea(gc,back,500,533,this);
 
-        int i = 3;
+        int i = 4;
         int y = 305;
         for (String s : buttons1) {
             Image im = new Image("data/left.png");
@@ -443,6 +448,11 @@ public class CharCreation extends GameStateBase<GameData,States> implements Comp
             GameData theGameData = getClient().getGameData();
             theGameData.setPlayer(player);
             //now we start the game with the cutscene, but for now lets head to the overworld
+            sbg.enterState(12);
+        }
+        
+        if(source == areas[3]){
+            sbg.enterState(10);
         }
 
         for (int i = 0; i < 21; i++) {
