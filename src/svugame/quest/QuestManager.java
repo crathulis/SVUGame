@@ -24,19 +24,11 @@ public class QuestManager {
     }
     
     public void advanceQuests(int thingID, int actionID){
-        questList.
+        
     }
     
-    public Quest getStage(String questName){
-        return questList.get(questName);
-    }
-    
-    public void setStage(String questName, int stage){
-        questList.get(questName).setStage(stage);
-    }
-    
-    public void completeQuest(String questName){
-        questList.get(questName).setStage(100);
+    public int getCurrentStage(String questName){
+        return questList.get(questName).getCurrentStage();
     }
     
     public boolean questExists(String questName){
