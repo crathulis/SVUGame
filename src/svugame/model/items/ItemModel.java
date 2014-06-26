@@ -12,7 +12,8 @@ import javax.xml.bind.annotation.XmlType;
  *
  * @author Kevin
  */
-@XmlType(propOrder = {"name", "id", "description", "type", "slot", "value", "weight", "damage"})
+@XmlType(propOrder = {"name", "id", "description", "type", "slot", "value", 
+    "weight", "damage"})
 
 public class ItemModel implements Comparable{
     
@@ -100,11 +101,8 @@ public class ItemModel implements Comparable{
     }
     
     @Override
-    public int compareTo(Object o) {
-        if ((o == null) || (!(o instanceof ItemModel))) {
-            return 1;
-        }
-        return this.id - ((ItemModel) o).getId();
+    public String toString() {
+        return getName();
     }
     
     private String name;
@@ -115,4 +113,14 @@ public class ItemModel implements Comparable{
     private int value;
     private int weight;
     private int damage;
+    
+    @Override
+    public int compareTo(Object o) {
+        if ((o == null) || (!(o instanceof ItemModel))) {
+            return 1;
+        }
+        return this.id - ((ItemModel) o).getId();
+    }
+    
+    
 }
