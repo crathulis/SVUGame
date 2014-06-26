@@ -6,13 +6,18 @@
 
 package svugame.model.items;
 
+import javax.xml.bind.annotation.XmlType;
+
 /**
  *
  * @author Kevin
  */
-public class ItemModel {
+@XmlType(propOrder = {"name", "id", "description", "type", "slot", "value", "weight", "damage"})
+
+public class ItemModel implements Comparable{
     
     private String name;
+    private int id;
     private String description;
     private int type;
     private int slot;
@@ -26,6 +31,14 @@ public class ItemModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDescription() {
@@ -74,5 +87,13 @@ public class ItemModel {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+    
+    @Override
+    public int compareTo(Object o) {
+        if ((o == null) || (!(o instanceof ItemModel))) {
+            return 1;
+        }
+        return this.id - ((ItemModel) o).getId();
     }
 }

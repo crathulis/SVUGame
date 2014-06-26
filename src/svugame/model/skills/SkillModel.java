@@ -81,9 +81,9 @@ public class SkillModel implements Comparable {
         this.attrib2 = attrib2;
     }
 
+    @Override
     public String toString() {
-        return String.format("<SkillModel: %s, %d, \"%s\", \"%s\", %d, %d>",
-                name, id, sdesc, ldesc, attrib1, attrib2);
+        return getName();
     }
 
     private String name;
