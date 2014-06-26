@@ -88,11 +88,11 @@ public class ActionFactory {
             case SKILL_CRIPPLE:
                 return new CqCrippleAction(actor, skillId, dobj, iobj);
             case SKILL_PIERCE:
-                return new RangedAction(actor, skillId, dobj, iobj);
+                return new RgPierceAction(actor, skillId, dobj, iobj);
             case SKILL_PUNCTURE:
-                return new RangedAction(actor, skillId, dobj, iobj);
+                return new RgPunctureAction(actor, skillId, dobj, iobj);
             case SKILL_SKEWER:
-                return new RangedAction(actor, skillId, dobj, iobj);
+                return new RgSkewerAction(actor, skillId, dobj, iobj);
             case SKILL_SHIELD: /* passive */
                 return null;
             case SKILL_SPEED:
