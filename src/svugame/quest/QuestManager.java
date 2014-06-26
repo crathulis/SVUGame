@@ -24,11 +24,9 @@ public class QuestManager {
     }
     
     public void advanceQuests(int thingID, int actionID){
-        
-    }
-    
-    public int getCurrentStage(String questName){
-        return questList.get(questName).getCurrentStage();
+        for(Quest q : questList.values()){
+            q.advanceQuest(thingID, actionID);
+        }
     }
     
     public boolean questExists(String questName){
