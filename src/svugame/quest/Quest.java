@@ -23,13 +23,8 @@ public class Quest {
         questStages.add(new QuestStage(stage, desc));
     }
     
-    public QuestStage getStage(int stage){
-        for(int n = 0; n < questStages.size(); n++){
-            if(questStages.get(n).getStageNumber() == stage){
-                return questStages.get(n);
-            }
-        }
-        return null;
+    public int getStage(int stage){
+        return currentStage;
     }
     
     public int getCurrentStage(){
@@ -37,10 +32,12 @@ public class Quest {
     }
     
     public void advanceQuest(int thingID, int actionID){
-        for(int n = 0; n < questStages.size(); n++){
-            if(questStages.get(n).checkAdvancers(thingID, actionID) != -1){
-                currentStage = questStages.get(n).checkAdvancers(thingID, actionID);
-                return;
+        for(int n = 0; n < questStages.size(); n++) {
+            if (questStages.get(n).getStageNumber() == currentStage) {
+                if (questStages.get(n).checkAdvancers(thingID, actionID) != -1) {
+                    currentStage = questStages.get(n).checkAdvancers(thingID, actionID);
+                    return;
+                }
             }
         }
     }
