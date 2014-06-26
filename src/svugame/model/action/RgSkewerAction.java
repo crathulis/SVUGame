@@ -13,17 +13,17 @@ import svugame.model.entity.Entity;
  *
  * @author Lab Admin
  */
-class OhWhirlAction extends OhMeleeAction {
+class RgSkewerAction extends RangedAction {
 
-    public OhWhirlAction(Entity actor, int skillId) {
+    public RgSkewerAction(Entity actor, int skillId) {
         super(actor, skillId);
     }
 
-    public OhWhirlAction(Entity actor, int skillId, Thing dobj) {
+    public RgSkewerAction(Entity actor, int skillId, Thing dobj) {
         super(actor, skillId, dobj);
     }
 
-    public OhWhirlAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
+    public RgSkewerAction(Entity actor, int skillId, Thing dobj, Thing iobj) {
         super(actor, skillId, dobj, iobj);
     }
 

@@ -24,6 +24,7 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
     private Inventory inventory;
     private Skill[] skills;
     private Item[] equipment;
+    private Party party;
 
     // TODO: location
     public Entity() {
@@ -428,6 +429,27 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
     public void addSkillPoints(int skillId, int points){
         skills[skillId].addPoints(points);
     }
+
+    /**
+     * Returns the party to which this entity belongs, if any.
+     * 
+     * @return the party to which this entity belongs or null if the entity
+     * is not in a party;
+     */
+    public Party getParty() {
+        return party;
+    }
+
+    /**
+     * Sets the party to which this entity belongs to the given party.
+     * 
+     * @param party the party of the entity.
+     */
+    public void setParty(Party party) {
+        this.party = party;
+    }
+    
+    
     
     /**
      * Updates the entity's health, spirit, attributes and skills to account
