@@ -83,6 +83,7 @@ public class Battle extends GameStateBase<GameData, States> {
         battlemanager.setParty(goodguys);
 
         //TODO: here we need to get our actors and do our intial draw on the field.
+        
     }
 
     @Override
@@ -92,7 +93,7 @@ public class Battle extends GameStateBase<GameData, States> {
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        TiledMap startMap = new TiledMap("data/BattleMap.tmx");
+        TiledMap startMap = new TiledMap("data/Arena BattleMap.tmx");
         //TiledMap map2 = new TiledMap("data/map2.tmx");
 
         //TODO: build world map that has tile data for each sectional map, then parse world map to get map data.
