@@ -66,7 +66,7 @@ public class SVUGame extends ClientBase<GameData> {
         addState(new City1());
         addState(new CharCreation(this,States.CharCreation));
         addState(new ArenaState(this,States.ArenaState));
-       enterState(11); 
+       enterState(10); 
     }
     
     
