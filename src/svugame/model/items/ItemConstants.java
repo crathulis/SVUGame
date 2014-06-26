@@ -46,5 +46,5 @@ public interface ItemConstants {
     public static final int ITEM_TYPE_ARMOR_PLATE = 18;
     
     
-    public static final int NUM_ITEMS = 6;
+    public static final int NUM_ITEMS = 5;
 }

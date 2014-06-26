@@ -11,7 +11,6 @@ import java.util.Collections;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
-import svugame.model.skills.SkillModel;
 
 /**
  *
@@ -28,12 +27,20 @@ public class ItemList {
         this.itemList = itemList;
     }
     
-    public ItemModel getItemModelById(int skillId) {
+    public ArrayList<ItemModel> getListOfItems() {
+        return itemList;
+    }
+
+    public void setItemList(ArrayList<ItemModel> itemList) {
+        this.itemList = itemList;
+    }
+    
+    public ItemModel getItemModelById(int itemId) {
         if(!sorted){
             Collections.sort(itemList);
             sorted = true;
         }
-        return itemList.get(skillId);
+        return itemList.get(itemId);
     }
     
     public ItemModel getItemModelByName(String name){

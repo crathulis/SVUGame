@@ -36,8 +36,8 @@ class ItemFactory {
         }
     }
 
-    public static ItemModel getModel(int skillId) {
-        return itemList.getItemModelById(skillId);
+    public static ItemModel getModel(int itemId) {
+        return itemList.getItemModelById(itemId);
     }
     
     public static ItemModel getModel(String name){

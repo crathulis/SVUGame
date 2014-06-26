@@ -16,14 +16,24 @@ import javax.xml.bind.annotation.XmlType;
 
 public class ItemModel implements Comparable{
     
-    private String name;
-    private int id;
-    private String description;
-    private int type;
-    private int slot;
-    private int value;
-    private int weight;
-    private int damage;
+    public ItemModel(){        
+    }
+    
+    public ItemModel(int id){
+        this("", id, "", 0, 0, 0, 0, 0);
+    }
+    
+    public ItemModel(String name, int id, String description, int type, 
+            int slot, int value, int weight, int damage) {
+        this.name = name;
+        this.id = id;
+        this.description = description;
+        this.type = type;
+        this.slot = slot;
+        this.value = value;
+        this.weight = weight;
+        this.damage = damage;
+    }
 
     public String getName() {
         return name;
@@ -96,4 +106,13 @@ public class ItemModel implements Comparable{
         }
         return this.id - ((ItemModel) o).getId();
     }
+    
+    private String name;
+    private int id;
+    private String description;
+    private int type;
+    private int slot;
+    private int value;
+    private int weight;
+    private int damage;
 }
