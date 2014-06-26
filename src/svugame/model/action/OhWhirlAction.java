@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package svugame.model.action;
 
 import svugame.model.Thing;
@@ -30,8 +29,13 @@ class OhWhirlAction extends OhMeleeAction {
 
     @Override
     protected void addMoreEffects() {
-        int damage = super.getBaseDamage();
+        int damage = super.getBaseDamage() / (((Entity) dobj).getParty().getMembers().size() - 1);
+        for (Entity entity : ((Entity) dobj).getParty().getMembers()) {
+            if (entity != ((Entity) dobj)) {
+                entity.setHealth(entity.getHealth() - damage);
+            }
+        }
         results.add(new Effect(RESULTS_DAMAGE_PARTY_HP, damage));
     }
-    
+
 }
