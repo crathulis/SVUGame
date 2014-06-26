@@ -10,9 +10,9 @@ package svugame.quest;
  */
 public class QuestAdvancer {
     
-    QuestAdvancer(int thingID, int actionResult, int stageToAdvanceTo){
+    QuestAdvancer(int thingID, int actionID, int stageToAdvanceTo){
         this.thingID = thingID;
-        this.actionResult = actionResult;
+        this.actionID = actionID;
         this.stageToAdvanceTo = stageToAdvanceTo;
     }
 
@@ -21,15 +21,15 @@ public class QuestAdvancer {
     }
 
     public int getActionResult() {
-        return actionResult;
+        return actionID;
     }
 
-    public int getQuestToAdvanceTo() {
+    public int getStageToAdvanceTo() {
         return stageToAdvanceTo;
     }
     
     private final int thingID;
-    private final int actionResult;
+    private final int actionID;
     private final int stageToAdvanceTo;
     
 }
