@@ -44,7 +44,6 @@ public class RangedAction extends Action {
         if (!(dobj instanceof Entity)) {
             return false;
         }
-        // dobj must not be flying or swimming
         return true;}
 
     @Override
