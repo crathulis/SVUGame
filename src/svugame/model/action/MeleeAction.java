@@ -117,9 +117,6 @@ public abstract class MeleeAction extends Action {
             return results;
         } else {
             Entity target = ((Entity) dobj);
-            int baseDamage = getBaseDamage();
-            int shieldAbsorb = getShieldAbsorb();
-            int armorAbsorb = getArmorAbsorb();
             int finalDamage = getFinalDamage();
             if (finalDamage > 0) {
                 System.out.println(actor.getName() + " hits the "
