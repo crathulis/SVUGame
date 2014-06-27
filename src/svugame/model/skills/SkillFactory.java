@@ -13,7 +13,7 @@ import static svugame.model.skills.SkillConstants.NUM_SKILLS;
  *
  * @author Lab Admin
  */
-class SkillFactory {
+public class SkillFactory {
 
     static {
         final String SKILLLIST_XML = "./data/skillset-jaxb.xml";
