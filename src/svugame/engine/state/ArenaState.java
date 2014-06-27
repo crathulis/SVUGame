@@ -120,7 +120,7 @@ public class ArenaState extends GameStateBase {
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
         double speed = .1; // this is how fast our char can move .03 is good
-        boolean collision = false;
+        boolean collision = true;
 
         //System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
         if (input.isKeyDown(Input.KEY_UP)) {
@@ -129,7 +129,10 @@ public class ArenaState extends GameStateBase {
              if (!isBlocked((playerx), (float) (playery - i * speed), sbg)) {
              collision = false;
              }
-             
+             if (collision == false) {
+                sprite.update(i);
+                playery -= i * speed;
+            }
 
             if (playery - (i * speed) < 0) {
                 //we will transition the screen up
@@ -147,7 +150,10 @@ public class ArenaState extends GameStateBase {
              if (!isBlocked((playerx), (float) (playery + 6 + i * speed), sbg)) {
              collision = false;
              }
-             
+             if (collision == false) {
+                sprite.update(i);
+                playery += i * speed;
+            }
             if (playery + (i * speed) > 350) {
                 //we will transition the screen up
                 System.out.println("transition down");
@@ -164,7 +170,11 @@ public class ArenaState extends GameStateBase {
              if (!isBlocked((float) (playerx - 3 - i * speed), playery + 6, sbg)) {
              collision = false;
              }
-
+             
+             if (collision == false) {
+                sprite.update(i);
+                playerx -= i * speed;
+            }
 
             if (playerx - (i * speed) < 0) {
                 //we will transition the screen left
@@ -182,7 +192,10 @@ public class ArenaState extends GameStateBase {
              if (!isBlocked((float) (playerx + 3 + i * speed), playery + 6, sbg)) {
              collision = false;
              }
-             
+             if (collision == false) {
+                sprite.update(i);
+                playerx += i * speed;
+            }
             //check to see if we're at the edge of the map
             //we can see that if startx == mapsize (160)
             //look up tile, from that we can get a transition
