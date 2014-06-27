@@ -26,7 +26,7 @@ class ItemFactory {
         try {
             JAXBContext context = JAXBContext.newInstance(ItemList.class);
             Unmarshaller um = context.createUnmarshaller();
-            itemList = (ItemList) um.unmarshal(new FileReader(ITEMLIST_XML));
+             itemList = (ItemList) um.unmarshal(new FileReader(ITEMLIST_XML));
         } catch (JAXBException ex) {
             Logger.getLogger(ItemFactory.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException(ex);

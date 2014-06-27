@@ -11,7 +11,6 @@ import java.util.Collections;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
-import svugame.model.skills.SkillModel;
 
 /**
  *
@@ -45,9 +44,9 @@ public class MonsterList {
     }
     
     public MonsterModel getMonsterModelByName(String name){
-        for(MonsterModel sm : monsterList){
-            if(sm.getName().equals(name)){
-                return sm;
+        for(MonsterModel mm : monsterList){
+            if(mm.getName().equals(name)){
+                return mm;
             }
         }
         return monsterList.get(0);
