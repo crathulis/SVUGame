@@ -76,7 +76,7 @@ public abstract class RangedAction extends Action {
         double strengthFactor = actor.getStrength() / 25.0;
         double weaponDamage = actor.getItemInSlot(ITEM_SLOT_RHAND).getDamage();
         int maxDamage = (int) Math.round((strengthFactor + actor.getSkillValue(skillId)) * weaponDamage);
-        return Dice.roll(actor.getLevel() + "d" + maxDamage);
+        return Dice.roll(actor.getLevelStep() + "d" + maxDamage);
     }
 
     protected int getShieldAbsorb() {
@@ -132,6 +132,7 @@ public abstract class RangedAction extends Action {
 
     @Override
     public ArrayList<Effect> apply() {
+        results = new ArrayList<>();
         if (!isPossible()) {
             System.out.println(actor.getName() + " can't attack " + ((Entity) dobj).getName());
             //results.add(new Effect(RESULTS_NONE));

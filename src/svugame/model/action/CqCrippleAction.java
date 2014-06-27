@@ -33,7 +33,7 @@ class CqCrippleAction extends CqMeleeAction {
     @Override
     protected void addMoreEffects() {
         int damage = super.getBaseDamage();
-        int duration = Dice.roll("1d" + ((int)actor.getLevel()));
+        int duration = Dice.roll("1d" + ((int)actor.getLevelStep()));
         ((Entity)dobj).setAttribute(AGI, ((Entity)dobj).getAgility() - damage);
         ((Entity)dobj).modifyAttribute(AGI, new Modifier(this, damage, duration, damage, false, true, false ));
         results.add(new Effect(RESULTS_HARM_AGI, damage));

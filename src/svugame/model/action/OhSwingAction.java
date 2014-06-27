@@ -30,7 +30,7 @@ public class OhSwingAction extends OhMeleeAction {
     
     @Override
     protected void addMoreEffects(){
-        int duration = Dice.roll("1d" + ((int)actor.getLevel()));
+        int duration = Dice.roll("1d" + ((int)actor.getLevelStep()));
         int dot = getBaseDamage() / Dice.roll("1d4");
         Modifier mod = new Modifier(this, dot, duration, 0, true, false, false);
         ((Entity)dobj).modifyHealth(mod);
