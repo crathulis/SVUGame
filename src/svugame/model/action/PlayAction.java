@@ -31,6 +31,10 @@ public class PlayAction extends Action implements ItemConstants {
     @Override
     public boolean isPossible() {
         // actor must be carrying an instrument in one of their hands
+        if(actor.getItemInSlot(ITEM_SLOT_LHAND)==null)
+        {
+            return false;
+        }
         if (actor.getItemInSlot(ITEM_SLOT_RHAND).getType() != ITEM_TYPE_INSTRUMENT
                 && actor.getItemInSlot(ITEM_SLOT_LHAND).getType() != ITEM_TYPE_INSTRUMENT) {
             return false;

@@ -17,4 +17,6 @@ public class Inventory {
     
     private ArrayList<Item> items;
     
+    
+    
 }
