@@ -23,7 +23,11 @@ class SpeedAction extends Action {
     @Override
     public boolean isPossible() {
         // should always be possible if the target is the actor and the
-        // actor has focus
+        // actor has enough spirit to complete action
+        if (actor.getSpirit()<(actor.getSkill(skillId).getModel().getSpirit())){
+            return false;
+        }
+
         if(dobj==null){
             dobj = actor;
         } else {
@@ -31,12 +35,14 @@ class SpeedAction extends Action {
                 return false;
             }
         }
-        return actor.getSpirit()>0;
+        return true;
     }
 
     @Override
     public ArrayList<Effect> apply() {
         ArrayList<Effect> effects = new ArrayList<>();
+        actor.setSpirit(actor.getSpirit()-actor.getSkill(skillId).getModel().getSpirit());
+        //TODO: decide on effect of haste
         
         return effects;
     }
