@@ -103,19 +103,23 @@ public abstract class MeleeAction extends Action {
     
     @Override
     public ArrayList<Effect> apply() {
+        attempted = true;
         if (!isPossible()) {
             System.out.println(actor.getName() + "can't attack " + ((Entity) dobj).getName());
             //results.add(new Effect(RESULTS_NONE));
             return results;
         } else if (!isHit()) {
+            successful = false;
             System.out.println(actor.getName() + " missed " + ((Entity) dobj).getName());
             results.add(new Effect(RESULTS_MISS));
             return results;
         } else if (isDodge()) {
+            successful = true;
             System.out.println(((Entity) dobj).getName() + " dodged.");
             results.add(new Effect(RESULTS_DODGE));
             return results;
         } else {
+            successful = true;
             Entity target = ((Entity) dobj);
             int finalDamage = getFinalDamage();
             if (finalDamage > 0) {
