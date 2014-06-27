@@ -106,7 +106,7 @@ public class ArenaState extends GameStateBase {
         //camera.translateGraphics();
         currentMap.render(0, 0, renderedArea.width, renderedArea.height, 18, 14);
         if (gameData.player != null) {
-            
+
         }
         //spritesheet = gameData.player.getSpritesheet();
         sprite.draw(playerx, playery);
@@ -125,11 +125,11 @@ public class ArenaState extends GameStateBase {
         //System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
         if (input.isKeyDown(Input.KEY_UP)) {
             sprite = up;
-            
-             if (!isBlocked((playerx), (float) (playery - i * speed), sbg)) {
-             collision = false;
-             }
-             if (collision == false) {
+
+            if (!isBlocked((playerx), (float) (playery - i * speed), sbg)) {
+                collision = false;
+            }
+            if (collision == false) {
                 sprite.update(i);
                 playery -= i * speed;
             }
@@ -139,18 +139,14 @@ public class ArenaState extends GameStateBase {
                 System.out.println("transition up");
                 transition("up", gc);
             }
-
-            if (collision == false) {
-                sprite.update(i);
-                playery -= i * speed;
-            }
+            
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             sprite = down;
-            
-             if (!isBlocked((playerx), (float) (playery + 6 + i * speed), sbg)) {
-             collision = false;
-             }
-             if (collision == false) {
+
+            if (!isBlocked((playerx), (float) (playery + 6 + i * speed), sbg)) {
+                collision = false;
+            }
+            if (collision == false) {
                 sprite.update(i);
                 playery += i * speed;
             }
@@ -160,18 +156,15 @@ public class ArenaState extends GameStateBase {
                 transition("down", gc);
             }
 
-            if (collision == false) {
-                sprite.update(i);
-                playery += i * speed;
-            }
+            
         } else if (input.isKeyDown(Input.KEY_LEFT)) {
             sprite = left;
-            
-             if (!isBlocked((float) (playerx - 3 - i * speed), playery + 6, sbg)) {
-             collision = false;
-             }
-             
-             if (collision == false) {
+
+            if (!isBlocked((float) (playerx - 3 - i * speed), playery + 6, sbg)) {
+                collision = false;
+            }
+
+            if (collision == false) {
                 sprite.update(i);
                 playerx -= i * speed;
             }
@@ -182,17 +175,14 @@ public class ArenaState extends GameStateBase {
                 transition("left", gc);
             }
 
-            if (collision == false) {
-                sprite.update(i);
-                playerx -= i * speed;
-            }
+            
         } else if (input.isKeyDown(Input.KEY_RIGHT)) {
             sprite = right;
-            
-             if (!isBlocked((float) (playerx + 3 + i * speed), playery + 6, sbg)) {
-             collision = false;
-             }
-             if (collision == false) {
+
+            if (!isBlocked((float) (playerx + 3 + i * speed), playery + 6, sbg)) {
+                collision = false;
+            }
+            if (collision == false) {
                 sprite.update(i);
                 playerx += i * speed;
             }
@@ -204,11 +194,7 @@ public class ArenaState extends GameStateBase {
                 System.out.println("transition right");
                 transition("right", gc);
             }
-
-            if (collision == false) {
-                sprite.update(i);
-                playerx += i * speed;
-            }
+            
         } else if (input.isKeyDown(Input.KEY_0)) {
             //Battle screen
             sbg.enterState(2, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
@@ -292,30 +278,30 @@ public class ArenaState extends GameStateBase {
         }
         //clearFog(renderedArea.width, renderedArea.height, 12, 9);
     }
-    
+
     private boolean isBlocked(float x, float y, StateBasedGame sbg) throws SlickException {
         int xBlock = (int) (x + 8) / SIZE;
         int yBlock = (int) (y + 9) / SIZE;
         //we need to see if something that is blocked can cause a transition
-     
+
         return blocked[xBlock][yBlock];
     }
 
     @Override
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException {
         spritesheet = gameData.player.getSpritesheet();
-            Image[] movementUp = {spritesheet.getSprite(0, 0), spritesheet.getSprite(1, 0), spritesheet.getSprite(2, 0), spritesheet.getSprite(1, 0)};
-            Image[] movementDown = {spritesheet.getSprite(0, 2), spritesheet.getSprite(1, 2), spritesheet.getSprite(2, 2), spritesheet.getSprite(1, 2)};
-            Image[] movementLeft = {spritesheet.getSprite(0, 3), spritesheet.getSprite(1, 3), spritesheet.getSprite(2, 3), spritesheet.getSprite(1, 3)};
-            Image[] movementRight = {spritesheet.getSprite(0, 1), spritesheet.getSprite(1, 1), spritesheet.getSprite(2, 1), spritesheet.getSprite(1, 1)};
-            int[] duration = {300, 300, 300, 300};
-            up = new Animation(movementUp, duration, false);
-            down = new Animation(movementDown, duration, false);
-            left = new Animation(movementLeft, duration, false);
-            right = new Animation(movementRight, duration, false);
-            sprite = down;
+        Image[] movementUp = {spritesheet.getSprite(0, 0), spritesheet.getSprite(1, 0), spritesheet.getSprite(2, 0), spritesheet.getSprite(1, 0)};
+        Image[] movementDown = {spritesheet.getSprite(0, 2), spritesheet.getSprite(1, 2), spritesheet.getSprite(2, 2), spritesheet.getSprite(1, 2)};
+        Image[] movementLeft = {spritesheet.getSprite(0, 3), spritesheet.getSprite(1, 3), spritesheet.getSprite(2, 3), spritesheet.getSprite(1, 3)};
+        Image[] movementRight = {spritesheet.getSprite(0, 1), spritesheet.getSprite(1, 1), spritesheet.getSprite(2, 1), spritesheet.getSprite(1, 1)};
+        int[] duration = {300, 300, 300, 300};
+        up = new Animation(movementUp, duration, false);
+        down = new Animation(movementDown, duration, false);
+        left = new Animation(movementLeft, duration, false);
+        right = new Animation(movementRight, duration, false);
+        sprite = down;
 
-            gameData.setPlayerSprite(down);
+        gameData.setPlayerSprite(down);
 
     }
 
