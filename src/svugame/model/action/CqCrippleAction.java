@@ -16,7 +16,7 @@ import svugame.model.entity.Entity;
  *
  * @author Lab Admin
  */
-class CqCrippleAction extends OhMeleeAction {
+class CqCrippleAction extends CqMeleeAction {
 
     public CqCrippleAction(Entity actor, int skillId) {
         super(actor, skillId);

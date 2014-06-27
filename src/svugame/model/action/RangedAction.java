@@ -42,6 +42,10 @@ public abstract class RangedAction extends Action {
 
     @Override
     public boolean isPossible() {
+        // actor must have enough spirit to complete action
+        if (actor.getSpirit()<(actor.getSkill(skillId).getModel().getSpirit())){
+            return false;
+        }
         // ranged actions require a target (dobj)
         if (dobj == null) {
             return false;
