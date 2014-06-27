@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package svugame.engine.state;
 
 import HelperClasses.Position;
@@ -28,11 +27,14 @@ import svugame.Camera;
  *
  * @author alanporter
  */
-public class ArenaState  extends GameStateBase{
-    
-    
+public class ArenaState extends GameStateBase {
+
     private TiledMap currentMap;
     private Animation sprite, up, down, left, right;
+    Image[] movementUp;
+    Image[] movementDown;
+    Image[] movementLeft;
+    Image[] movementRight;
     private boolean[][] blocked;
     private float playerx = 4f, playery = 21f;
     private static final int SIZE = 32;//size of our tiles
@@ -41,8 +43,8 @@ public class ArenaState  extends GameStateBase{
     private Display display;
     //Camera camera;
     SpriteSheet spritesheet;
-    private Dimension renderedArea = new Dimension(0,9);  //this is where our camera will start
-    
+    private Dimension renderedArea = new Dimension(0, 9);  //this is where our camera will start
+    GameData gameData = (GameData) getClient().getGameData();
 
     public ArenaState(ClientBase theClient, StateBase theState) {
         super(theClient, theState);
@@ -53,14 +55,14 @@ public class ArenaState  extends GameStateBase{
         return 12;
     }
 
-    
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-         TiledMap startMap = new TiledMap("data/ArenaMap.tmx");
-        
+        TiledMap startMap = new TiledMap("data/ArenaMap.tmx");
+
         currentMap = startMap;
+
         spritesheet = new SpriteSheet("data/ranger_f.png", 32, 36);
-         Image[] movementUp = {spritesheet.getSprite(0, 0), spritesheet.getSprite(1, 0), spritesheet.getSprite(2, 0), spritesheet.getSprite(1, 0)};
+        Image[] movementUp = {spritesheet.getSprite(0, 0), spritesheet.getSprite(1, 0), spritesheet.getSprite(2, 0), spritesheet.getSprite(1, 0)};
         Image[] movementDown = {spritesheet.getSprite(0, 2), spritesheet.getSprite(1, 2), spritesheet.getSprite(2, 2), spritesheet.getSprite(1, 2)};
         Image[] movementLeft = {spritesheet.getSprite(0, 3), spritesheet.getSprite(1, 3), spritesheet.getSprite(2, 3), spritesheet.getSprite(1, 3)};
         Image[] movementRight = {spritesheet.getSprite(0, 1), spritesheet.getSprite(1, 1), spritesheet.getSprite(2, 1), spritesheet.getSprite(1, 1)};
@@ -70,19 +72,17 @@ public class ArenaState  extends GameStateBase{
         left = new Animation(movementLeft, duration, false);
         right = new Animation(movementRight, duration, false);
         sprite = down;
-        GameData gameData = (GameData) getClient().getGameData();
+
         gameData.setPlayerSprite(down);
-        
+
 //        screenx = 50;
 //        screeny = 80;
-
         //camera = new Camera(gc, startMap);
-
         buildBlockArray();
-        
+
     }
-    
-     private void buildBlockArray() {
+
+    private void buildBlockArray() {
 
         blocked = new boolean[currentMap.getWidth()][currentMap.getHeight()];
         for (int xAxis = 0; xAxis < currentMap.getWidth(); xAxis++) {
@@ -98,14 +98,18 @@ public class ArenaState  extends GameStateBase{
             }
         }
     }
-    
+
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException {
         grphcs.scale(1.5f, 1.5f);
         //camera.drawMap();
         //camera.translateGraphics();
         currentMap.render(0, 0, renderedArea.width, renderedArea.height, 18, 14);
-        sprite.draw( playerx,  playery);
+        if (gameData.player != null) {
+            
+        }
+        //spritesheet = gameData.player.getSpritesheet();
+        sprite.draw(playerx, playery);
         if (this.convoActive == true) {
             grphcs.scale(0.2f, 0.2f);
             display.render(gc, grphcs);
@@ -114,95 +118,91 @@ public class ArenaState  extends GameStateBase{
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
-       Input input = gc.getInput();
+        Input input = gc.getInput();
         double speed = .1; // this is how fast our char can move .03 is good
-        boolean collision = false;
-        
-        //System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
-        
-        
+        boolean collision = true;
 
+        //System.out.println("height: " + gc.getHeight()/32 + " width: " + gc.getWidth()/32 + "currentmapx: " + renderedArea.width + " currentmapy: " + renderedArea.height);
         if (input.isKeyDown(Input.KEY_UP)) {
             sprite = up;
-            /*
+            
              if (!isBlocked((playerx), (float) (playery - i * speed), sbg)) {
              collision = false;
              }
-             */
-            
-            if(playery - (i*speed) < 0)
-            {
+             if (collision == false) {
+                sprite.update(i);
+                playery -= i * speed;
+            }
+
+            if (playery - (i * speed) < 0) {
                 //we will transition the screen up
                 System.out.println("transition up");
-                transition("up",gc);
+                transition("up", gc);
             }
-            
+
             if (collision == false) {
                 sprite.update(i);
                 playery -= i * speed;
             }
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             sprite = down;
-            /*
+            
              if (!isBlocked((playerx), (float) (playery + 6 + i * speed), sbg)) {
              collision = false;
              }
-             */
-            if(playery + (i*speed) > 300)
-            {
+             if (collision == false) {
+                sprite.update(i);
+                playery += i * speed;
+            }
+            if (playery + (i * speed) > 350) {
                 //we will transition the screen up
                 System.out.println("transition down");
-                transition("down",gc);
+                transition("down", gc);
             }
-            
-            
+
             if (collision == false) {
                 sprite.update(i);
                 playery += i * speed;
             }
         } else if (input.isKeyDown(Input.KEY_LEFT)) {
             sprite = left;
-            /*
+            
              if (!isBlocked((float) (playerx - 3 - i * speed), playery + 6, sbg)) {
              collision = false;
              }
-
-             if (playerx - 7 < 0) {
-             //we've reached the right edge of the screen
-             transition("left");
-             }
-             */
-            
-            if(playerx - (i*speed) < 0)
-            {
-                //we will transition the screen up
-                System.out.println("transition left");
-                transition("left",gc);
+             
+             if (collision == false) {
+                sprite.update(i);
+                playerx -= i * speed;
             }
-            
+
+            if (playerx - (i * speed) < 0) {
+                //we will transition the screen left
+                System.out.println("transition left");
+                transition("left", gc);
+            }
+
             if (collision == false) {
                 sprite.update(i);
                 playerx -= i * speed;
             }
         } else if (input.isKeyDown(Input.KEY_RIGHT)) {
             sprite = right;
-            /*
-             if (playerx + 12 > currentMap.getWidth() * SIZE) {
-             //we've reached the right edge of the screen
-             transition("right");
-             }
+            
              if (!isBlocked((float) (playerx + 3 + i * speed), playery + 6, sbg)) {
              collision = false;
              }
-             */
+             if (collision == false) {
+                sprite.update(i);
+                playerx += i * speed;
+            }
             //check to see if we're at the edge of the map
             //we can see that if startx == mapsize (160)
             //look up tile, from that we can get a transition
-           if(playerx + (i*speed) > 500)
-            {
-                //we will transition the screen up
+            if (playerx + (i * speed) > 500) {
+                //we will transition the screen right
                 System.out.println("transition right");
-                transition("right",gc);
+                transition("right", gc);
             }
 
             if (collision == false) {
@@ -233,21 +233,19 @@ public class ArenaState  extends GameStateBase{
 
         if (gc.getInput().isKeyPressed(Input.KEY_C)) {
         }
-        
+
         if (gc.getInput().isKeyPressed(Input.KEY_M)) {
             GameData thedata = (GameData) getClient().getGameData();
             //get half of the rendered area + etc /2 for both gets middle 25, 18
-            int middlex = renderedArea.width ;
-            int middley = renderedArea.height ;
-            thedata.setCameraPosition(new Position(middlex,middley));
-            thedata.setPlayerPosition(new Position((renderedArea.width*32)+playerx,(renderedArea.height*32)+playery));
-            thedata.setRelativePlayerPosition(new Position(playerx,playery));
+            int middlex = renderedArea.width;
+            int middley = renderedArea.height;
+            thedata.setCameraPosition(new Position(middlex, middley));
+            thedata.setPlayerPosition(new Position((renderedArea.width * 32) + playerx, (renderedArea.height * 32) + playery));
+            thedata.setRelativePlayerPosition(new Position(playerx, playery));
             //thedata.setFog(fog);
-            
+
             sbg.enterState(9);
         }
-        
-        
 
         if (convoActive == true) {
             if (input.isKeyPressed(Input.KEY_ENTER)) {
@@ -255,94 +253,115 @@ public class ArenaState  extends GameStateBase{
             }
         }
     }
-    
+
     private void transition(String direction, GameContainer gc) throws SlickException {
         //TODO: add searching for correct layer
-        switch(direction)
-        {
+        switch (direction) {
             case "right":
-                int endpoint = renderedArea.width + (gc.getWidth()/32) /2;
-                
-                
-                    renderedArea.width = endpoint;
-            
-                
-            
-            //now we move our character on the new map
-            playerx = 1;
+                int endpoint = renderedArea.width + (gc.getWidth() / 32) / 2;
+
+                renderedArea.width = endpoint;
+
+                //now we move our character on the new map
+                playerx = 1;
                 break;
-                
+
             case "left":
-                int checkleft = renderedArea.width - ((gc.getWidth()/32) /2);
-            if(checkleft >= 0)
-            {
-                renderedArea.width = checkleft;
-            //now we move our character on the new map
-            playerx = 500;
-            }
-            
-                
+                int checkleft = renderedArea.width - ((gc.getWidth() / 32) / 2);
+                if (checkleft >= 0) {
+                    renderedArea.width = checkleft;
+                    //now we move our character on the new map
+                    playerx = 500;
+                }
+
                 break;
-                
+
             case "up":
-                int checkup = renderedArea.height - (gc.getHeight()/32) /2;
-            if(checkup >= 0)
-            {
-                renderedArea.height = checkup;
-                playery = 260;
-            }
-                
+                int checkup = renderedArea.height - (gc.getHeight() / 32) / 2;
+                if (checkup >= 0) {
+                    renderedArea.height = checkup;
+                    playery = 320;
+                }
+
                 break;
-                
+
             case "down":
-                renderedArea.height += (gc.getHeight()/32) /2;
+                renderedArea.height += (gc.getHeight() / 32) / 2;
                 playery = 1;
                 break;
         }
-       //clearFog(renderedArea.width, renderedArea.height, 12, 9);
-
-        
+        //clearFog(renderedArea.width, renderedArea.height, 12, 9);
     }
     
-    
+    private boolean isBlocked(float x, float y, StateBasedGame sbg) throws SlickException {
+        int xBlock = (int) (x + 8) / SIZE;
+        int yBlock = (int) (y + 9) / SIZE;
+        //we need to see if something that is blocked can cause a transition
+     
+        return blocked[xBlock][yBlock];
+    }
 
     @Override
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        
+        spritesheet = gameData.player.getSpritesheet();
+            Image[] movementUp = {spritesheet.getSprite(0, 0), spritesheet.getSprite(1, 0), spritesheet.getSprite(2, 0), spritesheet.getSprite(1, 0)};
+            Image[] movementDown = {spritesheet.getSprite(0, 2), spritesheet.getSprite(1, 2), spritesheet.getSprite(2, 2), spritesheet.getSprite(1, 2)};
+            Image[] movementLeft = {spritesheet.getSprite(0, 3), spritesheet.getSprite(1, 3), spritesheet.getSprite(2, 3), spritesheet.getSprite(1, 3)};
+            Image[] movementRight = {spritesheet.getSprite(0, 1), spritesheet.getSprite(1, 1), spritesheet.getSprite(2, 1), spritesheet.getSprite(1, 1)};
+            int[] duration = {300, 300, 300, 300};
+            up = new Animation(movementUp, duration, false);
+            down = new Animation(movementDown, duration, false);
+            left = new Animation(movementLeft, duration, false);
+            right = new Animation(movementRight, duration, false);
+            sprite = down;
+
+            gameData.setPlayerSprite(down);
+
     }
 
     @Override
-    public void leave(GameContainer gc, StateBasedGame sbg) throws SlickException {}
+    public void leave(GameContainer gc, StateBasedGame sbg) throws SlickException {
+    }
 
     @Override
-    public void mouseWheelMoved(int i) {}
+    public void mouseWheelMoved(int i) {
+    }
 
     @Override
-    public void mouseClicked(int i, int i1, int i2, int i3) {}
+    public void mouseClicked(int i, int i1, int i2, int i3) {
+    }
 
     @Override
-    public void mousePressed(int i, int i1, int i2) {}
+    public void mousePressed(int i, int i1, int i2) {
+    }
 
     @Override
-    public void mouseReleased(int i, int i1, int i2) {}
+    public void mouseReleased(int i, int i1, int i2) {
+    }
 
     @Override
-    public void mouseMoved(int i, int i1, int i2, int i3) {}
-    
-    @Override
-    public void mouseDragged(int i, int i1, int i2, int i3) {}
+    public void mouseMoved(int i, int i1, int i2, int i3) {
+    }
 
     @Override
-    public void setInput(Input input) {}
+    public void mouseDragged(int i, int i1, int i2, int i3) {
+    }
 
     @Override
-    public void inputEnded() {}
+    public void setInput(Input input) {
+    }
 
     @Override
-    public void inputStarted() {}
+    public void inputEnded() {
+    }
 
     @Override
-    public void keyPressed(int i, char c) {}
+    public void inputStarted() {
+    }
+
+    @Override
+    public void keyPressed(int i, char c) {
+    }
 
     @Override
     public void keyReleased(int i, char c) {
@@ -366,12 +385,12 @@ public class ArenaState  extends GameStateBase{
 
     @Override
     public void controllerRightReleased(int i) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void controllerUpPressed(int i) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -381,12 +400,12 @@ public class ArenaState  extends GameStateBase{
 
     @Override
     public void controllerDownPressed(int i) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void controllerDownReleased(int i) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -396,7 +415,7 @@ public class ArenaState  extends GameStateBase{
 
     @Override
     public void controllerButtonReleased(int i, int i1) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

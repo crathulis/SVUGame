@@ -17,6 +17,18 @@ public class Inventory {
     
     private ArrayList<Item> items;
     
+
+    public void addItem(Item addItem){
+        items.add(addItem);
+    }
     
+    public Item getItem(int loc){
+        return items.get(loc);
+    }
+    
+    public void removeItem(int loc){
+        items.remove(loc);
+    }
+
     
 }
