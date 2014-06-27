@@ -152,6 +152,15 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
     public double getLevel() {
         return Math.max(Math.pow(getExperience(), 0.275) / Math.PI, 1.0);
     }
+    
+    /**
+     * Get the level as an integer number, dropping any partial level values.
+     * 
+     * @return The closest integer less than or equal to the level.
+     */
+    public int getLevelStep(){
+        return (int)getLevel();
+    }
 
     /**
      * Get the base health points of the character. Health is calculated from
