@@ -16,12 +16,8 @@ public class Dice {
     
     public static int roll(String spec){
         String [] parts = spec.split("d");
-        if(parts[0].equals("1.0"))
-        {
-            parts[0] = "100";
-        }
-        int numDice = Integer.parseInt(parts[0]);
-        int maxDice = Integer.parseInt(parts[1]);
+        int numDice = (int)Double.parseDouble(parts[0]);
+        int maxDice = (int)Double.parseDouble(parts[1]);
         int result = 0;
         for(int i=0;i<numDice;++i){
             int roll = rgen.nextInt(maxDice)+1;
