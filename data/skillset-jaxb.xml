@@ -9,7 +9,7 @@
             <ldesc>NONE</ldesc>
             <attrib1>0</attrib1>
             <attrib2>0</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
         </skill>
 		
         <skill>
@@ -19,7 +19,7 @@
             <ldesc>The ability to play a musical instrument so as to beguile or inspire.</ldesc>
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>physicalBuff</parent>
         </skill>
 		
@@ -30,7 +30,7 @@
             <ldesc>The ability to use one's voide so as to influence others.</ldesc>
             <attrib1>2</attrib1>
             <attrib2>3</attrib2>
-            <focus>2</focus>
+            <spirit>2</spirit>
             <parent>physicalBuff</parent>
         </skill>
 		
@@ -41,7 +41,7 @@
             <ldesc>The ability to accurately thrust a one-handed weapon into an enemy's weak spot.</ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent>oneHanded</parent>
         </skill>
         
@@ -52,7 +52,7 @@
             <ldesc>The ability to accurately swing a one-handed weapons so as to damage an emeny.</ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
-            <focus>2</focus>
+            <spirit>2</spirit>
             <parent>oneHanded</parent>
         </skill>
         
@@ -63,7 +63,7 @@
             <ldesc>The ability to spin and slice multiple enemies at the same time with a one-handed weapon.</ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>oneHanded</parent>
         </skill>
         
@@ -74,7 +74,7 @@
             <ldesc>The ability to accurately chop a two-handed weapon into an enemy.</ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent>twoHanded</parent>
         </skill>
         
@@ -85,7 +85,7 @@
             <ldesc>The ability to swing a two-handed weapon through an enemy's defenses sundering armor and bone.</ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
-            <focus>2</focus>
+            <spirit>2</spirit>
             <parent>twoHanded</parent>
         </skill>
         
@@ -96,7 +96,7 @@
             <ldesc>The ability to smash a two-handed weapon into multiple enemies.</ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>twoHanded</parent>
         </skill>
         
@@ -107,7 +107,7 @@
             <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent>closeQuarters</parent>
         </skill>
         
@@ -118,7 +118,7 @@
             <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
-            <focus>2</focus>
+            <spirit>2</spirit>
             <parent>closeQuarters</parent>
         </skill>
         
@@ -129,7 +129,7 @@
             <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>closeQuarters</parent>
         </skill>
         
@@ -140,7 +140,7 @@
             <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent>projectileWeapon</parent>
         </skill>
         
@@ -151,7 +151,7 @@
             <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
-            <focus>2</focus>
+            <spirit>2</spirit>
             <parent>projectileWeapon</parent>
         </skill>
         
@@ -162,7 +162,7 @@
             <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>projectileWeapon</parent>
         </skill>
         
@@ -173,7 +173,7 @@
             <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>4</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent>physicalBuff</parent>
         </skill>
         
@@ -184,7 +184,7 @@
             <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>4</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>physicalBuff</parent>
         </skill>
         
@@ -195,7 +195,7 @@
             <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>6</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent>physicalBuff</parent>
         </skill>
         
@@ -206,7 +206,7 @@
             <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>7</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent>physicalBuff</parent>
         </skill>
         
@@ -217,7 +217,7 @@
             <ldesc></ldesc>
             <attrib1>2</attrib1>
             <attrib2>6</attrib2>
-            <focus>2</focus>
+            <spirit>2</spirit>
             <parent>physicalBuff</parent>
         </skill>
         
@@ -228,7 +228,7 @@
             <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>6</attrib2>
-            <focus>3</focus>
+            <spirit>3</spirit>
             <parent></parent>
         </skill>
 		
@@ -239,7 +239,7 @@
             <ldesc></ldesc>
             <attrib1>0</attrib1>
             <attrib2>5</attrib2>
-            <focus>3</focus>
+            <spirit>3</spirit>
             <parent></parent>
         </skill>
         
@@ -250,7 +250,7 @@
             <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>8</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent></parent>
         </skill>
         
@@ -261,7 +261,7 @@
             <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>7</attrib2>
-            <focus>3</focus>
+            <spirit>3</spirit>
             <parent></parent>
         </skill>
         
@@ -272,7 +272,7 @@
             <ldesc></ldesc>
             <attrib1>3</attrib1>
             <attrib2>8</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>physicalBuff</parent>
         </skill>
         
@@ -283,7 +283,7 @@
             <ldesc></ldesc>
             <attrib1>1</attrib1>
             <attrib2>3</attrib2>
-            <focus>1</focus>
+            <spirit>1</spirit>
             <parent></parent>
         </skill>
         
@@ -294,7 +294,7 @@
             <ldesc></ldesc>
             <attrib1>4</attrib1>
             <attrib2>6</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent></parent>
         </skill>
         
@@ -305,7 +305,7 @@
             <ldesc></ldesc>
             <attrib1>5</attrib1>
             <attrib2>8</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent></parent>
         </skill>
         
@@ -316,7 +316,7 @@
             <ldesc></ldesc>
             <attrib1>4</attrib1>
             <attrib2>6</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent></parent>
         </skill>
         
@@ -327,7 +327,7 @@
             <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>3</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -338,7 +338,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>5</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -350,7 +350,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>0</attrib2>
-            <focus>2</focus>
+            <spirit>2</spirit>
             <parent>singleTarget</parent>
         </skill>
         
@@ -361,7 +361,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>0</attrib2>
-            <focus>8</focus>
+            <spirit>8</spirit>
             <parent>multiTarget</parent>
         </skill>
         
@@ -382,7 +382,7 @@
             <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>1</attrib2>
-            <focus>8</focus>
+            <spirit>8</spirit>
             <parent>multiTarget</parent>
         </skill>
         
@@ -393,7 +393,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>4</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>singleTarget</parent>
         </skill>
         
@@ -404,7 +404,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>4</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>multiTarget</parent>
         </skill>
         
@@ -415,7 +415,7 @@
             <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>4</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>singleTarget</parent>
         </skill>
         
@@ -426,7 +426,7 @@
             <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>4</attrib2>
-            <focus>8</focus>
+            <spirit>8</spirit>
             <parent>multiTarget</parent>
         </skill>
         
@@ -437,7 +437,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>0</attrib2>
-            <focus>10</focus>
+            <spirit>10</spirit>
             <parent>multiTarget</parent>
         </skill>
         
@@ -448,7 +448,7 @@
             <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>0</attrib2>
-            <focus>10</focus>
+            <spirit>10</spirit>
             <parent>multiTarget</parent>
         </skill>
         
@@ -459,7 +459,7 @@
             <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>1</attrib2>
-            <focus>10</focus>
+            <spirit>10</spirit>
             <parent>multiTarget</parent>
         </skill>
         
@@ -470,7 +470,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>5</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -481,7 +481,7 @@
             <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>0</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -492,7 +492,7 @@
             <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>2</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -503,7 +503,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>5</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -514,7 +514,7 @@
             <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>2</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -525,7 +525,7 @@
             <ldesc></ldesc>
             <attrib1>7</attrib1>
             <attrib2>1</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent>magicalBuff</parent>
         </skill>
         
@@ -536,7 +536,7 @@
             <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>2</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent></parent>
         </skill>
         
@@ -547,7 +547,7 @@
             <ldesc></ldesc>
             <attrib1>8</attrib1>
             <attrib2>3</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent></parent>
         </skill>
         
@@ -558,7 +558,7 @@
             <ldesc></ldesc>
             <attrib1>6</attrib1>
             <attrib2>3</attrib2>
-            <focus>4</focus>
+            <spirit>4</spirit>
             <parent></parent>
         </skill>
 
