@@ -214,6 +214,26 @@
  </tileset>
  <tileset firstgid="3841" name="animated_wooden_castle_door" tilewidth="32" tileheight="32">
   <image source="animated_wooden_castle_door.png" width="384" height="64"/>
+  <tile id="2">
+   <properties>
+    <property name="closedDoor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="closedDoor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="closedDoor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="closedDoor" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="ground" width="31" height="23">
   <data encoding="base64" compression="gzip">
