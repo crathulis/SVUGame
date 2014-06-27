@@ -30,6 +30,10 @@ public class PlayAction extends Action implements ItemConstants {
 
     @Override
     public boolean isPossible() {
+        // actor must have enough spirit to complete action
+        if (actor.getSpirit()<(actor.getSkill(skillId).getModel().getSpirit())){
+            return false;
+        }
         // actor must be carrying an instrument in one of their hands
         if (actor.getItemInSlot(ITEM_SLOT_RHAND).getType() != ITEM_TYPE_INSTRUMENT
                 && actor.getItemInSlot(ITEM_SLOT_LHAND).getType() != ITEM_TYPE_INSTRUMENT) {
@@ -48,6 +52,7 @@ public class PlayAction extends Action implements ItemConstants {
         int successChance = actor.getSkillValue(skillId);
         if (Dice.roll("1d100") <= successChance) {
             results.add(new Effect(RESULTS_PLAY, 1));
+            //TODO: decide on the effect of playing an instrument
         } else {
             results.add(new Effect(RESULTS_NONE));
         }
