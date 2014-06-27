@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author Lab Admin
  */
 //@XmlRootElement(name = "skill")
-@XmlType(propOrder = {"name", "id", "sdesc", "ldesc", "attrib1", "attrib2", "focus"})
+@XmlType(propOrder = {"name", "id", "sdesc", "ldesc", "attrib1", "attrib2", "spirit"})
 public class SkillModel implements Comparable {
 
     public SkillModel() {
@@ -24,14 +24,14 @@ public class SkillModel implements Comparable {
         this("", id, "", "", 0, 0, 1);
     }
 
-    public SkillModel(String name, int id, String sdesc, String ldesc, int attrib1, int attrib2, int focus) {
+    public SkillModel(String name, int id, String sdesc, String ldesc, int attrib1, int attrib2, int spirit) {
         this.name = name;
         this.id = id;
         this.sdesc = sdesc;
         this.ldesc = ldesc;
         this.attrib1 = attrib1;
         this.attrib2 = attrib2;
-        this.focus = focus;
+        this.spirit = spirit;
 
     }
 
@@ -83,12 +83,12 @@ public class SkillModel implements Comparable {
         this.attrib2 = attrib2;
     }
 
-    public int getFocus() {
-        return focus;
+    public int getSpirit() {
+        return spirit;
     }
 
-    public void setFocus(int focus) {
-        this.focus = focus;
+    public void setSpirit(int focus) {
+        this.spirit = focus;
     }
     
     @Override
@@ -101,7 +101,7 @@ public class SkillModel implements Comparable {
 
     @Override
     public String toString() {
-        return String.format("<%s: %d, %d, %d, %d >", name, id, attrib1, attrib2, focus);
+        return String.format("<%s: %d, %d, %d, %d >", name, id, attrib1, attrib2, spirit);
     }
 
     private String name;
@@ -110,7 +110,7 @@ public class SkillModel implements Comparable {
     private String ldesc;
     private int attrib1;
     private int attrib2;
-    private int focus;
+    private int spirit;
 
     
 
