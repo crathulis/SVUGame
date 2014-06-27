@@ -31,6 +31,11 @@ public class Item extends Thing {
         this.damage = model.getDamage();
     }
     
+    public Item()
+    {
+        
+    }
+    
     public String getName() {
         return name;
     }
