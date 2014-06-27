@@ -29,10 +29,15 @@ public class QuestManager {
         }
     }
     
+    public void activateQuest(String questName){
+        activeList.put(questName, questList.get(questName));
+    }
+    
     public boolean questExists(String questName){
         return questList.containsKey(questName);
     }
     
     private HashMap<String, Quest> questList = new HashMap();
+    private HashMap<String, Quest> activeList = new HashMap();
     
 }
