@@ -8,6 +8,7 @@ package svugame.model.action;
 import svugame.model.Thing;
 import static svugame.model.action.ActionConstants.RESULTS_DAMAGE_PARTY_HP;
 import svugame.model.entity.Entity;
+import static svugame.model.items.ItemConstants.ITEM_SLOT_RHAND;
 
 /**
  *
@@ -32,6 +33,10 @@ class OhWhirlAction extends OhMeleeAction {
         int damage = super.getBaseDamage() / (((Entity) dobj).getParty().getMembers().size() - 1);
         for (Entity entity : ((Entity) dobj).getParty().getMembers()) {
             if (entity != ((Entity) dobj)) {
+                System.out.println(actor.getName() + " hits the "
+                        + entity.getName() + " with the "
+                        + actor.getItemInSlot(ITEM_SLOT_RHAND).getName()
+                        + " for " + damage + " damage.");
                 entity.setHealth(entity.getHealth() - damage);
             }
         }

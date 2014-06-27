@@ -23,6 +23,7 @@ public class Dice {
             int roll = rgen.nextInt(maxDice)+1;
             result += roll;
         }
+        System.out.println(spec + ": " + result);
         return result;
     }
     

@@ -62,20 +62,20 @@ public abstract class RangedAction extends Action {
     }
 
     protected boolean isHit() {
-        double dexterityChance = actor.getDexterity() / 25.0;
+        double dexterityChance = (actor.getDexterity() / 25.0) * 100.0;
         int successChance = (int) Math.round(dexterityChance + actor.getSkillValue(skillId));
         return (Dice.roll("1d100") <= successChance);
     }
 
     protected boolean isDodge() {
-        int dodgeChance = Math.min(100, (int) Math.round((((Entity) dobj).getAgility() / (double) actor.getSkillValue(skillId)) * 100));
+        int dodgeChance = Math.min(100, (int) Math.round((((Entity) dobj).getAgility() / (double) actor.getSkillValue(skillId)) * 100.0));
         return Dice.roll("1d100") < dodgeChance;
     }
 
     protected int getBaseDamage() {
-        double strengthFactor = actor.getStrength() / 25.0;
+        double strengthFactor = (actor.getStrength() / 25.0) * 100.0;
         double weaponDamage = actor.getItemInSlot(ITEM_SLOT_RHAND).getDamage();
-        int maxDamage = (int) Math.round((strengthFactor + actor.getSkillValue(skillId)) * weaponDamage);
+        int maxDamage = (int) Math.round(((strengthFactor + actor.getSkillValue(skillId)) / 100.0) * weaponDamage);
         return Dice.roll(actor.getLevelStep() + "d" + maxDamage);
     }
 
@@ -83,10 +83,10 @@ public abstract class RangedAction extends Action {
         Entity target = (Entity) dobj;
          if (target.getItemInSlot(ITEM_SLOT_LHAND) != null) {
         if (target.getItemInSlot(ITEM_SLOT_LHAND).getType() == ITEM_TYPE_SHIELD) {
-            double agilityFactor = target.getAgility() / 25.0;
+            double agilityFactor = (target.getAgility() / 25.0) * 100.0;
             int shieldDamage = target.getItemInSlot(ITEM_SLOT_LHAND).getDamage();
             int maxShield = (int) Math.round((agilityFactor + target.getSkillValue(SKILL_SHIELD)) * shieldDamage);
-            int shieldAbsorb = Dice.roll(((int) target.getLevel()) + "d" + maxShield);
+            int shieldAbsorb = Dice.roll(target.getLevelStep() + "d" + maxShield);
             if (shieldAbsorb > 0) {
                 System.out.println(target.getName() + " blocks " + shieldAbsorb
                         + " points of damage with their shield.");
@@ -103,7 +103,7 @@ public abstract class RangedAction extends Action {
         if (Items.isArmor(target.getItemInSlot(ITEM_SLOT_TORSO))) {
             int armorPower = target.getItemInSlot(ITEM_SLOT_TORSO).getDamage();
             int maxArmorAbsorb = (int) Math.round(armorPower * target.getLevel());
-            int armorAbsorb = Dice.roll(target.getLevel() + "d" + maxArmorAbsorb);
+            int armorAbsorb = Dice.roll("1d" + maxArmorAbsorb);
             System.out.println(target.getName() + "'s armor absorbs " + armorAbsorb
                     + " points of damage.");
             results.add(new Effect(RESULTS_ARMOR, armorAbsorb));
@@ -116,16 +116,7 @@ public abstract class RangedAction extends Action {
         int baseDamage = getBaseDamage();
         int shieldAbsorb = getShieldAbsorb();
         int armorAbsorb = getArmorAbsorb();
-        int finalDamage = Math.max(0, baseDamage - shieldAbsorb - armorAbsorb);
-        if (finalDamage > 0) {
-            System.out.println(actor.getName() + " hits the "
-                    + ((Entity) dobj).getName() + " with the "
-                    + actor.getItemInSlot(ITEM_SLOT_RHAND).getName()
-                    + " for " + finalDamage + " damage.");
-            results.add(new Effect(RESULTS_DAMAGE_HP, finalDamage));
-            ((Entity) dobj).setHealth(((Entity) dobj).getHealth() - finalDamage);
-        }
-        return finalDamage;
+        return Math.max(0, baseDamage - shieldAbsorb - armorAbsorb);
     }
 
     protected abstract void addMoreEffects();
@@ -138,14 +129,17 @@ public abstract class RangedAction extends Action {
             //results.add(new Effect(RESULTS_NONE));
             return results;
         } else if (!isHit()) {
+            actor.setSpirit(actor.getSpirit()-actor.getSkill(skillId).getModel().getSpirit());
             System.out.println(actor.getName() + " missed " + ((Entity) dobj).getName());
             results.add(new Effect(RESULTS_MISS));
             return results;
         } else if (isDodge()) {
+            actor.setSpirit(actor.getSpirit()-actor.getSkill(skillId).getModel().getSpirit());
             System.out.println(((Entity) dobj).getName() + " dodged.");
             results.add(new Effect(RESULTS_DODGE));
             return results;
         } else {
+            actor.setSpirit(actor.getSpirit()-actor.getSkill(skillId).getModel().getSpirit());
             Entity target = ((Entity) dobj);
             int finalDamage = getFinalDamage();
             if (finalDamage > 0) {

@@ -8,13 +8,10 @@ package svugame.engine.state;
 import HelperClasses.EffEntTar;
 import HelperClasses.Entityplussprite;
 import HelperClasses.Position;
-import HelperClasses.TurnMade;
-import java.awt.Cursor;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import mdes.slick.sui.Button;
 import mdes.slick.sui.Container;
@@ -32,19 +29,20 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.UnicodeFont;
 import org.newdawn.slick.font.effects.ColorEffect;
-import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
-import org.newdawn.slick.state.transition.FadeInTransition;
-import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.tiled.TiledMap;
 import svugame.SVUGame;
 import svugame.model.BattleManager;
+import svugame.model.entity.AttributeConstants;
 import svugame.model.entity.Entity;
 import svugame.model.entity.Party;
 import svugame.model.items.Item;
 import static svugame.model.items.ItemConstants.ITEM_SLOT_RHAND;
 import static svugame.model.items.ItemConstants.ITEM_TYPE_OH_WEAPON;
 import static svugame.model.items.ItemConstants.ITEM_TYPE_RG_WEAPON;
+import static svugame.model.items.ItemConstants.ITEM_TYPE_TH_WEAPON;
+import svugame.model.skills.SkillConstants;
+import svugame.model.skills.SkillFactory;
 
 /**
  *
@@ -100,45 +98,44 @@ public class Battle extends GameStateBase<GameData, States> {
         Entity bernard = new Entity("Bernard", true, 20);
         Entity bernard2 = new Entity("Bernardina", false, 20);
         Entity bernard3 = new Entity("Ser Bernardo", true, 20);
+        for (int i = 0; i < SkillConstants.NUM_SKILLS; ++i) {
+            bernard.addSkillPoints(i, 10);
+            bernard2.addSkillPoints(i, 10);
+            bernard3.addSkillPoints(i, 10);
+        }
+        for (int i = 0; i < AttributeConstants.NUM_ATTRIB; ++i) {
+            bernard.setAttribute(i, 10);
+            bernard2.setAttribute(i, 10);
+            bernard3.setAttribute(i, 10);
+        }
         Item item11 = new Item();
-        item11.setName("ranged weapon");
-        item11.setDamage(2);
+        item11.setName("Short Bow");
+        item11.setDamage(6);
         item11.setSlot(ITEM_SLOT_RHAND);
         item11.setType(ITEM_TYPE_RG_WEAPON);
         Item[] testarray = new Item[512];
         testarray[1] = item11;
         bernard.setEquipment(testarray);
-        bernard.setHealth(20000);
         Item item22 = new Item();
-        item22.setName("melee weapon");
-        item22.setDamage(2);
+        item22.setName("Long Sword");
+        item22.setDamage(8);
         item22.setSlot(ITEM_SLOT_RHAND);
         item22.setType(ITEM_TYPE_OH_WEAPON);
         Item[] testarray2 = new Item[512];
         testarray2[1] = item22;
         bernard2.setEquipment(testarray2);
-        bernard2.setHealth(20000);
         Item item33 = new Item();
-        item33.setName("melee weapon");
-        item33.setDamage(2);
+        item33.setName("Claymore");
+        item33.setDamage(10);
         item33.setSlot(ITEM_SLOT_RHAND);
-        item33.setType(ITEM_TYPE_OH_WEAPON);
+        item33.setType(ITEM_TYPE_TH_WEAPON);
         Item[] testarray3 = new Item[512];
         testarray3[1] = item33;
         bernard3.setEquipment(testarray3);
-        bernard3.setHealth(20000);
-        bernard.setParty(goodguys);
-        bernard2.setParty(goodguys);
-        bernard3.setParty(goodguys);
         goodguys.add(bernard);
         goodguys.add(bernard2);
         goodguys.add(bernard3);
-
-        for (Entity en : goodguys.getMembers()) {
-            for (int i = 0; i < 9; i++) {
-                en.setAttribute(i, 10);
-            }
-        }
+        // bad guys
         Entity wolf1 = new Entity("Wolf1", true, 10);
         Item item1 = new Item();
         item1.setName("ranged weapon");
@@ -168,9 +165,6 @@ public class Battle extends GameStateBase<GameData, States> {
         wolf3.setEquipment(testarray6);
         System.out.println("finished setting items");
         Party mobParty = new Party();
-        wolf1.setParty(mobParty);
-        wolf2.setParty(mobParty);
-        wolf3.setParty(mobParty);
         mobParty.add(wolf1);
         mobParty.add(wolf2);
         mobParty.add(wolf3);
@@ -205,7 +199,7 @@ public class Battle extends GameStateBase<GameData, States> {
         ArrayList<EffEntTar> eet = battlemanager.nextTurn(null, null, 0);
         if (eet.get(0).getActor() == null) {
             this.eet = eet;
-             currenteffenttar = eet.get(0);
+            currenteffenttar = eet.get(0);
             SetActiveActor(eet.get(0).getNextPC());
         } else {
             AnimateEffects(eet);
@@ -346,7 +340,9 @@ public class Battle extends GameStateBase<GameData, States> {
 
                 for (final int s : usableAbilities) {
 
-                    Button tempButton = new Button(Integer.toString(s));
+                    String label = SkillFactory.getModel(s).getName();
+
+                    Button tempButton = new Button(label);
 
                     tempButton.setSize(10, secondGroup.getHeight() / 5);
 
@@ -485,15 +481,15 @@ public class Battle extends GameStateBase<GameData, States> {
                 grphcs.setColor(Color.red);
                 grphcs.drawRect(eps.getPosition().getX(), eps.getPosition().getY() + 37, 32, 5);
                 grphcs.setColor(Color.green);
-                float basehealth = eps.getEntity().getBaseHealth();
-                float basehealthandextrahealth = basehealth + 20000;
-                float health = eps.getEntity().getHealth() / basehealthandextrahealth;
+                //float basehealth = eps.getEntity().getBaseHealth();
+                //float basehealthandextrahealth = basehealth + 50;
+                float health = eps.getEntity().getHealth() / eps.getEntity().getBaseHealth();
                 //System.out.println(eps.getEntity().getName() + " Health: %: "+health);
                 grphcs.fillRect(eps.getPosition().getX(), eps.getPosition().getY() + 37, health * 32, 5);
                 grphcs.setColor(Color.red);
                 grphcs.drawRect(eps.getPosition().getX(), eps.getPosition().getY() + 44, 32, 5);
                 grphcs.setColor(Color.blue);
-                grphcs.fillRect(eps.getPosition().getX(), eps.getPosition().getY() + 44, eps.getEntity().getSpirit() / eps.getEntity().getBaseSpirit() * 32, 5);
+                grphcs.fillRect(eps.getPosition().getX(), eps.getPosition().getY() + 44, (eps.getEntity().getSpirit() / eps.getEntity().getBaseSpirit()) * 32, 5);
                 eps.getImage().draw(eps.getPosition().getX(), eps.getPosition().getY());
             }
 
@@ -504,11 +500,11 @@ public class Battle extends GameStateBase<GameData, States> {
                 grphcs.setColor(Color.red);
                 grphcs.drawRect(eps.getPosition().getX(), eps.getPosition().getY() + 37, 32, 5);
                 grphcs.setColor(Color.green);
-                grphcs.fillRect(eps.getPosition().getX(), eps.getPosition().getY() + 37, eps.getEntity().getHealth() / eps.getEntity().getBaseHealth() * 32, 5);
+                grphcs.fillRect(eps.getPosition().getX(), eps.getPosition().getY() + 37, (eps.getEntity().getHealth() / eps.getEntity().getBaseHealth()) * 32, 5);
                 grphcs.setColor(Color.red);
                 grphcs.drawRect(eps.getPosition().getX(), eps.getPosition().getY() + 44, 32, 5);
                 grphcs.setColor(Color.blue);
-                grphcs.fillRect(eps.getPosition().getX(), eps.getPosition().getY() + 44, eps.getEntity().getSpirit() / eps.getEntity().getBaseSpirit() * 32, 5);
+                grphcs.fillRect(eps.getPosition().getX(), eps.getPosition().getY() + 44, (eps.getEntity().getSpirit() / eps.getEntity().getBaseSpirit()) * 32, 5);
                 eps.getImage().getFlippedCopy(true, false).draw(eps.getPosition().getX(), eps.getPosition().getY());
             }
 
@@ -555,9 +551,9 @@ public class Battle extends GameStateBase<GameData, States> {
                     for (Entityplussprite eps : badguysprites) {
                         System.out.println("x: " + eps.getPosition().getX() + " y:" + eps.getPosition().getY());
                         if (input.getMouseX() / 1.85 >= eps.getPosition().getX() && input.getMouseX() / 1.85 < (eps.getPosition().getX() + 32) && input.getMouseY() / 2 >= eps.getPosition().getY() && input.getMouseY() / 2 < (eps.getPosition().getY() + 32)) {
-                        //this is the one that they are choosing
+                            //this is the one that they are choosing
                             //so lets change the mouse cursor back
-                            System.out.println("starting new turn: "+currenteffenttar.getNextPC().getName()+" is attacking " + eps.getEntity().getName());
+                            System.out.println("starting new turn: " + currenteffenttar.getNextPC().getName() + " is attacking " + eps.getEntity().getName());
                             gc.setDefaultMouseCursor();
                             ArrayList<EffEntTar> eet = battlemanager.nextTurn(currenteffenttar.getNextPC(), eps.getEntity(), currentchosenaction);
                             AnimateEffects(eet);
@@ -573,7 +569,7 @@ public class Battle extends GameStateBase<GameData, States> {
                     //animate to the right
                     Entityplussprite entityplussprite = null;
                     for (Entityplussprite ens : badguysprites) {
-                         if (ens.getEntity().getName().equals(currenteffenttar.getActor().getName())) {
+                        if (ens.getEntity().getName().equals(currenteffenttar.getActor().getName())) {
                             entityplussprite = ens;
                         }
                     }
@@ -611,7 +607,7 @@ public class Battle extends GameStateBase<GameData, States> {
                             //entityplussprite.setPosition(new Position(entityplussprite.getPosition().getX() + 64f, entityplussprite.getPosition().getY()));
                         }
                     }
-                //for (int i = deltamark; i < deltamark + 1500; i++) {
+                    //for (int i = deltamark; i < deltamark + 1500; i++) {
                     //    entityplussprite.setPosition(new Position(entityplussprite.getPosition().getX() - (64 / 1500), entityplussprite.getPosition().getY()));
                     //}
                 } else {
@@ -660,8 +656,7 @@ public class Battle extends GameStateBase<GameData, States> {
 
             }
         }
-        if(!battlemanager.IsGameActive())
-        {
+        if (!battlemanager.IsGameActive()) {
             Music winMusic = new Music("data/6 Open Surge score jingle - AA.ogg");
             winMusic.play();
             JOptionPane.showMessageDialog(null, "Battle is over");

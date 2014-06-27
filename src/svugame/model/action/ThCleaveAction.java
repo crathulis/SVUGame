@@ -14,7 +14,7 @@ import svugame.model.entity.Entity;
  *
  * @author Lab Admin
  */
-class ThCleaveAction extends OhMeleeAction {
+class ThCleaveAction extends ThMeleeAction {
 
     public ThCleaveAction(Entity actor, int skillId) {
         super(actor, skillId);

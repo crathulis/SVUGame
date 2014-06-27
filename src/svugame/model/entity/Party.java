@@ -25,6 +25,7 @@ public class Party extends Thing {
      */
     public void add(Entity entity) {
         members.add(entity);
+        entity.setParty(this);
     }
     
     /**

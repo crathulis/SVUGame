@@ -40,7 +40,9 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
             attributes[i] = new Attribute(i, 10, 10);
         }
         this.health = new Stat("Health", this, END);
+        this.resetHealth();
         this.spirit = new Stat("Spirit", this, FOC);
+        this.resetSpirit();
         this.inventory = new Inventory();
         this.equipment = new Item[NUM_SLOTS];
         this.skills = new Skill[NUM_SKILLS];

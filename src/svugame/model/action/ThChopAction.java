@@ -2,8 +2,6 @@ package svugame.model.action;
 
 import svugame.model.Thing;
 import svugame.model.entity.Entity;
-import svugame.model.items.ItemConstants;
-import static svugame.model.skills.SkillConstants.SKILL_THRUST;
 
 /**
  *
