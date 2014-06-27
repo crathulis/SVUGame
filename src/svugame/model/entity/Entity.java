@@ -37,7 +37,7 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
         this.experience = experience;
         this.attributes = new Attribute[NUM_ATTRIB];
         for (int i = 0; i < NUM_ATTRIB; ++i) {
-            attributes[i] = new Attribute(i, 0, 0);
+            attributes[i] = new Attribute(i, 10, 10);
         }
         this.health = new Stat("Health", this, END);
         this.spirit = new Stat("Spirit", this, FOC);
@@ -510,4 +510,20 @@ public class Entity extends Thing implements AttributeConstants, SkillConstants,
             System.out.println("Entity " + bob.getName() + ": Exp=" + bob.getExperience() + ", Level=" + bob.getLevel());
         }
     }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public void setEquipment(Item[] equipment) {
+        this.equipment = equipment;
+    }
+    
+    
+    
+    
 }

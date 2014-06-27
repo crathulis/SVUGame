@@ -81,6 +81,7 @@ public abstract class RangedAction extends Action {
 
     protected int getShieldAbsorb() {
         Entity target = (Entity) dobj;
+         if (target.getItemInSlot(ITEM_SLOT_LHAND) != null) {
         if (target.getItemInSlot(ITEM_SLOT_LHAND).getType() == ITEM_TYPE_SHIELD) {
             double agilityFactor = target.getAgility() / 25.0;
             int shieldDamage = target.getItemInSlot(ITEM_SLOT_LHAND).getDamage();
@@ -93,6 +94,7 @@ public abstract class RangedAction extends Action {
             }
             return shieldAbsorb;
         }
+         }
         return 0;
     }
 
@@ -131,7 +133,7 @@ public abstract class RangedAction extends Action {
     @Override
     public ArrayList<Effect> apply() {
         if (!isPossible()) {
-            System.out.println(actor.getName() + "can't attack " + ((Entity) dobj).getName());
+            System.out.println(actor.getName() + " can't attack " + ((Entity) dobj).getName());
             //results.add(new Effect(RESULTS_NONE));
             return results;
         } else if (!isHit()) {
@@ -152,6 +154,10 @@ public abstract class RangedAction extends Action {
                         + " for " + finalDamage + " damage.");
                 results.add(new Effect(RESULTS_DAMAGE_HP, finalDamage));
                 target.setHealth(target.getHealth() - finalDamage);
+                if(target.getHealth()<0)
+                {
+                    target.setHealth(0);
+                }
                 addMoreEffects();
             }
             return results;

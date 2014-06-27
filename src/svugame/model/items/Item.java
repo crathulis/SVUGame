@@ -15,7 +15,6 @@ import svugame.model.Thing;
 public class Item extends Thing {
     
     private String name;
-//    private int id;
     private String description;
     private int type;
     private int slot;
@@ -23,6 +22,15 @@ public class Item extends Thing {
     private int weight;
     private int damage;
 
+    public Item(ItemModel model){
+        this.name = model.getName();
+        this.type = model.getType();
+        this.slot = model.getSlot();
+        this.value = model.getValue();
+        this.weight = model.getWeight();
+        this.damage = model.getDamage();
+    }
+    
     public String getName() {
         return name;
     }
@@ -30,14 +38,6 @@ public class Item extends Thing {
     public void setName(String name) {
         this.name = name;
     }
-
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
 
     public String getDescription() {
         return description;
