@@ -7,6 +7,7 @@
 package svugame.quest;
 
 import java.util.HashMap;
+import svugame.model.action.Action;
 
 /**
  *
@@ -23,9 +24,9 @@ public class QuestManager {
         //This should read in an XML file of quests. Eventually.
     }
     
-    public void advanceQuests(int thingID, int actionID){
+    public void advanceQuests(Action action){
         for(Quest q : questList.values()){
-            q.advanceQuest(thingID, actionID);
+            q.advanceQuest(action);
         }
     }
     

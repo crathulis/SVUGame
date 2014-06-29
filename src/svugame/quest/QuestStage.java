@@ -5,6 +5,7 @@
 package svugame.quest;
 
 import java.util.ArrayList;
+import svugame.model.action.Action;
 
 /**
  *
@@ -25,16 +26,29 @@ public class QuestStage {
         this.desc = desc;
     }
     
-    public void addAdvancer(int thingID, int actionResult, int stageToAdvanceTo){
-        advancers.add(new QuestAdvancer(thingID, actionResult, stageToAdvanceTo));
+    public void addAdvancer(Action action, int stageToAdvanceTo){
+        actionAdvancers.add(new ActionAdvancer(action, stageToAdvanceTo));
     }
     
-    public int checkAdvancers(int thingID, int actionID){
-        for(int n = 0; n < advancers.size(); n++){
-            if(advancers.get(n).getThingID() == thingID && 
-                    advancers.get(n).getActionResult() == actionID){
+    public int checkActionAdvancers(Action action){
+        for(int n = 0; n < actionAdvancers.size(); n++){
+            if(actionAdvancers.get(n).getAction().equals(action)){
                 counter--;
-                if(counter == 0) return advancers.get(n).getStageToAdvanceTo();
+                if(counter == 0) return actionAdvancers.get(n).getStageToAdvanceTo();
+            }
+        }
+        return -1;
+    }
+    
+    public void addAdvancer(String convo, String pointer, int stageToAdvanceTo) {
+        dialogueAdvancers.add(new DialogueAdvancer(convo, pointer, stageToAdvanceTo));
+    }
+    
+    public int checkDialogueAdvancers(String convo, String pointer) {
+        for(int n = 0; n < dialogueAdvancers.size(); n++){
+            if(dialogueAdvancers.get(n).getConvo().equals(convo) &&
+                    dialogueAdvancers.get(n).getPointer().equals(pointer)){
+                return dialogueAdvancers.get(n).getStageToAdvanceTo();
             }
         }
         return -1;
@@ -43,6 +57,7 @@ public class QuestStage {
     private final int stageNumber;
     private final String desc;
     private int counter;
-    private ArrayList<QuestAdvancer> advancers = new ArrayList<>();
+    private ArrayList<ActionAdvancer> actionAdvancers = new ArrayList<>();
+    private ArrayList<DialogueAdvancer> dialogueAdvancers = new ArrayList<>();
     
 }

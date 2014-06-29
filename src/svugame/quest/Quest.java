@@ -6,6 +6,7 @@
 package svugame.quest;
 
 import java.util.ArrayList;
+import svugame.model.action.Action;
 
 /**
  *
@@ -26,9 +27,15 @@ public class Quest {
         return currentStage;
     }
 
-    public void advanceQuest(int thingID, int actionID) {
-        if (currentStage.checkAdvancers(thingID, actionID) != -1) {
-            setCurrentStage(currentStage.checkAdvancers(thingID, actionID));
+    public void advanceQuest(Action action) {
+        if (currentStage.checkActionAdvancers(action) != -1) {
+            setCurrentStage(currentStage.checkActionAdvancers(action));
+        }
+    }
+    
+    public void advanceQuest(String convo, String pointer) {
+        if (currentStage.checkDialogueAdvancers(convo, pointer) != -1){
+            setCurrentStage(currentStage.checkDialogueAdvancers(convo, pointer));
         }
     }
 
@@ -37,6 +44,22 @@ public class Quest {
             if (questStages.get(n).getStageNumber() == stage) {
                 currentStage = questStages.get(n);
                 return;
+            }
+        }
+    }
+    
+    public void addAdvancer(int stageNumber, Action action, int stageToAdvanceTo) {
+        for (int n = 0; n < questStages.size(); n++) {
+            if (questStages.get(n).getStageNumber() == stageNumber) {
+                questStages.get(n).addAdvancer(action, stageToAdvanceTo);
+            }
+        }
+    }
+    
+    public void addAdvancer(int stageNumber, String convo, String pointer, int stageToAdvanceTo) {
+        for (int n = 0; n < questStages.size(); n++) {
+            if (questStages.get(n).getStageNumber() == stageNumber) {
+                questStages.get(n).addAdvancer(convo, pointer, stageToAdvanceTo);
             }
         }
     }

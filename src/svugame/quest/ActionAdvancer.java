@@ -4,32 +4,28 @@
  */
 package svugame.quest;
 
+import svugame.model.action.Action;
+
 /**
  *
  * @author Student
  */
-public class QuestAdvancer {
+public class ActionAdvancer {
     
-    QuestAdvancer(int thingID, int actionID, int stageToAdvanceTo){
-        this.thingID = thingID;
-        this.actionID = actionID;
+    ActionAdvancer(Action action, int stageToAdvanceTo){
+        this.action = action;
         this.stageToAdvanceTo = stageToAdvanceTo;
     }
 
-    public int getThingID() {
-        return thingID;
-    }
-
-    public int getActionResult() {
-        return actionID;
+    public Action getAction() {
+        return action;
     }
 
     public int getStageToAdvanceTo() {
         return stageToAdvanceTo;
     }
     
-    private final int thingID;
-    private final int actionID;
+    private final Action action;
     private final int stageToAdvanceTo;
     
 }
