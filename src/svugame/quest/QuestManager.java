@@ -6,6 +6,7 @@
 
 package svugame.quest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import svugame.model.action.Action;
 
@@ -25,8 +26,16 @@ public class QuestManager {
     }
     
     public void advanceQuests(Action action){
-        for(Quest q : questList.values()){
+        for(Quest q : activeList.values()){
             q.advanceQuest(action);
+        }
+    }
+    
+    public void advanceQuests(String convo, ArrayList<String> pointers){
+        for(Quest q : activeList.values()){
+            for(String s : pointers){
+                q.advanceQuest(convo, s);
+            }
         }
     }
     

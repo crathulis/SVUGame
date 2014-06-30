@@ -25,11 +25,11 @@ public class ArenaQuest {
         example.addStage(0, "You are in the arena and must fight. Start a fight "
                 + "by speaking with the arena master and keep your eyes open"
                 + "for a way to get out.");
-        example.addAdvancer(0, null, null, 5);
+        example.addAdvancer(0, "ArenaBattle1", "j1", 5);
         example.addStage(5, "Go through the door to fight your first arena battle.");
         example.addAdvancer(5, null, 10);
         example.addStage(10, "You've won your first battle. Talk to the Arena Master to start the second.");
-        example.addAdvancer(10, null, null, 15);
+        example.addAdvancer(10, "ArenaBattle2", "c2", 15);
         example.addStage(15, "You've won the second arena fight. Ask around the arena to "
                 + "see if anyone knows how to escape the arena, or fight your "
                 + "third fight.");
@@ -51,7 +51,7 @@ public class ArenaQuest {
                 + "in solitary confinement, where it is said that one prisoner once"
                 + "escaped through a secret tunnel.");
         example.addAdvancer(30, null, null, 35);
-        example.addAdvancer(30, null, null, 40);
+        example.addAdvancer(30, "ArenaNPC1", "4bb", 40);
         example.addAdvancer(30, null, 50);
         example.addStage(35, "Both the Mage Trainer and the Warrior Trainer have "
                 + "suggested ways to escape the Arena.");
