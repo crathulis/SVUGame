@@ -1143,5 +1143,215 @@ What do you mean? </text>
                 </dialogue>
             </dialogueList>
         </conversation>
+        <conversation conversationName="MageTrainer2">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>You know, I've seen you fight. You're really something. It's really too bad that you're going to... Well, you know.</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>What more can you teach me?</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>Let me show you some things.</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;Open trainer menu&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>I'll come back later.</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>Alright.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Is there anything you can think of to get me out of here?</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>It's been years since someone's even been rumored to escape.</text>
+                    <pointer>3ca</pointer>
+                    <pointer>3cb</pointer>
+                    <pointer>3cc</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ca</id>
+                    <prerequisites></prerequisites>
+                    <text>Aren't you magic or something?</text>
+                    <pointer>4ca</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3cb</id>
+                    <prerequisites></prerequisites>
+                    <text>So? There must be a way.</text>
+                    <pointer>4ca</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3cc</id>
+                    <prerequisites></prerequisites>
+                    <text>Magic is totally useless then.</text>
+                    <pointer>4cb</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4ca</id>
+                    <prerequisites></prerequisites>
+                    <text>Well... There may be a way. I think I know a spell, but it requires a specific ingrediant.</text>
+                    <pointer>5ca</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4cb</id>
+                    <prerequisites></prerequisites>
+                    <text>Why, I never!</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5ca</id>
+                    <prerequisites></prerequisites>
+                    <text>What is it?</text>
+                    <pointer>6ca</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>6ca</id>
+                    <prerequisites></prerequisites>
+                    <text>A gloom mushroom. It can be found growing around the arena sometimes. Take a look around.</text>
+                    <pointer>7caa</pointer>
+                    <pointer>7cab</pointer>
+                    <pointer>7cac</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7caa</id>
+                    <prerequisites></prerequisites>
+                    <text>Okay, I'll be back when I have one.</text>
+                    <pointer>8caa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8caa</id>
+                    <prerequisites></prerequisites>
+                    <text>Good luck.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7cab</id>
+                    <prerequisites></prerequisites>
+                    <text>Anything else I should know?</text>
+                    <pointer>8cab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7cac</id>
+                    <prerequisites></prerequisites>
+                    <text>What are you going to try to do?</text>
+                    <pointer>8cac</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8cac</id>
+                    <prerequisites></prerequisites>
+                    <text>I'm going to try a spell that hasn't been tried in years.</text>
+                    <pointer>7caa</pointer>
+                    <pointer>7cab</pointer>
+                    <pointer>7cac</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8cab</id>
+                    <prerequisites></prerequisites>
+                    <text>It will take some magic skill on your part. I hope you are up for the task.</text>
+                    <pointer>7caa</pointer>
+                    <pointer>7cab</pointer>
+                    <pointer>7cac</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="MageTrainer3">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>Do you have the mushroom yet?</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites>&quot;Gloom Mushroom in inventory&quot;</prerequisites>
+                    <text>Yes.</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>No.</text>
+                    <pointer>2b</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2b</id>
+                    <prerequisites></prerequisites>
+                    <text>Come back when you do.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Can you train me in the mean time?</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>Of course.</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;Open trainer menu&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>Great. Now, I'm going to try to cast a teleportation spell.</text>
+                    <pointer>3aa</pointer>
+                    <pointer>3ab</pointer>
+                    <actions></actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
     </allConversations>
 </conversationList>
