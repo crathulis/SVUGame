@@ -508,8 +508,7 @@
                 <dialogue>
                     <id>3c</id>
                     <prerequisites></prerequisites>
-                    <text>* What do you mean? 
-What do you mean? </text>
+                    <text>What do you mean? </text>
                     <pointer>4c</pointer>
                     <actions></actions>
                 </dialogue>
@@ -1349,6 +1348,234 @@ What do you mean? </text>
                     <text>Great. Now, I'm going to try to cast a teleportation spell.</text>
                     <pointer>3aa</pointer>
                     <pointer>3ab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3aa</id>
+                    <prerequisites></prerequisites>
+                    <text>Is that dangerous?</text>
+                    <pointer>4aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ab</id>
+                    <prerequisites></prerequisites>
+                    <text>What do I have to do?</text>
+                    <pointer>6aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4aa</id>
+                    <prerequisites></prerequisites>
+                    <text>There's been stories of landing halfway through a wall or only half of a person getting teleported.</text>
+                    <pointer>5aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5aa</id>
+                    <prerequisites></prerequisites>
+                    <text>Great. So what do I do?</text>
+                    <pointer>6aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>6aa</id>
+                    <prerequisites></prerequisites>
+                    <text>Use what magic skill you have to help me with this ritual and we'll see if we can make it happen.</text>
+                    <pointer>7aaa</pointer>
+                    <pointer>8aab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7aa</id>
+                    <prerequisites></prerequisites>
+                    <text>(Help with the ritual.)</text>
+                    <pointer>8aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7aaa</id>
+                    <prerequisites></prerequisites>
+                    <text>(Help with the ritual.)</text>
+                    <pointer>8aaa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8aaa</id>
+                    <prerequisites></prerequisites>
+                    <text>No, no, no, no! That's all wrong. Look, if you're going to want this to work you're going to need to brush up on your magic skills.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7aab</id>
+                    <prerequisites>&quot;Magic skill trained&quot;</prerequisites>
+                    <text>(Help with the ritual.)</text>
+                    <pointer>8aab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8aab</id>
+                    <prerequisites></prerequisites>
+                    <text>There, there! It's working! Goodbye!</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;teleport user&quot;</actions>
+                </dialogue>
+            </dialogueList>
+        </conversation>
+        <conversation conversationName="WarriorTrainer2">
+            <dialogueList>
+                <dialogue>
+                    <id>start</id>
+                    <prerequisites></prerequisites>
+                    <text>Impressive fighting out there, eh?</text>
+                    <pointer>1a</pointer>
+                    <pointer>1b</pointer>
+                    <pointer>1c</pointer>
+                    <pointer>1d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1c</id>
+                    <prerequisites></prerequisites>
+                    <text>Could you just show me some techniques?</text>
+                    <pointer>2c</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2c</id>
+                    <prerequisites></prerequisites>
+                    <text>For you. Yeah.</text>
+                    <pointer>end</pointer>
+                    <actions>&quot;open trainer menu&quot;</actions>
+                </dialogue>
+                <dialogue>
+                    <id>1d</id>
+                    <prerequisites></prerequisites>
+                    <text>I'll come back later.</text>
+                    <pointer>2d</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2d</id>
+                    <prerequisites></prerequisites>
+                    <text>Yeah, yeah, whenever you want.</text>
+                    <pointer>end</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1a</id>
+                    <prerequisites></prerequisites>
+                    <text>Except I really shouldn't be here.</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>1b</id>
+                    <prerequisites></prerequisites>
+                    <text>But now I'm going to have to go up against stronger monsters.</text>
+                    <pointer>2a</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>2a</id>
+                    <prerequisites></prerequisites>
+                    <text>I know. You know, there've been rumors of people escaping before.</text>
+                    <pointer>3aa</pointer>
+                    <pointer>3ab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3aa</id>
+                    <prerequisites></prerequisites>
+                    <text>Really? How did they do it?</text>
+                    <pointer>6aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>4ab</id>
+                    <prerequisites></prerequisites>
+                    <text>Well. There've been disappearances in my day. Maybe so.</text>
+                    <pointer>5aa</pointer>
+                    <pointer>5ab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5aa</id>
+                    <prerequisites></prerequisites>
+                    <text>How'd they do it?</text>
+                    <pointer>6aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>5ab</id>
+                    <prerequisites></prerequisites>
+                    <text>Well, what do you think they did?</text>
+                    <pointer>6aa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>6aa</id>
+                    <prerequisites></prerequisites>
+                    <text>Rumor goes that someone tunneled out through the confinement cell.</text>
+                    <pointer>7aaa</pointer>
+                    <pointer>7aab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7aaa</id>
+                    <prerequisites></prerequisites>
+                    <text>You're saying I'd have to break into jail?</text>
+                    <pointer>8aaa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>7aab</id>
+                    <prerequisites></prerequisites>
+                    <text>How do I get in?</text>
+                    <pointer>8aaa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>8aaa</id>
+                    <prerequisites></prerequisites>
+                    <text>If you get into a fight with another combatant they'll throw you in.</text>
+                    <pointer>9aaa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>9aaa</id>
+                    <prerequisites></prerequisites>
+                    <text>With whom do you suggest I do that?</text>
+                    <pointer>10aaa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>3ab</id>
+                    <prerequisites></prerequisites>
+                    <text>Do you think they're true?</text>
+                    <pointer>4ab</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>10aaa</id>
+                    <prerequisites></prerequisites>
+                    <text>One of the combatants is a bit on edge. Gone crazy. If you tell him off right, he might go off on you. Then you could look into escaping.</text>
+                    <pointer>11aaa</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>11aaa</id>
+                    <prerequisites></prerequisites>
+                    <text>Okay, I'll look into it, thanks.</text>
+                    <pointer>12</pointer>
+                    <actions></actions>
+                </dialogue>
+                <dialogue>
+                    <id>12</id>
+                    <prerequisites></prerequisites>
+                    <text>Good luck.</text>
+                    <pointer>end</pointer>
                     <actions></actions>
                 </dialogue>
             </dialogueList>
